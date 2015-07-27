@@ -3,7 +3,7 @@ using System.Collections;
 
 public class InputManager : MonoBehaviour 
 {
-    
+    ///<summary>Controlls which input method is being used</summary>
     public enum ControllerType : byte
     {
         GHguitar,
@@ -11,7 +11,9 @@ public class InputManager : MonoBehaviour
         PS4controller,
         keyboard
     };
-    [SerializeField]
+
+   
+    [SerializeField] ///<summary>The current input method being used</summary>
     private ControllerType m_playerInput = ControllerType.keyboard;
 
 	void Start () 

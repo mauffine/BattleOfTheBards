@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 
+/// <summary>A musical note in an enum</summary>
 public enum Note : byte
 {
     A,
