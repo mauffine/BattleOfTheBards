@@ -98,6 +98,7 @@ GameObject:
   - 33: {fileID: 79142227}
   - 64: {fileID: 79142226}
   - 23: {fileID: 79142225}
+  - 114: {fileID: 79142229}
   m_Layer: 0
   m_Name: Background
   m_TagString: Untagged
@@ -160,6 +161,19 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 4
+--- !u!114 &79142229
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 79142224}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: db67d79fffa91c14c865400f0984dd2d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_playTextTrans: {fileID: 1951353358}
+  m_quitTextTrans: {fileID: 533979079}
 --- !u!1 &533979076
 GameObject:
   m_ObjectHideFlags: 0
