@@ -23,8 +23,10 @@ public class TurnTimer : MonoBehaviour
     {
         TurnCountdown();
 	}
-
-    void TurnCountdown() //Function to count down the time left in the turn, switches turns when the timer ends and restarts it
+    /// <summary>
+    /// Counts down the time left in the turn, switches turns when the timer ends and resets the timer
+    /// </summary>
+    void TurnCountdown()
     {
         //basic timer stuff
         m_turnCountdown -= Time.deltaTime;

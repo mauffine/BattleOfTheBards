@@ -15,12 +15,10 @@ public enum Note : byte
 public class Battle : MonoBehaviour 
 {
     //Attributes
-    static Dictionary<Note, string> m_notes;
     static Battle m_battleRef;
 
     bool m_win = false;
     bool m_playing = true;
-
     [SerializeField]
     bool m_playerTurn;
     //Behavious
@@ -29,22 +27,21 @@ public class Battle : MonoBehaviour
         m_playerTurn = true;
         m_battleRef = this;
 	}
-	
 	void Update () 
     {
 	
 	}
-    //Receives valid key presses from InputManager and passes them out to all the relevant scripts if
-    //it's a not or quits and loads the menu if it's the escape button
-    static public void ReceiveKey(Note a_key)
+
+    /// <summary> Receive valid key presses from InputManager and passes them out to all the relevant scripts if it's a note or quits and loads the menu if it's the escape button </summary>
+    /// <param name="a_note"></param>
+    static public void ReceiveKey(Note a_note)
     {
-        if (m_notes.ContainsKey(a_key))
-        {
-            string note;
-            m_notes.TryGetValue(a_key, out note); //grab the note out of a dictionary
-            m_battleRef.SendMessage("PlayNote", note); //send it to everyone with a "PlayNote" method
-        }
+        m_battleRef.SendMessage("ReceiveNote", a_note); //send it to everyone with a "PlayNote" method
     }
+    /// <summary>
+    /// Recieves when the current turn ends through a bool and thus also knows who's turn it is
+    /// </summary>
+    /// <param name="a_playerTurn"></param>
     public void RecieveTurnOver(bool a_playerTurn)
     {
         m_playerTurn = a_playerTurn;
