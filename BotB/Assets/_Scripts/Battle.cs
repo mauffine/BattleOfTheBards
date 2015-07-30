@@ -11,7 +11,16 @@ public enum Note : byte
     D,
     E
 };
-
+public struct TimedNote
+{
+    Note m_note;
+    float m_time;
+    public TimedNote(Note a_note, float a_time)
+    {
+        m_note = a_note;
+        m_time = a_time;
+    }
+}
 public class Battle : MonoBehaviour 
 {
     //Attributes
@@ -36,6 +45,7 @@ public class Battle : MonoBehaviour
     /// <param name="a_note"></param>
     static public void ReceiveKey(Note a_note)
     {
+        TimedNote newNote = 
         m_battleRef.SendMessage("ReceiveNote", a_note); //send it to everyone with a "PlayNote" method
     }
     /// <summary>
@@ -45,6 +55,7 @@ public class Battle : MonoBehaviour
     public void RecieveTurnOver(bool a_playerTurn)
     {
         m_playerTurn = a_playerTurn;
+        this.GetComponent<SpellSystem>().TurnOver();
         //change turn and notify SpellSystem to cast spells
     }
 }

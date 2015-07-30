@@ -5,7 +5,8 @@ using System.Collections.Generic;
 public class SpellSystem : MonoBehaviour {
     //Attributes
     Dictionary<string, Note[]> m_spellList = new Dictionary<string,Note[]>();
-
+    [SerializeField]
+    List<Note> m_currentNotes;
 
     //Behaviours
     void Start () {
@@ -20,6 +21,11 @@ public class SpellSystem : MonoBehaviour {
     /// <param name="a_note"></param>
     void ReceiveNote (Note a_note)
     {
-
+        m_currentNotes.Add(a_note);
+    }
+    /// <summary>casts spells, clears notes</summary>
+    public void TurnOver()
+    {
+        m_currentNotes.Clear();
     }
 }
