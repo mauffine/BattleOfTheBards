@@ -11,10 +11,11 @@ public enum Note : byte
     D,
     E
 };
+/// <summary>A struct for the time a note was played and the note itself</summary>
 public struct TimedNote
 {
-    Note m_note;
-    float m_time;
+    public Note m_note;
+    public float m_time;
     public TimedNote(Note a_note, float a_time)
     {
         m_note = a_note;
@@ -43,9 +44,8 @@ public class Battle : MonoBehaviour
 
     /// <summary> Receive valid key presses from InputManager and passes them out to all the relevant scripts if it's a note or quits and loads the menu if it's the escape button </summary>
     /// <param name="a_note"></param>
-    static public void ReceiveKey(Note a_note)
+    static public void ReceiveKey(TimedNote a_note)
     {
-        TimedNote newNote = 
         m_battleRef.SendMessage("ReceiveNote", a_note); //send it to everyone with a "PlayNote" method
     }
     /// <summary>

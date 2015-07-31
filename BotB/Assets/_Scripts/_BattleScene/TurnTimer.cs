@@ -10,7 +10,8 @@ public class TurnTimer : MonoBehaviour
 
     [SerializeField]
     float m_turnCountdown; //the countdown variable used in the timer 
-    
+
+    public float GetTime() { return m_turnCountdown; }
     //Behavious
 	void Start () 
     {
@@ -38,4 +39,5 @@ public class TurnTimer : MonoBehaviour
             battleScript.RecieveTurnOver(m_playerTurn);
         }
     }
+
 }
