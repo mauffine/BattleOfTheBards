@@ -57,7 +57,7 @@ public class SpellSystem : MonoBehaviour {
                 Note[] currentSequence = new Note[] { a_currentNotes[i], a_currentNotes[i + 1], a_currentNotes[i + 2], a_currentNotes[i + 3] };
                 if (currentSequence.SequenceEqual(spellEnumerator.Current.Key))
                 {
-                    m_Emitter.Add((GameObject)Instantiate(Resources.Load("_Prefabs/Emitter")));
+                   Instantiate(Resources.Load("_Prefabs/Emitter"));
                 }
             }
         }
