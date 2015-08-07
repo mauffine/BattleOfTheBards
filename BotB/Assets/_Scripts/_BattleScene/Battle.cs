@@ -2,14 +2,20 @@
 using System.Collections;
 using System.Collections.Generic;
 
-/// <summary>A musical note in an enum</summary>
+/// <summary>A musical note in an enum, _ means the note is flat</summary>
 public enum Note : byte
 {
+    A_,
     A,
-    C,
+    B_,
     B,
+    C,
+    D_,
     D,
-    E
+    E,
+    F_,
+    F,
+    G,
 };
 /// <summary>A struct for the time a note was played and the note itself</summary>
 public struct TimedNote

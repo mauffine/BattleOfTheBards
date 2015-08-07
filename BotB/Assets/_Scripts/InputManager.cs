@@ -1,31 +1,28 @@
 ﻿using UnityEngine;
 using System.Collections;
 
+///<summary>Controlls which input method is being used</summary>
+public enum ControllerType : byte
+{
+    GHguitar,
+    XBXcontroller,
+    PS4controller,
+    keyboard
+};
 public class InputManager : MonoBehaviour 
 {
-    ///<summary>Controlls which input method is being used</summary>
-    public enum ControllerType : byte
-    {
-        GHguitar,
-        XBXcontroller,
-        PS4controller,
-        keyboard
-    };
-
-   
     [SerializeField] ///<summary>The current input method being used</summary>
     private ControllerType m_playerInput = ControllerType.keyboard;
-
 	void Start () 
     {
 	
 	}
-	
+	//The update function
 	void Update () 
     {
        if (m_playerInput == ControllerType.keyboard)
        {
-           float time = this.GetComponent<TurnTimer>().GetTime();
+           float time = this.GetComponent<TurnTimer>().CountdownTime;
            //A whole bunch of key checks
            //I have tried to lay the notes out to correspond with the key presses musically
            if (Input.GetKeyDown(KeyCode.W))
