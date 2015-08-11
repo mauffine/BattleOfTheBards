@@ -8,15 +8,13 @@ struct SpellData
 {
     Vector3 m_colour;
     int m_damage;
-
 }
-public class SpellSystem : MonoBehaviour {
+public class SpellSystem : MonoBehaviour 
+{
     //Attributes
     Dictionary<Note[], string> m_spellList = new Dictionary<Note[], string>(); //list of all the spells
-
     [SerializeField]
     List<Note> m_currentNotes; //list of notes played this turn
-
     [SerializeField]
     List<GameObject> m_Emitter = new List<GameObject>(); //list of current spell effects
     //Behaviours
