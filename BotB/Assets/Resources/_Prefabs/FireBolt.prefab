@@ -12,7 +12,7 @@ GameObject:
   - 199: {fileID: 19926816}
   - 114: {fileID: 11457590}
   m_Layer: 0
-  m_Name: Emitter
+  m_Name: FireBolt
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1178,7 +1178,7 @@ ParticleSystemRenderer:
   m_CastShadows: 0
   m_ReceiveShadows: 1
   m_Materials:
-  - {fileID: 2100000, guid: 76a61b17fdf557e44b57d8304b68833d, type: 2}
+  - {fileID: 10301, guid: 0000000000000000f000000000000000, type: 0}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_UseLightProbes: 1

@@ -15,13 +15,13 @@ public class Spell : MonoBehaviour
 	// Update is called once per frame
 	void Update() 
     {
-        this.transform.Translate(m_velocity);
-        m_lifetime -= Time.deltaTime;
+        transform.Translate(m_velocity);
+        //m_lifetime -= Time.deltaTime;
 
-        if (m_lifetime <= 0)
-            this.GetComponent<ParticleSystem>().enableEmission = false;
-        if (m_lifetime <= -1)
-            Destroy(gameObject);
+        //if (m_lifetime <= 0)
+        //    GetComponent<ParticleSystem>().enableEmission = false;
+        //if (m_lifetime <= -1)
+        //    Destroy(gameObject);
 	}
     //
     public string Key 

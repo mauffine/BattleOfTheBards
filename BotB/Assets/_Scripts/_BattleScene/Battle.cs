@@ -36,7 +36,7 @@ public class Battle : MonoBehaviour
     bool m_win = false;
     bool m_playing = true;
     [SerializeField]
-    bool m_playerTurn;
+    public bool m_playerTurn;
     //Behavious
 	void Start () 
     {
@@ -61,7 +61,7 @@ public class Battle : MonoBehaviour
     public void RecieveTurnOver(bool a_playerTurn)
     {
         m_playerTurn = a_playerTurn;
-        this.GetComponent<SpellSystem>().TurnOver();
+        GetComponent<SpellSystem>().TurnOver();
         //change turn and notify SpellSystem to cast spells
     }
 }
