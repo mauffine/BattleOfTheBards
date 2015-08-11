@@ -5,19 +5,16 @@ public class TurnTimer : MonoBehaviour
 {
     //Attributes
     [SerializeField]
-    float m_turnTime; //the time in seconds for each turn
+    float m_turnTime = 8; //the time in seconds for each turn
     [SerializeField]
-    bool m_playerTurn; //bool for it it's player's turn or enemy's turn
+    bool m_playerTurn = true; //bool for it it's player's turn or enemy's turn
     [SerializeField]
-    float m_turnCountdown; //the countdown variable used in the timer 
+    float m_turnCountdown = 8; //the countdown variable used in the timer 
 
     public float CountdownTime { get { return m_turnCountdown; } }
     //Behavious
 	void Start() 
     {
-        m_turnTime = 8; //8 seconds per turn   
-        m_playerTurn = true; //start on the player turn
-        m_turnCountdown = m_turnTime; //set the countdown to the turn time
 	}
 	
 	void Update() 
@@ -38,4 +35,8 @@ public class TurnTimer : MonoBehaviour
         }
     }
 
+    public float TimePerTurn
+    {
+        get {return m_turnTime; }
+    }
 }
