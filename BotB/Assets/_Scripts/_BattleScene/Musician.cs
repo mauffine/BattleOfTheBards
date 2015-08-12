@@ -19,8 +19,7 @@ public class Musician : MonoBehaviour
 	// Use this for initialization
     protected void Start() 
     {
-        TurnTimer turnTime = gameObject.GetComponent<TurnTimer>();//This is broken
-        turnTick = turnTime.TimePerTurn;
+        turnTick = TurnTimer.TimePerTurn;
 	}
 	// Update is called once per frame
     protected void Update() 

@@ -20,11 +20,11 @@ public class InputManager : MonoBehaviour
 	
 	}
 	//The update function
-	void Update () 
+	void Update()
     {
        if (m_playerInput == ControllerType.keyboard)
        {
-           float time = this.GetComponent<TurnTimer>().CountdownTime;
+           float time = TurnTimer.CountdownTime;
            //A whole bunch of key checks
            //I have tried to lay the notes out to correspond with the key presses musically
            if (Input.GetKeyDown(aNote))

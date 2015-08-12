@@ -64,4 +64,9 @@ public class Battle : MonoBehaviour
         this.GetComponent<SpellSystem>().TurnOver();
         //change turn and notify SpellSystem to cast spells
     }
+
+    public static Battle BattleReference
+    {
+        get {return m_battleRef; }
+    }
 }

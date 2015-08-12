@@ -6428,6 +6428,7 @@ GameObject:
   - 114: {fileID: 1775765533}
   - 114: {fileID: 1775765534}
   - 114: {fileID: 1775765535}
+  - 114: {fileID: 1775765536}
   m_Layer: 0
   m_Name: SceneHandler
   m_TagString: Untagged
@@ -6446,9 +6447,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: de0332b049833bf47b5386b244576f21, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_turnTime: 4
-  m_playerTurn: 0
-  m_turnCountdown: 0
 --- !u!4 &1775765532
 Transform:
   m_ObjectHideFlags: 0
@@ -6504,6 +6502,21 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_currentNotes: 
   m_Emitter: []
+--- !u!114 &1775765536
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1775765530}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 37f0613a2c06c01459b674c4b44e472f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_noteArray: []
+  m_noteVolume: .25
+  m_backgroundSong: {fileID: 8300000, guid: 287a65a507f3b734f96407d3f9734ae9, type: 3}
+  m_Backgroundvolume: .0250000004
 --- !u!1 &1816189725
 GameObject:
   m_ObjectHideFlags: 0

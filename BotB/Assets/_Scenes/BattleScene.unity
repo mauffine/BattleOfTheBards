@@ -68,7 +68,7 @@ LightmapSettings:
     m_TextureCompression: 1
     m_FinalGather: 0
     m_FinalGatherRayCount: 1024
-  m_LightmapSnapshot: {fileID: 112000000, guid: 80a75c2f3a7cfcb45a19891c72580dd2,
+  m_LightmapSnapshot: {fileID: 112000000, guid: f6d68f830220ec444b0b2139f806e176,
     type: 2}
   m_RuntimeCPUUsage: 25
 --- !u!196 &5
@@ -1976,9 +1976,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 911b278a3d5b39c4d81d4b511e9583fd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mainSpeed: 100
-  shiftAdd: 250
-  maxShift: 1000
+  mainSpeed: 20
+  shiftAdd: 100
+  maxShift: 250
   camSens: .25
 --- !u!4 &825524875 stripped
 Transform:
@@ -6448,6 +6448,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_playerInput: 3
+  aNote: 122
+  bNote: 120
+  cNote: 99
+  dNote: 118
+  eNote: 32
 --- !u!114 &1775765535
 MonoBehaviour:
   m_ObjectHideFlags: 0
