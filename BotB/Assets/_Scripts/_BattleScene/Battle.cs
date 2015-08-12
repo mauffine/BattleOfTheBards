@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.UI;
 using System.Collections;
 using System.Collections.Generic;
 
@@ -33,6 +34,9 @@ public class Battle : MonoBehaviour
     //Attributes
     static Battle m_battleRef;
 
+    [SerializeField]
+    Text m_debugText;
+
     bool m_win = false;
     bool m_playing = true;
     [SerializeField]
@@ -42,6 +46,7 @@ public class Battle : MonoBehaviour
     {
         m_playerTurn = true;
         m_battleRef = this;
+        m_debugText.text = "PlayerTurn";
 	}
 	void Update () 
     {
@@ -62,6 +67,16 @@ public class Battle : MonoBehaviour
     {
         m_playerTurn = a_playerTurn;
         GetComponent<SpellSystem>().TurnOver();
+        if (!m_playerTurn)
+            m_debugText.text = "EnemyTurn";
+        else
+            m_debugText.text = "PlayerTurn";
         //change turn and notify SpellSystem to cast spells
+    }
+    /// <summary>Called by spellsystem, Deals damage to character bassed on who's turn it is</summary>
+    /// <param name="a_damage">Damage dealt to character</param>
+    public void DealDamage(uint a_damage)
+    {
+        //pass the damage off to a character bassed on turn
     }
 }
