@@ -1976,7 +1976,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 911b278a3d5b39c4d81d4b511e9583fd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mainSpeed: 100
+  mainSpeed: 20
   shiftAdd: 250
   maxShift: 1000
   camSens: .25
@@ -4339,6 +4339,25 @@ Transform:
   - {fileID: 1669813263}
   m_Father: {fileID: 0}
   m_RootOrder: 2
+--- !u!1 &1400537123 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 100008, guid: fb7a894a58a92a946bd6a446501b0450, type: 3}
+  m_PrefabInternal: {fileID: 1026271900}
+--- !u!114 &1400537126
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1400537123}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 42d63fac46bb9aa4fbb2c0e87b589f53, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_health: 100
+  m_name: Slime
+  m_spellList: []
+  m_spellNum: 0
 --- !u!1 &1402585178
 GameObject:
   m_ObjectHideFlags: 0
@@ -5848,6 +5867,25 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1562704015}
   m_Mesh: {fileID: 4300056, guid: 1a8afc73411334744937fe88bb8b628c, type: 3}
+--- !u!1 &1564909508 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 100000, guid: a514458d3d123ff42aed2d231a14f352, type: 3}
+  m_PrefabInternal: {fileID: 1702827915}
+--- !u!114 &1564909512
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1564909508}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d9648715b2e132146b890d79d387d998, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_health: 150
+  m_name: The Bard!
+  m_spellList: []
+  m_spellNum: 0
 --- !u!1 &1566042851
 GameObject:
   m_ObjectHideFlags: 0
@@ -6390,6 +6428,7 @@ GameObject:
   - 114: {fileID: 1775765533}
   - 114: {fileID: 1775765534}
   - 114: {fileID: 1775765535}
+  - 114: {fileID: 1775765536}
   m_Layer: 0
   m_Name: SceneHandler
   m_TagString: Untagged
@@ -6408,9 +6447,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: de0332b049833bf47b5386b244576f21, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_turnTime: 4
-  m_playerTurn: 0
-  m_turnCountdown: 0
 --- !u!4 &1775765532
 Transform:
   m_ObjectHideFlags: 0
@@ -6448,6 +6484,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_playerInput: 3
+  aNote: 122
+  bNote: 120
+  cNote: 99
+  dNote: 118
+  eNote: 32
 --- !u!114 &1775765535
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6461,6 +6502,21 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_currentNotes: 
   m_Emitter: []
+--- !u!114 &1775765536
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1775765530}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 37f0613a2c06c01459b674c4b44e472f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_noteArray: []
+  m_noteVolume: .25
+  m_backgroundSong: {fileID: 8300000, guid: 287a65a507f3b734f96407d3f9734ae9, type: 3}
+  m_Backgroundvolume: .0250000004
 --- !u!1 &1816189725
 GameObject:
   m_ObjectHideFlags: 0

@@ -73,10 +73,17 @@ public class Battle : MonoBehaviour
             m_debugText.text = "PlayerTurn";
         //change turn and notify SpellSystem to cast spells
     }
+
     /// <summary>Called by spellsystem, Deals damage to character bassed on who's turn it is</summary>
     /// <param name="a_damage">Damage dealt to character</param>
     public void DealDamage(uint a_damage)
     {
         //pass the damage off to a character bassed on turn
+	}
+
+
+    public static Battle BattleReference
+    {
+        get {return m_battleRef; }
     }
 }
