@@ -69,4 +69,9 @@ public class Battle : MonoBehaviour
     {
         get {return m_battleRef; }
     }
+
+    public bool PlayerTurn
+    {
+        get { return m_playing; }
+    }
 }

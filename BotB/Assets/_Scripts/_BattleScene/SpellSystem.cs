@@ -27,7 +27,7 @@ public class SpellSystem : MonoBehaviour
 	// Update is called once per frame
 	void Update () 
     {
-	
+
 	}
     /// <summary> Receive's note from Battle.cs as a_note </summary>
     /// <param name="a_note"></param>

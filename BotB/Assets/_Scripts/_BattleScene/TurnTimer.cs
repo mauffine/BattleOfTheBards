@@ -13,11 +13,11 @@ public class TurnTimer : MonoBehaviour
 
    
     //Behavious
-    static void Start() 
+    void Start() 
     {
 	}
 
-    static void Update() 
+    void Update() 
     {
         TurnCountdown();
 	}
