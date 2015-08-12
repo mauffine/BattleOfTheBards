@@ -67,7 +67,8 @@ public class SpellSystem : MonoBehaviour
     /// <param name="a_note"></param>
     void ReceiveNote (TimedNote a_note)
     {
-        m_currentNotes.Add(a_note.m_note);
+        if (GetComponent<Battle>().m_playerTurn)
+            m_currentNotes.Add(a_note.m_note);
     }
     /// <summary>casts spells, clears notes</summary>
     public void TurnOver()

@@ -2046,6 +2046,25 @@ MonoBehaviour:
   shiftAdd: 250
   maxShift: 1000
   camSens: .25
+--- !u!1 &801762580 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 100000, guid: a514458d3d123ff42aed2d231a14f352, type: 3}
+  m_PrefabInternal: {fileID: 1702827915}
+--- !u!114 &801762584
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 801762580}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d9648715b2e132146b890d79d387d998, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_health: 100
+  m_name: 
+  m_spellList: []
+  m_spellNum: 0
 --- !u!4 &825524875 stripped
 Transform:
   m_PrefabParentObject: {fileID: 400002, guid: b9aa1753b0e504b4ba90fd33b7ab02a9, type: 3}
@@ -2332,6 +2351,25 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 29177c80bd3e7154e983bbdf70ee060f, type: 2}
   m_IsPrefabParent: 0
+--- !u!1 &970355254 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 100008, guid: fb7a894a58a92a946bd6a446501b0450, type: 3}
+  m_PrefabInternal: {fileID: 1026271900}
+--- !u!114 &970355257
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 970355254}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 42d63fac46bb9aa4fbb2c0e87b589f53, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_health: 100
+  m_name: 
+  m_spellList: []
+  m_spellNum: 0
 --- !u!1 &975442278
 GameObject:
   m_ObjectHideFlags: 0
@@ -2969,7 +3007,7 @@ ParticleSystem:
     m_Mesh: {fileID: 0}
     randomDirection: 1
   EmissionModule:
-    enabled: 1
+    enabled: 0
     m_Type: 0
     rate:
       scalar: 30
@@ -3755,7 +3793,7 @@ ParticleSystem:
     voxelSize: .5
     collisionMessages: 0
   SubModule:
-    enabled: 0
+    enabled: 1
     subEmitterBirth: {fileID: 0}
     subEmitterBirth1: {fileID: 0}
     subEmitterCollision: {fileID: 1492003872}
@@ -6475,9 +6513,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: de0332b049833bf47b5386b244576f21, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_turnTime: 4
-  m_playerTurn: 0
-  m_turnCountdown: 0
 --- !u!4 &1775765532
 Transform:
   m_ObjectHideFlags: 0
@@ -6502,6 +6537,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 46440103293007a4fbc190bcdd49be22, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_player: {fileID: 801762580}
+  m_slime: {fileID: 970355254}
   m_debugText: {fileID: 234225276}
   m_playerTurn: 0
 --- !u!114 &1775765534

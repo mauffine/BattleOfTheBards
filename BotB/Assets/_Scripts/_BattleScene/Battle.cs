@@ -35,6 +35,12 @@ public class Battle : MonoBehaviour
     static Battle m_battleRef;
 
     [SerializeField]
+    GameObject m_player;
+
+    [SerializeField]
+    GameObject m_slime;
+
+    [SerializeField]
     Text m_debugText;
 
     bool m_win = false;
@@ -78,7 +84,14 @@ public class Battle : MonoBehaviour
     /// <param name="a_damage">Damage dealt to character</param>
     public void DealDamage(uint a_damage)
     {
-        //pass the damage off to a character bassed on turn
+        if (m_playerTurn) 
+        {
+            m_player.GetComponent<TheBard>().TakeDamage(a_damage);
+        }
+        else
+        {
+            m_slime.GetComponent<TheSlime>().TakeDamage(a_damage);
+        }
 	}
 
 

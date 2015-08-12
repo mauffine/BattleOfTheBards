@@ -3,26 +3,21 @@ using System.Collections;
 
 public class Spell : MonoBehaviour 
 {
-    public uint m_damage;
     public Vector3 m_velocity;//The velocity
-
-    float m_lifetime;//How long the spell particles lasts= for
-    string m_key;//A key to show what key
-
+    public uint m_damage;
+    protected string m_key;//A key to show what key
 	// Use this for initialization
 	void Start() 
     {
-        m_lifetime = 2.0f;
+        m_damage = 20;
 	}
 	// Update is called once per frame
 	void Update() 
     {
-        transform.Translate(m_velocity);
-       
+        this.transform.Translate(m_velocity);
 	}
-    /// <summary></summary>
-    public string Key 
+    public string Key
     {
-        get {return m_key;}
+        get { return m_key; }
     }
 }

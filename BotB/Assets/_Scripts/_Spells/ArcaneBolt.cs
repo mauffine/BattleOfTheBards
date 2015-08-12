@@ -5,6 +5,7 @@ public class ArcaneBolt : Spell {
 
 	// Use this for initialization
 	void Start () {
+        //Key = "ArcaneBolt";
         m_damage = 20;
 	}
 	
