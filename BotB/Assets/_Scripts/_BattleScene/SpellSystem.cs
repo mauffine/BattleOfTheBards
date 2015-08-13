@@ -11,7 +11,7 @@ public class SpellSystem : MonoBehaviour
     List<Note> m_currentNotes; //list of notes played this turn
     [SerializeField]
     List<GameObject> m_emitters = new List<GameObject>(); //list of current spell effects
-    float m_lifetime = 2.0f;
+    float m_lifetime = 0.7f;
     [SerializeField]
     uint m_damage; //damage sum for when damage is dealt
     //Behaviours
@@ -41,9 +41,10 @@ public class SpellSystem : MonoBehaviour
             {
                 //Turn current of the spell's emissions off                    
                 emitterEnumerator.Current.GetComponent<ParticleSystem>().enableEmission = false;
+                emitterEnumerator.Current.GetComponentInChildren<ParticleSystem>().enableEmission = false;
             }
         }
-        if (m_lifetime <= -1)
+        if (m_lifetime <= -.5f)
         {
             var emitterEnumerator = m_emitters.GetEnumerator();
             while (emitterEnumerator.MoveNext())
@@ -70,7 +71,7 @@ public class SpellSystem : MonoBehaviour
     {
         CheckForSpell(m_currentNotes, m_spellList);
         m_currentNotes.Clear();
-        m_lifetime = 2.0f;
+        m_lifetime = 1.0f;
     } 
     /// <summary>Checks the played notes for spells</summary>
     /// <param name="a_CurrentNotes">The list of notes played this turn</param>

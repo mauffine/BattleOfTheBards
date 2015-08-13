@@ -1,15 +1,15 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &174120
+--- !u!1 &123988
 GameObject:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   serializedVersion: 4
   m_Component:
-  - 4: {fileID: 466896}
-  - 198: {fileID: 19820990}
-  - 199: {fileID: 19986120}
+  - 4: {fileID: 429182}
+  - 198: {fileID: 19813568}
+  - 199: {fileID: 19990608}
   m_Layer: 0
   m_Name: Particle System
   m_TagString: Untagged
@@ -17,17 +17,16 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!1 &181932
+--- !u!1 &192338
 GameObject:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   serializedVersion: 4
   m_Component:
-  - 4: {fileID: 458580}
-  - 198: {fileID: 19853754}
-  - 199: {fileID: 19934306}
-  - 114: {fileID: 11480744}
+  - 4: {fileID: 420720}
+  - 198: {fileID: 19862364}
+  - 199: {fileID: 19959412}
   m_Layer: 0
   m_Name: ArcaneBolt
   m_TagString: Untagged
@@ -35,50 +34,37 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &458580
+--- !u!4 &420720
 Transform:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 181932}
+  m_GameObject: {fileID: 192338}
   m_LocalRotation: {x: -.707106829, y: 0, z: 0, w: .707106829}
-  m_LocalPosition: {x: 0, y: 0, z: .519999981}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 466896}
+  - {fileID: 429182}
   m_Father: {fileID: 0}
   m_RootOrder: 0
---- !u!4 &466896
+--- !u!4 &429182
 Transform:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 174120}
+  m_GameObject: {fileID: 123988}
   m_LocalRotation: {x: .545817316, y: .453569144, z: -.0343642496, w: .703688622}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: .225371838, y: .225371867, z: .225371867}
   m_Children: []
-  m_Father: {fileID: 458580}
+  m_Father: {fileID: 420720}
   m_RootOrder: 0
---- !u!114 &11480744
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 181932}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b872d8431c425514a88e9bf9ec20358c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_speedModifier: 0
-  m_velocity: {x: 0, y: 0, z: 0}
---- !u!198 &19820990
+--- !u!198 &19813568
 ParticleSystem:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 174120}
+  m_GameObject: {fileID: 123988}
   lengthInSec: 2
   startDelay: 0
   speed: 1
@@ -1121,12 +1107,12 @@ ParticleSystem:
     subEmitterCollision1: {fileID: 0}
     subEmitterDeath: {fileID: 0}
     subEmitterDeath1: {fileID: 0}
---- !u!198 &19853754
+--- !u!198 &19862364
 ParticleSystem:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 181932}
+  m_GameObject: {fileID: 192338}
   lengthInSec: 5
   startDelay: 0
   speed: 1
@@ -2144,12 +2130,12 @@ ParticleSystem:
     subEmitterCollision1: {fileID: 0}
     subEmitterDeath: {fileID: 0}
     subEmitterDeath1: {fileID: 0}
---- !u!199 &19934306
+--- !u!199 &19959412
 ParticleSystemRenderer:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 181932}
+  m_GameObject: {fileID: 192338}
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
@@ -2180,12 +2166,12 @@ ParticleSystemRenderer:
   m_Mesh1: {fileID: 0}
   m_Mesh2: {fileID: 0}
   m_Mesh3: {fileID: 0}
---- !u!199 &19986120
+--- !u!199 &19990608
 ParticleSystemRenderer:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 174120}
+  m_GameObject: {fileID: 123988}
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
@@ -2225,5 +2211,5 @@ Prefab:
     m_Modifications: []
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
-  m_RootGameObject: {fileID: 181932}
+  m_RootGameObject: {fileID: 192338}
   m_IsPrefabParent: 1
