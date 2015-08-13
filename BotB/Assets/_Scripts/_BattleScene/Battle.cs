@@ -34,12 +34,12 @@ public class Battle : MonoBehaviour
     static Battle m_battleRef;
 
     bool m_win = false;
-    bool m_playing = true;
     [SerializeField]
     bool m_playerTurn;
     //Behavious
 	void Start () 
     {
+        Application.targetFrameRate = 300;
         m_playerTurn = true;
         m_battleRef = this;
 	}
@@ -72,6 +72,6 @@ public class Battle : MonoBehaviour
 
     public bool PlayerTurn
     {
-        get { return m_playing; }
+        get { return m_playerTurn; }
     }
 }
