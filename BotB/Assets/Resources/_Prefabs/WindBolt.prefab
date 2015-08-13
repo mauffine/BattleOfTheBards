@@ -103,7 +103,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b872d8431c425514a88e9bf9ec20358c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_damage: 0
   m_velocity: {x: 0, y: 0, z: 0}
 --- !u!135 &13512852
 SphereCollider:
@@ -1153,7 +1152,7 @@ ParticleSystem:
     plane5: {fileID: 0}
     dampen: 0
     bounce: 1
-    energyLossOnCollision: 0
+    energyLossOnCollision: 1
     minKillSpeed: 0
     particleRadius: .00999999978
     collidesWith:
@@ -1379,6 +1378,10 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: SubModule.enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: CollisionModule.energyLossOnCollision
       value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []

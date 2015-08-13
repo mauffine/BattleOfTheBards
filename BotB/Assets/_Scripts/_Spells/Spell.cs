@@ -4,7 +4,7 @@ using System.Collections;
 public class Spell : MonoBehaviour 
 {
     public Vector3 m_velocity;//The velocity
-    public uint m_damage;
+    protected uint m_damage; //Damage that the spell deals
     protected string m_key;//A key to show what key
 	// Use this for initialization
 	void Start() 
@@ -16,7 +16,11 @@ public class Spell : MonoBehaviour
     {
         this.transform.Translate(m_velocity);
 	}
-    public string Key
+    public uint Damage
+    {
+        get { return m_damage; }
+    }
+    public virtual string Key
     {
         get { return m_key; }
     }

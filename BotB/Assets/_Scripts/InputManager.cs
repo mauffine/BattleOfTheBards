@@ -22,23 +22,25 @@ public class InputManager : MonoBehaviour
 	//The update function
 	void Update()
     {
-       if (m_playerInput == ControllerType.keyboard)
-       {
-           float time = TurnTimer.CountdownTime;
-           //A whole bunch of key checks
-           //I have tried to lay the notes out to correspond with the key presses musically
-           if (Input.GetKeyDown(aNote))
-               Battle.ReceiveKey(new TimedNote(Note.A, time));
-           if (Input.GetKeyDown(bNote))
-               Battle.ReceiveKey(new TimedNote(Note.B, time));
-           if (Input.GetKeyDown(cNote))
-               Battle.ReceiveKey(new TimedNote(Note.C, time));
-           if (Input.GetKeyDown(dNote))
-               Battle.ReceiveKey(new TimedNote(Note.D, time));
-           if (Input.GetKeyDown(eNote))
-               Battle.ReceiveKey(new TimedNote(Note.E, time)); 
-       }
-      
+        if (TurnTimer.playerTurn)
+        {
+            if (m_playerInput == ControllerType.keyboard)
+            {
+                float time = TurnTimer.CountdownTime;
+                //A whole bunch of key checks
+                //I have tried to lay the notes out to correspond with the key presses musically
+                if (Input.GetKeyDown(aNote))
+                    Battle.ReceiveKey(new TimedNote(Note.A, time));
+                if (Input.GetKeyDown(bNote))
+                    Battle.ReceiveKey(new TimedNote(Note.B, time));
+                if (Input.GetKeyDown(cNote))
+                    Battle.ReceiveKey(new TimedNote(Note.C, time));
+                if (Input.GetKeyDown(dNote))
+                    Battle.ReceiveKey(new TimedNote(Note.D, time));
+                if (Input.GetKeyDown(eNote))
+                    Battle.ReceiveKey(new TimedNote(Note.E, time));
+            }
+        }
         if (Input.GetKeyDown(KeyCode.Escape))
         {
             //go back to menu

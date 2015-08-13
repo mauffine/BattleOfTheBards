@@ -2,13 +2,6 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
-//using System;
-
-struct SpellData
-{
-    Vector3 m_colour;
-    int m_damage;
-}
 public class SpellSystem : MonoBehaviour 
 {
     //Attributes
@@ -20,14 +13,15 @@ public class SpellSystem : MonoBehaviour
     List<GameObject> m_emitters = new List<GameObject>(); //list of current spell effects
     float m_lifetime = 2.0f;
     [SerializeField]
-    uint m_damage;
+    uint m_damage; //damage sum for when damage is dealt
     //Behaviours
     void Start ()
     {
+        //create the spells
         Note[] IceBolt = new Note[] { Note.C, Note.D, Note.E, Note.B, Note.A };
         m_spellList.Add(IceBolt, "IceBolt");
-        Note[] ArcaneMissile = new Note[] {Note.A, Note.A, Note.D, Note.E, Note.B};
-        m_spellList.Add(ArcaneMissile, "ArcaneMissile");
+        Note[] ArcaneBolt = new Note[] {Note.A, Note.A, Note.D, Note.E, Note.B};
+        m_spellList.Add(ArcaneBolt, "ArcaneBolt");
         Note[] FireBolt = new Note[] {Note.B, Note.B, Note.E, Note.D, Note.C};
         m_spellList.Add(FireBolt, "FireBolt");
         Note[] WindBolt = new Note[] { Note.D, Note.E, Note.B, Note.C, Note.A };
@@ -39,15 +33,14 @@ public class SpellSystem : MonoBehaviour
 	void Update () 
     {
         m_lifetime -= Time.deltaTime;
-
+        //check if expired
         if (m_lifetime <= 0)
         {
             var emitterEnumerator = m_emitters.GetEnumerator();
             while (emitterEnumerator.MoveNext())
             {
-                //Turn all of the emitter's emissions off
+                //Turn current of the spell's emissions off                    
                 emitterEnumerator.Current.GetComponent<ParticleSystem>().enableEmission = false;
-                m_damage += emitterEnumerator.Current.GetComponent<Spell>().m_damage;
             }
         }
         if (m_lifetime <= -1)
@@ -55,31 +48,33 @@ public class SpellSystem : MonoBehaviour
             var emitterEnumerator = m_emitters.GetEnumerator();
             while (emitterEnumerator.MoveNext())
             {
-                //Delete all the emitters
+                //Sum up damage of the spells before deletion;
+                m_damage += emitterEnumerator.Current.GetComponent<Spell>().Damage;
+                //Delete current spell
                 Destroy(emitterEnumerator.Current.gameObject);
             }
+            if (m_emitters.Count != 0)
+                GetComponent<Battle>().DealDamage(m_damage);
             m_emitters.Clear();
-            GetComponent<Battle>().DealDamage(m_damage);
             m_damage = 0;
         }
 	}
     /// <summary> Receive's note from Battle.cs as a_note </summary>
-    /// <param name="a_note"></param>
+    /// <param name="a_note"> The note to recieve</param>
     void ReceiveNote (TimedNote a_note)
     {
-        if (GetComponent<Battle>().m_playerTurn)
-            m_currentNotes.Add(a_note.m_note);
+        m_currentNotes.Add(a_note.m_note);
     }
-    /// <summary>casts spells, clears notes</summary>
+    /// <summary>casts spells, clears notes and resets the lifetime of the spells in flight</summary>
     public void TurnOver()
     {
         CheckForSpell(m_currentNotes, m_spellList);
         m_currentNotes.Clear();
         m_lifetime = 2.0f;
-    }
+    } 
     /// <summary>Checks the played notes for spells</summary>
-    /// <param name="a_CurrentNotes"></param>
-    /// <param name="a_spellList"></param>
+    /// <param name="a_CurrentNotes">The list of notes played this turn</param>
+    /// <param name="a_spellList">The list of Spells that can be played and their note comninations</param>
     void CheckForSpell(List<Note> a_currentNotes, Dictionary<Note[], string> a_spellList)
     {
         var spellEnumerator = a_spellList.GetEnumerator();
@@ -91,10 +86,10 @@ public class SpellSystem : MonoBehaviour
                 Note[] currentSequence = new Note[] { a_currentNotes[i], a_currentNotes[i + 1], a_currentNotes[i + 2], a_currentNotes[i + 3], a_currentNotes[i + 4]};
                 if (currentSequence.SequenceEqual(spellEnumerator.Current.Key))
                 {
-                    //Check what spell is being cast
+                    //Check what spell is being cast and by who
                     switch (spellEnumerator.Current.Value)
                     {
-                        case "ArcaneMissile":
+                        case "ArcaneBolt":
                             {
                                 if (GetComponent<Battle>().m_playerTurn)
                                 { 
