@@ -35,13 +35,12 @@ public class Battle : MonoBehaviour
     static Battle m_battleRef;
 
     [SerializeField]
-    GameObject m_player;
+    public GameObject m_player;
 
     [SerializeField]
-    GameObject m_slime;
-
-    [SerializeField]
-    Text m_debugText;
+    public GameObject m_slime;
+    //[SerializeField]
+    //Text m_debugText;
 
     public bool m_win = false;
     public bool m_playing = true;
@@ -74,6 +73,97 @@ public class Battle : MonoBehaviour
     /// <param name="a_note"></param>
     static public void ReceiveKey(TimedNote a_note)
     {
+        if (m_battleRef.PlayerTurn)
+        {
+            switch (a_note.m_note)
+            {
+                case Note.A_:
+                    break;
+                case Note.A:
+                    {
+                        BattleReference.m_player.GetComponent<Animator>().Play(Animator.StringToHash("Chord1"));
+                    }
+                    break;
+                case Note.B_:
+                    break;
+                case Note.B:
+                    {
+                        BattleReference.m_player.GetComponent<Animator>().Play(Animator.StringToHash("Chord2"));
+                    }
+                    break;
+                case Note.C:
+                    {
+                        BattleReference.m_player.GetComponent<Animator>().Play(Animator.StringToHash("Chord3"));
+                    }
+                    break;
+                case Note.D_:
+                    break;
+                case Note.D:
+                    {
+                        BattleReference.m_player.GetComponent<Animator>().Play(Animator.StringToHash("Chord1"));
+                    }
+                    break;
+                case Note.E:
+                    {
+                        BattleReference.m_player.GetComponent<Animator>().Play(Animator.StringToHash("Chord4"));
+                    }
+                    break;
+                case Note.F_:
+                    break;
+                case Note.F:
+                    break;
+                case Note.G:
+                    break;
+                default:
+                    break;
+            }
+
+        }
+        else
+        {
+            switch (a_note.m_note)
+            {
+                case Note.A_:
+                    break;
+                case Note.A:
+                    {
+                        BattleReference.m_slime.GetComponent<Animator>().Play(Animator.StringToHash("Attack"));
+                    }
+                    break;
+                case Note.B_:
+                    break;
+                case Note.B:
+                    {
+                        BattleReference.m_slime.GetComponent<Animator>().Play(Animator.StringToHash("Attack"));
+                    }
+                    break;
+                case Note.C:
+                    {
+                        BattleReference.m_slime.GetComponent<Animator>().Play(Animator.StringToHash("Attack"));
+                    }
+                    break;
+                case Note.D_:
+                    break;
+                case Note.D:
+                    {
+                        BattleReference.m_slime.GetComponent<Animator>().Play(Animator.StringToHash("Attack"));
+                    }
+                    break;
+                case Note.E:
+                    {
+                        BattleReference.m_slime.GetComponent<Animator>().Play(Animator.StringToHash("Attack"));
+                    }
+                    break;
+                case Note.F_:
+                    break;
+                case Note.F:
+                    break;
+                case Note.G:
+                    break;
+                default:
+                    break;
+            }
+        }
         m_battleRef.SendMessage("ReceiveNote", a_note); //send it to everyone with a "PlayNote" method
         NoteVisualiser.Reference.ReceiveNote(a_note);
     }

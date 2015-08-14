@@ -55,7 +55,15 @@ public class SpellSystem : MonoBehaviour
                 Destroy(emitterEnumerator.Current.gameObject);
             }
             if (m_emitters.Count != 0)
+            {
+                if (Battle.BattleReference.PlayerTurn)
+                {
+                    Battle.BattleReference.m_player.GetComponent<Animator>().Play(Animator.StringToHash("Hurt"));
+                }
+                else
+                    Battle.BattleReference.m_slime.GetComponent<Animator>().Play(Animator.StringToHash("Hurt"));
                 GetComponent<Battle>().DealDamage(m_damage);
+            }
             m_emitters.Clear();
             m_damage = 0;
         }

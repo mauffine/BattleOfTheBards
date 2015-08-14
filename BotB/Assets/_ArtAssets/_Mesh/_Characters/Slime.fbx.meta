@@ -148,6 +148,7 @@ ModelImporter:
     4300004: left_eye
     4300006: right_eye
     4300008: piano
+    6400000: piano
     7400000: Idle
     7400002: Attack
     7400004: Hurt
@@ -667,7 +668,7 @@ ModelImporter:
     lODScreenPercentages: []
     globalScale: 1
     meshCompression: 0
-    addColliders: 0
+    addColliders: 1
     importBlendShapes: 1
     swapUVChannels: 0
     generateSecondaryUV: 0
