@@ -52,9 +52,10 @@ public class Battle : MonoBehaviour
     //Behavious
 	void Start () 
     {
-        m_playerTurn = true;
+        Application.targetFrameRate = 300;
+        m_playerTurn = false;
         m_battleRef = this;
-        m_debugText.text = "PlayerTurn";
+        //m_debugText.text = "PlayerTurn";
         m_gameOverTimer = 4.0f;
 	}
 	void Update () 
@@ -74,17 +75,19 @@ public class Battle : MonoBehaviour
     static public void ReceiveKey(TimedNote a_note)
     {
         m_battleRef.SendMessage("ReceiveNote", a_note); //send it to everyone with a "PlayNote" method
+        NoteVisualiser.Reference.ReceiveNote(a_note);
     }
-    /// <summary> Recieves when the current turn ends through a bool and thus also knows who's turn it is </summary>
+
+    ///<summary> Recieves when the current turn ends through a bool and thus also knows who's turn it is</summary>
     /// <param name="a_playerTurn"></param>
     public void RecieveTurnOver(bool a_playerTurn)
     {
         m_playerTurn = a_playerTurn;
-        GetComponent<SpellSystem>().TurnOver();
+        GetComponent<SpellSystem>().TurnOver();/*
         if (!m_playerTurn)
             m_debugText.text = "EnemyTurn";
         else
-            m_debugText.text = "PlayerTurn";
+            m_debugText.text = "PlayerTurn"; */
         //change turn and notify SpellSystem to cast spells
     }
 
@@ -106,5 +109,10 @@ public class Battle : MonoBehaviour
     public static Battle BattleReference
     {
         get {return m_battleRef; }
+    }
+
+    public bool PlayerTurn
+    {
+        get { return m_playerTurn; }
     }
 }

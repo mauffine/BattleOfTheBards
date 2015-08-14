@@ -15,7 +15,7 @@ public class InputManager : MonoBehaviour
     private ControllerType m_playerInput = ControllerType.keyboard;
     [SerializeField]
     private KeyCode aNote = KeyCode.Z, bNote = KeyCode.X, cNote = KeyCode.C, dNote = KeyCode.V, eNote = KeyCode.Space;
-	void Start () 
+	void Start() 
     {
 	
 	}

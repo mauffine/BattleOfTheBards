@@ -59,6 +59,7 @@ public class SpellSystem : MonoBehaviour
             m_emitters.Clear();
             m_damage = 0;
         }
+
 	}
     /// <summary> Receive's note from Battle.cs as a_note </summary>
     /// <param name="a_note"> The note to recieve</param>
