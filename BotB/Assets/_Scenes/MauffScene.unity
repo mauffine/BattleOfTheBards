@@ -586,7 +586,7 @@ RectTransform:
   m_RootOrder: 1
   m_AnchorMin: {x: .5, y: .5}
   m_AnchorMax: {x: .5, y: .5}
-  m_AnchoredPosition: {x: -379, y: 69}
+  m_AnchoredPosition: {x: -422.5, y: 118}
   m_SizeDelta: {x: 159, y: 329}
   m_Pivot: {x: .5, y: .5}
 --- !u!114 &134497429
@@ -931,8 +931,8 @@ RectTransform:
   m_RootOrder: 0
   m_AnchorMin: {x: .5, y: .5}
   m_AnchorMax: {x: .5, y: .5}
-  m_AnchoredPosition: {x: -379.5, y: 243.5}
-  m_SizeDelta: {x: 160, y: 30}
+  m_AnchoredPosition: {x: 0, y: 254.5}
+  m_SizeDelta: {x: 211, y: 56}
   m_Pivot: {x: .5, y: .5}
 --- !u!114 &234225276
 MonoBehaviour:
@@ -949,12 +949,12 @@ MonoBehaviour:
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FontData:
     m_Font: {fileID: 12800000, guid: 802c64ed82ffe4345b8805bb45a03f4d, type: 3}
-    m_FontSize: 14
+    m_FontSize: 30
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 10
     m_MaxSize: 40
-    m_Alignment: 0
+    m_Alignment: 1
     m_RichText: 1
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
@@ -2109,9 +2109,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 911b278a3d5b39c4d81d4b511e9583fd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mainSpeed: 100
-  shiftAdd: 250
-  maxShift: 1000
+  mainSpeed: 15
+  shiftAdd: 10
+  maxShift: 100
   camSens: .25
 --- !u!1 &801762580 stripped
 GameObject:
@@ -2130,7 +2130,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_health: 100
   m_name: 
-  m_sceneHandler: {fileID: 0}
+  m_sceneHandler: {fileID: 1775765530}
 --- !u!4 &825524875 stripped
 Transform:
   m_PrefabParentObject: {fileID: 400002, guid: b9aa1753b0e504b4ba90fd33b7ab02a9, type: 3}
@@ -2432,7 +2432,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 42d63fac46bb9aa4fbb2c0e87b589f53, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_health: 0
+  m_health: 100
   m_name: 
   m_sceneHandler: {fileID: 1775765530}
 --- !u!1 &975442278
@@ -6607,6 +6607,8 @@ MonoBehaviour:
   m_player: {fileID: 801762580}
   m_slime: {fileID: 970355254}
   m_debugText: {fileID: 234225276}
+  m_win: 0
+  m_playing: 1
   m_playerTurn: 0
 --- !u!114 &1775765534
 MonoBehaviour:

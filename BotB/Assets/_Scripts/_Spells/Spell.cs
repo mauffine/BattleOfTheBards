@@ -8,13 +8,13 @@ public class Spell : MonoBehaviour
     protected uint m_damage; //Damage that the spell deals
     protected string m_key;//A key to show what key
 	// Use this for initialization
-	void Start() 
+	protected void Start() 
     {
         m_speedModifier = 80;
         m_damage = 20;
 	}
 	// Update is called once per frame
-	void Update() 
+	protected void Update() 
     {
         transform.Translate(m_velocity * Time.deltaTime * m_speedModifier);
 	}

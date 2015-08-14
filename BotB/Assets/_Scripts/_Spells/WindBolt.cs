@@ -8,14 +8,14 @@ public class WindBolt : Spell
     // Use this for initialization
     void Start()
     {
-        m_damage = 20;
+        base.Start();
         
     }
 
     // Update is called once per frame
     void Update()
     {
-        transform.Translate(m_velocity);
+        base.Update();
     }
     public override string Key
     {

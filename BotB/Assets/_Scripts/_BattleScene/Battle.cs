@@ -43,20 +43,30 @@ public class Battle : MonoBehaviour
     [SerializeField]
     Text m_debugText;
 
-    bool m_win = false;
-    bool m_playing = true;
+    public bool m_win = false;
+    public bool m_playing = true;
     [SerializeField]
     public bool m_playerTurn;
+
+    float m_gameOverTimer;
     //Behavious
 	void Start () 
     {
         m_playerTurn = true;
         m_battleRef = this;
         m_debugText.text = "PlayerTurn";
+        m_gameOverTimer = 4.0f;
 	}
 	void Update () 
     {
-	
+        if (!m_playing)
+        {
+            m_gameOverTimer -= Time.deltaTime;
+        }
+        if (m_gameOverTimer <= 0)
+        {
+            Application.Quit();
+        }
 	}
 
     /// <summary> Receive valid key presses from InputManager and passes them out to all the relevant scripts if it's a note or quits and loads the menu if it's the escape button </summary>
@@ -65,9 +75,7 @@ public class Battle : MonoBehaviour
     {
         m_battleRef.SendMessage("ReceiveNote", a_note); //send it to everyone with a "PlayNote" method
     }
-    /// <summary>
-    /// Recieves when the current turn ends through a bool and thus also knows who's turn it is
-    /// </summary>
+    /// <summary> Recieves when the current turn ends through a bool and thus also knows who's turn it is </summary>
     /// <param name="a_playerTurn"></param>
     public void RecieveTurnOver(bool a_playerTurn)
     {

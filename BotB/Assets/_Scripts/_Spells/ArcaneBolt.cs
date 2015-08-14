@@ -5,13 +5,15 @@ public class ArcaneBolt : Spell {
     
     string m_key = "AADEB";
 	// Use this for initialization
-	void Start () {
-        m_damage = 20;
+	void Start () 
+    {
+        base.Start();
 	}
 	
 	// Update is called once per frame
-	void Update () {
-        transform.Translate(m_velocity);
+	void Update () 
+    {
+        base.Update();
 	}
     public override string Key
     {

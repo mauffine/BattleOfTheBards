@@ -42,8 +42,10 @@ public class Musician : MonoBehaviour
                 }
                 else
                 {
+                    //set toPlay to something
                     Note toPlay = (Note)m_spellList[m_spellLoc][(int)m_notesPlayed];
                     //int index = (int)(m_noteCount - m_notesPlayed);
+                    //convert characters into notes
                     switch (m_spellList[m_spellLoc][(int)m_notesPlayed])
                     {
                         case 'A':

@@ -5,11 +5,11 @@ public class TurnTimer : MonoBehaviour
 {
     //Attributes
     [SerializeField]
-    static float turnTime = 8; //the time in seconds for each turn
+    static float turnTime = 6; //the time in seconds for each turn
     [SerializeField]
     public static bool playerTurn = true; //bool for it it's player's turn or enemy's turn
     [SerializeField]
-    static float turnCountdown = 8; //the countdown variable used in the timer 
+    static float turnCountdown = 6; //the countdown variable used in the timer 
 
    
     //Behavious
