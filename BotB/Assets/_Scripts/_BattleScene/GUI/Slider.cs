@@ -43,4 +43,14 @@ public class Slider : MonoBehaviour
         pos = m_transform.position;
         locPos = m_transform.localPosition;
 	}
+
+    public static Vector3 Position
+    {
+        get { return pos; }
+    }
+
+    public static Vector3 LocalPosition
+    {
+        get { return locPos; }
+    }
 }

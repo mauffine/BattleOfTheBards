@@ -1,6 +1,6 @@
 fileFormatVersion: 2
-guid: 49af613e6b97f204db0ed730c4d60274
-timeCreated: 1439364105
+guid: 715be61205baec94e881784e56cddaea
+timeCreated: 1439511614
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
@@ -8,6 +8,7 @@ TextureImporter:
     21300002: Notes_1
     21300004: Notes_2
     21300006: Notes_3
+    21300008: Notes_4
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
@@ -30,11 +31,11 @@ TextureImporter:
   cubemapConvolutionSteps: 8
   cubemapConvolutionExponent: 1.5
   seamlessCubemap: 0
-  textureFormat: -1
-  maxTextureSize: 2048
+  textureFormat: -3
+  maxTextureSize: 512
   textureSettings:
-    filterMode: -1
-    aniso: 1
+    filterMode: 0
+    aniso: -1
     mipBias: -1
     wrapMode: 1
   nPOTScale: 0
@@ -47,7 +48,7 @@ TextureImporter:
   alignment: 0
   spritePivot: {x: .5, y: .5}
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 72
   alphaIsTransparency: 1
   textureType: 8
   buildTargetSettings: []
@@ -56,42 +57,52 @@ TextureImporter:
     - name: Notes_0
       rect:
         serializedVersion: 2
-        x: 1
-        y: 4
-        width: 58
-        height: 58
+        x: 2
+        y: 2
+        width: 60
+        height: 60
       alignment: 0
-      pivot: {x: .5, y: .5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: Notes_1
       rect:
         serializedVersion: 2
-        x: 70
-        y: 4
-        width: 58
-        height: 58
+        x: 66
+        y: 2
+        width: 60
+        height: 60
       alignment: 0
-      pivot: {x: .5, y: .5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: Notes_2
       rect:
         serializedVersion: 2
-        x: 139
-        y: 4
-        width: 58
-        height: 58
+        x: 130
+        y: 2
+        width: 60
+        height: 60
       alignment: 0
-      pivot: {x: .5, y: .5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: Notes_3
       rect:
         serializedVersion: 2
-        x: 209
-        y: 4
-        width: 58
-        height: 58
+        x: 194
+        y: 2
+        width: 60
+        height: 60
       alignment: 0
-      pivot: {x: .5, y: .5}
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Notes_4
+      rect:
+        serializedVersion: 2
+        x: 258
+        y: 2
+        width: 60
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
   spritePackingTag: 
   userData: 

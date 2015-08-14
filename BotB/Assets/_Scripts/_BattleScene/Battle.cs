@@ -53,10 +53,9 @@ public class Battle : MonoBehaviour
     static public void ReceiveKey(TimedNote a_note)
     {
         m_battleRef.SendMessage("ReceiveNote", a_note); //send it to everyone with a "PlayNote" method
+        NoteVisualiser.Reference.ReceiveNote(a_note);
     }
-    /// <summary>
-    /// Recieves when the current turn ends through a bool and thus also knows who's turn it is
-    /// </summary>
+    ///<summary> Recieves when the current turn ends through a bool and thus also knows who's turn it is</summary>
     /// <param name="a_playerTurn"></param>
     public void RecieveTurnOver(bool a_playerTurn)
     {
