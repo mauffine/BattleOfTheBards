@@ -17,7 +17,7 @@ namespace UnityStandardAssets.Effects
             if(m_Rnd < 0.5f)
                 m_Rnd = 0.5f;
             m_Rnd *= 25;
-            m_Light = GetComponentInParent<Light>();
+            m_Light = GetComponent<Light>();
         }
 
 

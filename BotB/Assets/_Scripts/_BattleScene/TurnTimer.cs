@@ -5,16 +5,17 @@ public class TurnTimer : MonoBehaviour
 {
     //Attributes
     [SerializeField]
-    static float turnTime = 4.5f; //the time in seconds for each turn
+    static float turnTime = 4.0f; //the time in seconds for each turn
     [SerializeField]
     public static bool playerTurn = false; //bool for it it's player's turn or enemy's turn
     [SerializeField]
-    static float turnCountdown = 4.5f; //the countdown variable used in the timer 
+    static float turnCountdown = 4.0f; //the countdown variable used in the timer 
+    static bool m_pause;
 
-   
     //Behavious
     void Start() 
     {
+        AudioSource.PlayClipAtPoint((AudioClip)Resources.Load("_Sound/Metronome4s"), Vector3.zero, 0.1f);
 	}
 
     void Update() 
@@ -31,6 +32,7 @@ public class TurnTimer : MonoBehaviour
             turnCountdown = turnTime;
             playerTurn = !playerTurn;
             Battle.BattleReference.RecieveTurnOver(playerTurn);
+            AudioSource.PlayClipAtPoint((AudioClip)Resources.Load("_Sound/Metronome4s"), Vector3.zero, 0.1f);
         }
     }
 
@@ -40,4 +42,5 @@ public class TurnTimer : MonoBehaviour
     } 
     //
     static public float CountdownTime { get { return turnCountdown; } }
+    static public bool Paused { get { return m_pause; } }
 }
