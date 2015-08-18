@@ -10,7 +10,7 @@ GameObject:
   - 4: {fileID: 403998}
   - 198: {fileID: 19865934}
   - 199: {fileID: 19909424}
-  - 114: {fileID: 11491490}
+  - 114: {fileID: 11440314}
   m_Layer: 0
   m_Name: WindBolt
   m_TagString: Untagged
@@ -90,7 +90,7 @@ Transform:
   m_Children: []
   m_Father: {fileID: 403998}
   m_RootOrder: 0
---- !u!114 &11491490
+--- !u!114 &11440314
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -98,10 +98,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 142226}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b872d8431c425514a88e9bf9ec20358c, type: 3}
+  m_Script: {fileID: 11500000, guid: 5c0a71996ffecd343ae5d577ee84028a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_speedModifier: 80
+  m_speedModifier: 0
   m_velocity: {x: 0, y: 0, z: 0}
 --- !u!198 &19859208
 ParticleSystem:

@@ -10,7 +10,7 @@ GameObject:
   - 4: {fileID: 491440}
   - 198: {fileID: 19851002}
   - 199: {fileID: 19924164}
-  - 114: {fileID: 11467910}
+  - 114: {fileID: 11441910}
   m_Layer: 0
   m_Name: IceBolt
   m_TagString: Untagged
@@ -90,7 +90,7 @@ Transform:
   m_Children: []
   m_Father: {fileID: 491440}
   m_RootOrder: 1
---- !u!114 &11467910
+--- !u!114 &11441910
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -98,7 +98,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 157976}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b872d8431c425514a88e9bf9ec20358c, type: 3}
+  m_Script: {fileID: 11500000, guid: 8779240da7005ab4888bd8329d33f4c8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   m_speedModifier: 0

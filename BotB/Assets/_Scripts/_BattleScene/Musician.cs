@@ -76,7 +76,7 @@ public class Musician : MonoBehaviour
                         default:
                             break;
                     }
-                    Battle.ReceiveKey(new TimedNote(toPlay, Time.deltaTime));
+                    Battle.ReceiveKey(new TimedNote(toPlay, TurnTimer.CountdownTime));
                     ++m_notesPlayed;
                     m_noteTime = (turnTick / m_noteCount);
                 }

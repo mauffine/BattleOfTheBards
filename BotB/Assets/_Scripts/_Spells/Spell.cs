@@ -11,7 +11,7 @@ public class Spell : MonoBehaviour
 	protected void Start() 
     {
         m_speedModifier = 80;
-        m_damage = 20;
+        m_damage = 1;
 	}
 	// Update is called once per frame
 	protected void Update() 

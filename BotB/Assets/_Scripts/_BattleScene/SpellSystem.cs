@@ -8,9 +8,14 @@ public class SpellSystem : MonoBehaviour
     [SerializeField]
     Dictionary<Note[], string> m_spellList = new Dictionary<Note[], string>(); //list of all the spells
     [SerializeField]
-    List<Note> m_currentNotes; //list of notes played this turn
+    List<TimedNote> m_currentNotes = new List<TimedNote>(); //list of notes played this turn
     [SerializeField]
     List<GameObject> m_emitters = new List<GameObject>(); //list of current spell effects
+    [SerializeField]
+    List<GameObject> m_noteSpells = new List<GameObject>();
+
+    List<TimedNote> m_notesPlayedLast = new List<TimedNote>();
+
     float m_lifetime = 0.7f;
     [SerializeField]
     uint m_damage; //damage sum for when damage is dealt
@@ -32,18 +37,8 @@ public class SpellSystem : MonoBehaviour
 	// Update is called once per frame
 	void Update () 
     {
-        m_lifetime -= Time.deltaTime;
-        //check if expired
-        if (m_lifetime <= 0)
-        {
-            var emitterEnumerator = m_emitters.GetEnumerator();
-            while (emitterEnumerator.MoveNext())
-            {
-                //Turn current of the spell's emissions off                    
-                emitterEnumerator.Current.GetComponent<ParticleSystem>().enableEmission = false;
-                emitterEnumerator.Current.GetComponentInChildren<ParticleSystem>().enableEmission = false;
-            }
-        }
+        if (m_emitters.Count > -.5)
+            m_lifetime -= Time.deltaTime;
         if (m_lifetime <= -.5f)
         {
             var emitterEnumerator = m_emitters.GetEnumerator();
@@ -62,7 +57,20 @@ public class SpellSystem : MonoBehaviour
                 }
                 else
                     Battle.BattleReference.m_slime.GetComponent<Animator>().Play(Animator.StringToHash("Hurt"));
+            }
+            if (m_notesPlayedLast.Count != 0)
+            {
+
+                foreach (TimedNote note in m_notesPlayedLast)
+                {
+                    float noteTime = note.m_time * 120.0f * (1.0f / 60.0f);
+                    if (noteTime % 1 >= 0.9f || noteTime % 1 <= 0.1f)
+                        m_damage += 2;
+                    else
+                        m_damage += 1;
+                }
                 GetComponent<Battle>().DealDamage(m_damage);
+                m_notesPlayedLast.Clear();
             }
             m_emitters.Clear();
             m_damage = 0;
@@ -73,19 +81,31 @@ public class SpellSystem : MonoBehaviour
     /// <param name="a_note"> The note to recieve</param>
     void ReceiveNote (TimedNote a_note)
     {
-        m_currentNotes.Add(a_note.m_note);
+        if (!Battle.BattleReference.PlayerTurn)
+        {
+            GameObject temp = (GameObject)Instantiate(Resources.Load("_Prefabs/Notes"), new Vector3(-1.2f, 1f, 1.1f), Quaternion.AngleAxis(180, Vector3.up));
+            temp.GetComponent<Spell>().m_velocity = new Vector3(-.03f, Random.Range(-.007f, 0.0007f), 0.0f);
+        }
+        else
+        {
+            GameObject temp = (GameObject)Instantiate(Resources.Load("_Prefabs/Notes"), new Vector3(2, 1.3f, 1), Quaternion.AngleAxis(0, Vector3.up));
+            temp.GetComponent<Spell>().m_velocity = new Vector3(-.03f, Random.Range(-.007f, 0.0f), 0.0f);
+        }
+        m_currentNotes.Add(a_note);
+        
     }
     /// <summary>casts spells, clears notes and resets the lifetime of the spells in flight</summary>
     public void TurnOver()
     {
         CheckForSpell(m_currentNotes, m_spellList);
+        m_notesPlayedLast.AddRange(m_currentNotes);
         m_currentNotes.Clear();
         m_lifetime = 1.0f;
     } 
     /// <summary>Checks the played notes for spells</summary>
     /// <param name="a_CurrentNotes">The list of notes played this turn</param>
     /// <param name="a_spellList">The list of Spells that can be played and their note comninations</param>
-    void CheckForSpell(List<Note> a_currentNotes, Dictionary<Note[], string> a_spellList)
+    void CheckForSpell(List<TimedNote> a_currentNotes, Dictionary<Note[], string> a_spellList)
     {
         var spellEnumerator = a_spellList.GetEnumerator();
         while (spellEnumerator.MoveNext())
@@ -93,7 +113,7 @@ public class SpellSystem : MonoBehaviour
             //Check the full list of notes 4 at a time
             for (int i = 0; i + 4 < a_currentNotes.Count; ++i)
             {
-                Note[] currentSequence = new Note[] { a_currentNotes[i], a_currentNotes[i + 1], a_currentNotes[i + 2], a_currentNotes[i + 3], a_currentNotes[i + 4]};
+                Note[] currentSequence = new Note[] { a_currentNotes[i].m_note, a_currentNotes[i + 1].m_note, a_currentNotes[i + 2].m_note, a_currentNotes[i + 3].m_note, a_currentNotes[i + 4].m_note };
                 if (currentSequence.SequenceEqual(spellEnumerator.Current.Key))
                 {
                     //Check what spell is being cast and by who
