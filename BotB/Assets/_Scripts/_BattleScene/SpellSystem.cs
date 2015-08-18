@@ -11,7 +11,7 @@ public class SpellSystem : MonoBehaviour
     List<TimedNote> m_currentNotes = new List<TimedNote>(); //list of notes played this turn
     [SerializeField]
     List<GameObject> m_emitters = new List<GameObject>(); //list of current spell effects
-    float m_lifetime = 0.3f;
+    float m_lifetime = 0.7f;
 
     [SerializeField]
     List<GameObject> m_noteSpells = new List<GameObject>();
@@ -39,10 +39,10 @@ public class SpellSystem : MonoBehaviour
 	void Update()
     {
         m_lifetime -= Time.deltaTime;
-        if (m_emitters.Count > -0.45f)
+        if (m_emitters.Count > -0.7f)
             m_lifetime -= Time.deltaTime;
-		
-        if (m_lifetime <= -0.45f)
+
+        if (m_lifetime <= -0.7f)
         {
             var emitterEnumerator = m_emitters.GetEnumerator();
             while (emitterEnumerator.MoveNext())
@@ -103,7 +103,7 @@ public class SpellSystem : MonoBehaviour
         CheckForSpell(m_currentNotes, m_spellList);
         m_notesPlayedLast.AddRange(m_currentNotes);
         m_currentNotes.Clear();
-        m_lifetime = 0.3f;
+        m_lifetime = 0.7f;
     } 
     /// <summary>Checks the played notes for spells</summary>
     /// <param name="a_CurrentNotes">The list of notes played this turn</param>

@@ -6,7 +6,7 @@ public class Spell : MonoBehaviour
     public float m_speedModifier;//modifier for deltaTime
     public Vector3 m_velocity;//The velocity
     protected string m_key;//A key to show what key
-    Stats m_stats;
+    protected Stats m_stats;
 	// Use this for initialization
 	protected void Start() 
     {

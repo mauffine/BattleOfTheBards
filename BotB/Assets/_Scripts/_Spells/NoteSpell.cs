@@ -8,7 +8,7 @@ public class NoteSpell : Spell
     void Start()
     {
         base.Start();
-        m_damage = 1;
+        m_stats.Damage = 20;
     }
 
     // Update is called once per frame

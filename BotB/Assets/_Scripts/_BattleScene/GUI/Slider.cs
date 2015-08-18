@@ -25,17 +25,17 @@ public class Slider : MonoBehaviour
         bool playerTurn =  Battle.BattleReference.PlayerTurn;
         
         if (playerTurn)
-            m_transform.position += new Vector3(m_screenWidth * modTime, 0, 0);
+            m_transform.localPosition += new Vector3(m_screenWidth * modTime, 0, 0);
         else
-            m_transform.position -= new Vector3(m_screenWidth * modTime, 0, 0);
+            m_transform.localPosition -= new Vector3(m_screenWidth * modTime, 0, 0);
     
         if (m_playerTurn != playerTurn)
         {
             Vector3 myPos = m_transform.localPosition;
             if (playerTurn)
-                m_transform.localPosition = new Vector3(-931, myPos.y, myPos.z);
+                m_transform.localPosition = new Vector3(-966, myPos.y, myPos.z);
             else
-                m_transform.localPosition = new Vector3(931, myPos.y, myPos.z);
+                m_transform.localPosition = new Vector3(966, myPos.y, myPos.z);
             m_playerTurn = playerTurn;
             Vector3 flipScale = new Vector3(m_transform.localScale.x * -1,100,1);
             m_transform.localScale = flipScale;
