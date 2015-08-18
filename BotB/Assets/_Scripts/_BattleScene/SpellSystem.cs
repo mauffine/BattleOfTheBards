@@ -11,9 +11,9 @@ public class SpellSystem : MonoBehaviour
     List<Note> m_currentNotes; //list of notes played this turn
     [SerializeField]
     List<GameObject> m_emitters = new List<GameObject>(); //list of current spell effects
-    float m_lifetime = 0.7f;
+    float m_lifetime = 0.3f;
     [SerializeField]
-    uint m_damage; //damage sum for when damage is dealt
+    int m_damage; //damage sum for when damage is dealt
     //Behaviours
     void Start ()
     {
@@ -30,7 +30,7 @@ public class SpellSystem : MonoBehaviour
 	}
 	
 	// Update is called once per frame
-	void Update () 
+	void Update()
     {
         m_lifetime -= Time.deltaTime;
         //check if expired
@@ -44,7 +44,7 @@ public class SpellSystem : MonoBehaviour
                 emitterEnumerator.Current.GetComponentInChildren<ParticleSystem>().enableEmission = false;
             }
         }
-        if (m_lifetime <= -.5f)
+        if (m_lifetime <= -0.45f)
         {
             var emitterEnumerator = m_emitters.GetEnumerator();
             while (emitterEnumerator.MoveNext())
@@ -80,7 +80,7 @@ public class SpellSystem : MonoBehaviour
     {
         CheckForSpell(m_currentNotes, m_spellList);
         m_currentNotes.Clear();
-        m_lifetime = 1.0f;
+        m_lifetime = 0.3f;
     } 
     /// <summary>Checks the played notes for spells</summary>
     /// <param name="a_CurrentNotes">The list of notes played this turn</param>
@@ -104,12 +104,12 @@ public class SpellSystem : MonoBehaviour
                                 if (GetComponent<Battle>().m_playerTurn)
                                 { 
                                     m_emitters.Add((GameObject)Instantiate(Resources.Load("_Prefabs/ArcaneBolt"), new Vector3(-1.2f, 1f, 1.1f), Quaternion.AngleAxis(180, Vector3.up)));
-                                    m_emitters.Last<GameObject>().GetComponent<Spell>().m_velocity = new Vector3(-.03f, Random.Range(-.007f, 0.0007f), 0.0f);
+                                    m_emitters.Last<GameObject>().GetComponent<Spell>().m_velocity = new Vector3(-.03f, Random.Range(-.007f, 0.0007f), 0.0f) * 2;
                                 }
                                 else
                                 {
                                    m_emitters.Add((GameObject)Instantiate(Resources.Load("_Prefabs/ArcaneBolt"), new Vector3(2, 1.3f, 1), Quaternion.AngleAxis(0, Vector3.up)));
-                                    m_emitters.Last<GameObject>().GetComponent<Spell>().m_velocity = new Vector3(-.03f, Random.Range(-.007f, 0.0f), 0.0f);
+                                   m_emitters.Last<GameObject>().GetComponent<Spell>().m_velocity = new Vector3(-.03f, Random.Range(-.007f, 0.0f), 0.0f) * 2;
                                 }
                                 break;
                             }
@@ -118,12 +118,12 @@ public class SpellSystem : MonoBehaviour
                                 if (GetComponent<Battle>().m_playerTurn)
                                 {
                                     m_emitters.Add((GameObject)Instantiate(Resources.Load("_Prefabs/FireBolt"), new Vector3(-1.2f, 1f, 1.1f), Quaternion.AngleAxis(180, Vector3.up)));
-                                    m_emitters.Last<GameObject>().GetComponent<Spell>().m_velocity = new Vector3(-.03f, Random.Range(-.007f, 0.007f), 0.0f);
+                                    m_emitters.Last<GameObject>().GetComponent<Spell>().m_velocity = new Vector3(-.03f, Random.Range(-.007f, 0.007f), 0.0f) * 2;
                                 }
                                 else
                                 {
                                     m_emitters.Add((GameObject)Instantiate(Resources.Load("_Prefabs/FireBolt"), new Vector3(2, 1.3f, 1), Quaternion.AngleAxis(0, Vector3.up)));
-                                    m_emitters.Last<GameObject>().GetComponent<Spell>().m_velocity = new Vector3(-.03f, Random.Range(-.007f, 0.0f), 0.0f);
+                                    m_emitters.Last<GameObject>().GetComponent<Spell>().m_velocity = new Vector3(-.03f, Random.Range(-.007f, 0.0f), 0.0f) * 2;
                                 }
                                 break;
                             }
@@ -132,12 +132,12 @@ public class SpellSystem : MonoBehaviour
                                 if (GetComponent<Battle>().m_playerTurn)
                                 {
                                     m_emitters.Add((GameObject)Instantiate(Resources.Load("_Prefabs/IceBolt"), new Vector3(-1.2f, 1f, 1.1f), Quaternion.AngleAxis(180, Vector3.up)));
-                                    m_emitters.Last<GameObject>().GetComponent<Spell>().m_velocity = new Vector3(-.03f, Random.Range(-.007f, 0.007f), 0.0f);
+                                    m_emitters.Last<GameObject>().GetComponent<Spell>().m_velocity = new Vector3(-.03f, Random.Range(-.007f, 0.007f), 0.0f) * 2;
                                 }
                                 else
                                 {
                                     m_emitters.Add((GameObject)Instantiate(Resources.Load("_Prefabs/IceBolt"), new Vector3(2, 1.3f, 1), Quaternion.AngleAxis(0, Vector3.up)));
-                                    m_emitters.Last<GameObject>().GetComponent<Spell>().m_velocity = new Vector3(-.03f, Random.Range(-.007f, 0.0f), 0.0f);
+                                    m_emitters.Last<GameObject>().GetComponent<Spell>().m_velocity = new Vector3(-.03f, Random.Range(-.007f, 0.0f), 0.0f) * 2;
                                 }
                                 break; 
                             }
@@ -146,12 +146,12 @@ public class SpellSystem : MonoBehaviour
                                 if (GetComponent<Battle>().m_playerTurn)
                                 { 
                                     m_emitters.Add((GameObject)Instantiate(Resources.Load("_Prefabs/WindBolt"), new Vector3(-1.2f, 1f, 1.1f), Quaternion.AngleAxis(180, Vector3.up)));
-                                    m_emitters.Last<GameObject>().GetComponent<Spell>().m_velocity = new Vector3(-.03f, Random.Range(-.007f, 0.007f), 0.0f);
+                                    m_emitters.Last<GameObject>().GetComponent<Spell>().m_velocity = new Vector3(-.03f, Random.Range(-.007f, 0.007f), 0.0f) * 2;
                                 }
                                 else
                                 {
                                     m_emitters.Add((GameObject)Instantiate(Resources.Load("_Prefabs/WindBolt"), new Vector3(2, 1.3f, 1), Quaternion.AngleAxis(0, Vector3.up)));
-                                    m_emitters.Last<GameObject>().GetComponent<Spell>().m_velocity = new Vector3(-.03f, Random.Range(-.007f, 0.0f), 0.0f);
+                                    m_emitters.Last<GameObject>().GetComponent<Spell>().m_velocity = new Vector3(-.03f, Random.Range(-.007f, 0.0f), 0.0f) * 2;
                                 }
                                 break;
                             }

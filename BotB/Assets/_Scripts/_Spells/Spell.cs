@@ -5,22 +5,22 @@ public class Spell : MonoBehaviour
 {
     public float m_speedModifier;//modifier for deltaTime
     public Vector3 m_velocity;//The velocity
-    protected uint m_damage; //Damage that the spell deals
     protected string m_key;//A key to show what key
+    Stats m_stats;
 	// Use this for initialization
 	protected void Start() 
     {
         m_speedModifier = 80;
-        m_damage = 20;
+        m_stats.Damage = 20;
 	}
 	// Update is called once per frame
 	protected void Update() 
     {
         transform.Translate(m_velocity * Time.deltaTime * m_speedModifier);
 	}
-    public uint Damage
+    public int Damage
     {
-        get { return m_damage; }
+        get { return m_stats.Damage; }
     }
     public virtual string Key
     {

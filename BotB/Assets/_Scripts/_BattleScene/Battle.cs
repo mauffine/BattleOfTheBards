@@ -41,6 +41,9 @@ public class Battle : MonoBehaviour
     public GameObject m_slime;
     //[SerializeField]
     //Text m_debugText;
+    [SerializeField]
+    Canvas m_GUICanvas;
+    TextGen m_damageDisplay;
 
     public bool m_win = false;
     public bool m_playing = true;
@@ -49,24 +52,21 @@ public class Battle : MonoBehaviour
 
     float m_gameOverTimer;
     //Behavious
-	void Start () 
+	void Start() 
     {
         Application.targetFrameRate = 300;
+        m_damageDisplay = m_GUICanvas.GetComponent<TextGen>();
         m_playerTurn = false;
         m_battleRef = this;
         //m_debugText.text = "PlayerTurn";
         m_gameOverTimer = 4.0f;
 	}
-	void Update () 
+	void Update() 
     {
         if (!m_playing)
-        {
             m_gameOverTimer -= Time.deltaTime;
-        }
         if (m_gameOverTimer <= 0)
-        {
             Application.Quit();
-        }
 	}
 
     /// <summary> Receive valid key presses from InputManager and passes them out to all the relevant scripts if it's a note or quits and loads the menu if it's the escape button </summary>
@@ -183,15 +183,17 @@ public class Battle : MonoBehaviour
 
     /// <summary>Called by spellsystem, Deals damage to character bassed on who's turn it is</summary>
     /// <param name="a_damage">Damage dealt to character</param>
-    public void DealDamage(uint a_damage)
+    public void DealDamage(int a_damage)
     {
-        if (m_playerTurn) 
+        if (m_playerTurn)
         {
             m_player.GetComponent<TheBard>().TakeDamage(a_damage);
+            m_damageDisplay.TakeDamage(a_damage, m_player.transform.position,4);
         }
         else
         {
             m_slime.GetComponent<TheSlime>().TakeDamage(a_damage);
+            m_damageDisplay.TakeDamage(a_damage, m_slime.transform.position, 1.15f);
         }
 	}
 

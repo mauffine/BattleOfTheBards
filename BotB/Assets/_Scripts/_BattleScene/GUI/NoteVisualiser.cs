@@ -19,12 +19,14 @@ public class NoteVisualiser : MonoBehaviour
     [SerializeField]
    // Sprite[] m_spriteSheet;
     List<GameObject> m_spriteDisplay;
+    List<GameObject> m_greyDisplay;
 	// Use this for initialization
     static NoteVisualiser refToMe;
 	void Start()
     {
         refToMe = this;
         m_spriteDisplay = new List<GameObject>();
+        m_greyDisplay = new List<GameObject>();
         m_spriteDisplay.Capacity = 15;
         m_playerTurn = Battle.BattleReference.PlayerTurn;
 	}
@@ -40,12 +42,7 @@ public class NoteVisualiser : MonoBehaviour
         if (m_playerTurn != Battle.BattleReference.PlayerTurn)
         {
             m_playerTurn = Battle.BattleReference.PlayerTurn;
-            for (int I = 0; I < m_spriteDisplay.Count; ++I )
-            {
-                m_spriteDisplay[I].SetActive(false);
-                Destroy(m_spriteDisplay[I]);
-            }
-            m_spriteDisplay.Clear();
+            Swap();
         }
 	}
     public void ReceiveNote(TimedNote a_note)
@@ -111,6 +108,24 @@ public class NoteVisualiser : MonoBehaviour
                 break;
         }
         m_spriteDisplay[m_spriteDisplay.Count - 1].transform.SetParent(this.transform.parent);
+    }
+
+    private void Swap()
+    {
+        //Delete old greyed out notes
+        for (int I = 0; I < m_greyDisplay.Count; ++I)
+        {
+            m_greyDisplay[I].SetActive(false);
+            Destroy(m_greyDisplay[I]);
+        }
+        m_greyDisplay.Clear();
+        //swap the lists
+        for(int I = 0; I < m_spriteDisplay.Count; ++I)
+        {
+            m_spriteDisplay[I].GetComponent<SpriteRenderer>().color = Color.grey;
+            m_greyDisplay.Add(m_spriteDisplay[I]);
+        }
+        m_spriteDisplay.Clear();
     }
     public static NoteVisualiser Reference
     {

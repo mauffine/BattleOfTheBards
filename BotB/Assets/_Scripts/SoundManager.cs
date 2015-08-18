@@ -22,7 +22,6 @@ public class SoundManager : MonoBehaviour
         for (uint I = 0; I < 7; ++I)
         {
             m_noteArray[I] = Resources.Load<AudioClip>("_Sound/Piano Notes/" + clipTitle);
-            print("_Sound/Piano Notes/" + clipTitle);
             ++clipTitle;
         }
         AudioSource.PlayClipAtPoint(m_backgroundSong, origin, m_Backgroundvolume);
