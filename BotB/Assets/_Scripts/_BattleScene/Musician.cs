@@ -167,9 +167,8 @@ public class Musician : MonoBehaviour
         }
     }
     //*dies
-    protected void Die() 
+    protected virtual void Die() 
     { 
-
     }
     public Stats Statistics
     {

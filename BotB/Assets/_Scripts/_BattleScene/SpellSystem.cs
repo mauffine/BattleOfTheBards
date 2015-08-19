@@ -68,9 +68,9 @@ public class SpellSystem : MonoBehaviour
                 {
                     float noteTime = note.m_time * 120.0f * (1.0f / 60.0f);
                     if (noteTime % 1 >= 0.9f || noteTime % 1 <= 0.1f)
-                        m_damage += 2;
+                        m_damage -= 2;
                     else
-                        m_damage += 1;
+                        m_damage -= 1;
                 }
                 GetComponent<Battle>().DealDamage(m_damage);
                 m_notesPlayedLast.Clear();

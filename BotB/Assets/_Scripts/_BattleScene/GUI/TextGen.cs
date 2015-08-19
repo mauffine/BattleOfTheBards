@@ -19,8 +19,11 @@ public class TextGen : MonoBehaviour
             damageText[I].transform.position += new Vector3(0, Time.deltaTime, 0);
             Color textCol = damageText[I].color;
             damageText[I].color = Color.Lerp(textCol, Color.clear,Time.deltaTime * 9);
-            if(textCol.a <= 0.05f)
+            if(textCol.a <= 0.075f)
+            {
+                Destroy(damageText[I]);
                 damageText.RemoveAt(I);
+            }
         }
 	}
 
@@ -33,5 +36,15 @@ public class TextGen : MonoBehaviour
         toWrite.transform.position = (a_pos + offset);
         toWrite.color = Color.red;
         damageText.Add(toWrite);
+    }
+    public void YouWin()
+    {
+        GameObject toConvert = (GameObject)TextMesh.Instantiate(Resources.Load("_Prefabs/Enviroment/GUIText"), new Vector3(0, 0, 0), new Quaternion(0, 1, 0, 0));
+        TextMesh toWrite = toConvert.GetComponent<TextMesh>();
+        toWrite.text = "You Win!";
+        toWrite.fontSize = 1000;
+        toWrite.transform.localScale = new Vector3(0.015f,0.015f,0);
+        toWrite.transform.localPosition = new Vector3(3.5f,1,0);
+        toWrite.color = Color.white;
     }
 }

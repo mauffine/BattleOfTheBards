@@ -39,14 +39,13 @@ public class Battle : MonoBehaviour
 
     [SerializeField]
     public GameObject m_slime;
-    //[SerializeField]
-    //Text m_debugText;
     [SerializeField]
     Canvas m_GUICanvas;
     TextGen m_damageDisplay;
 
     public bool m_win = false;
     public bool m_playing = true;
+    bool m_displayingText = false;
     [SerializeField]
     public bool m_playerTurn;
 
@@ -58,13 +57,17 @@ public class Battle : MonoBehaviour
         m_damageDisplay = m_GUICanvas.GetComponent<TextGen>();
         m_playerTurn = false;
         m_battleRef = this;
-        //m_debugText.text = "PlayerTurn";
-        m_gameOverTimer = 4.0f;
+        m_gameOverTimer = 1.5f;
+        m_displayingText = false;
 	}
 	void Update() 
     {
         if (!m_playing)
+        { 
             m_gameOverTimer -= Time.deltaTime;
+            if (!m_displayingText)
+                m_damageDisplay.YouWin();
+        }
         if (m_gameOverTimer <= 0)
             Application.Quit();
 	}
@@ -173,12 +176,7 @@ public class Battle : MonoBehaviour
     public void RecieveTurnOver(bool a_playerTurn)
     {
         m_playerTurn = a_playerTurn;
-        GetComponent<SpellSystem>().TurnOver();/*
-        if (!m_playerTurn)
-            m_debugText.text = "EnemyTurn";
-        else
-            m_debugText.text = "PlayerTurn"; */
-        //change turn and notify SpellSystem to cast spells
+        GetComponent<SpellSystem>().TurnOver();
     }
 
     /// <summary>Called by spellsystem, Deals damage to character bassed on who's turn it is</summary>

@@ -5994,7 +5994,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_noteArray: []
-  m_noteVolume: .25
+  m_noteVolume: 1
   m_backgroundSong: {fileID: 8300000, guid: 287a65a507f3b734f96407d3f9734ae9, type: 3}
   m_Backgroundvolume: .0250000004
 --- !u!4 &1789236595 stripped

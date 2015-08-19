@@ -7,14 +7,19 @@ public class TheBard : Musician
 	void Start() 
     {
         base.Start();
+        m_stats.Health = 500;
 	}
 	// Update is called once per frame
 	void Update() 
     {
 	}
     //
-    protected void Die()
+    protected override void Die()
     {
-
+         if (m_stats.Health <= 0)
+        {
+            Battle.BattleReference.m_win = false;
+            Battle.BattleReference.m_playing = false;
+        }
     }
 }
