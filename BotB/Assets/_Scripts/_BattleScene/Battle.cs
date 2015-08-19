@@ -40,6 +40,8 @@ public class Battle : MonoBehaviour
     [SerializeField]
     public GameObject m_slime;
     [SerializeField]
+    GameObject m_guiRef;
+    [SerializeField]
     Canvas m_GUICanvas;
     TextGen m_damageDisplay;
 
@@ -66,7 +68,7 @@ public class Battle : MonoBehaviour
         { 
             m_gameOverTimer -= Time.deltaTime;
             if (!m_displayingText)
-                m_damageDisplay.YouWin();
+                m_guiRef.GetComponentInChildren<Image>().enabled = true;
         }
         if (m_gameOverTimer <= 0)
             Application.Quit();
