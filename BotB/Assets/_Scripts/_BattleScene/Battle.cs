@@ -55,7 +55,7 @@ public class Battle : MonoBehaviour
     //Behavious
 	void Start() 
     {
-        Application.targetFrameRate = 300;
+        Application.targetFrameRate = 60;
         m_damageDisplay = m_GUICanvas.GetComponent<TextGen>();
         m_playerTurn = false;
         m_battleRef = this;
