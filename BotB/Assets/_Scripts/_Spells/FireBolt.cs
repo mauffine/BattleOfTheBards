@@ -2,7 +2,7 @@
 using System.Collections;
 
 public class FireBolt : Spell {
-    string m_key = "BBEDC";
+    //string m_key = "BBEDC";
     // Use this for initialization
     void Start()
     {

@@ -139,14 +139,14 @@ public class Musician : MonoBehaviour
                     default:
                         break;
                 }
-                Battle.ReceiveKey(new TimedNote(toPlay, Time.deltaTime));
+                Battle.ReceiveKey(new TimedNote(toPlay, Time.deltaTime, false));
                 ++m_notesPlayed;
                 m_noteTime = (turnTick / m_noteCount);
             }
         }
         else
         {
-            int rand = Random.Range(0, m_spellList.Length - 1);
+            int rand = Random.Range(0, m_spellList.Length);
             PlaySpell(m_spellList[rand]);
         }
             

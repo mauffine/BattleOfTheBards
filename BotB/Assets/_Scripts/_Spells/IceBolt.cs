@@ -3,7 +3,7 @@ using System.Collections;
 
 public class IceBolt : Spell
 {
-    string m_key = "CDEBA";
+    //string m_key = "CDEBA";
 
     // Use this for initialization
     void Start()

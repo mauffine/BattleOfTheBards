@@ -2,7 +2,10 @@
 using UnityEngine.UI;
 using System.Collections;
 using System.Collections.Generic;
-
+public enum Turn
+{
+    Casting, Menu
+}
 /// <summary>A musical note in an enum, _ means the note is flat</summary>
 public enum Note : byte
 {
@@ -23,16 +26,18 @@ public struct TimedNote
 {
     public Note m_note;
     public float m_time;
-    public TimedNote(Note a_note, float a_time)
+    public bool m_playerOwned; //need a better name...
+    public TimedNote(Note a_note, float a_time, bool a_playerOwned = false)
     {
         m_note = a_note;
         m_time = a_time;
+        m_playerOwned = a_playerOwned;
     }
 }
 public class Battle : MonoBehaviour 
 {
     //Attributes
-    static Battle m_battleRef;
+    static Battle s_battleRef;
 
     [SerializeField]
     public GameObject m_player;
@@ -58,7 +63,7 @@ public class Battle : MonoBehaviour
         Application.targetFrameRate = 300;
         m_damageDisplay = m_GUICanvas.GetComponent<TextGen>();
         m_playerTurn = false;
-        m_battleRef = this;
+        s_battleRef = this;
         m_gameOverTimer = 1.5f;
         m_displayingText = false;
 	}
@@ -78,7 +83,7 @@ public class Battle : MonoBehaviour
     /// <param name="a_note"></param>
     static public void ReceiveKey(TimedNote a_note)
     {
-        if (m_battleRef.PlayerTurn)
+        if (s_battleRef.PlayerTurn)
         {
             switch (a_note.m_note)
             {
@@ -86,31 +91,32 @@ public class Battle : MonoBehaviour
                     break;
                 case Note.A:
                     {
-                        BattleReference.m_player.GetComponent<Animator>().Play(Animator.StringToHash("Chord1"));
+                        BattleReference.m_player.GetComponent<Animator>().SetTrigger("Chord1");
+                        //BattleReference.m_player.GetComponent<Animator>().Play(Animator.StringToHash("Chord1"));
                     }
                     break;
                 case Note.B_:
                     break;
                 case Note.B:
                     {
-                        BattleReference.m_player.GetComponent<Animator>().Play(Animator.StringToHash("Chord2"));
+                        BattleReference.m_player.GetComponent<Animator>().SetTrigger("Chord2");
                     }
                     break;
                 case Note.C:
                     {
-                        BattleReference.m_player.GetComponent<Animator>().Play(Animator.StringToHash("Chord3"));
+                        BattleReference.m_player.GetComponent<Animator>().SetTrigger("Cord3");
                     }
                     break;
                 case Note.D_:
                     break;
                 case Note.D:
                     {
-                        BattleReference.m_player.GetComponent<Animator>().Play(Animator.StringToHash("Chord1"));
+                        BattleReference.m_player.GetComponent<Animator>().SetTrigger("Chord1");
                     }
                     break;
                 case Note.E:
                     {
-                        BattleReference.m_player.GetComponent<Animator>().Play(Animator.StringToHash("Chord4"));
+                        BattleReference.m_player.GetComponent<Animator>().SetTrigger("Chord4");
                     }
                     break;
                 case Note.F_:
@@ -132,31 +138,31 @@ public class Battle : MonoBehaviour
                     break;
                 case Note.A:
                     {
-                        BattleReference.m_slime.GetComponent<Animator>().Play(Animator.StringToHash("Attack"));
+                        BattleReference.m_slime.GetComponent<Animator>().SetTrigger("Attack");
                     }
                     break;
                 case Note.B_:
                     break;
                 case Note.B:
                     {
-                        BattleReference.m_slime.GetComponent<Animator>().Play(Animator.StringToHash("Attack"));
+                        BattleReference.m_slime.GetComponent<Animator>().SetTrigger("Attack");
                     }
                     break;
                 case Note.C:
                     {
-                        BattleReference.m_slime.GetComponent<Animator>().Play(Animator.StringToHash("Attack"));
+                        BattleReference.m_slime.GetComponent<Animator>().SetTrigger("Attack");
                     }
                     break;
                 case Note.D_:
                     break;
                 case Note.D:
                     {
-                        BattleReference.m_slime.GetComponent<Animator>().Play(Animator.StringToHash("Attack"));
+                        BattleReference.m_slime.GetComponent<Animator>().SetTrigger("Attack");
                     }
                     break;
                 case Note.E:
                     {
-                        BattleReference.m_slime.GetComponent<Animator>().Play(Animator.StringToHash("Attack"));
+                        BattleReference.m_slime.GetComponent<Animator>().SetTrigger("Attack");
                     }
                     break;
                 case Note.F_:
@@ -169,8 +175,7 @@ public class Battle : MonoBehaviour
                     break;
             }
         }
-        m_battleRef.SendMessage("ReceiveNote", a_note); //send it to everyone with a "PlayNote" method
-        NoteVisualiser.Reference.ReceiveNote(a_note);
+        SendNote(a_note);
     }
 
     ///<summary> Recieves when the current turn ends through a bool and thus also knows who's turn it is</summary>
@@ -197,10 +202,16 @@ public class Battle : MonoBehaviour
         }
 	}
 
+    static void SendNote(TimedNote a_note)//rename this later
+    {
+        SpellSystem.Reference.ReceiveNote(a_note);
+        SoundManager.Reference.ReceiveNote(a_note);
+        NoteVisualiser.Reference.ReceiveNote(a_note);
+    }
 
     public static Battle BattleReference
     {
-        get {return m_battleRef; }
+        get {return s_battleRef; }
     }
 
     public bool PlayerTurn

@@ -3,6 +3,7 @@ using System.Collections;
 
 public class SoundManager : MonoBehaviour 
 {
+    static SoundManager s_SoundManRef;
     [SerializeField]
     AudioClip[] m_noteArray;
     [SerializeField]
@@ -17,6 +18,7 @@ public class SoundManager : MonoBehaviour
 	// Use this for initialization
 	void Start() 
     {
+        s_SoundManRef = this;
         m_noteArray = new AudioClip[7];
         char clipTitle = 'A';
         for (uint I = 0; I < 7; ++I)
@@ -69,4 +71,8 @@ public class SoundManager : MonoBehaviour
     {
 	
 	}
+    public static SoundManager Reference
+    {
+        get { return s_SoundManRef; }
+    }
 }

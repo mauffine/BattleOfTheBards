@@ -25,7 +25,7 @@ public class InputManager : MonoBehaviour
 	//The update function
 	void Update()
     {
-        if (TurnTimer.playerTurn)
+        if (TurnTimer.s_playerTurn)
         {
             resetTick -= Time.deltaTime;
             if (m_playerInput == ControllerType.keyboard)
@@ -36,15 +36,15 @@ public class InputManager : MonoBehaviour
                 if(noteCounter < 15)
                 { 
                     if (Input.GetKeyDown(aNote)) { 
-                        Battle.ReceiveKey(new TimedNote(Note.A, time)); ++noteCounter;}
+                        Battle.ReceiveKey(new TimedNote(Note.A, time, true)); ++noteCounter;}
                     if (Input.GetKeyDown(bNote)) { 
-                        Battle.ReceiveKey(new TimedNote(Note.B, time)); ++noteCounter;}
+                        Battle.ReceiveKey(new TimedNote(Note.B, time, true)); ++noteCounter;}
                     if (Input.GetKeyDown(cNote)) { 
-                        Battle.ReceiveKey(new TimedNote(Note.C, time)); ++noteCounter;}
+                        Battle.ReceiveKey(new TimedNote(Note.C, time, true)); ++noteCounter;}
                     if (Input.GetKeyDown(dNote)) { 
-                        Battle.ReceiveKey(new TimedNote(Note.D, time)); ++noteCounter;}
+                        Battle.ReceiveKey(new TimedNote(Note.D, time, true)); ++noteCounter;}
                     if (Input.GetKeyDown(eNote)) {
-                        Battle.ReceiveKey(new TimedNote(Note.E, time)); ++noteCounter; }
+                        Battle.ReceiveKey(new TimedNote(Note.E, time, true)); ++noteCounter; }
                 }
                 if(resetTick < 0)
                 {
