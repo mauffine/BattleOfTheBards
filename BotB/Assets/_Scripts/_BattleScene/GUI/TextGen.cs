@@ -5,6 +5,7 @@ public class TextGen : MonoBehaviour
 {
     List<TextMesh> damageText;
     float m_timer = 3;
+    public GameObject m_textMesh;
 	// Use this for initialization
 	void Start() 
     {
@@ -29,7 +30,7 @@ public class TextGen : MonoBehaviour
 
     public void TakeDamage(int a_damage, Vector3 a_pos, float a_ySize)
     {
-        GameObject toConvert = (GameObject)TextMesh.Instantiate(Resources.Load("_Prefabs/Enviroment/GUIText"), new Vector3(0, 0, 0), new Quaternion(0, 1, 0, 0));
+        GameObject toConvert = (GameObject)TextMesh.Instantiate(m_textMesh, new Vector3(0, 0, 0), new Quaternion(0, 1, 0, 0));
         TextMesh toWrite = toConvert.GetComponent<TextMesh>();
         toWrite.text = a_damage.ToString();
         Vector3 offset = new Vector3(0, a_pos.y + (a_ySize/ 2), 0);
@@ -39,7 +40,7 @@ public class TextGen : MonoBehaviour
     }
     public void YouWin()
     {
-        GameObject toConvert = (GameObject)TextMesh.Instantiate(Resources.Load("_Prefabs/Enviroment/GUIText"), new Vector3(0, 0, 0), new Quaternion(0, 1, 0, 0));
+        GameObject toConvert = (GameObject)TextMesh.Instantiate(m_textMesh, new Vector3(0, 0, 0), new Quaternion(0, 1, 0, 0));
         TextMesh toWrite = toConvert.GetComponent<TextMesh>();
         toWrite.text = "You Win!";
         toWrite.fontSize = 1000;
