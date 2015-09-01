@@ -55,7 +55,7 @@ public class Battle : MonoBehaviour
     //Behavious
 	void Start() 
     {
-        Application.targetFrameRate = 60;
+        Application.targetFrameRate = 300;
         m_damageDisplay = m_GUICanvas.GetComponent<TextGen>();
         m_playerTurn = false;
         m_battleRef = this;
@@ -197,12 +197,10 @@ public class Battle : MonoBehaviour
         }
 	}
 
-
     public static Battle BattleReference
     {
         get {return m_battleRef; }
     }
-
     public bool PlayerTurn
     {
         get { return m_playerTurn; }

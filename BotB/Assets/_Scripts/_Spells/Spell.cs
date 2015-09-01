@@ -6,12 +6,12 @@ public class Spell : MonoBehaviour
     public float m_speedModifier;//modifier for deltaTime
     public Vector3 m_velocity;//The velocity
     protected string m_key;//A key to show what key
-    protected Stats m_stats;
+    protected int m_damage;
 	// Use this for initialization
 	protected void Start() 
     {
         m_speedModifier = 80;
-        m_stats.Damage = 20;
+        m_damage = 20;
 	}
 	// Update is called once per frame
 	protected void Update() 
@@ -20,7 +20,7 @@ public class Spell : MonoBehaviour
 	}
     public int Damage
     {
-        get { return m_stats.Damage; }
+        get { return m_damage; }
     }
     public virtual string Key
     {

@@ -9,7 +9,7 @@ public class IceBolt : Spell
     void Start()
     {
         base.Start();
-        m_stats.Damage = 20;
+        m_damage = 20;
     }
 
     // Update is called once per frame
