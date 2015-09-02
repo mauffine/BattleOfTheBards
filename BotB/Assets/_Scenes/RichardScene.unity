@@ -6084,6 +6084,7 @@ GameObject:
   - 114: {fileID: 1775765534}
   - 114: {fileID: 1775765535}
   - 114: {fileID: 1775765536}
+  - 114: {fileID: 1775765537}
   m_Layer: 0
   m_Name: SceneHandler
   m_TagString: Untagged
@@ -6177,6 +6178,18 @@ MonoBehaviour:
   m_noteVolume: 1
   m_backgroundSong: {fileID: 8300000, guid: 287a65a507f3b734f96407d3f9734ae9, type: 3}
   m_Backgroundvolume: .0250000004
+--- !u!114 &1775765537
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1775765530}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 990f0c600d921f84085bbe57d32dece6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_audioSourcePrefab: {fileID: 182634, guid: 0afbba38684a4474995af6176e5df66f, type: 2}
 --- !u!4 &1789236595 stripped
 Transform:
   m_PrefabParentObject: {fileID: 400002, guid: 198990cc5ce78544d91d6c363c84efcd, type: 3}
