@@ -8,7 +8,7 @@ public class Slider : MonoBehaviour
     [SerializeField]
     float m_screenWidth = 1920;
     float m_turnTime;
-    bool m_playerTurn;
+    Turn m_playerTurn;
 	// Use this for initialization
     private static Vector3 pos, locPos;
 	void Start() 
@@ -22,9 +22,9 @@ public class Slider : MonoBehaviour
 	void Update() 
     {
         float modTime = (m_turnTime * Time.deltaTime);
-        bool playerTurn =  Battle.BattleReference.PlayerTurn;
+        Turn playerTurn =  Battle.BattleReference.PlayerTurn;
         
-        if (playerTurn)
+        if (playerTurn == Turn.Casting)
             m_transform.localPosition += new Vector3(m_screenWidth * modTime, 0, 0);
         else
             m_transform.localPosition -= new Vector3(m_screenWidth * modTime, 0, 0);
@@ -32,7 +32,7 @@ public class Slider : MonoBehaviour
         if (m_playerTurn != playerTurn)
         {
             Vector3 myPos = m_transform.localPosition;
-            if (playerTurn)
+            if (playerTurn == Turn.Casting)
                 m_transform.localPosition = new Vector3(-966, myPos.y, myPos.z);
             else
                 m_transform.localPosition = new Vector3(966, myPos.y, myPos.z);

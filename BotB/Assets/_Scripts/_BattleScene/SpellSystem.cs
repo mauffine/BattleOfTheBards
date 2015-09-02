@@ -11,7 +11,9 @@ public class SpellSystem : MonoBehaviour
     [SerializeField]
     List<TimedNote> m_currentNotes = new List<TimedNote>(); //list of notes played this turn
     [SerializeField]
-    List<GameObject> m_emitters = new List<GameObject>(); //list of current spell effects
+    List<GameObject> m_enemySpells = new List<GameObject>(); //list of the enemy cast spells
+    [SerializeField]
+    List<GameObject> m_playerSpells = new List<GameObject>(); //list of the palyer cast spells
     float m_lifetime = 0.7f;
     public List<GameObject> m_spellPrefabs = new List<GameObject>();
 
@@ -44,27 +46,20 @@ public class SpellSystem : MonoBehaviour
 	void Update()
     {
         m_lifetime -= Time.deltaTime;
-        if (m_emitters.Count > -0.7f)
-            m_lifetime -= Time.deltaTime;
 
         if (m_lifetime <= -0.7f)
         {
-            var emitterEnumerator = m_emitters.GetEnumerator();
-            while (emitterEnumerator.MoveNext())
+            var castSpellEnumerator = m_enemySpells.GetEnumerator();
+            while (castSpellEnumerator.MoveNext())
             {
                 //Sum up damage of the spells before deletion;
-                m_damage += emitterEnumerator.Current.GetComponent<Spell>().Damage;
+                m_damage += castSpellEnumerator.Current.GetComponent<Spell>().Damage;
                 //Delete current spell
-                Destroy(emitterEnumerator.Current.gameObject);
+                Destroy(castSpellEnumerator.Current.gameObject);
             }
-            if (m_emitters.Count != 0)
+            if (m_enemySpells.Count != 0)
             {
-                if (Battle.BattleReference.PlayerTurn)
-                {
-                    Battle.BattleReference.m_player.GetComponent<Animator>().SetTrigger("Hurt");
-                }
-                else
-                    Battle.BattleReference.m_slime.GetComponent<Animator>().SetTrigger("Hurt");
+                Battle.BattleReference.m_player.GetComponent<Animator>().SetTrigger("Hurt");
             }
             if (m_notesPlayedLast.Count != 0)
             {
@@ -77,10 +72,10 @@ public class SpellSystem : MonoBehaviour
                     else
                         m_damage -= 1;
                 }
-                GetComponent<Battle>().DealDamage(m_damage);
+                GetComponent<Battle>().DealDamage(m_damage, false);
                 m_notesPlayedLast.Clear();
             }
-            m_emitters.Clear();
+            m_enemySpells.Clear();
             m_damage = 0;
         }
 
@@ -111,10 +106,8 @@ public class SpellSystem : MonoBehaviour
         CheckForSpell(m_playerNotes, m_spellList);
         CheckForSpell(m_enemyNotes, m_spellList);
 
-        m_notesPlayedLast.AddRange(m_currentNotes);
-        m_currentNotes.Clear();
-        m_enemyNotes.Clear();
-        m_playerNotes.Clear();
+        //m_enemyNotes.Clear();
+        //m_playerNotes.Clear();
         m_lifetime = 0.7f;
     } 
     /// <summary>Checks the played notes for spells</summary>
@@ -138,13 +131,13 @@ public class SpellSystem : MonoBehaviour
                             {
                                 if (a_currentNotes[i].m_playerOwned)
                                 {
-                                    m_emitters.Add((GameObject)Instantiate(m_spellPrefabs[1], new Vector3(2, 1.3f, 1), Quaternion.AngleAxis(0, Vector3.up)));
-                                    m_emitters.Last<GameObject>().GetComponent<Spell>().m_velocity = new Vector3(-.03f, Random.Range(-.007f, 0.0f), 0.0f) * 2;
+                                    m_playerSpells.Add((GameObject)Instantiate(m_spellPrefabs[1], new Vector3(2, 1.3f, 1), Quaternion.AngleAxis(0, Vector3.up)));
+                                    m_playerSpells.Last<GameObject>().GetComponent<Spell>().m_velocity = new Vector3(-.03f, Random.Range(-.007f, 0.0f), 0.0f) * 2;
                                 }
                                 else
                                 {
-                                    m_emitters.Add((GameObject)Instantiate(m_spellPrefabs[1], new Vector3(-1.2f, 1f, 1.1f), Quaternion.AngleAxis(180, Vector3.up)));
-                                    m_emitters.Last<GameObject>().GetComponent<Spell>().m_velocity = new Vector3(-.03f, Random.Range(-.007f, 0.0007f), 0.0f) * 2;
+                                    m_enemySpells.Add((GameObject)Instantiate(m_spellPrefabs[1], new Vector3(-1.2f, 1f, 1.1f), Quaternion.AngleAxis(180, Vector3.up)));
+                                    m_enemySpells.Last<GameObject>().GetComponent<Spell>().m_velocity = new Vector3(-.03f, Random.Range(-.007f, 0.0007f), 0.0f) * 2;
                                 }
                                 break;
                             }
@@ -152,13 +145,13 @@ public class SpellSystem : MonoBehaviour
                             {
                                 if (a_currentNotes[i].m_playerOwned)
                                 {
-                                    m_emitters.Add((GameObject)Instantiate(m_spellPrefabs[2], new Vector3(2, 1.3f, 1), Quaternion.AngleAxis(0, Vector3.up)));
-                                    m_emitters.Last<GameObject>().GetComponent<Spell>().m_velocity = new Vector3(-.03f, Random.Range(-.007f, 0.0f), 0.0f) * 2;
+                                    m_playerSpells.Add((GameObject)Instantiate(m_spellPrefabs[2], new Vector3(2, 1.3f, 1), Quaternion.AngleAxis(0, Vector3.up)));
+                                    m_playerSpells.Last<GameObject>().GetComponent<Spell>().m_velocity = new Vector3(-.03f, Random.Range(-.007f, 0.0f), 0.0f) * 2;
                                 }
                                 else
                                 {
-                                    m_emitters.Add((GameObject)Instantiate(m_spellPrefabs[2], new Vector3(-1.2f, 1f, 1.1f), Quaternion.AngleAxis(180, Vector3.up)));
-                                    m_emitters.Last<GameObject>().GetComponent<Spell>().m_velocity = new Vector3(-.03f, Random.Range(-.007f, 0.007f), 0.0f) * 2;
+                                    m_enemySpells.Add((GameObject)Instantiate(m_spellPrefabs[2], new Vector3(-1.2f, 1f, 1.1f), Quaternion.AngleAxis(180, Vector3.up)));
+                                    m_enemySpells.Last<GameObject>().GetComponent<Spell>().m_velocity = new Vector3(-.03f, Random.Range(-.007f, 0.007f), 0.0f) * 2;
                                 }
                                 break;
                             }
@@ -166,13 +159,13 @@ public class SpellSystem : MonoBehaviour
                             {
                                 if (a_currentNotes[i].m_playerOwned)
                                 {
-                                    m_emitters.Add((GameObject)Instantiate(m_spellPrefabs[3], new Vector3(2, 1.3f, 1), Quaternion.AngleAxis(0, Vector3.up)));
-                                    m_emitters.Last<GameObject>().GetComponent<Spell>().m_velocity = new Vector3(-.03f, Random.Range(-.007f, 0.0f), 0.0f) * 2;
+                                    m_playerSpells.Add((GameObject)Instantiate(m_spellPrefabs[3], new Vector3(2, 1.3f, 1), Quaternion.AngleAxis(0, Vector3.up)));
+                                    m_playerSpells.Last<GameObject>().GetComponent<Spell>().m_velocity = new Vector3(-.03f, Random.Range(-.007f, 0.0f), 0.0f) * 2;
                                 }
                                 else
                                 {
-                                    m_emitters.Add((GameObject)Instantiate(m_spellPrefabs[3], new Vector3(-1.2f, 1f, 1.1f), Quaternion.AngleAxis(180, Vector3.up)));
-                                    m_emitters.Last<GameObject>().GetComponent<Spell>().m_velocity = new Vector3(-.03f, Random.Range(-.007f, 0.007f), 0.0f) * 2;
+                                    m_enemySpells.Add((GameObject)Instantiate(m_spellPrefabs[3], new Vector3(-1.2f, 1f, 1.1f), Quaternion.AngleAxis(180, Vector3.up)));
+                                    m_enemySpells.Last<GameObject>().GetComponent<Spell>().m_velocity = new Vector3(-.03f, Random.Range(-.007f, 0.007f), 0.0f) * 2;
                                 }
                                 break; 
                             }
@@ -180,13 +173,13 @@ public class SpellSystem : MonoBehaviour
                             {
                                 if (a_currentNotes[i].m_playerOwned)
                                 {
-                                    m_emitters.Add((GameObject)Instantiate(m_spellPrefabs[4], new Vector3(2, 1.3f, 1), Quaternion.AngleAxis(0, Vector3.up)));
-                                    m_emitters.Last<GameObject>().GetComponent<Spell>().m_velocity = new Vector3(-.03f, Random.Range(-.007f, 0.0f), 0.0f) * 2;
+                                    m_playerSpells.Add((GameObject)Instantiate(m_spellPrefabs[4], new Vector3(2, 1.3f, 1), Quaternion.AngleAxis(0, Vector3.up)));
+                                    m_playerSpells.Last<GameObject>().GetComponent<Spell>().m_velocity = new Vector3(-.03f, Random.Range(-.007f, 0.0f), 0.0f) * 2;
                                 }
                                 else
                                 {
-                                    m_emitters.Add((GameObject)Instantiate(m_spellPrefabs[4], new Vector3(-1.2f, 1f, 1.1f), Quaternion.AngleAxis(180, Vector3.up)));
-                                    m_emitters.Last<GameObject>().GetComponent<Spell>().m_velocity = new Vector3(-.03f, Random.Range(-.007f, 0.007f), 0.0f) * 2;
+                                    m_enemySpells.Add((GameObject)Instantiate(m_spellPrefabs[4], new Vector3(-1.2f, 1f, 1.1f), Quaternion.AngleAxis(180, Vector3.up)));
+                                    m_enemySpells.Last<GameObject>().GetComponent<Spell>().m_velocity = new Vector3(-.03f, Random.Range(-.007f, 0.007f), 0.0f) * 2;
                                 }
                                 break;
                             }

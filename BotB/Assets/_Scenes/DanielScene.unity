@@ -5243,6 +5243,10 @@ Prefab:
       propertyPath: m_spellPrefabs.Array.data[4]
       value: 
       objectReference: {fileID: 142226, guid: 9e2674d8bf83e7f4da56e1e185e34af4, type: 2}
+    - target: {fileID: 11494406, guid: c2cb8aafa83d79f4bb15694996577265, type: 2}
+      propertyPath: m_playing
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c2cb8aafa83d79f4bb15694996577265, type: 2}
   m_IsPrefabParent: 0

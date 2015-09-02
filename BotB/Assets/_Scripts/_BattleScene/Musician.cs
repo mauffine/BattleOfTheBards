@@ -77,10 +77,7 @@ public class Musician : MonoBehaviour
     protected void Update() 
     {
         //choose a spell and play a spell
-        if (!m_sceneHandler.GetComponent<Battle>().m_playerTurn)
-            SpellAI();
-        else
-            m_spellPlay = false;
+        SpellAI();
         if (m_stats.Health < 0)
             Die();
 	}

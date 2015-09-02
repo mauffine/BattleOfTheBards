@@ -54,7 +54,7 @@ public class Battle : MonoBehaviour
     public bool m_playing = true;
     bool m_displayingText = false;
     [SerializeField]
-    public bool m_playerTurn;
+    public Turn m_turn;
 
     float m_gameOverTimer;
     //Behavious
@@ -62,7 +62,7 @@ public class Battle : MonoBehaviour
     {
         Application.targetFrameRate = 300;
         m_damageDisplay = m_GUICanvas.GetComponent<TextGen>();
-        m_playerTurn = false;
+        m_turn = Turn.Menu;
         s_battleRef = this;
         m_gameOverTimer = 1.5f;
         m_displayingText = false;
@@ -83,7 +83,7 @@ public class Battle : MonoBehaviour
     /// <param name="a_note"></param>
     static public void ReceiveKey(TimedNote a_note)
     {
-        if (s_battleRef.PlayerTurn)
+        if (s_battleRef.PlayerTurn == Turn.Casting)
         {
             switch (a_note.m_note)
             {
@@ -91,7 +91,7 @@ public class Battle : MonoBehaviour
                     break;
                 case Note.A:
                     {
-                        BattleReference.m_player.GetComponent<Animator>().SetTrigger("Chord1");
+                        BattleReference.m_player.GetComponent<Animator>().SetTrigger("Chord_1");
                         //BattleReference.m_player.GetComponent<Animator>().Play(Animator.StringToHash("Chord1"));
                     }
                     break;
@@ -99,24 +99,24 @@ public class Battle : MonoBehaviour
                     break;
                 case Note.B:
                     {
-                        BattleReference.m_player.GetComponent<Animator>().SetTrigger("Chord2");
+                        BattleReference.m_player.GetComponent<Animator>().SetTrigger("Chord_2");
                     }
                     break;
                 case Note.C:
                     {
-                        BattleReference.m_player.GetComponent<Animator>().SetTrigger("Cord3");
+                        BattleReference.m_player.GetComponent<Animator>().SetTrigger("Cord_3");
                     }
                     break;
                 case Note.D_:
                     break;
                 case Note.D:
                     {
-                        BattleReference.m_player.GetComponent<Animator>().SetTrigger("Chord1");
+                        BattleReference.m_player.GetComponent<Animator>().SetTrigger("Chord_1");
                     }
                     break;
                 case Note.E:
                     {
-                        BattleReference.m_player.GetComponent<Animator>().SetTrigger("Chord4");
+                        BattleReference.m_player.GetComponent<Animator>().SetTrigger("Chord_4");
                     }
                     break;
                 case Note.F_:
@@ -180,17 +180,17 @@ public class Battle : MonoBehaviour
 
     ///<summary> Recieves when the current turn ends through a bool and thus also knows who's turn it is</summary>
     /// <param name="a_playerTurn"></param>
-    public void RecieveTurnOver(bool a_playerTurn)
+    public void RecieveTurnOver(Turn a_turn)
     {
-        m_playerTurn = a_playerTurn;
+        m_turn = a_turn;
         GetComponent<SpellSystem>().TurnOver();
     }
 
     /// <summary>Called by spellsystem, Deals damage to character bassed on who's turn it is</summary>
     /// <param name="a_damage">Damage dealt to character</param>
-    public void DealDamage(int a_damage)
+    public void DealDamage(int a_damage, bool a_dealToPlayer)
     {
-        if (m_playerTurn)
+        if (a_dealToPlayer)
         {
             m_player.GetComponent<TheBard>().TakeDamage(a_damage);
             m_damageDisplay.TakeDamage(a_damage, m_player.transform.position,4);
@@ -214,8 +214,8 @@ public class Battle : MonoBehaviour
         get {return s_battleRef; }
     }
 
-    public bool PlayerTurn
+    public Turn PlayerTurn
     {
-        get { return m_playerTurn; }
+        get { return m_turn; }
     }
 }

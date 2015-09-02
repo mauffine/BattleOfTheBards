@@ -13,10 +13,11 @@ public class TurnTimer : MonoBehaviour
     [SerializeField]
     static float s_turnCountdown = 4.0f; //the countdown variable used in the timer 
     static Turn s_currentTurn; //sets whether the player is playing a song or picking one from the menu
+    static AudioClip s_metronome;
     //Behavious
     void Start() 
     {
-        AudioSource.PlayClipAtPoint((AudioClip)Resources.Load("_Sound/Metronome4s"), Vector3.zero, 0.1f);
+        //AudioSource.PlayClipAtPoint(s_metronome, Vector3.zero, 0.1f);
         s_currentTurn = Turn.Menu;
 	}
 
@@ -29,13 +30,20 @@ public class TurnTimer : MonoBehaviour
     {
         //basic timer stuff
         s_turnCountdown -= Time.deltaTime;
-        if (s_turnCountdown <= 0)
+        if (s_turnCountdown <= 0 && s_currentTurn == Turn.Casting)
+        {
+            s_turnCountdown = s_menuTime;
+            s_playerTurn = !s_playerTurn;
+            s_currentTurn = Turn.Menu;
+            Battle.BattleReference.RecieveTurnOver(s_currentTurn);
+            //AudioSource.PlayClipAtPoint(s_metronome, Vector3.zero, 0.1f);
+        }
+        else if (s_currentTurn <= 0 && s_currentTurn == Turn.Menu)
         {
             s_turnCountdown = s_turnTime;
-            s_playerTurn = !s_playerTurn;
-            Battle.BattleReference.RecieveTurnOver(s_playerTurn);
-            AudioSource.PlayClipAtPoint((AudioClip)Resources.Load("_Sound/Metronome4s"), Vector3.zero, 0.1f);
+            s_currentTurn = Turn.Menu;
         }
+
     }
 
     static public float TimePerTurn

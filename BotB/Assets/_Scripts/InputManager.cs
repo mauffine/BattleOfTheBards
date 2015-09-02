@@ -25,32 +25,29 @@ public class InputManager : MonoBehaviour
 	//The update function
 	void Update()
     {
-        if (TurnTimer.s_playerTurn)
+        resetTick -= Time.deltaTime;
+        if (m_playerInput == ControllerType.keyboard)
         {
-            resetTick -= Time.deltaTime;
-            if (m_playerInput == ControllerType.keyboard)
+            float time = TurnTimer.CountdownTime;
+            //A whole bunch of key checks
+            //I have tried to lay the notes out to correspond with the key presses musically
+            if(noteCounter < 15)
+            { 
+                if (Input.GetKeyDown(aNote)) { 
+                    Battle.ReceiveKey(new TimedNote(Note.A, time, true)); ++noteCounter;}
+                if (Input.GetKeyDown(bNote)) { 
+                    Battle.ReceiveKey(new TimedNote(Note.B, time, true)); ++noteCounter;}
+                if (Input.GetKeyDown(cNote)) { 
+                    Battle.ReceiveKey(new TimedNote(Note.C, time, true)); ++noteCounter;}
+                if (Input.GetKeyDown(dNote)) { 
+                    Battle.ReceiveKey(new TimedNote(Note.D, time, true)); ++noteCounter;}
+                if (Input.GetKeyDown(eNote)) {
+                    Battle.ReceiveKey(new TimedNote(Note.E, time, true)); ++noteCounter; }
+            }
+            if(resetTick < 0)
             {
-                float time = TurnTimer.CountdownTime;
-                //A whole bunch of key checks
-                //I have tried to lay the notes out to correspond with the key presses musically
-                if(noteCounter < 15)
-                { 
-                    if (Input.GetKeyDown(aNote)) { 
-                        Battle.ReceiveKey(new TimedNote(Note.A, time, true)); ++noteCounter;}
-                    if (Input.GetKeyDown(bNote)) { 
-                        Battle.ReceiveKey(new TimedNote(Note.B, time, true)); ++noteCounter;}
-                    if (Input.GetKeyDown(cNote)) { 
-                        Battle.ReceiveKey(new TimedNote(Note.C, time, true)); ++noteCounter;}
-                    if (Input.GetKeyDown(dNote)) { 
-                        Battle.ReceiveKey(new TimedNote(Note.D, time, true)); ++noteCounter;}
-                    if (Input.GetKeyDown(eNote)) {
-                        Battle.ReceiveKey(new TimedNote(Note.E, time, true)); ++noteCounter; }
-                }
-                if(resetTick < 0)
-                {
-                    noteCounter = 0;
-                    resetTick = 4;
-                }
+                noteCounter = 0;
+                resetTick = 4;
             }
         }
         if (Input.GetKeyDown(KeyCode.Escape))

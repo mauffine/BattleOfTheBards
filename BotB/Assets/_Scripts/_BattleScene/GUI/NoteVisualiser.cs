@@ -15,7 +15,7 @@ public class NoteVisualiser : MonoBehaviour
     }; */
     public GameObject[] m_notePrefabs;
     bool m_putDown = false;
-    bool m_playerTurn;
+    Turn m_playerTurn;
     Note m_noteType;
     [SerializeField]
    // Sprite[] m_spriteSheet;
