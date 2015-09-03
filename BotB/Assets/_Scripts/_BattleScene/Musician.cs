@@ -89,62 +89,65 @@ public class Musician : MonoBehaviour
     //
     private void SpellAI()
     {
-        if (m_spellPlay)
+        if (TurnTimer.Instance.CurrentTurn == Turn.Casting)
         {
-            if (m_notesPlayed >= m_noteCount)
+            if (m_spellPlay)
             {
-                m_spellPlay = false;
-                m_noteTime = (turnTick / m_noteCount);
-            }
-            else if (m_noteTime > 0)
-            {
-                m_noteTime -= Time.deltaTime;
+                if (m_notesPlayed >= m_noteCount)
+                {
+                    m_spellPlay = false;
+                    m_noteTime = (turnTick / m_noteCount);
+                }
+                else if (m_noteTime > 0)
+                {
+                    m_noteTime -= Time.deltaTime;
+                }
+                else
+                {
+                    //set toPlay to something
+                    Note toPlay = (Note)m_spellList[m_spellLoc][(int)m_notesPlayed];
+                    //int index = (int)(m_noteCount - m_notesPlayed);
+                    //convert characters into notes
+                    switch (m_spellList[m_spellLoc][(int)m_notesPlayed])
+                    {
+                        case 'A':
+                            {
+                                toPlay = Note.A;
+                                break;
+                            }
+                        case 'B':
+                            {
+                                toPlay = Note.B;
+                                break;
+                            }
+                        case 'C':
+                            {
+                                toPlay = Note.C;
+                                break;
+                            }
+                        case 'D':
+                            {
+                                toPlay = Note.D;
+                                break;
+                            }
+                        case 'E':
+                            {
+                                toPlay = Note.E;
+                                break;
+                            }
+                        default:
+                            break;
+                    }
+                    Battle.Instance.ReceiveKey(new TimedNote(toPlay, Time.deltaTime, false));
+                    ++m_notesPlayed;
+                    m_noteTime = (turnTick / m_noteCount);
+                }
             }
             else
             {
-                //set toPlay to something
-                Note toPlay = (Note)m_spellList[m_spellLoc][(int)m_notesPlayed];
-                //int index = (int)(m_noteCount - m_notesPlayed);
-                //convert characters into notes
-                switch (m_spellList[m_spellLoc][(int)m_notesPlayed])
-                {
-                    case 'A':
-                        {
-                            toPlay = Note.A;
-                            break;
-                        }
-                    case 'B':
-                        {
-                            toPlay = Note.B;
-                            break;
-                        }
-                    case 'C':
-                        {
-                            toPlay = Note.C;
-                            break;
-                        }
-                    case 'D':
-                        {
-                            toPlay = Note.D;
-                            break;
-                        }
-                    case 'E':
-                        {
-                            toPlay = Note.E;
-                            break;
-                        }
-                    default:
-                        break;
-                }
-                Battle.Instance.ReceiveKey(new TimedNote(toPlay, Time.deltaTime, false));
-                ++m_notesPlayed;
-                m_noteTime = (turnTick / m_noteCount);
+                int rand = Random.Range(0, m_spellList.Length);
+                PlaySpell(m_spellList[rand]);
             }
-        }
-        else
-        {
-            int rand = Random.Range(0, m_spellList.Length);
-            PlaySpell(m_spellList[rand]);
         }
             
     }

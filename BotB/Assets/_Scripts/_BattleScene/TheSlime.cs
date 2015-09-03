@@ -19,8 +19,5 @@ public class TheSlime : Musician
 
     protected override void Die()
     {
-        if (m_stats.Health <= 0)
-        {
-        }
     }
 }

@@ -34,12 +34,14 @@ public struct TimedNote
         m_playerOwned = a_playerOwned;
     }
 }
-
+//*********************************************************************************
+//actual class starts here
 public class Battle : MonoBehaviour
 {
     //Attributes
     public static Battle Instance;
     public GameObject m_Player, m_currentEnemy;
+    public bool m_win, m_playing;
     //Behavious
     void Awake()
     {
@@ -58,7 +60,7 @@ public class Battle : MonoBehaviour
     {
         SpellSystem.Instance.ReceiveKey(a_note);
         SoundManager.Reference.ReceiveNote(a_note);
-        //NoteVisualiser.Reference.ReceiveNote(a_note);
+        NoteVisualiser.Reference.ReceiveNote(a_note);
     }
     public void ReceiveTurnOver()
     {

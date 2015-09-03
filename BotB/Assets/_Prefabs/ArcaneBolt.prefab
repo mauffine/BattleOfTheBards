@@ -73,6 +73,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_speedModifier: 0
   m_velocity: {x: 0, y: 0, z: 0}
+  m_name: ArcaneBolt
 --- !u!198 &19820990
 ParticleSystem:
   m_ObjectHideFlags: 1
@@ -2226,6 +2227,10 @@ Prefab:
     - target: {fileID: 0}
       propertyPath: InitialModule.startSize.scalar
       value: .600000024
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_name
+      value: ArcaneBolt
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}

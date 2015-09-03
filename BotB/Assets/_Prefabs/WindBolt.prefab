@@ -103,6 +103,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_speedModifier: 0
   m_velocity: {x: 0, y: 0, z: 0}
+  m_name: WindBolt
 --- !u!198 &19859208
 ParticleSystem:
   m_ObjectHideFlags: 1
@@ -3401,6 +3402,10 @@ Prefab:
     - target: {fileID: 0}
       propertyPath: ColorModule.gradient.maxGradient.ctime3
       value: 65535
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_name
+      value: WindBolt
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}

@@ -103,6 +103,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_speedModifier: 0
   m_velocity: {x: 0, y: 0, z: 0}
+  m_name: IceBolt
 --- !u!198 &19833454
 ParticleSystem:
   m_ObjectHideFlags: 1
@@ -3425,6 +3426,10 @@ Prefab:
     - target: {fileID: 0}
       propertyPath: moveWithTransform
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_name
+      value: IceBolt
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
