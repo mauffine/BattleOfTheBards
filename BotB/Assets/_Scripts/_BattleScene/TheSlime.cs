@@ -21,8 +21,6 @@ public class TheSlime : Musician
     {
         if (m_stats.Health <= 0)
         {
-            Battle.BattleReference.m_win = true;
-            Battle.BattleReference.m_playing = false;
         }
     }
 }

@@ -1,55 +1,48 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class TurnTimer : MonoBehaviour 
+public class TurnTimer : MonoBehaviour
 {
     //Attributes
+    public static TurnTimer Instance { get; private set; }
+    Turn m_currentTurn;
     [SerializeField]
-    static float s_turnTime = 4.0f; //the time in seconds for each turn
-    [SerializeField]
-    static float s_menuTime = 2.0f;
-    [SerializeField]
-    public static bool s_playerTurn = false; //bool for it it's player's turn or enemy's turn
-    [SerializeField]
-    static float s_turnCountdown = 4.0f; //the countdown variable used in the timer 
-    static Turn s_currentTurn; //sets whether the player is playing a song or picking one from the menu
-    static AudioClip s_metronome;
+    float m_castingTime, m_menuTime, m_countDown;
     //Behavious
-    void Start() 
+    void Awake()
     {
-        //AudioSource.PlayClipAtPoint(s_metronome, Vector3.zero, 0.1f);
-        s_currentTurn = Turn.Menu;
-	}
-
-    void Update() 
-    {
-        TurnCountdown();
-	}
-    ///<summary> Counts down the time left in the turn, switches turns when the timer ends and resets the timer</summary>
-    static void TurnCountdown()
-    {
-        //basic timer stuff
-        s_turnCountdown -= Time.deltaTime;
-        if (s_turnCountdown <= 0 && s_currentTurn == Turn.Casting)
-        {
-            s_turnCountdown = s_menuTime;
-            s_playerTurn = !s_playerTurn;
-            s_currentTurn = Turn.Menu;
-            Battle.BattleReference.RecieveTurnOver(s_currentTurn);
-            //AudioSource.PlayClipAtPoint(s_metronome, Vector3.zero, 0.1f);
-        }
-        else if (s_currentTurn <= 0 && s_currentTurn == Turn.Menu)
-        {
-            s_turnCountdown = s_turnTime;
-            s_currentTurn = Turn.Menu;
-        }
-
+        Instance = this;
     }
-
-    static public float TimePerTurn
+    void Start()
     {
-        get {return s_turnTime; }
-    } 
-    static public float CountdownTime { get { return s_turnCountdown; } }
-    static public Turn CurrentTurn { get { return s_currentTurn; } }
+        m_countDown = m_menuTime;
+    }
+    void Update()
+    {
+        m_countDown -= Time.deltaTime;
+        if(m_countDown <= 0 && m_currentTurn == Turn.Menu)
+        {
+            m_countDown = m_castingTime;
+            m_currentTurn = Turn.Casting;
+        }
+        else if (m_countDown <= 0 && m_currentTurn == Turn.Casting)
+        {
+            m_countDown = m_menuTime;
+            m_currentTurn = Turn.Menu;
+            Battle.Instance.ReceiveTurnOver();
+        }
+        
+    }
+    public Turn CurrentTurn 
+    { 
+        get { return m_currentTurn; } 
+    }
+    public float CurrentTime
+    {
+        get { return m_countDown; }
+    }
+    public float CastingTime
+    {
+        get { return m_castingTime; }
+    }
 }

@@ -8,7 +8,6 @@ public class Hasten : Spell
     // Use this for initialization
     void Start()
     {
-        TurnTimer.s_playerTurn = true;
         base.Start();
     }
 

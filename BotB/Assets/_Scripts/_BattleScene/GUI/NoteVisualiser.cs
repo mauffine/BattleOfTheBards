@@ -15,7 +15,7 @@ public class NoteVisualiser : MonoBehaviour
     }; */
     public GameObject[] m_notePrefabs;
     bool m_putDown = false;
-    Turn m_playerTurn;
+    Turn m_turn;
     Note m_noteType;
     [SerializeField]
    // Sprite[] m_spriteSheet;
@@ -29,7 +29,7 @@ public class NoteVisualiser : MonoBehaviour
         m_spriteDisplay = new List<GameObject>();
         m_greyDisplay = new List<GameObject>();
         m_spriteDisplay.Capacity = 15;
-        m_playerTurn = Battle.BattleReference.PlayerTurn;
+        m_turn = TurnTimer.Instance.CurrentTurn;
 	}
 	
 	// Update is called once per frame
@@ -40,9 +40,9 @@ public class NoteVisualiser : MonoBehaviour
             m_putDown = false;
             PushNote(m_noteType);
         }
-        if (m_playerTurn != Battle.BattleReference.PlayerTurn)
+        if (m_turn != TurnTimer.Instance.CurrentTurn)
         {
-            m_playerTurn = Battle.BattleReference.PlayerTurn;
+            m_turn = TurnTimer.Instance.CurrentTurn;
             Swap();
         }
 	}

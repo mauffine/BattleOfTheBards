@@ -71,7 +71,7 @@ public class Musician : MonoBehaviour
 	// Use this for initialization
     protected void Start() 
     {
-        turnTick = TurnTimer.TimePerTurn - 1;
+        turnTick = TurnTimer.Instance.CastingTime - 1;
 	}
 	// Update is called once per frame
     protected void Update() 
@@ -136,7 +136,7 @@ public class Musician : MonoBehaviour
                     default:
                         break;
                 }
-                Battle.ReceiveKey(new TimedNote(toPlay, Time.deltaTime, false));
+                Battle.Instance.ReceiveKey(new TimedNote(toPlay, Time.deltaTime, false));
                 ++m_notesPlayed;
                 m_noteTime = (turnTick / m_noteCount);
             }
