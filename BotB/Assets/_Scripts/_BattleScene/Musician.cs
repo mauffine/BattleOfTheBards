@@ -12,6 +12,13 @@ public class Musician : MonoBehaviour
     [SerializeField]
     protected float m_attack, m_defence = 0, m_health;
 
+    enum SpellType
+    {
+        Offencive,
+        Defensive,
+        Effect
+    };
+    SpellType m_behavior = SpellType.Offencive;
     protected bool m_spellPlay = false;
     protected float m_noteTime = -1;
     protected static float s_turnTick = -1;
@@ -29,12 +36,22 @@ public class Musician : MonoBehaviour
     protected void Update() 
     {
         if(Active)
-        { 
-            //choose a spell and play a spell
-            if (!m_sceneHandler.GetComponent<Battle>().m_playerTurn)
-                SpellAI();
-            else
-                m_spellPlay = false;
+        {
+            switch (m_behavior)
+            {
+                case SpellType.Offencive:
+                    m_spellLoc = 0;
+                    break;
+                case SpellType.Defensive:
+                    m_spellLoc = 1;
+                    break;
+                case SpellType.Effect:
+                    m_spellLoc = 2;
+                    break;
+                default:
+                    break;
+            }
+            SpellAI();
             if (m_health < 0)
                 Die();
         }
@@ -42,7 +59,7 @@ public class Musician : MonoBehaviour
     //Takes damage
     public virtual void TakeDamage(int a_damage)
     {
-        m_health += ( a_damage);//USE DEFENCE AND PASS THROUGH POSITIVE NUMBERS
+        m_health += (a_damage);//USE DEFENCE AND PASS THROUGH POSITIVE NUMBERS
     }
     //
     private void SpellAI()
@@ -55,9 +72,7 @@ public class Musician : MonoBehaviour
                 m_noteTime = (s_turnTick / m_noteCount);
             }
             else if (m_noteTime > 0)
-            {
                 m_noteTime -= Time.deltaTime;
-            }
             else
             {
                 //set toPlay to something
@@ -98,12 +113,12 @@ public class Musician : MonoBehaviour
                 ++m_notesPlayed;
                 m_noteTime = (s_turnTick / m_noteCount);
             }
-        }
+        }/*
         else
         {
             int rand = Random.Range(0, m_spellList.Length - 1);
             PlaySpell(m_spellList[rand]);
-        }
+        } */
             
     }
     //Playes a spell
