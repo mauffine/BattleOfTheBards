@@ -38,6 +38,13 @@ Material:
           m_Offset: {x: 0, y: 0}
       data:
         first:
+          name: _Ramp
+        second:
+          m_Texture: {fileID: 2800000, guid: b016c25f4bad2d6488a263f7ed0d91ba, type: 3}
+          m_Scale: {x: 1, y: 1}
+          m_Offset: {x: 0, y: 0}
+      data:
+        first:
           name: _ParallaxMap
         second:
           m_Texture: {fileID: 0}
@@ -85,13 +92,6 @@ Material:
           m_Texture: {fileID: 0}
           m_Scale: {x: 1, y: 1}
           m_Offset: {x: 0, y: 0}
-      data:
-        first:
-          name: _Ramp
-        second:
-          m_Texture: {fileID: 2800000, guid: b016c25f4bad2d6488a263f7ed0d91ba, type: 3}
-          m_Scale: {x: 1, y: 1}
-          m_Offset: {x: 0, y: 0}
     m_Floats:
       data:
         first:
@@ -107,8 +107,36 @@ Material:
         second: .5
       data:
         first:
+          name: _Outline
+        second: .00499999989
+      data:
+        first:
           name: _Parallax
         second: .0199999996
+      data:
+        first:
+          name: _DiffuseScale
+        second: 1
+      data:
+        first:
+          name: _DiffuseBias
+        second: 0
+      data:
+        first:
+          name: _DiffuseExponent
+        second: 1
+      data:
+        first:
+          name: _RimPower
+        second: 4.5
+      data:
+        first:
+          name: _SpecPower
+        second: 3
+      data:
+        first:
+          name: _OutlineWidth
+        second: .0250000004
       data:
         first:
           name: _ZWrite
@@ -141,34 +169,6 @@ Material:
         first:
           name: _Metallic
         second: 0
-      data:
-        first:
-          name: _Outline
-        second: .00499999989
-      data:
-        first:
-          name: _DiffuseScale
-        second: 1
-      data:
-        first:
-          name: _DiffuseBias
-        second: 0
-      data:
-        first:
-          name: _DiffuseExponent
-        second: 1
-      data:
-        first:
-          name: _RimPower
-        second: 4.5
-      data:
-        first:
-          name: _SpecPower
-        second: 3
-      data:
-        first:
-          name: _OutlineWidth
-        second: .0250000004
     m_Colors:
       data:
         first:
