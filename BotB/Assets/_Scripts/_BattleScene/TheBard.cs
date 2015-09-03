@@ -18,8 +18,6 @@ public class TheBard : Musician
     {
         if (m_health <= 0)
         {
-            Battle.BattleReference.m_win = false;
-            Battle.BattleReference.m_playing = false;
         }
     }
 }

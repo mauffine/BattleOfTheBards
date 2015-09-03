@@ -4,7 +4,7 @@ using System.Collections;
 public class ArcaneBolt : Spell 
 {
     
-    string m_key = "AADEB";
+   // string m_key = "AADEB";
 	// Use this for initialization
 	void Start () 
     {

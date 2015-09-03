@@ -8,7 +8,7 @@ public class TheSlime : Musician
     void Start()
     {
         base.Start();
-        m_health = 300;
+        m_stats.Health = 300;
     }
 
     // Update is called once per frame
@@ -19,7 +19,8 @@ public class TheSlime : Musician
 
     protected override void Die()
     {
-        Battle.BattleReference.m_win = true;
-        Battle.BattleReference.m_playing = false;
+        if (m_stats.Health <= 0)
+        {
+        }
     }
 }

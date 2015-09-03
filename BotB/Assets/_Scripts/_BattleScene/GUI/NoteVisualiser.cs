@@ -13,8 +13,9 @@ public class NoteVisualiser : MonoBehaviour
             pos = a_p;
         }
     }; */
+    public GameObject[] m_notePrefabs;
     bool m_putDown = false;
-    bool m_playerTurn;
+    Turn m_turn;
     Note m_noteType;
     [SerializeField]
    // Sprite[] m_spriteSheet;
@@ -28,7 +29,7 @@ public class NoteVisualiser : MonoBehaviour
         m_spriteDisplay = new List<GameObject>();
         m_greyDisplay = new List<GameObject>();
         m_spriteDisplay.Capacity = 15;
-        m_playerTurn = Battle.BattleReference.PlayerTurn;
+        m_turn = TurnTimer.Instance.CurrentTurn;
 	}
 	
 	// Update is called once per frame
@@ -39,9 +40,9 @@ public class NoteVisualiser : MonoBehaviour
             m_putDown = false;
             PushNote(m_noteType);
         }
-        if (m_playerTurn != Battle.BattleReference.PlayerTurn)
+        if (m_turn != TurnTimer.Instance.CurrentTurn)
         {
-            m_playerTurn = Battle.BattleReference.PlayerTurn;
+            m_turn = TurnTimer.Instance.CurrentTurn;
             Swap();
         }
 	}
@@ -63,7 +64,7 @@ public class NoteVisualiser : MonoBehaviour
                 {
                   /*  NotePlacer tempA = new NotePlacer(m_spriteSheet[0], Slider.Position);
                     m_spriteDisplay.Push(tempA); */
-                    m_spriteDisplay.Add((GameObject)Instantiate(Resources.Load("_Prefabs/Notes/Note A"), pos, new Quaternion(0, 1, 0, 0)));
+                    m_spriteDisplay.Add((GameObject)Instantiate(m_notePrefabs[0], pos, new Quaternion(0, 1, 0, 0)));
                 }
                 break;
             case Note.B_:
@@ -72,14 +73,14 @@ public class NoteVisualiser : MonoBehaviour
                 {
                    /* NotePlacer tempA = new NotePlacer(m_spriteSheet[1], Slider.Position);
                     m_spriteDisplay.Push(tempA); */
-                    m_spriteDisplay.Add((GameObject)Instantiate(Resources.Load("_Prefabs/Notes/Note B"), pos, new Quaternion(0, 1, 0, 0)));
+                    m_spriteDisplay.Add((GameObject)Instantiate(m_notePrefabs[1], pos, new Quaternion(0, 1, 0, 0)));
                 }
                 break;
             case Note.C:
                 {
                    /* NotePlacer tempB = new NotePlacer(m_spriteSheet[2], Slider.Position);
                     m_spriteDisplay.Push(tempB); */
-                    m_spriteDisplay.Add((GameObject)Instantiate(Resources.Load("_Prefabs/Notes/Note C"), pos, new Quaternion(0, 1, 0, 0)));
+                    m_spriteDisplay.Add((GameObject)Instantiate(m_notePrefabs[2], pos, new Quaternion(0, 1, 0, 0)));
                 }
                 break;
             case Note.D_:
@@ -88,14 +89,14 @@ public class NoteVisualiser : MonoBehaviour
                 {
                  /*   NotePlacer tempC = new NotePlacer(m_spriteSheet[3], Slider.Position);
                     m_spriteDisplay.Push(tempC); */
-                    m_spriteDisplay.Add((GameObject)Instantiate(Resources.Load("_Prefabs/Notes/Note D"), pos, new Quaternion(0, 1, 0, 0)));
+                    m_spriteDisplay.Add((GameObject)Instantiate(m_notePrefabs[3], pos, new Quaternion(0, 1, 0, 0)));
                 }
                 break;
             case Note.E:
                 {
                   /*  NotePlacer tempD = new NotePlacer(m_spriteSheet[4], Slider.Position);
                     m_spriteDisplay.Push(tempD); */
-                    m_spriteDisplay.Add((GameObject)Instantiate(Resources.Load("_Prefabs/Notes/Note E"), pos, new Quaternion(0, 1, 0, 0)));
+                    m_spriteDisplay.Add((GameObject)Instantiate(m_notePrefabs[4], pos, new Quaternion(0, 1, 0, 0)));
                 }
                 break;
             case Note.F_:

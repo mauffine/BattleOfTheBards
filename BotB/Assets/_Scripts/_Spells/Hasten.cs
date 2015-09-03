@@ -3,12 +3,11 @@ using System.Collections;
 
 public class Hasten : Spell 
 {
-    string m_key = "AAAEA";
+    //string m_key = "AAAEA";
 
     // Use this for initialization
     void Start()
     {
-        TurnTimer.playerTurn = true;
         base.Start();
     }
 

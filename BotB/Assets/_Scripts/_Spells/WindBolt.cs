@@ -4,7 +4,7 @@ using System.Collections;
 public class WindBolt : Spell
 {
     
-    string m_key = "DEBCA";
+    //string m_key = "DEBCA";
     // Use this for initialization
     void Start()
     {

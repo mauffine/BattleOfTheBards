@@ -891,7 +891,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!1 &183110
 GameObject:
   m_ObjectHideFlags: 1
@@ -1552,8 +1552,8 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 181486}
-  m_LocalRotation: {x: 0, y: -.777794003, z: 0, w: .628519356}
-  m_LocalPosition: {x: 2.15100002, y: 0, z: 1.12399995}
+  m_LocalRotation: {x: 0, y: .91345346, z: 0, w: -.406943262}
+  m_LocalPosition: {x: 2.11683536, y: 0, z: 1.14377642}
   m_LocalScale: {x: .425000012, y: .425000012, z: .425000012}
   m_Children:
   - {fileID: 416754}
@@ -1945,13 +1945,12 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 181486}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d9648715b2e132146b890d79d387d998, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_health: 0
-  m_name: 
+  m_name: Bard
   m_sceneHandler: {fileID: 0}
 --- !u!137 &13727458
 SkinnedMeshRenderer:
@@ -2107,8 +2106,8 @@ SkinnedMeshRenderer:
   m_BlendShapeWeights: []
   m_RootBone: {fileID: 441308}
   m_AABB:
-    m_Center: {x: -.818974018, y: 2.31207228, z: 0}
-    m_Extent: {x: 2.55470943, y: 2.68752813, z: 2.89485574}
+    m_Center: {x: -.818973839, y: 2.31207275, z: -4.76837158e-07}
+    m_Extent: {x: 2.00639939, y: 2.64738393, z: 2.46383667}
   m_DirtyAABB: 0
 --- !u!183 &18367974
 Cloth:
@@ -2118,7 +2117,7 @@ Cloth:
   m_GameObject: {fileID: 120678}
   m_Enabled: 1
   m_StretchingStiffness: 1
-  m_BendingStiffness: .5
+  m_BendingStiffness: .349999994
   m_UseTethers: 1
   m_UseGravity: 1
   m_Damping: 0
