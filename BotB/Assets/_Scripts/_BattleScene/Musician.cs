@@ -113,13 +113,13 @@ public class Musician : MonoBehaviour
                 ++m_notesPlayed;
                 m_noteTime = (s_turnTick / m_noteCount);
             }
-        }/*
+        }
         else
         {
             int rand = Random.Range(0, m_spellList.Length - 1);
-            PlaySpell(m_spellList[rand]);
-        } */
-            
+            PlaySpell(m_spellList[m_spellLoc]);
+        }
+
     }
     //Playes a spell
     public virtual void PlaySpell(string a_spellKey)
@@ -137,7 +137,7 @@ public class Musician : MonoBehaviour
         }
     }
     //*dies
-    protected virtual void Die() 
+    protected virtual void Die()
     {
         Active = false;
     }
