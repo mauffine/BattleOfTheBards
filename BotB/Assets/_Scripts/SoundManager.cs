@@ -11,10 +11,14 @@ public class SoundManager : MonoBehaviour
     AudioClip m_backgroundSong;
     [SerializeField]
     float m_Backgroundvolume = 0.0f;
-
-    private AudioPool m_audioPool;
+    
+    AudioPool m_audioPool;
+    [SerializeField]
+    GameObject m_audioSourcePrefab;
 
     private readonly Vector3 origin = new Vector3(0, 0, 0);
+
+    
 	// Use this for initialization
 	void Start() 
     {
@@ -25,7 +29,12 @@ public class SoundManager : MonoBehaviour
             m_noteArray[I] = Resources.Load<AudioClip>("_Sound/Piano Notes/" + clipTitle);
             ++clipTitle;
         }
+
+        gameObject.AddComponent<AudioPool>();
         m_audioPool = GetComponent<AudioPool>();
+        m_audioPool.Initialise(m_audioSourcePrefab);
+        //m_audioPool.m_audioSourcePrefab = m_audioSourcePrefab;
+
         m_audioPool.PlayClip(m_backgroundSong);
         //AudioSource.PlayClipAtPoint(m_backgroundSong, origin, m_Backgroundvolume);
 
@@ -75,4 +84,6 @@ public class SoundManager : MonoBehaviour
     {
 	
 	}
+
+
 }

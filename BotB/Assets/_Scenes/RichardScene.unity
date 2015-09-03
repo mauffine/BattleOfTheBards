@@ -5896,6 +5896,7 @@ GameObject:
   - 114: {fileID: 1727921407}
   - 114: {fileID: 1727921406}
   - 114: {fileID: 1727921409}
+  - 114: {fileID: 1727921410}
   m_Layer: 0
   m_Name: GUI
   m_TagString: Untagged
@@ -5988,6 +5989,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e0345c3030d84654f815930ea0222b5b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1727921410
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1727921404}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 77af42e9d4fcf8c44a28198b46ab29e9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_notePrefab: {fileID: 121142, guid: 9b473cfd2979ce645bbe846119a8e7ba, type: 2}
+  m_noteA: {fileID: 21300000, guid: 715be61205baec94e881784e56cddaea, type: 3}
+  m_noteB: {fileID: 21300002, guid: 715be61205baec94e881784e56cddaea, type: 3}
+  m_noteC: {fileID: 21300004, guid: 715be61205baec94e881784e56cddaea, type: 3}
+  m_noteD: {fileID: 21300006, guid: 715be61205baec94e881784e56cddaea, type: 3}
+  m_noteE: {fileID: 21300008, guid: 715be61205baec94e881784e56cddaea, type: 3}
 --- !u!1 &1749193688
 GameObject:
   m_ObjectHideFlags: 0
@@ -6084,7 +6102,6 @@ GameObject:
   - 114: {fileID: 1775765534}
   - 114: {fileID: 1775765535}
   - 114: {fileID: 1775765536}
-  - 114: {fileID: 1775765537}
   m_Layer: 0
   m_Name: SceneHandler
   m_TagString: Untagged
@@ -6178,17 +6195,6 @@ MonoBehaviour:
   m_noteVolume: 1
   m_backgroundSong: {fileID: 8300000, guid: 287a65a507f3b734f96407d3f9734ae9, type: 3}
   m_Backgroundvolume: .0250000004
---- !u!114 &1775765537
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1775765530}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 990f0c600d921f84085bbe57d32dece6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
   m_audioSourcePrefab: {fileID: 182634, guid: 0afbba38684a4474995af6176e5df66f, type: 2}
 --- !u!4 &1789236595 stripped
 Transform:

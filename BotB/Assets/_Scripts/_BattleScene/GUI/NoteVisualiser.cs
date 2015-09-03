@@ -22,6 +22,9 @@ public class NoteVisualiser : MonoBehaviour
     List<GameObject> m_greyDisplay;
 	// Use this for initialization
     static NoteVisualiser refToMe;
+
+    NotePool m_notePool;
+
 	void Start()
     {
         refToMe = this;
@@ -29,6 +32,7 @@ public class NoteVisualiser : MonoBehaviour
         m_greyDisplay = new List<GameObject>();
         m_spriteDisplay.Capacity = 15;
         m_playerTurn = Battle.BattleReference.PlayerTurn;
+        m_notePool = transform.parent.GetComponent<NotePool>();
 	}
 	
 	// Update is called once per frame
@@ -42,6 +46,7 @@ public class NoteVisualiser : MonoBehaviour
         if (m_playerTurn != Battle.BattleReference.PlayerTurn)
         {
             m_playerTurn = Battle.BattleReference.PlayerTurn;
+            m_notePool.RemoveAllNotes();
             Swap();
         }
 	}
@@ -54,60 +59,63 @@ public class NoteVisualiser : MonoBehaviour
     private void PushNote(Note a_Note)
     {
 
-        Vector3 pos = (Slider.Position);// - new Vector3(0, 0, 0.5f));
-        switch (a_Note)
-        {
-            case Note.A_:
-                break;
-            case Note.A:
-                {
-                  /*  NotePlacer tempA = new NotePlacer(m_spriteSheet[0], Slider.Position);
-                    m_spriteDisplay.Push(tempA); */
-                    m_spriteDisplay.Add((GameObject)Instantiate(Resources.Load("_Prefabs/Notes/Note A"), pos, new Quaternion(0, 1, 0, 0)));
-                }
-                break;
-            case Note.B_:
-                break;
-            case Note.B:
-                {
-                   /* NotePlacer tempA = new NotePlacer(m_spriteSheet[1], Slider.Position);
-                    m_spriteDisplay.Push(tempA); */
-                    m_spriteDisplay.Add((GameObject)Instantiate(Resources.Load("_Prefabs/Notes/Note B"), pos, new Quaternion(0, 1, 0, 0)));
-                }
-                break;
-            case Note.C:
-                {
-                   /* NotePlacer tempB = new NotePlacer(m_spriteSheet[2], Slider.Position);
-                    m_spriteDisplay.Push(tempB); */
-                    m_spriteDisplay.Add((GameObject)Instantiate(Resources.Load("_Prefabs/Notes/Note C"), pos, new Quaternion(0, 1, 0, 0)));
-                }
-                break;
-            case Note.D_:
-                break;
-            case Note.D:
-                {
-                 /*   NotePlacer tempC = new NotePlacer(m_spriteSheet[3], Slider.Position);
-                    m_spriteDisplay.Push(tempC); */
-                    m_spriteDisplay.Add((GameObject)Instantiate(Resources.Load("_Prefabs/Notes/Note D"), pos, new Quaternion(0, 1, 0, 0)));
-                }
-                break;
-            case Note.E:
-                {
-                  /*  NotePlacer tempD = new NotePlacer(m_spriteSheet[4], Slider.Position);
-                    m_spriteDisplay.Push(tempD); */
-                    m_spriteDisplay.Add((GameObject)Instantiate(Resources.Load("_Prefabs/Notes/Note E"), pos, new Quaternion(0, 1, 0, 0)));
-                }
-                break;
-            case Note.F_:
-                break;
-            case Note.F:
-                break;
-            case Note.G:
-                break;
-            default:
-                break;
-        }
-        m_spriteDisplay[m_spriteDisplay.Count - 1].transform.SetParent(this.transform.parent);
+        Vector3 pos = (Slider.LocalPosition) - new Vector3(0, 0, 0.5f);
+
+        m_notePool.AddNote(pos, a_Note);
+        //switch (a_Note)
+        //{
+        //    case Note.A_:
+        //        break;
+        //    case Note.A:
+        //        {
+        //          /*  NotePlacer tempA = new NotePlacer(m_spriteSheet[0], Slider.Position);
+        //            m_spriteDisplay.Push(tempA); */
+        //            m_spriteDisplay.Add((GameObject)Instantiate(Resources.Load("_Prefabs/Notes/Note A"), pos, new Quaternion(0, 1, 0, 0)));
+        //        }
+        //        break;
+        //    case Note.B_:
+        //        break;
+        //    case Note.B:
+        //        {
+        //           /* NotePlacer tempA = new NotePlacer(m_spriteSheet[1], Slider.Position);
+        //            m_spriteDisplay.Push(tempA); */
+        //            m_spriteDisplay.Add((GameObject)Instantiate(Resources.Load("_Prefabs/Notes/Note B"), pos, new Quaternion(0, 1, 0, 0)));
+        //        }
+        //        break;
+        //    case Note.C:
+        //        {
+        //           /* NotePlacer tempB = new NotePlacer(m_spriteSheet[2], Slider.Position);
+        //            m_spriteDisplay.Push(tempB); */
+        //            m_spriteDisplay.Add((GameObject)Instantiate(Resources.Load("_Prefabs/Notes/Note C"), pos, new Quaternion(0, 1, 0, 0)));
+        //        }
+        //        break;
+        //    case Note.D_:
+        //        break;
+        //    case Note.D:
+        //        {
+        //         /*   NotePlacer tempC = new NotePlacer(m_spriteSheet[3], Slider.Position);
+        //            m_spriteDisplay.Push(tempC); */
+        //            m_spriteDisplay.Add((GameObject)Instantiate(Resources.Load("_Prefabs/Notes/Note D"), pos, new Quaternion(0, 1, 0, 0)));
+        //        }
+        //        break;
+        //    case Note.E:
+        //        {
+        //          /*  NotePlacer tempD = new NotePlacer(m_spriteSheet[4], Slider.Position);
+        //            m_spriteDisplay.Push(tempD); */
+        //            m_spriteDisplay.Add((GameObject)Instantiate(Resources.Load("_Prefabs/Notes/Note E"), pos, new Quaternion(0, 1, 0, 0)));
+        //        }
+        //        break;
+        //    case Note.F_:
+        //        break;
+        //    case Note.F:
+        //        break;
+        //    case Note.G:
+        //        break;
+        //    default:
+        //        break;
+        //}
+
+        //m_spriteDisplay[m_spriteDisplay.Count - 1].transform.SetParent(this.transform.parent);
     }
 
     private void Swap()

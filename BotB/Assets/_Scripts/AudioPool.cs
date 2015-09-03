@@ -11,16 +11,23 @@ public class AudioPool : MonoBehaviour {
 	// Use this for initialization
 	void Start () 
     {
+        
+	}
+
+    public void Initialise(GameObject a_audioSourcePrefab)
+    {
+        m_audioSourcePrefab = a_audioSourcePrefab;
+
         m_audioSourceList = new AudioSource[32];
 
-        for(int i = 0; i < m_audioSourceList.Length; i++)
+        for (int i = 0; i < m_audioSourceList.Length; i++)
         {
             var audioSourceObject = Instantiate(m_audioSourcePrefab);
             audioSourceObject.transform.SetParent(this.transform);
             audioSourceObject.name = "AudioPool " + i;
             m_audioSourceList[i] = audioSourceObject.GetComponent<AudioSource>();
         }
-	}
+    }
 	
 	// Update is called once per frame
 	void Update () 

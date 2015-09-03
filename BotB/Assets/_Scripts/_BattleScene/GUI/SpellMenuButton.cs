@@ -18,6 +18,7 @@ public class SpellMenuButton : MonoBehaviour
 	void Update () {
         if (!m_selected)
         {
+            //change to lerp
             transform.localScale = new Vector3(50 + Mathf.Sin(Time.time * 5) * 5, 50 + Mathf.Sin(Time.time * 5) * 5, 50);
         }
         else
