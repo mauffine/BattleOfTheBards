@@ -1,55 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public struct Stats
-{
-    private int health, str, def, dex, time;
-    public Stats(int a_health = 0, int a_str = 0, int a_def = 0, int a_dex = 0, int a_time = 0)
-    {
-        health = a_health;
-        str = a_str;
-        def = a_def;
-        dex = a_dex;
-        time = a_time;
-    }
-    public int Damage
-    {
-        get { return -health; }
-        set { health = value;}
-    }
-    public int Health
-    {
-        get { return health; }
-        set { health = value; }
-    }
-    public int Str
-    {
-        get { return str; }
-        set { str = value; }
-    }
-    public int Def
-    {
-        get { return def; }
-        set { def = value; }
-    }
-    public int Dex
-    {
-        get { return dex; }
-        set { dex = value; }
-    }
-    public int TimeMod
-    {
-        get { return time; }
-        set { time = value; }
-
-    }
-
-    public static Stats operator +(Stats a_LHS, Stats a_RHS)
-    {
-        Stats returnVal = new Stats(a_LHS.health + a_RHS.Health, a_LHS.str + a_RHS.Str, a_LHS.def + a_RHS.Def, a_LHS.dex + a_RHS.Dex, a_LHS.time + a_RHS.TimeMod);
-        return returnVal;
-    }
-}
 public class Musician : MonoBehaviour
 {
     [SerializeField]
@@ -59,32 +10,56 @@ public class Musician : MonoBehaviour
     [SerializeField]
     GameObject m_sceneHandler;
     [SerializeField]
-    protected Stats m_stats;
-    protected Stats m_mods;
+    protected float m_attack, m_defence = 0, m_health;
 
+    enum SpellType
+    {
+        Offencive,
+        Defensive,
+        Effect
+    };
+    SpellType m_behavior = SpellType.Offencive;
     protected bool m_spellPlay = false;
     protected float m_noteTime = -1;
-    protected static float turnTick = -1;
+    protected static float s_turnTick = -1;
     protected uint m_spellLoc = 0, m_noteCount = 0, m_notesPlayed = 0;
 
 
 	// Use this for initialization
     protected void Start() 
     {
-        turnTick = TurnTimer.Instance.CastingTime - 1;
+        s_turnTick = TurnTimer.Instance.CastingTime - 1;
+        m_attack = 0;
+        Active = true;
 	}
-	// Update is called once per frame
+	//Update is called once per frame
     protected void Update() 
     {
-        //choose a spell and play a spell
-        SpellAI();
-        if (m_stats.Health < 0)
-            Die();
+        if(Active)
+        {
+            switch (m_behavior)
+            {
+                case SpellType.Offencive:
+                    m_spellLoc = 0;
+                    break;
+                case SpellType.Defensive:
+                    m_spellLoc = 1;
+                    break;
+                case SpellType.Effect:
+                    m_spellLoc = 2;
+                    break;
+                default:
+                    break;
+            }
+            SpellAI();
+            if (m_health < 0)
+                Die();
+        }
 	}
     //Takes damage
     public virtual void TakeDamage(int a_damage)
     {
-        m_stats.Health += a_damage;
+        m_health += (a_damage);//USE DEFENCE AND PASS THROUGH POSITIVE NUMBERS
     }
     //
     private void SpellAI()
@@ -94,12 +69,10 @@ public class Musician : MonoBehaviour
             if (m_notesPlayed >= m_noteCount)
             {
                 m_spellPlay = false;
-                m_noteTime = (turnTick / m_noteCount);
+                m_noteTime = (s_turnTick / m_noteCount);
             }
             else if (m_noteTime > 0)
-            {
                 m_noteTime -= Time.deltaTime;
-            }
             else
             {
                 //set toPlay to something
@@ -136,17 +109,17 @@ public class Musician : MonoBehaviour
                     default:
                         break;
                 }
-                Battle.Instance.ReceiveKey(new TimedNote(toPlay, Time.deltaTime, false));
+                Battle.Instance.ReceiveKey(new TimedNote(toPlay, Time.deltaTime));
                 ++m_notesPlayed;
-                m_noteTime = (turnTick / m_noteCount);
+                m_noteTime = (s_turnTick / m_noteCount);
             }
         }
         else
         {
-            int rand = Random.Range(0, m_spellList.Length);
-            PlaySpell(m_spellList[rand]);
+            int rand = Random.Range(0, m_spellList.Length - 1);
+            PlaySpell(m_spellList[m_spellLoc]);
         }
-            
+
     }
     //Playes a spell
     public virtual void PlaySpell(string a_spellKey)
@@ -158,22 +131,20 @@ public class Musician : MonoBehaviour
                 m_spellPlay = true;
                 m_spellLoc = I;
                 m_noteCount = (uint)m_spellList[I].Length;
-                m_noteTime = (turnTick / m_noteCount);
+                m_noteTime = (s_turnTick / m_noteCount);
                 m_notesPlayed = 0;
             }
         }
     }
     //*dies
-    protected virtual void Die() 
-    { 
-    }
-    public Stats Statistics
+    protected virtual void Die()
     {
-        get { return m_stats; }
-    }
-    public Stats CurrentModifers
-    {
-        get { return m_mods; }
+        Active = false;
     }
 
+    public bool Active
+    {
+        get;
+        set;
+    }
 }

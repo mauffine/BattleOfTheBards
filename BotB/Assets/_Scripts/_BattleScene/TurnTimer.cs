@@ -5,6 +5,7 @@ public class TurnTimer : MonoBehaviour
 {
     //Attributes
     public static TurnTimer Instance { get; private set; }
+    [SerializeField]
     Turn m_currentTurn;
     [SerializeField]
     float m_castingTime, m_menuTime, m_countDown;
@@ -16,6 +17,7 @@ public class TurnTimer : MonoBehaviour
     void Start()
     {
         m_countDown = m_menuTime;
+        m_currentTurn = Turn.Menu;  
     }
     void Update()
     {

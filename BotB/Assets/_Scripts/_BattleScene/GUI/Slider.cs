@@ -8,38 +8,32 @@ public class Slider : MonoBehaviour
     [SerializeField]
     float m_screenWidth = 1920;
     float m_turnTime;
-    Turn m_turn;
+    float m_resetTick;
 	// Use this for initialization
     private static Vector3 pos, locPos;
 	void Start() 
     {
-        m_screenWidth /= 2;
-        m_turnTime =  1 / TurnTimer.Instance.CastingTime;//Scales the time for the slider
-        m_turn = TurnTimer.Instance.CurrentTurn;
+        //m_screenWidth /= 2;
+        m_resetTick = TurnTimer.Instance.CurrentTime;
+        m_turnTime =  1 / TurnTimer.Instance.CurrentTime;//Scales the time for the slider
 	}
 	
 	// Update is called once per frame
 	void Update() 
     {
-        float modTime = (m_turnTime * Time.deltaTime);
-        Turn turn = TurnTimer.Instance.CurrentTurn;
-        
-        if (turn == Turn.Casting)
-            m_transform.localPosition += new Vector3(m_screenWidth * modTime, 0, 0);
-        else
-            m_transform.localPosition -= new Vector3(m_screenWidth * modTime, 0, 0);
+        float modTime = (m_turnTime * Time.deltaTime) / 4;
 
-        if (m_turn != turn)
+        m_resetTick -= Time.deltaTime;
+        bool playerTurn = (m_resetTick < 0);
+        
+        m_transform.localPosition += new Vector3(m_screenWidth * modTime, 0, 0);
+        if (playerTurn)
         {
             Vector3 myPos = m_transform.localPosition;
-            if (turn == Turn.Casting)
-                m_transform.localPosition = new Vector3(-966, myPos.y, myPos.z);
-            else
-                m_transform.localPosition = new Vector3(966, myPos.y, myPos.z);
-            m_turn = turn;
-            Vector3 flipScale = new Vector3(m_transform.localScale.x * -1,100,1);
-            m_transform.localScale = flipScale;
+            m_resetTick = TurnTimer.Instance.CurrentTime;
+            m_transform.localPosition = new Vector3(-966, myPos.y, myPos.z);
         }
+
         pos = m_transform.position;
         locPos = m_transform.localPosition;
 	}

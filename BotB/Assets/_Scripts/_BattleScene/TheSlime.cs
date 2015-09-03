@@ -8,7 +8,7 @@ public class TheSlime : Musician
     void Start()
     {
         base.Start();
-        m_stats.Health = 300;
+        m_health = 300;
     }
 
     // Update is called once per frame
@@ -19,8 +19,5 @@ public class TheSlime : Musician
 
     protected override void Die()
     {
-        if (m_stats.Health <= 0)
-        {
-        }
     }
 }
