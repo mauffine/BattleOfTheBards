@@ -86,6 +86,10 @@ public class NoteVisualiser : MonoBehaviour
 
     private void Reset()
     {
+        for(int I = 0; I < m_noteList.Count; ++I)
+        {
+            Destroy(m_noteList[I]);
+        }
         m_noteList.Clear();
     }
     public static NoteVisualiser Reference

@@ -14,14 +14,14 @@ public class Slider : MonoBehaviour
 	void Start() 
     {
         //m_screenWidth /= 2;
-        m_resetTick = TurnTimer.Instance.CurrentTime;
-        m_turnTime =  1 / TurnTimer.Instance.CurrentTime;//Scales the time for the slider
+        m_resetTick = TurnTimer.Instance.CastingTime;
+        m_turnTime = 1 / TurnTimer.Instance.CastingTime;//Scales the time for the slider
 	}
 	
 	// Update is called once per frame
 	void Update() 
     {
-        float modTime = (m_turnTime * Time.deltaTime) / 4;
+        float modTime = (m_turnTime * Time.deltaTime);
 
         m_resetTick -= Time.deltaTime;
         bool playerTurn = (m_resetTick < 0);
@@ -30,7 +30,7 @@ public class Slider : MonoBehaviour
         if (playerTurn)
         {
             Vector3 myPos = m_transform.localPosition;
-            m_resetTick = TurnTimer.Instance.CurrentTime;
+            m_resetTick = TurnTimer.Instance.CastingTime;
             m_transform.localPosition = new Vector3(-966, myPos.y, myPos.z);
         }
 

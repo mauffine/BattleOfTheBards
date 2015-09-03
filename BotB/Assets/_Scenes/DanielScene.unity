@@ -4653,7 +4653,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cb66a6b690c59c14f984679662aaddf4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_spriteDisplay: []
+  m_spriteDisplay:
+  - {fileID: 129508, guid: b85528f13db6ee4478248a2d55dcb5f1, type: 2}
+  - {fileID: 129210, guid: ef62550cc4866e24396edfc722ff0b65, type: 2}
+  - {fileID: 119968, guid: 57b601e69a961c1419815f6b7d82ade0, type: 2}
+  - {fileID: 158328, guid: 5949838d17b178d49b4f25bdf3a967d0, type: 2}
+  - {fileID: 197996, guid: 7ee4b2c64a82f0b4f812388dd5876f7c, type: 2}
 --- !u!1001 &1850752162
 Prefab:
   m_ObjectHideFlags: 0
@@ -5320,6 +5325,18 @@ Prefab:
       propertyPath: m_Player
       value: 
       objectReference: {fileID: 588442637}
+    - target: {fileID: 11461622, guid: c2cb8aafa83d79f4bb15694996577265, type: 2}
+      propertyPath: m_castingTime
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 11461622, guid: c2cb8aafa83d79f4bb15694996577265, type: 2}
+      propertyPath: m_menuTime
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 11461622, guid: c2cb8aafa83d79f4bb15694996577265, type: 2}
+      propertyPath: m_countDown
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c2cb8aafa83d79f4bb15694996577265, type: 2}
   m_IsPrefabParent: 0
