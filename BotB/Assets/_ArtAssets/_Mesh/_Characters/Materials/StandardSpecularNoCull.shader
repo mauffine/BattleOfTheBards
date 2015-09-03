@@ -1,4 +1,4 @@
-Shader "Standard (Specular setup)"
+Shader "StandardNoCull"
 {
 	Properties
 	{
