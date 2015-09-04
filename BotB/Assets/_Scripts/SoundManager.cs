@@ -12,9 +12,14 @@ public class SoundManager : MonoBehaviour
     AudioClip m_backgroundSong;
     [SerializeField]
     float m_Backgroundvolume = 0.0f;
-
+    
+    AudioPool m_audioPool;
+    [SerializeField]
+    GameObject m_audioSourcePrefab;
 
     private readonly Vector3 origin = new Vector3(0, 0, 0);
+
+    
 	// Use this for initialization
 	void Start() 
     {
@@ -26,7 +31,16 @@ public class SoundManager : MonoBehaviour
             m_noteArray[I] = Resources.Load<AudioClip>("_Sound/Piano Notes/" + clipTitle);
             ++clipTitle;
         }
-        AudioSource.PlayClipAtPoint(m_backgroundSong, origin, m_Backgroundvolume);
+
+        gameObject.AddComponent<AudioPool>();
+        m_audioPool = GetComponent<AudioPool>();
+        m_audioPool.Initialise(m_audioSourcePrefab);
+        //m_audioPool.m_audioSourcePrefab = m_audioSourcePrefab;
+
+        m_audioPool.PlayClip(m_backgroundSong);
+        //AudioSource.PlayClipAtPoint(m_backgroundSong, origin, m_Backgroundvolume);
+
+        
 	}
     public void ReceiveNote(TimedNote a_note)
     {
@@ -36,31 +50,32 @@ public class SoundManager : MonoBehaviour
             case Note.A_:
                 break;
             case Note.A:
-                AudioSource.PlayClipAtPoint(m_noteArray[0], origin, m_noteVolume);
+                //AudioSource.PlayClipAtPoint(m_noteArray[0], origin, m_noteVolume);
+                m_audioPool.PlayClip(m_noteArray[0]);
                 break;
             case Note.B_:
                 break;
             case Note.B:
-                AudioSource.PlayClipAtPoint(m_noteArray[1], origin, m_noteVolume);
+                m_audioPool.PlayClip(m_noteArray[1]);
                 break;
             case Note.C:
-                AudioSource.PlayClipAtPoint(m_noteArray[2], origin, m_noteVolume);
+                m_audioPool.PlayClip(m_noteArray[2]);
                 break;
             case Note.D_:
                 break;
             case Note.D:
-                AudioSource.PlayClipAtPoint(m_noteArray[3], origin, m_noteVolume);
+                m_audioPool.PlayClip(m_noteArray[3]);
                 break;
             case Note.E:
-                AudioSource.PlayClipAtPoint(m_noteArray[4], origin, m_noteVolume);
+                m_audioPool.PlayClip(m_noteArray[4]);
                 break;
             case Note.F_:
                 break;
             case Note.F:
-                AudioSource.PlayClipAtPoint(m_noteArray[5], origin, m_noteVolume);
+                m_audioPool.PlayClip(m_noteArray[5]);
                 break;
             case Note.G:
-                AudioSource.PlayClipAtPoint(m_noteArray[6], origin, m_noteVolume);
+                m_audioPool.PlayClip(m_noteArray[6]);
                 break;
             default:
                 break;
@@ -71,6 +86,7 @@ public class SoundManager : MonoBehaviour
     {
 	
 	}
+
     public static SoundManager Reference
     {
         get { return s_SoundManRef; }
