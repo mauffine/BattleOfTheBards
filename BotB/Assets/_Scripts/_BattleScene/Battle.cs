@@ -39,17 +39,17 @@ public struct TimedNote
 public class Battle : MonoBehaviour
 {
     //Attributes
-    public static Battle Instance;
-    public GameObject m_Player, m_currentEnemy;
-    public bool m_win, m_playing;
+    public static Battle Instance; //singleton instance
+    public GameObject m_Player, m_currentEnemy; //the characters in the scene
+    public bool m_win, m_playing; //bools for the end of the battle
     //Behavious
     void Awake()
     {
-        Instance = this;
+        Instance = this; //set singleton instance to this
     }
     void Start()
     {
-        Application.targetFrameRate = 300;
+        Application.targetFrameRate = 300; //attampt this framerate
 
     }
     void Update()
@@ -58,16 +58,19 @@ public class Battle : MonoBehaviour
     }
     public void ReceiveKey(TimedNote a_note)
     {
+        //send the keypress notifications to the following scripts
         SpellSystem.Instance.ReceiveKey(a_note);
         SoundManager.Reference.ReceiveNote(a_note);
         NoteVisualiser.Reference.ReceiveNote(a_note);
     }
     public void ReceiveTurnOver()
     {
+        //notify these scripts that the casting turn is over
         SpellSystem.Instance.CastSpells();
     }
     public void DealDamage(int a_damage, bool a_toPlayer)
     {
+        //deal damage to the approriate character in the scene
         if (a_toPlayer)
             m_Player.GetComponent<TheBard>().TakeDamage(a_damage);
         else

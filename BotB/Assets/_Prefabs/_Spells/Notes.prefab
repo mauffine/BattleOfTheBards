@@ -72,6 +72,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_speedModifier: 0
   m_velocity: {x: 0, y: 0, z: 0}
+  m_name: 
 --- !u!198 &19814080
 ParticleSystem:
   m_ObjectHideFlags: 1

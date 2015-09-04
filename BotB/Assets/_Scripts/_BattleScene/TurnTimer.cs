@@ -8,7 +8,11 @@ public class TurnTimer : MonoBehaviour
     [SerializeField]
     Turn m_currentTurn;
     [SerializeField]
-    float m_castingTime, m_menuTime, m_countDown;
+    float m_castingTime; //how much time there is to cast,
+    [SerializeField]
+    float m_menuTime; //how much time there is to select spells from menu,
+    [SerializeField]
+    float m_countDown; //were in the current turn the game is
     //Behavious
     void Awake()
     {
@@ -35,16 +39,15 @@ public class TurnTimer : MonoBehaviour
         }
         
     }
-    public Turn CurrentTurn 
+    public Turn CurrentTurn //the current turn
     { 
         get { return m_currentTurn; } 
     }
-    public float CurrentTime
+    public float CurrentTime //the current time in the turn
     {
         get { return m_countDown; }
     }
-    /// <summary>Current Time within the current turn</summary>
-    public float CastingTime
+    public float CastingTime //how much time the casting turn lasts for
     {
         get { return m_castingTime; }
     }
