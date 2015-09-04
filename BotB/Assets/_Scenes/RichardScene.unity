@@ -6141,6 +6141,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: de0332b049833bf47b5386b244576f21, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_currentTurn: 0
+  m_castingTime: 4
+  m_menuTime: 2
+  m_countDown: 0
 --- !u!4 &1775765532
 Transform:
   m_ObjectHideFlags: 0
@@ -6164,12 +6168,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 46440103293007a4fbc190bcdd49be22, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_player: {fileID: 575474540}
-  m_slime: {fileID: 1197531538}
-  m_GUICanvas: {fileID: 1727921408}
+  m_Player: {fileID: 575474540}
+  m_currentEnemy: {fileID: 1197531538}
   m_win: 0
   m_playing: 1
-  m_playerTurn: 0
 --- !u!114 &1775765534
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6198,9 +6200,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ba72cbaf182ad194c8152dcf7bdd3c2f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_emitters: []
-  m_noteSpells: []
-  m_damage: 0
+  m_spellPrefabs: []
 --- !u!114 &1775765536
 MonoBehaviour:
   m_ObjectHideFlags: 0

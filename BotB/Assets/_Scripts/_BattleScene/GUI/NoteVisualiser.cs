@@ -4,7 +4,7 @@ using System.Collections.Generic;
 public class NoteVisualiser : MonoBehaviour 
 {
     bool m_putDown = false;
-    bool m_playerTurn;
+    Turn m_turn;
     Note m_noteType;
     [SerializeField]
    // Sprite[] m_spriteSheet;
@@ -20,9 +20,9 @@ public class NoteVisualiser : MonoBehaviour
         refToMe = this;
 
         m_spriteDisplay = new List<GameObject>();
-        m_greyDisplay = new List<GameObject>();
+        //m_greyDisplay = new List<GameObject>();
         m_spriteDisplay.Capacity = 15;
-        m_playerTurn = Battle.BattleReference.PlayerTurn;
+        m_turn = TurnTimer.Instance.CurrentTurn;
         m_notePool = transform.parent.GetComponent<NotePool>();
 	}
 	
@@ -35,11 +35,11 @@ public class NoteVisualiser : MonoBehaviour
             PushNote(m_noteType);
         }
 
-        if (m_playerTurn != Battle.BattleReference.PlayerTurn)
+        if (m_turn != TurnTimer.Instance.CurrentTurn)
         {
-            m_playerTurn = Battle.BattleReference.PlayerTurn;
+            m_turn = TurnTimer.Instance.CurrentTurn;
             m_notePool.RemoveAllNotes();
-            Swap();
+            //Reset();
         }
 	}
     public void ReceiveNote(TimedNote a_note)
