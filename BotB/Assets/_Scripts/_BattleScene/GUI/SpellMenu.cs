@@ -35,15 +35,16 @@ public class SpellMenu : MonoBehaviour
         //m_leftSelection = (GameObject)Instantiate(Resources.Load("_Prefabs/Notes/Note A"), new Vector3(0, 0, 0), new Quaternion(0, 1, 0, 0));
         //m_leftSelection.transform.SetParent(this.transform.parent);
         //m_leftSelection.transform.localPosition = new Vector3(0, 0, 0);
+        
 	}
 	
 	// Update is called once per frame
 	void Update() 
     {
-        if (Input.GetKey(KeyCode.W))
-            HideMenu();
-        else
+        if (TurnTimer.Instance.CurrentTurn == Turn.Menu)
             ShowMenu();
+        else
+            HideMenu();  
 
         if(m_showMenu)
         {
