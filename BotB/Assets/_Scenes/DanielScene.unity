@@ -1644,8 +1644,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_name: Bard
   m_sceneHandler: {fileID: 1775765530}
-  m_attack: 0
-  m_defence: 0
   m_health: 0
 --- !u!4 &598359169 stripped
 Transform:
@@ -5331,7 +5329,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 11461622, guid: c2cb8aafa83d79f4bb15694996577265, type: 2}
       propertyPath: m_menuTime
-      value: 0
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 11461622, guid: c2cb8aafa83d79f4bb15694996577265, type: 2}
       propertyPath: m_countDown
