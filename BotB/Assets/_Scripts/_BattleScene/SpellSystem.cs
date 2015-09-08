@@ -136,7 +136,7 @@ public class SpellSystem : MonoBehaviour
                                 }
                                 break;
                             }
-                        case "Firebolt":
+                        case "FireBolt":
                             {
                                 if (a_currentNotes[i].m_playerOwned)
                                 {
