@@ -131,6 +131,42 @@ Prefab:
       propertyPath: m_Name
       value: FireLights (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 166666, guid: 541c59260fc03c640ae5040af608f413, type: 2}
+      propertyPath: m_Layer
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 168374, guid: 541c59260fc03c640ae5040af608f413, type: 2}
+      propertyPath: m_Layer
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 161646, guid: 541c59260fc03c640ae5040af608f413, type: 2}
+      propertyPath: m_Layer
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 159988, guid: 541c59260fc03c640ae5040af608f413, type: 2}
+      propertyPath: m_Layer
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 124072, guid: 541c59260fc03c640ae5040af608f413, type: 2}
+      propertyPath: m_Layer
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 109398, guid: 541c59260fc03c640ae5040af608f413, type: 2}
+      propertyPath: m_Layer
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 113360, guid: 541c59260fc03c640ae5040af608f413, type: 2}
+      propertyPath: m_Layer
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 173274, guid: 541c59260fc03c640ae5040af608f413, type: 2}
+      propertyPath: m_Layer
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 108386, guid: 541c59260fc03c640ae5040af608f413, type: 2}
+      propertyPath: m_Layer
+      value: 5
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 541c59260fc03c640ae5040af608f413, type: 2}
   m_IsPrefabParent: 0
@@ -214,7 +250,7 @@ GameObject:
   - 4: {fileID: 84313228}
   - 212: {fileID: 84313230}
   - 114: {fileID: 84313229}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: UpSelect
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1216,6 +1252,42 @@ Prefab:
       propertyPath: m_RootOrder
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 166666, guid: 541c59260fc03c640ae5040af608f413, type: 2}
+      propertyPath: m_Layer
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 168374, guid: 541c59260fc03c640ae5040af608f413, type: 2}
+      propertyPath: m_Layer
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 161646, guid: 541c59260fc03c640ae5040af608f413, type: 2}
+      propertyPath: m_Layer
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 159988, guid: 541c59260fc03c640ae5040af608f413, type: 2}
+      propertyPath: m_Layer
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 124072, guid: 541c59260fc03c640ae5040af608f413, type: 2}
+      propertyPath: m_Layer
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 109398, guid: 541c59260fc03c640ae5040af608f413, type: 2}
+      propertyPath: m_Layer
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 113360, guid: 541c59260fc03c640ae5040af608f413, type: 2}
+      propertyPath: m_Layer
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 173274, guid: 541c59260fc03c640ae5040af608f413, type: 2}
+      propertyPath: m_Layer
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 108386, guid: 541c59260fc03c640ae5040af608f413, type: 2}
+      propertyPath: m_Layer
+      value: 5
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 541c59260fc03c640ae5040af608f413, type: 2}
   m_IsPrefabParent: 0
@@ -1676,7 +1748,7 @@ GameObject:
   - 4: {fileID: 779418791}
   - 212: {fileID: 779418793}
   - 114: {fileID: 779418792}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: RightSelect
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1830,7 +1902,7 @@ Camera:
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
-    m_Bits: 4294967039
+    m_Bits: 4294967007
   m_RenderingPath: -1
   m_TargetTexture: {fileID: 0}
   m_TargetDisplay: 0
@@ -4501,7 +4573,7 @@ AudioListener:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1344534678}
-  m_Enabled: 1
+  m_Enabled: 0
 --- !u!124 &1344534686
 Behaviour:
   m_ObjectHideFlags: 0
@@ -4533,7 +4605,7 @@ Camera:
   m_Depth: 1
   m_CullingMask:
     serializedVersion: 2
-    m_Bits: 256
+    m_Bits: 288
   m_RenderingPath: 1
   m_TargetTexture: {fileID: 0}
   m_TargetDisplay: 0
@@ -4629,7 +4701,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 1368876202}
   - 114: {fileID: 1368876203}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Lights
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5926,7 +5998,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 1502877544}
   - 114: {fileID: 1502877545}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: SpellMenu
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6709,7 +6781,7 @@ GameObject:
   - 114: {fileID: 1727921406}
   - 114: {fileID: 1727921409}
   - 114: {fileID: 1727921410}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: GUI
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7084,7 +7156,7 @@ GameObject:
   - 4: {fileID: 1847701818}
   - 212: {fileID: 1847701817}
   - 114: {fileID: 1847701819}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Notebar
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7243,7 +7315,7 @@ GameObject:
   - 4: {fileID: 1876369712}
   - 212: {fileID: 1876369714}
   - 114: {fileID: 1876369713}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: LeftSelect
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7375,7 +7447,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 1937121257}
   - 108: {fileID: 1937121256}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Directional light
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7578,7 +7650,7 @@ GameObject:
   - 4: {fileID: 2113909153}
   - 212: {fileID: 2113909154}
   - 114: {fileID: 2113909155}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Slider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
