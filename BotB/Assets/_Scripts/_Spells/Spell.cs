@@ -5,15 +5,16 @@ public class Spell : MonoBehaviour
 {
     public float m_speedModifier;//modifier for deltaTime
     public Vector3 m_velocity;//The velocity
-    public string m_name;
 
     protected string m_key;//A key to show what key
     protected int m_damage;
+    protected SpellType m_type;
 	// Use this for initialization
 	protected void Start() 
     {
         m_speedModifier = 80;
         m_damage = 20;
+        m_type = SpellType.Attack;
 	}
 	// Update is called once per frame
 	protected void Update() 
@@ -24,8 +25,16 @@ public class Spell : MonoBehaviour
     {
         get { return m_damage; }
     }
-    public virtual string Key
+    public virtual Note[] Key
     {
-        get { return m_key; }
+        get { return null; }
+    }
+    public virtual string Name
+    {
+        get { return null; }
+    }
+    public SpellType Type
+    {
+        get { return m_type; }
     }
 }

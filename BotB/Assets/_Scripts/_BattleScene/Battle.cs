@@ -2,7 +2,13 @@
 using UnityEngine.UI;
 using System.Collections;
 using System.Collections.Generic;
-public enum Turn
+public enum SpellType : byte //What type of spell it is
+{
+    Attack, 
+    Defense, 
+    Effect
+}
+public enum Turn : byte //Which turn it currently is
 {
     Casting, Menu
 }
@@ -24,8 +30,8 @@ public enum Note : byte
 /// <summary>A struct for the time a note was played and the note itself</summary>
 public struct TimedNote
 {
-    public Note m_note;
     public float m_time;
+    public Note m_note;
     public bool m_playerOwned; //need a better name...
     public TimedNote(Note a_note, float a_time, bool a_playerOwned = false)
     {

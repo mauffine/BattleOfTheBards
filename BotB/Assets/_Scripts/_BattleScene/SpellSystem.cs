@@ -7,11 +7,11 @@ public class SpellSystem : MonoBehaviour
     //Attributes
     List<TimedNote> m_playerNotes = new List<TimedNote>();
     [SerializeField]
-    List<GameObject> m_playerSpells = new List<GameObject>();
+    GameObject m_playerSpell;
 
     List<TimedNote> m_enemyNotes = new List<TimedNote>();
     [SerializeField]
-    List<GameObject> m_enemySpells = new List<GameObject>();
+    GameObject m_enemySpell;
 
     public List<GameObject> m_spellPrefabs = new List<GameObject>();
 
@@ -27,14 +27,10 @@ public class SpellSystem : MonoBehaviour
     }
     void Start()
     {
-        Note[] IceBolt = new Note[] { Note.C, Note.D, Note.E, Note.B, Note.A };
-        m_spellList.Add("IceBolt", IceBolt);
-        Note[] ArcaneBolt = new Note[] { Note.A, Note.A, Note.D, Note.E, Note.B };
-        m_spellList.Add("ArcaneBolt", ArcaneBolt);
-        Note[] FireBolt = new Note[] { Note.B, Note.B, Note.E, Note.D, Note.C };
-        m_spellList.Add("FireBolt", FireBolt);
-        Note[] WindBolt = new Note[] { Note.D, Note.E, Note.B, Note.C, Note.A };
-        m_spellList.Add("WindBolt", WindBolt);
+        for (int i = 0; i < m_spellPrefabs.Count; ++i)
+        {
+            m_spellList.Add(m_spellPrefabs[i].GetComponent<Spell>().Name, m_spellPrefabs[i].GetComponent<Spell>().Key);
+        }
         m_damage = 0;
         m_flightTime = 1.0f;
     }
@@ -47,31 +43,23 @@ public class SpellSystem : MonoBehaviour
             m_flightTime -= Time.deltaTime;
         if (m_flightTime <= 0 && TurnTimer.Instance.CurrentTurn == Turn.Menu)
         {
-            if (m_playerSpells.Count != 0)
+            if (m_playerSpell != null)
             {
-                var playerSpellEnum = m_playerSpells.GetEnumerator();
-                while (playerSpellEnum.MoveNext())
-                {
-                    m_damage = playerSpellEnum.Current.GetComponent<Spell>().Damage;
-                    m_damage += m_playerNotes.Count;
-                    Battle.Instance.DealDamage(m_damage, false);
-                    m_damage = 0;
-                    Destroy(playerSpellEnum.Current);
-                }
-                m_playerSpells.Clear();
+                m_damage = m_playerSpell.GetComponent<Spell>().Damage;
+                m_damage += m_playerNotes.Count;
+                Battle.Instance.DealDamage(m_damage, false);
+                m_damage = 0;
+                Destroy(m_playerSpell);
+                m_playerSpell = null;
             }
-            else if (m_enemySpells.Count != 0)
+            if (m_enemySpell != null)
             {
-                var enemySpellEnum = m_enemySpells.GetEnumerator();
-                while (enemySpellEnum.MoveNext())
-                {
-                    m_damage = enemySpellEnum.Current.GetComponent<Spell>().Damage;
-                    m_damage += m_playerNotes.Count;
-                    Battle.Instance.DealDamage(m_damage, true);
-                    m_damage = 0;
-                    Destroy(enemySpellEnum.Current);
-                }
-                m_enemySpells.Clear();
+                m_damage = m_enemySpell.GetComponent<Spell>().Damage;
+                m_damage += m_enemyNotes.Count;
+                Battle.Instance.DealDamage(m_damage, true);
+                m_damage = 0;
+                Destroy(m_enemySpell);
+                m_enemySpell = null;
             }
             m_playerNotes.Clear();
             m_enemyNotes.Clear();
@@ -99,76 +87,27 @@ public class SpellSystem : MonoBehaviour
         var spellEnumerator = a_spellList.GetEnumerator();
         while (spellEnumerator.MoveNext())
         {
-            //Check the full list of notes 4 at a time
             for (int i = 0; i + 4 < a_currentNotes.Count; ++i)
             {
                 Note[] currentSequence = new Note[] { a_currentNotes[i].m_note, a_currentNotes[i + 1].m_note, a_currentNotes[i + 2].m_note, a_currentNotes[i + 3].m_note, a_currentNotes[i + 4].m_note };
                 if (currentSequence.SequenceEqual(spellEnumerator.Current.Value))
                 {
-                    //Check what spell is being cast and by who
-                    switch (spellEnumerator.Current.Key)
+                    for (int o = 0; o < m_spellPrefabs.Count; ++o)
                     {
-                        case "IceBolt":
+                        if (spellEnumerator.Current.Key == m_spellPrefabs[o].GetComponent<Spell>().Name)
+                        {
+                            if (a_currentNotes[i].m_playerOwned)
                             {
-                                if (a_currentNotes[i].m_playerOwned)
-                                {
-                                    m_playerSpells.Add((GameObject)Instantiate(m_spellPrefabs[1], new Vector3(2, 1.3f, 1), Quaternion.AngleAxis(0, Vector3.up)));
-                                    m_playerSpells.Last<GameObject>().GetComponent<Spell>().m_velocity = new Vector3(-.03f, Random.Range(-.007f, 0.0f), 0.0f) * 2;
-                                }
-                                else
-                                {
-                                    m_enemySpells.Add((GameObject)Instantiate(m_spellPrefabs[1], new Vector3(-1.2f, 1f, 1.1f), Quaternion.AngleAxis(180, Vector3.up)));
-                                    m_enemySpells.Last<GameObject>().GetComponent<Spell>().m_velocity = new Vector3(-.03f, Random.Range(-.007f, 0.0007f), 0.0f) * 2;
-                                }
-                                break;
+                                m_playerSpell = (GameObject)Instantiate(m_spellPrefabs[o], new Vector3(2, 1.3f, 1), Quaternion.AngleAxis(0, Vector3.up));
+                                m_playerSpell.GetComponent<Spell>().m_velocity = new Vector3(-.03f, Random.Range(-.007f, 0.0f), 0.0f) * 2;
                             }
-                        case "ArcaneBolt":
+                            else
                             {
-                                if (a_currentNotes[i].m_playerOwned)
-                                {
-                                    m_playerSpells.Add((GameObject)Instantiate(m_spellPrefabs[2], new Vector3(2, 1.3f, 1), Quaternion.AngleAxis(0, Vector3.up)));
-                                    m_playerSpells.Last<GameObject>().GetComponent<Spell>().m_velocity = new Vector3(-.03f, Random.Range(-.007f, 0.0f), 0.0f) * 2;
-                                }
-                                else
-                                {
-                                    m_enemySpells.Add((GameObject)Instantiate(m_spellPrefabs[2], new Vector3(-1.2f, 1f, 1.1f), Quaternion.AngleAxis(180, Vector3.up)));
-                                    m_enemySpells.Last<GameObject>().GetComponent<Spell>().m_velocity = new Vector3(-.03f, Random.Range(-.007f, 0.007f), 0.0f) * 2;
-                                }
-                                break;
+                                m_enemySpell = (GameObject)Instantiate(m_spellPrefabs[o], new Vector3(-1.2f, 1f, 1.1f), Quaternion.AngleAxis(180, Vector3.up));
+                                m_enemySpell.GetComponent<Spell>().m_velocity = new Vector3(-.03f, Random.Range(-.007f, 0.0007f), 0.0f) * 2;
                             }
-                        case "FireBolt":
-                            {
-                                if (a_currentNotes[i].m_playerOwned)
-                                {
-                                    m_playerSpells.Add((GameObject)Instantiate(m_spellPrefabs[3], new Vector3(2, 1.3f, 1), Quaternion.AngleAxis(0, Vector3.up)));
-                                    m_playerSpells.Last<GameObject>().GetComponent<Spell>().m_velocity = new Vector3(-.03f, Random.Range(-.007f, 0.0f), 0.0f) * 2;
-                                }
-                                else
-                                {
-                                    m_enemySpells.Add((GameObject)Instantiate(m_spellPrefabs[3], new Vector3(-1.2f, 1f, 1.1f), Quaternion.AngleAxis(180, Vector3.up)));
-                                    m_enemySpells.Last<GameObject>().GetComponent<Spell>().m_velocity = new Vector3(-.03f, Random.Range(-.007f, 0.007f), 0.0f) * 2;
-                                }
-                                break;
-                            }
-                        case "WindBolt":
-                            {
-                                if (a_currentNotes[i].m_playerOwned)
-                                {
-                                    m_playerSpells.Add((GameObject)Instantiate(m_spellPrefabs[4], new Vector3(2, 1.3f, 1), Quaternion.AngleAxis(0, Vector3.up)));
-                                    m_playerSpells.Last<GameObject>().GetComponent<Spell>().m_velocity = new Vector3(-.03f, Random.Range(-.007f, 0.0f), 0.0f) * 2;
-                                }
-                                else
-                                {
-                                    m_enemySpells.Add((GameObject)Instantiate(m_spellPrefabs[4], new Vector3(-1.2f, 1f, 1.1f), Quaternion.AngleAxis(180, Vector3.up)));
-                                    m_enemySpells.Last<GameObject>().GetComponent<Spell>().m_velocity = new Vector3(-.03f, Random.Range(-.007f, 0.007f), 0.0f) * 2;
-                                }
-                                break;
-                            }
-
-                        default:
-                            break;
+                        }
                     }
-
                 }
             }
         }
