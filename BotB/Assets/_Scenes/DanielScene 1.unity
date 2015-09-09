@@ -1644,7 +1644,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_name: Bard
   m_sceneHandler: {fileID: 1775765530}
-  m_health: 0
 --- !u!4 &598359169 stripped
 Transform:
   m_PrefabParentObject: {fileID: 400016, guid: 07d6e0ec8f8d0134ca861ad547ce615d, type: 3}
@@ -3496,7 +3495,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 8b535999f9994104c8ac7a9d9d11a051, type: 3}
       propertyPath: m_RootOrder
-      value: 0
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 400124, guid: 8b535999f9994104c8ac7a9d9d11a051, type: 3}
       propertyPath: m_LocalRotation.x
@@ -4294,6 +4293,7 @@ GameObject:
   - 114: {fileID: 1727921407}
   - 114: {fileID: 1727921406}
   - 114: {fileID: 1727921409}
+  - 114: {fileID: 1727921410}
   m_Layer: 0
   m_Name: GUI
   m_TagString: Untagged
@@ -4386,6 +4386,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e0345c3030d84654f815930ea0222b5b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1727921410
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1727921404}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 77af42e9d4fcf8c44a28198b46ab29e9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_notePrefab: {fileID: 121142, guid: 9b473cfd2979ce645bbe846119a8e7ba, type: 2}
+  m_noteA: {fileID: 21300000, guid: 715be61205baec94e881784e56cddaea, type: 3}
+  m_noteB: {fileID: 21300002, guid: 715be61205baec94e881784e56cddaea, type: 3}
+  m_noteC: {fileID: 21300004, guid: 715be61205baec94e881784e56cddaea, type: 3}
+  m_noteD: {fileID: 21300006, guid: 715be61205baec94e881784e56cddaea, type: 3}
+  m_noteE: {fileID: 21300008, guid: 715be61205baec94e881784e56cddaea, type: 3}
+  m_noteBLANK: {fileID: 21300010, guid: 715be61205baec94e881784e56cddaea, type: 3}
 --- !u!1 &1749193688
 GameObject:
   m_ObjectHideFlags: 0
@@ -4635,7 +4653,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1847701816}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -.0158399548, y: -298, z: .999904573}
+  m_LocalPosition: {x: -.0158399548, y: -357, z: .999904573}
   m_LocalScale: {x: 101, y: 101, z: 1}
   m_Children: []
   m_Father: {fileID: 1727921405}
@@ -4651,12 +4669,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cb66a6b690c59c14f984679662aaddf4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_spriteDisplay:
-  - {fileID: 129508, guid: b85528f13db6ee4478248a2d55dcb5f1, type: 2}
-  - {fileID: 129210, guid: ef62550cc4866e24396edfc722ff0b65, type: 2}
-  - {fileID: 119968, guid: 57b601e69a961c1419815f6b7d82ade0, type: 2}
-  - {fileID: 158328, guid: 5949838d17b178d49b4f25bdf3a967d0, type: 2}
-  - {fileID: 197996, guid: 7ee4b2c64a82f0b4f812388dd5876f7c, type: 2}
 --- !u!1001 &1850752162
 Prefab:
   m_ObjectHideFlags: 0
@@ -5335,6 +5347,18 @@ Prefab:
       propertyPath: m_countDown
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 11414214, guid: c2cb8aafa83d79f4bb15694996577265, type: 2}
+      propertyPath: m_audioSourcePrefab
+      value: 
+      objectReference: {fileID: 182634, guid: 0afbba38684a4474995af6176e5df66f, type: 2}
+    - target: {fileID: 11414214, guid: c2cb8aafa83d79f4bb15694996577265, type: 2}
+      propertyPath: m_Backgroundvolume
+      value: .0125000002
+      objectReference: {fileID: 0}
+    - target: {fileID: 11414214, guid: c2cb8aafa83d79f4bb15694996577265, type: 2}
+      propertyPath: m_noteVolume
+      value: .75
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c2cb8aafa83d79f4bb15694996577265, type: 2}
   m_IsPrefabParent: 0
@@ -5408,7 +5432,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 2113909152}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 959, y: -276, z: 0}
+  m_LocalPosition: {x: 959, y: -330, z: 0}
   m_LocalScale: {x: -100, y: 100, z: 2}
   m_Children: []
   m_Father: {fileID: 1727921405}

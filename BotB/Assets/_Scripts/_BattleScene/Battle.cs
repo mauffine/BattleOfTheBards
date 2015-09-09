@@ -20,6 +20,7 @@ public enum Note : byte
     F_,
     F,
     G,
+    BLANK,
 };
 /// <summary>A struct for the time a note was played and the note itself</summary>
 public struct TimedNote
