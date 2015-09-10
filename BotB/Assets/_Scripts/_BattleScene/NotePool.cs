@@ -1,21 +1,19 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class NotePool : MonoBehaviour {
-
-    public GameObject m_notePrefab;
-
-    public Sprite m_noteA;
-    public Sprite m_noteB;
-    public Sprite m_noteC;
-    public Sprite m_noteD;
-    public Sprite m_noteE;
+public class NotePool : MonoBehaviour 
+{
+    [SerializeField]
+    private GameObject m_notePrefab;
+    [SerializeField]
+    private Sprite m_noteA, m_noteB, m_noteC, m_noteD, m_noteE, m_noteBLANK;
 
     //GameObject[] m_noteList;
     GameObject[] m_noteList;
 
 	// Use this for initialization
-	void Start () {
+	void Start() 
+    {
 
         m_noteList = new GameObject[32];
 
@@ -31,7 +29,8 @@ public class NotePool : MonoBehaviour {
 	}
 	
 	// Update is called once per frame
-	void Update () {
+	void Update() 
+    {
         //AddNote(new Vector2(-50, 0), Note.C);
 	}
 
@@ -83,6 +82,11 @@ public class NotePool : MonoBehaviour {
                     case Note.F:
                         break;
                     case Note.G:
+                        break;
+                    case Note.BLANK:
+                        {
+                            spriteRenderer.sprite = m_noteBLANK;
+                        }
                         break;
                     default:
                         break;

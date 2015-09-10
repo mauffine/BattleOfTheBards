@@ -16,9 +16,6 @@ public class SoundManager : MonoBehaviour
     AudioPool m_audioPool;
     [SerializeField]
     GameObject m_audioSourcePrefab;
-
-    private readonly Vector3 origin = new Vector3(0, 0, 0);
-
     
 	// Use this for initialization
 	void Start() 
@@ -37,9 +34,7 @@ public class SoundManager : MonoBehaviour
         m_audioPool.Initialise(m_audioSourcePrefab);
         //m_audioPool.m_audioSourcePrefab = m_audioSourcePrefab;
 
-        m_audioPool.PlayClip(m_backgroundSong);
-        //AudioSource.PlayClipAtPoint(m_backgroundSong, origin, m_Backgroundvolume);
-
+        m_audioPool.PlayClip(m_backgroundSong, m_Backgroundvolume);
         
 	}
     public void ReceiveNote(TimedNote a_note)
@@ -50,7 +45,6 @@ public class SoundManager : MonoBehaviour
             case Note.A_:
                 break;
             case Note.A:
-                //AudioSource.PlayClipAtPoint(m_noteArray[0], origin, m_noteVolume);
                 m_audioPool.PlayClip(m_noteArray[0]);
                 break;
             case Note.B_:

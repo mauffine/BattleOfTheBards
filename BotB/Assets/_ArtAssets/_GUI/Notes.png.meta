@@ -1,6 +1,6 @@
 fileFormatVersion: 2
 guid: 715be61205baec94e881784e56cddaea
-timeCreated: 1439529201
+timeCreated: 1441761666
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
@@ -9,6 +9,7 @@ TextureImporter:
     21300004: Notes_2
     21300006: Notes_3
     21300008: Notes_4
+    21300010: Notes_5
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
@@ -67,9 +68,9 @@ TextureImporter:
     - name: Notes_1
       rect:
         serializedVersion: 2
-        x: 131
+        x: 132
         y: 4
-        width: 121
+        width: 120
         height: 120
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -87,9 +88,9 @@ TextureImporter:
     - name: Notes_3
       rect:
         serializedVersion: 2
-        x: 387
+        x: 388
         y: 4
-        width: 122
+        width: 120
         height: 120
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -97,9 +98,19 @@ TextureImporter:
     - name: Notes_4
       rect:
         serializedVersion: 2
-        x: 515
+        x: 516
         y: 4
-        width: 121
+        width: 120
+        height: 120
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Notes_5
+      rect:
+        serializedVersion: 2
+        x: 644
+        y: 4
+        width: 120
         height: 120
       alignment: 0
       pivot: {x: 0, y: 0}
