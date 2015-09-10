@@ -1201,6 +1201,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 510791735}
+  - 114: {fileID: 510791736}
   m_Layer: 0
   m_Name: Bard
   m_TagString: Untagged
@@ -1221,6 +1222,19 @@ Transform:
   - {fileID: 586213013}
   m_Father: {fileID: 0}
   m_RootOrder: 3
+--- !u!114 &510791736
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 510791734}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d9648715b2e132146b890d79d387d998, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_name: 
+  m_sceneHandler: {fileID: 1775765530}
 --- !u!1001 &535792897
 Prefab:
   m_ObjectHideFlags: 0
@@ -3835,6 +3849,7 @@ MonoBehaviour:
   m_noteC: {fileID: 21300004, guid: 715be61205baec94e881784e56cddaea, type: 3}
   m_noteD: {fileID: 21300006, guid: 715be61205baec94e881784e56cddaea, type: 3}
   m_noteE: {fileID: 21300008, guid: 715be61205baec94e881784e56cddaea, type: 3}
+  m_noteBLANK: {fileID: 21300010, guid: 715be61205baec94e881784e56cddaea, type: 3}
 --- !u!1 &1743128867 stripped
 GameObject:
   m_PrefabParentObject: {fileID: 100134, guid: 8b535999f9994104c8ac7a9d9d11a051, type: 3}
@@ -3993,7 +4008,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 46440103293007a4fbc190bcdd49be22, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Player: {fileID: 0}
+  m_Player: {fileID: 510791734}
   m_currentEnemy: {fileID: 1197531538}
   m_win: 0
   m_playing: 1
@@ -4595,7 +4610,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cb66a6b690c59c14f984679662aaddf4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_spriteDisplay: []
 --- !u!1001 &1850752162
 Prefab:
   m_ObjectHideFlags: 0
@@ -4852,27 +4866,27 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 13700002, guid: 8b535999f9994104c8ac7a9d9d11a051, type: 3}
       propertyPath: m_AABB.m_Center.x
-      value: -.953991532
+      value: -.95399189
       objectReference: {fileID: 0}
     - target: {fileID: 13700002, guid: 8b535999f9994104c8ac7a9d9d11a051, type: 3}
       propertyPath: m_AABB.m_Center.y
-      value: 2.72702217
+      value: 2.72702098
       objectReference: {fileID: 0}
     - target: {fileID: 13700002, guid: 8b535999f9994104c8ac7a9d9d11a051, type: 3}
       propertyPath: m_AABB.m_Center.z
-      value: -.00751495361
+      value: -.00751447678
       objectReference: {fileID: 0}
     - target: {fileID: 13700002, guid: 8b535999f9994104c8ac7a9d9d11a051, type: 3}
       propertyPath: m_AABB.m_Extent.x
-      value: 1.58174801
+      value: 2.07134914
       objectReference: {fileID: 0}
     - target: {fileID: 13700002, guid: 8b535999f9994104c8ac7a9d9d11a051, type: 3}
       propertyPath: m_AABB.m_Extent.y
-      value: 1.50568354
+      value: 1.32513213
       objectReference: {fileID: 0}
     - target: {fileID: 13700002, guid: 8b535999f9994104c8ac7a9d9d11a051, type: 3}
       propertyPath: m_AABB.m_Extent.z
-      value: 1.46510947
+      value: 2.06797576
       objectReference: {fileID: 0}
     - target: {fileID: 100006, guid: 8b535999f9994104c8ac7a9d9d11a051, type: 3}
       propertyPath: m_IsActive
