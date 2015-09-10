@@ -8,7 +8,7 @@ public class FireBolt : Spell {
     {
         base.Start();
         m_damage = 20;
-        m_type = SpellType.Attack;
+        m_type = SpellType.Offencive;
     }
 
     // Update is called once per frame

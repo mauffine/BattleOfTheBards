@@ -4,8 +4,8 @@ using System.Collections;
 using System.Collections.Generic;
 public enum SpellType : byte //What type of spell it is
 {
-    Attack, 
-    Defense, 
+    Offencive,
+    Defensive, 
     Effect
 }
 public enum Turn : byte //Which turn it currently is
@@ -47,7 +47,7 @@ public class Battle : MonoBehaviour
 {
     //Attributes
     public static Battle Instance; //singleton instance
-    public GameObject m_Player, m_currentEnemy; //the characters in the scene
+    [SerializeField] GameObject m_Player, m_currentEnemy; //the characters in the scene
     public bool m_win, m_playing; //bools for the end of the battle
     //Behavious
     void Awake()
@@ -57,7 +57,6 @@ public class Battle : MonoBehaviour
     void Start()
     {
         Application.targetFrameRate = 300; //attampt this framerate
-
     }
     void Update()
     {

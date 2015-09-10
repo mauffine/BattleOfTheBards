@@ -1,24 +1,23 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class Hasten : Spell 
+public class TheSlime : Musician
 {
-    //string m_key = "AAAEA";
 
     // Use this for initialization
     void Start()
     {
         base.Start();
-        m_type = SpellType.Effect;
+        m_health = 300;
     }
 
     // Update is called once per frame
-    void Update()
+    void Update() 
     {
         base.Update();
     }
-    public override Note[] Key
+
+    protected override void Die()
     {
-        get { return new Note[] {Note.A, Note.A, Note.A, Note.E, Note.A}; }
     }
 }

@@ -7,7 +7,7 @@ public class IceShield : Spell {
     {
         base.Start();
         m_damage = 20;
-        m_type = SpellType.Defense;
+        m_type = SpellType.Defensive;
     }
 
     // Update is called once per frame
