@@ -66,7 +66,7 @@ LightmapSettings:
     m_FinalGather: 0
     m_FinalGatherRayCount: 1024
     m_ReflectionCompression: 2
-  m_LightmapSnapshot: {fileID: 112000000, guid: bc5fb69801aba7647b49160252f79d0b,
+  m_LightmapSnapshot: {fileID: 112000071, guid: 32dbdd302caaae4478c61109f7ac26b2,
     type: 2}
   m_RuntimeCPUUsage: 50
 --- !u!196 &5
@@ -3779,11 +3779,19 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 187724, guid: 003929773b76b8b4ca96e347890ac28a, type: 2}
       propertyPath: m_Name
-      value: Bard (1)
+      value: Bard
       objectReference: {fileID: 0}
+    - target: {fileID: 11499538, guid: 003929773b76b8b4ca96e347890ac28a, type: 2}
+      propertyPath: m_sceneHandler
+      value: 
+      objectReference: {fileID: 1775765530}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 003929773b76b8b4ca96e347890ac28a, type: 2}
   m_IsPrefabParent: 0
+--- !u!1 &1535237796 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 187724, guid: 003929773b76b8b4ca96e347890ac28a, type: 2}
+  m_PrefabInternal: {fileID: 1535237795}
 --- !u!1 &1562169344
 GameObject:
   m_ObjectHideFlags: 0
@@ -5180,6 +5188,10 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 11414214, guid: c2cb8aafa83d79f4bb15694996577265, type: 2}
+      propertyPath: m_noteArray.Array.size
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: 11481506, guid: c2cb8aafa83d79f4bb15694996577265, type: 2}
       propertyPath: m_spellPrefabs.Array.size
       value: 4
@@ -5263,7 +5275,7 @@ Prefab:
     - target: {fileID: 11494406, guid: c2cb8aafa83d79f4bb15694996577265, type: 2}
       propertyPath: m_Player
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1535237796}
     - target: {fileID: 11461622, guid: c2cb8aafa83d79f4bb15694996577265, type: 2}
       propertyPath: m_castingTime
       value: 4
@@ -5288,6 +5300,34 @@ Prefab:
       propertyPath: m_noteVolume
       value: .75
       objectReference: {fileID: 0}
+    - target: {fileID: 11414214, guid: c2cb8aafa83d79f4bb15694996577265, type: 2}
+      propertyPath: m_noteArray.Array.data[0]
+      value: 
+      objectReference: {fileID: 8300000, guid: 3db170713b982164da3023d8c8c637af, type: 3}
+    - target: {fileID: 11414214, guid: c2cb8aafa83d79f4bb15694996577265, type: 2}
+      propertyPath: m_noteArray.Array.data[1]
+      value: 
+      objectReference: {fileID: 8300000, guid: 598d3d58fc6a6c7439979404832525b7, type: 3}
+    - target: {fileID: 11414214, guid: c2cb8aafa83d79f4bb15694996577265, type: 2}
+      propertyPath: m_noteArray.Array.data[2]
+      value: 
+      objectReference: {fileID: 8300000, guid: b07018714d9aa5d48b4c570f129fe9dd, type: 3}
+    - target: {fileID: 11414214, guid: c2cb8aafa83d79f4bb15694996577265, type: 2}
+      propertyPath: m_noteArray.Array.data[3]
+      value: 
+      objectReference: {fileID: 8300000, guid: a2c4a05fac7aef748bb45013a942725f, type: 3}
+    - target: {fileID: 11414214, guid: c2cb8aafa83d79f4bb15694996577265, type: 2}
+      propertyPath: m_noteArray.Array.data[4]
+      value: 
+      objectReference: {fileID: 8300000, guid: e04773427d973d042b886cda0dc539ea, type: 3}
+    - target: {fileID: 11414214, guid: c2cb8aafa83d79f4bb15694996577265, type: 2}
+      propertyPath: m_noteArray.Array.data[5]
+      value: 
+      objectReference: {fileID: 8300000, guid: 8e6fcd90395a9954fbd80acdd84b4280, type: 3}
+    - target: {fileID: 11414214, guid: c2cb8aafa83d79f4bb15694996577265, type: 2}
+      propertyPath: m_noteArray.Array.data[6]
+      value: 
+      objectReference: {fileID: 8300000, guid: d40e28b8c5c49f8438eb56b298858521, type: 3}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c2cb8aafa83d79f4bb15694996577265, type: 2}
   m_IsPrefabParent: 0

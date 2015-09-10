@@ -18,6 +18,8 @@ public class SpellSystem : MonoBehaviour
     Dictionary<string, Note[]> m_spellList = new Dictionary<string, Note[]>();
 
     int m_damage;
+    [SerializeField]
+    float m_accuracy;
     float m_flightTime;
     public static SpellSystem Instance;
     //Behaviours
@@ -32,38 +34,225 @@ public class SpellSystem : MonoBehaviour
             m_spellList.Add(m_spellPrefabs[i].GetComponent<Spell>().Name, m_spellPrefabs[i].GetComponent<Spell>().Key);
         }
         m_damage = 0;
+        m_accuracy = 0; // this should always be out of 100;
         m_flightTime = 1.0f;
     }
 
     // Update is called once per frame
     void Update()
     {
-        //(broken) after a time when the spells are cast deal damage to the appropriate characters and remove the instantiated spells from the scene
+
         if (TurnTimer.Instance.CurrentTurn == Turn.Menu)
             m_flightTime -= Time.deltaTime;
-        if (m_flightTime <= 0 && TurnTimer.Instance.CurrentTurn == Turn.Menu)
+
+        if (m_flightTime <=0 && TurnTimer.Instance.CurrentTurn == Turn.Menu)
         {
-            if (m_playerSpell != null)
+            if (m_playerSpell != null && m_enemySpell != null)
             {
-                m_damage = m_playerSpell.GetComponent<Spell>().Damage;
-                m_damage += m_playerNotes.Count;
-                Battle.Instance.DealDamage(m_damage, false);
-                m_damage = 0;
-                Destroy(m_playerSpell);
-                m_playerSpell = null;
+                switch (m_playerSpell.GetComponent<Spell>().Type) //paper, scissors, rock aka Attack, Defense, Effect
+                {
+                    case SpellType.Attack:
+                        {
+                            switch (m_enemySpell.GetComponent<Spell>().Type)
+                            {
+                                case SpellType.Attack: //both Damage each other
+                                    {
+                                        m_damage = m_playerSpell.GetComponent<Spell>().Damage;
+                                        m_damage += m_playerNotes.Count;
+                                        Battle.Instance.DealDamage(m_damage, false);
+                                        m_damage = 0;
+                                        Destroy(m_playerSpell);
+                                        m_playerSpell = null;
+
+                                        m_damage = m_enemySpell.GetComponent<Spell>().Damage;
+                                        m_damage += m_enemyNotes.Count;
+                                        Battle.Instance.DealDamage(m_damage, true);
+                                        m_damage = 0;
+                                        Destroy(m_enemySpell);
+                                        m_enemySpell = null;
+                                    }
+                                    break;
+                                case SpellType.Defense: //reflect the player's spell back at him
+                                    {
+                                        m_damage = m_playerSpell.GetComponent<Spell>().Damage;
+                                        m_damage += m_enemyNotes.Count;
+                                        Battle.Instance.DealDamage(m_damage, true);
+                                        m_damage = 0;
+                                        Destroy(m_enemySpell);
+                                        m_enemySpell = null;
+
+                                        m_damage += m_playerNotes.Count;
+                                        Battle.Instance.DealDamage(m_damage, false);
+                                        m_damage = 0;
+                                        Destroy(m_playerSpell);
+                                        m_playerSpell = null;
+                                    }
+                                    break;
+                                case SpellType.Effect: //player spell breaks through the enemy's spell
+                                    {
+                                        m_damage = m_playerSpell.GetComponent<Spell>().Damage;
+                                        m_damage += m_playerNotes.Count;
+                                        Battle.Instance.DealDamage(m_damage, false);
+                                        m_damage = 0;
+                                        Destroy(m_playerSpell);
+                                        m_playerSpell = null;
+
+                                        m_damage += m_enemyNotes.Count;
+                                        Battle.Instance.DealDamage(m_damage, true);
+                                        m_damage = 0;
+                                        Destroy(m_enemySpell);
+                                        m_enemySpell = null;
+                                    }
+                                    break;
+                                default:
+                                    break;
+                            }
+                        }
+                        break;
+                    case SpellType.Defense:
+                        {
+                            switch (m_enemySpell.GetComponent<Spell>().Type)
+                            {
+                                case SpellType.Attack:
+                                    {
+                                        m_damage = m_enemySpell.GetComponent<Spell>().Damage;
+                                        m_damage += m_playerNotes.Count;
+                                        Battle.Instance.DealDamage(m_damage, false);
+                                        m_damage = 0;
+                                        Destroy(m_enemySpell);
+                                        m_enemySpell = null;
+
+                                        m_damage += m_enemyNotes.Count;
+                                        Battle.Instance.DealDamage(m_damage, true);
+                                        m_damage = 0;
+                                        Destroy(m_playerSpell);
+                                        m_playerSpell = null;
+                                    }
+                                    break;
+                                case SpellType.Defense:
+                                    {
+                                        //just sit around looking stupid
+                                        m_damage += m_playerNotes.Count;
+                                        Battle.Instance.DealDamage(m_damage, false);
+                                        m_damage = 0;
+                                        Destroy(m_enemySpell);
+                                        m_enemySpell = null;
+
+                                        m_damage += m_enemyNotes.Count;
+                                        Battle.Instance.DealDamage(m_damage, true);
+                                        m_damage = 0;
+                                        Destroy(m_playerSpell);
+                                        m_playerSpell = null;
+                                    }
+                                    break;
+                                case SpellType.Effect:
+                                    {
+                                        m_damage += m_playerNotes.Count;
+                                        Battle.Instance.DealDamage(m_damage, false);
+                                        m_damage = 0;
+                                        Destroy(m_playerSpell);
+                                        m_playerSpell = null;
+
+                                        m_damage = m_enemySpell.GetComponent<Spell>().Damage;
+                                        m_damage += m_enemyNotes.Count;
+                                        Battle.Instance.DealDamage(m_damage, true);
+                                        m_damage = 0;
+                                        Destroy(m_enemySpell);
+                                        m_enemySpell = null;
+                                    }
+                                    break;
+                                default:
+                                    break;
+                            }
+                        }
+                        break;
+                    case SpellType.Effect:
+                        {
+                            switch (m_enemySpell.GetComponent<Spell>().Type)
+                            {
+                                case SpellType.Attack:
+                                    {
+                                        m_damage += m_playerNotes.Count;
+                                        Battle.Instance.DealDamage(m_damage, false);
+                                        m_damage = 0;
+                                        Destroy(m_playerSpell);
+                                        m_playerSpell = null;
+
+                                        m_damage = m_enemySpell.GetComponent<Spell>().Damage;
+                                        m_damage += m_enemyNotes.Count;
+                                        Battle.Instance.DealDamage(m_damage, true);
+                                        m_damage = 0;
+                                        Destroy(m_enemySpell);
+                                        m_enemySpell = null;
+                                    }
+                                    break;
+                                case SpellType.Defense:
+                                    {
+                                        m_damage = m_playerSpell.GetComponent<Spell>().Damage;
+                                        m_damage += m_playerNotes.Count;
+                                        Battle.Instance.DealDamage(m_damage, false);
+                                        m_damage = 0;
+                                        Destroy(m_playerSpell);
+                                        m_playerSpell = null;
+
+                                        m_damage += m_enemyNotes.Count;
+                                        Battle.Instance.DealDamage(m_damage, true);
+                                        m_damage = 0;
+                                        Destroy(m_enemySpell);
+                                        m_enemySpell = null;
+                                    }
+                                    break;
+                                case SpellType.Effect:
+                                    {
+                                        m_damage = m_playerSpell.GetComponent<Spell>().Damage;
+                                        m_damage += m_playerNotes.Count;
+                                        Battle.Instance.DealDamage(m_damage, false);
+                                        m_damage = 0;
+                                        Destroy(m_playerSpell);
+                                        m_playerSpell = null;
+
+                                        m_damage = m_enemySpell.GetComponent<Spell>().Damage;
+                                        m_damage += m_enemyNotes.Count;
+                                        Battle.Instance.DealDamage(m_damage, true);
+                                        m_damage = 0;
+                                        Destroy(m_enemySpell);
+                                        m_enemySpell = null;
+                                    }
+                                    break;
+                                default:
+                                    break;
+                            }
+                        }
+                        break;
+                    default:
+                        break;
+                }
             }
-            if (m_enemySpell != null)
+            else
             {
-                m_damage = m_enemySpell.GetComponent<Spell>().Damage;
-                m_damage += m_enemyNotes.Count;
-                Battle.Instance.DealDamage(m_damage, true);
-                m_damage = 0;
-                Destroy(m_enemySpell);
-                m_enemySpell = null;
+                if (m_playerSpell != null)
+                {
+                    m_damage = m_playerSpell.GetComponent<Spell>().Damage;
+                    m_damage += m_playerNotes.Count;
+                    Battle.Instance.DealDamage(m_damage, false);
+                    m_damage = 0;
+                    Destroy(m_playerSpell);
+                    m_playerSpell = null;
+                }
+                if (m_enemySpell != null)
+                {
+                    m_damage = m_enemySpell.GetComponent<Spell>().Damage;
+                    m_damage += m_enemyNotes.Count;
+                    Battle.Instance.DealDamage(m_damage, true);
+                    m_damage = 0;
+                    Destroy(m_enemySpell);
+                    m_enemySpell = null;
+                }
+                m_playerNotes.Clear();
+                m_enemyNotes.Clear();
+                m_flightTime = 1.0f;
+                m_accuracy = 0;
             }
-            m_playerNotes.Clear();
-            m_enemyNotes.Clear();
-            m_flightTime = 1.0f;
         }
 
     }
@@ -72,7 +261,22 @@ public class SpellSystem : MonoBehaviour
     public void ReceiveKey(TimedNote a_note)
     {
         if (a_note.m_playerOwned)
+        {
             m_playerNotes.Add(a_note);
+            float noteTime = a_note.m_time * 120.0f * (1.0f / 60.0f);//gives how far off the beat that the note was played and which beat it was played on
+            float noteAccuracy = noteTime % 1; //converts the accuracy into a float from 0-1, the closer to 1 or 0 the closer to the beat the note was played
+            if (noteAccuracy > .5f) // convert the accuracy to a value between 0 and 0.5, the higher the more accurate
+            {
+                noteAccuracy -= .5f;
+            }
+            else
+            {
+                noteAccuracy = .5f - noteAccuracy;
+            }
+            noteAccuracy = ((noteAccuracy / .5f) * 100.0f) / 5; //convert it into a percentage and divide it by how many notes there are to be played in a single turn
+            m_accuracy += noteAccuracy;
+            //TODO: give a visual cue to how well the player has played
+        }
         else
             m_enemyNotes.Add(a_note);
     }
@@ -98,8 +302,11 @@ public class SpellSystem : MonoBehaviour
                         {
                             if (a_currentNotes[i].m_playerOwned)
                             {
-                                m_playerSpell = (GameObject)Instantiate(m_spellPrefabs[o], new Vector3(2, 1.3f, 1), Quaternion.AngleAxis(0, Vector3.up));
-                                m_playerSpell.GetComponent<Spell>().m_velocity = new Vector3(-.03f, Random.Range(-.007f, 0.0f), 0.0f) * 2;
+                                if (m_accuracy >= 50)
+                                {
+                                    m_playerSpell = (GameObject)Instantiate(m_spellPrefabs[o], new Vector3(2, 1.3f, 1), Quaternion.AngleAxis(0, Vector3.up));
+                                    m_playerSpell.GetComponent<Spell>().m_velocity = new Vector3(-.03f, Random.Range(-.007f, 0.0f), 0.0f) * 2;
+                                }
                             }
                             else
                             {
@@ -113,3 +320,8 @@ public class SpellSystem : MonoBehaviour
         }
     }
 }
+//function for checking casting accuracy
+/*
+ * float noteTime = note.m_time * 120.0f * (1.0f / 60.0f);
+    if (noteTime % 1 >= 0.9f || noteTime % 1 <= 0.1f)
+*/

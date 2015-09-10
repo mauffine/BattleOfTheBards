@@ -33,7 +33,7 @@ public class InputManager : MonoBehaviour
             //I have tried to lay the notes out to correspond with the key presses musically
             if (TurnTimer.Instance.CurrentTurn == Turn.Casting)
             {
-                if (noteCounter < 15)
+                if (noteCounter < 5)
                 {
                     if (Input.GetKeyDown(aNote))
                     {
