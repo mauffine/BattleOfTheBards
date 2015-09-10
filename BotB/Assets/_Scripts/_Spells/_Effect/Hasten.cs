@@ -9,6 +9,7 @@ public class Hasten : Spell
     void Start()
     {
         base.Start();
+        m_type = SpellType.Effect;
     }
 
     // Update is called once per frame
