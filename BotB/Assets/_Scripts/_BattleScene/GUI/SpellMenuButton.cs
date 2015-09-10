@@ -8,24 +8,19 @@ public class SpellMenuButton : MonoBehaviour
     public bool m_selected;    
 
 	// Use this for initialization
-	void Start () 
+	void Start() 
     {
         m_initialPosition = transform.localPosition;
         m_selected = false;
 	}
 	
 	// Update is called once per frame
-	void Update () {
+	void Update() 
+    {
         if (!m_selected)
-        {
-            //change to lerp
-            transform.localScale = new Vector3(50 + Mathf.Sin(Time.time * 5) * 5, 50 + Mathf.Sin(Time.time * 5) * 5, 50);
-        }
+            transform.localScale = new Vector3(50 + Mathf.Sin(Time.time * 5) * 5, 50 + Mathf.Sin(Time.time * 5) * 5, 50) * 1.25f;
         else
-        {
-            transform.localScale = new Vector3(60, 60, 60);
-
-        }
+            transform.localScale = new Vector3(60, 60, 60) * 1.5f;
 
         //transform.localPosition = new Vector3(m_initialPosition.x, m_initialPosition.y + 20 * Mathf.Sin((Time.time + m_hoverOffset) * 1.5f), m_initialPosition.z);
 	}

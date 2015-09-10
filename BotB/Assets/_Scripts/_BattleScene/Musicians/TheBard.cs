@@ -7,7 +7,6 @@ public class TheBard : Musician
 	void Start() 
     {
         base.Start();
-        m_health = 500;
 	}
 	// Update is called once per frame
 	void Update() 

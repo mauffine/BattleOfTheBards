@@ -8,7 +8,6 @@ public class TheSlime : Musician
     void Start()
     {
         base.Start();
-        m_health = 300;
     }
 
     // Update is called once per frame
