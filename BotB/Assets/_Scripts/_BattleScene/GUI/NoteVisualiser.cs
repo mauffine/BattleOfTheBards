@@ -8,7 +8,6 @@ public class NoteVisualiser : MonoBehaviour
     private TimedNote m_noteType;
 	// Use this for initialization
     static NoteVisualiser refToMe;
-
     NotePool m_notePool;
 
 	void Start()
@@ -16,7 +15,7 @@ public class NoteVisualiser : MonoBehaviour
         refToMe = this;
 
         m_turn = TurnTimer.Instance.CurrentTurn;
-        m_notePool = transform.parent.GetComponent<NotePool>();
+        m_notePool = GetComponentInParent<NotePool>();
 	}
 	
 	// Update is called once per frame
