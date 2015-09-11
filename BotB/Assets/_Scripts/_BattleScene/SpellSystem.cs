@@ -169,6 +169,7 @@ public class SpellSystem : MonoBehaviour
                     case SpellType.Effect:
                         {
                             if (m_playerSpell.GetComponent<Spell>().Name == "Hasten")
+                            //if (m_playerSpell.GetComponent<Spell>().Type == SpellType.Effect)
                                 Battle.Instance.DealDamage(-5, true);
                             switch (m_enemySpell.GetComponent<Spell>().Type)
                             {
@@ -352,14 +353,14 @@ public class SpellSystem : MonoBehaviour
                                         }
                                     case SpellType.Defensive:
                                         {
-                                            m_playerSpell = (GameObject)Instantiate(m_spellPrefabs[o], new Vector3(-1, 1, 1), Quaternion.AngleAxis(180, Vector3.up));
-                                            m_playerSpell.GetComponent<Spell>().m_velocity = Vector3.zero;
+                                            m_enemySpell = (GameObject)Instantiate(m_spellPrefabs[o], new Vector3(-1, 1, 1), Quaternion.AngleAxis(180, Vector3.up));
+                                            m_enemySpell.GetComponent<Spell>().m_velocity = Vector3.zero;
                                             break;
                                         }
                                     case SpellType.Effect:
                                         {
-                                            m_playerSpell = (GameObject)Instantiate(m_spellPrefabs[o], new Vector3(-1.5f, 1, 1), Quaternion.AngleAxis(0, Vector3.up));
-                                            m_playerSpell.GetComponent<Spell>().m_velocity = Vector3.zero;
+                                            m_enemySpell = (GameObject)Instantiate(m_spellPrefabs[o], new Vector3(-1.5f, 1, 1), Quaternion.AngleAxis(0, Vector3.up));
+                                            m_enemySpell.GetComponent<Spell>().m_velocity = Vector3.zero;
                                             break;
                                         }
                                 }
