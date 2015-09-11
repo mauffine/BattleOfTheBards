@@ -51,11 +51,11 @@ public class SpellSystem : MonoBehaviour
             {
                 switch (m_playerSpell.GetComponent<Spell>().Type) //paper, scissors, rock aka Attack, Defense, Effect
                 {
-                    case SpellType.Attack:
+                    case SpellType.Offencive:
                         {
                             switch (m_enemySpell.GetComponent<Spell>().Type)
                             {
-                                case SpellType.Attack: //both Damage each other
+                                case SpellType.Offencive: //both Damage each other
                                     {
                                         m_damage = m_playerSpell.GetComponent<Spell>().Damage;
                                         m_damage += m_playerNotes.Count;
@@ -72,7 +72,7 @@ public class SpellSystem : MonoBehaviour
                                         m_enemySpell = null;
                                     }
                                     break;
-                                case SpellType.Defense: //reflect the player's spell back at him
+                                case SpellType.Defensive: //reflect the player's spell back at him
                                     {
                                         m_damage = m_playerSpell.GetComponent<Spell>().Damage;
                                         m_damage += m_enemyNotes.Count;
@@ -109,11 +109,11 @@ public class SpellSystem : MonoBehaviour
                             }
                         }
                         break;
-                    case SpellType.Defense:
+                    case SpellType.Defensive:
                         {
                             switch (m_enemySpell.GetComponent<Spell>().Type)
                             {
-                                case SpellType.Attack:
+                                case SpellType.Offencive:
                                     {
                                         m_damage = m_enemySpell.GetComponent<Spell>().Damage;
                                         m_damage += m_playerNotes.Count;
@@ -129,7 +129,7 @@ public class SpellSystem : MonoBehaviour
                                         m_playerSpell = null;
                                     }
                                     break;
-                                case SpellType.Defense:
+                                case SpellType.Defensive:
                                     {
                                         //just sit around looking stupid
                                         m_damage += m_playerNotes.Count;
@@ -170,7 +170,7 @@ public class SpellSystem : MonoBehaviour
                         {
                             switch (m_enemySpell.GetComponent<Spell>().Type)
                             {
-                                case SpellType.Attack:
+                                case SpellType.Offencive:
                                     {
                                         m_damage += m_playerNotes.Count;
                                         Battle.Instance.DealDamage(m_damage, false);
@@ -186,7 +186,7 @@ public class SpellSystem : MonoBehaviour
                                         m_enemySpell = null;
                                     }
                                     break;
-                                case SpellType.Defense:
+                                case SpellType.Defensive:
                                     {
                                         m_damage = m_playerSpell.GetComponent<Spell>().Damage;
                                         m_damage += m_playerNotes.Count;
