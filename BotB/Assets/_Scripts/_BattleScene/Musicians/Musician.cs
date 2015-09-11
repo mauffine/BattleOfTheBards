@@ -14,11 +14,11 @@ public class Musician : MonoBehaviour
     [SerializeField]
     protected SpellType m_spellBehavior;
 
+    private bool m_reset = true;
     private bool m_spellPlay = false;
     private float m_noteTime = -1;
     private static float turnTick = -1;
     private uint m_spellLoc = 0, m_noteCount = 0, m_notesPlayed = 0;
-    
     
 	// Use this for initialization
     protected void Start() 
@@ -45,6 +45,7 @@ public class Musician : MonoBehaviour
         {
             if (m_spellPlay)
             {
+                m_reset = true;
                 if (m_notesPlayed >= m_noteCount)
                 {
                     m_spellPlay = false;
@@ -58,7 +59,6 @@ public class Musician : MonoBehaviour
                 {
                     //set toPlay to something
                     Note toPlay = (Note)m_spellList[m_spellLoc][(int)m_notesPlayed];
-                    //int index = (int)(m_noteCount - m_notesPlayed);
                     //convert characters into notes
                     switch (m_spellList[m_spellLoc][(int)m_notesPlayed])
                     {
@@ -95,22 +95,31 @@ public class Musician : MonoBehaviour
                     m_noteTime = (turnTick / m_noteCount);
                 }
             }
-            else
+        }
+        else
+        {
+            if(m_reset)
             {
+                SpellType toMake = SpellType.Offencive;
                 switch (m_spellBehavior)
                 {
                     case SpellType.Offencive:
                         PlaySpell(m_spellList[0]);
+                        toMake = SpellType.Defensive;
                         break;
                     case SpellType.Defensive:
-                        PlaySpell(m_spellList[1]);
+                        PlaySpell(m_spellList[0]);
+                        toMake = SpellType.Effect;
                         break;
                     case SpellType.Effect:
                         PlaySpell(m_spellList[2]);
+                        toMake = SpellType.Offencive;
                         break;
                     default:
                         break;
                 }
+                m_spellBehavior = toMake;
+                m_reset = false;
             }
         }
             

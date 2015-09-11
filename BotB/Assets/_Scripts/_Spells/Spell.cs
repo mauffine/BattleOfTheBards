@@ -33,7 +33,7 @@ public class Spell : MonoBehaviour
     {
         get { return null; }
     }
-    public SpellType Type
+    public virtual SpellType Type
     {
         get { return m_type; }
     }

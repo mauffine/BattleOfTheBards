@@ -40,11 +40,11 @@ public class SpellMenu : MonoBehaviour
 
         if(m_showMenu)
         {
-            if(Input.GetKey(KeyCode.A))
+            if (Input.GetButtonDown("Triangle"))
                 SelectOffence();
-            else if (Input.GetKey(KeyCode.S))
+            else if (Input.GetButtonDown("Square"))
                 SelectDefence();
-            else if (Input.GetKey(KeyCode.D))
+            else if (Input.GetButtonDown("Circle"))
                 SelectEffect();
         }
 	}
