@@ -6153,6 +6153,10 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 11414214, guid: c2cb8aafa83d79f4bb15694996577265, type: 2}
+      propertyPath: m_noteArray.Array.size
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: 11481506, guid: c2cb8aafa83d79f4bb15694996577265, type: 2}
       propertyPath: m_spellPrefabs.Array.size
       value: 4
@@ -6255,12 +6259,48 @@ Prefab:
       objectReference: {fileID: 182634, guid: 0afbba38684a4474995af6176e5df66f, type: 2}
     - target: {fileID: 11414214, guid: c2cb8aafa83d79f4bb15694996577265, type: 2}
       propertyPath: m_Backgroundvolume
-      value: .0125000002
+      value: .0250000004
       objectReference: {fileID: 0}
     - target: {fileID: 11414214, guid: c2cb8aafa83d79f4bb15694996577265, type: 2}
       propertyPath: m_noteVolume
       value: .75
       objectReference: {fileID: 0}
+    - target: {fileID: 11404228, guid: c2cb8aafa83d79f4bb15694996577265, type: 2}
+      propertyPath: s_inputDevice
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 11414214, guid: c2cb8aafa83d79f4bb15694996577265, type: 2}
+      propertyPath: m_noteArray.Array.data[0]
+      value: 
+      objectReference: {fileID: 8300000, guid: 3db170713b982164da3023d8c8c637af, type: 3}
+    - target: {fileID: 11414214, guid: c2cb8aafa83d79f4bb15694996577265, type: 2}
+      propertyPath: m_noteArray.Array.data[1]
+      value: 
+      objectReference: {fileID: 8300000, guid: 598d3d58fc6a6c7439979404832525b7, type: 3}
+    - target: {fileID: 11414214, guid: c2cb8aafa83d79f4bb15694996577265, type: 2}
+      propertyPath: m_noteArray.Array.data[2]
+      value: 
+      objectReference: {fileID: 8300000, guid: b07018714d9aa5d48b4c570f129fe9dd, type: 3}
+    - target: {fileID: 11414214, guid: c2cb8aafa83d79f4bb15694996577265, type: 2}
+      propertyPath: m_noteArray.Array.data[3]
+      value: 
+      objectReference: {fileID: 8300000, guid: a2c4a05fac7aef748bb45013a942725f, type: 3}
+    - target: {fileID: 11414214, guid: c2cb8aafa83d79f4bb15694996577265, type: 2}
+      propertyPath: m_noteArray.Array.data[4]
+      value: 
+      objectReference: {fileID: 8300000, guid: e04773427d973d042b886cda0dc539ea, type: 3}
+    - target: {fileID: 11414214, guid: c2cb8aafa83d79f4bb15694996577265, type: 2}
+      propertyPath: m_noteArray.Array.data[5]
+      value: 
+      objectReference: {fileID: 8300000, guid: 8e6fcd90395a9954fbd80acdd84b4280, type: 3}
+    - target: {fileID: 11414214, guid: c2cb8aafa83d79f4bb15694996577265, type: 2}
+      propertyPath: m_noteArray.Array.data[6]
+      value: 
+      objectReference: {fileID: 8300000, guid: d40e28b8c5c49f8438eb56b298858521, type: 3}
+    - target: {fileID: 11414214, guid: c2cb8aafa83d79f4bb15694996577265, type: 2}
+      propertyPath: m_backgroundSong
+      value: 
+      objectReference: {fileID: 8300000, guid: 521626cdaca2b374a88cb17d35b18bb0, type: 3}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c2cb8aafa83d79f4bb15694996577265, type: 2}
   m_IsPrefabParent: 0

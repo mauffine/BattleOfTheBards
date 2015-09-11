@@ -28,9 +28,9 @@ public class InputManager : MonoBehaviour
     public void Update()
     {
         s_resetTick -= Time.deltaTime;
-        if (TurnTimer.playerTurn && s_noteCounter < 15)
+        if (TurnTimer.Instance.CurrentTurn == Turn.Casting && s_noteCounter < 15)
         {
-            float timePass = TurnTimer.CountdownTime;
+            float timePass = TurnTimer.Instance.CurrentTime;
             //I have tried to lay the notes out to correspond with the key presses musically
 
             if (s_inputDevice == ControllerType.keyboard)//If Keyboard check Keyboard
@@ -59,59 +59,60 @@ public class InputManager : MonoBehaviour
             if (Input.GetAxis("Vertical") > 0.8f)
             {
                 s_controllerReset = false;
-                Battle.ReceiveKey(new TimedNote(Note.D, a_time)); ++s_noteCounter;
+                Battle.Instance.ReceiveKey(new TimedNote(Note.D, a_time, true)); ++s_noteCounter;
                 s_axisTick = axisTick;
             }
             if (Input.GetAxis("Vertical") < -0.8f)
             {
                 s_controllerReset = false;
-                Battle.ReceiveKey(new TimedNote(Note.C, a_time)); ++s_noteCounter;
+                Battle.Instance.ReceiveKey(new TimedNote(Note.C, a_time, true)); ++s_noteCounter;
                 s_axisTick = axisTick;
             }
             if (Input.GetAxis("Horizontal") > 0.8f)
             {
                 s_controllerReset = false;
-                Battle.ReceiveKey(new TimedNote(Note.A, a_time)); ++s_noteCounter;
+                Battle.Instance.ReceiveKey(new TimedNote(Note.A, a_time, true)); ++s_noteCounter;
                 s_axisTick = axisTick;
             }
             if (Input.GetAxis("Horizontal") < -0.8f)
             {
                 s_controllerReset = false;
-                Battle.ReceiveKey(new TimedNote(Note.B, a_time)); ++s_noteCounter;
+                Battle.Instance.ReceiveKey(new TimedNote(Note.B, a_time, true)); ++s_noteCounter;
                 s_axisTick = axisTick;
             }
             //D-Pad are axes for some reason?
             if (Input.GetAxis("D-Pad X") >= 1.0f)
             {
                 s_controllerReset = false;
-                Battle.ReceiveKey(new TimedNote(Note.A, a_time)); ++s_noteCounter;
+                Battle.Instance.ReceiveKey(new TimedNote(Note.A, a_time, true)); ++s_noteCounter;
                 s_axisTick = axisTick;
             }
             if (Input.GetAxis("D-Pad X") <= -1.0f)
             {
                 s_controllerReset = false;
-                Battle.ReceiveKey(new TimedNote(Note.B, a_time)); ++s_noteCounter;
+                Battle.Instance.ReceiveKey(new TimedNote(Note.B, a_time, true)); ++s_noteCounter;
                 s_axisTick = axisTick;
             }
             if (Input.GetAxis("D-Pad Y") >= 1.0f)
             {
                 s_controllerReset = false;
-                Battle.ReceiveKey(new TimedNote(Note.D, a_time)); ++s_noteCounter;
+                Battle.Instance.ReceiveKey(new TimedNote(Note.D, a_time, true)); ++s_noteCounter;
                 s_axisTick = axisTick;
             }
             if (Input.GetAxis("D-Pad Y") <= -1.0f)
             {
                 s_controllerReset = false;
-                Battle.ReceiveKey(new TimedNote(Note.C, a_time)); ++s_noteCounter;
+                Battle.Instance.ReceiveKey(new TimedNote(Note.C, a_time, true)); ++s_noteCounter;
                 s_axisTick = axisTick;
             }
             //Buttons
             if (Input.GetButtonDown("Cross"))
             {                
                 s_controllerReset = false;
-                Battle.ReceiveKey(new TimedNote(Note.E, a_time)); ++s_noteCounter;
+                Battle.Instance.ReceiveKey(new TimedNote(Note.E, a_time,true)); ++s_noteCounter;
                 s_axisTick = axisTick;
             }
+
         }
         if (s_axisTick < 0)
             s_controllerReset = true;
@@ -121,23 +122,23 @@ public class InputManager : MonoBehaviour
     {
         if (Input.GetKeyDown(aNote))
         {
-            Battle.ReceiveKey(new TimedNote(Note.A, a_time)); ++s_noteCounter;
+            Battle.Instance.ReceiveKey(new TimedNote(Note.A, a_time, true)); ++s_noteCounter;
         }
         if (Input.GetKeyDown(bNote))
         {
-            Battle.ReceiveKey(new TimedNote(Note.B, a_time)); ++s_noteCounter;
+            Battle.Instance.ReceiveKey(new TimedNote(Note.B, a_time, true)); ++s_noteCounter;
         }
         if (Input.GetKeyDown(cNote))
         {
-            Battle.ReceiveKey(new TimedNote(Note.C, a_time)); ++s_noteCounter;
+            Battle.Instance.ReceiveKey(new TimedNote(Note.C, a_time, true)); ++s_noteCounter;
         }
         if (Input.GetKeyDown(dNote))
         {
-            Battle.ReceiveKey(new TimedNote(Note.D, a_time)); ++s_noteCounter;
+            Battle.Instance.ReceiveKey(new TimedNote(Note.D, a_time, true)); ++s_noteCounter;
         }
         if (Input.GetKeyDown(eNote))
         {
-            Battle.ReceiveKey(new TimedNote(Note.E, a_time)); ++s_noteCounter;
+            Battle.Instance.ReceiveKey(new TimedNote(Note.E, a_time, true)); ++s_noteCounter;
         }
     }
 }
