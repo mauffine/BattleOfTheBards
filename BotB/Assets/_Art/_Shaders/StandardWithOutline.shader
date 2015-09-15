@@ -17,9 +17,12 @@
 		//UsePass "StandardNoCull/DEFERRED"
 		//UsePass "StandardNoCull/META"
 		UsePass "Diffuse/FORWARD"
+		//UsePass "Diffuse/DEFERRED"		
+		//UsePass "Toon/Basic Outline/OUTLINE"
+		//UsePass "Standard (Outlined)/FORWARD"
 		//UsePass "Standard (Outlined)/DEFERRED"
-		UsePass "Toon/Basic Outline/OUTLINE"
-		//UsePass "Standard (Outlined)/OUTLINE"
+		//UsePass "Toon/Lit/FORWARD""
+		UsePass "Standard (Outlined)/OUTLINE"
 	} 
 
 	FallBack "Diffuse"

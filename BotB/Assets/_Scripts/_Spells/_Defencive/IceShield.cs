@@ -6,7 +6,7 @@ public class IceShield : Spell {
     void Start()
     {
         base.Start();
-        m_damage = 20;
+        m_damage = 0;
         m_type = SpellType.Defensive;
     }
 
@@ -17,10 +17,15 @@ public class IceShield : Spell {
     }
     public override Note[] Key
     {
-        get { return new Note[] { Note.D, Note.E, Note.B, Note.C, Note.A }; }
+        get { return new Note[] { Note.C, Note.D, Note.E, Note.B, Note.B }; }
     }
     public override string Name
     {
         get { return "IceShield"; }
+    }
+    public override SpellType Type
+    {
+        get
+        { return SpellType.Defensive; }
     }
 }

@@ -5,12 +5,17 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 0
+  - enabled: 1
+    path: Assets/_Scenes/MenuScene.unity
+  - enabled: 1
     path: Assets/_Scenes/MauffScene.unity
   - enabled: 0
     path: Assets/_Scenes/BattleScene.unity
+<<<<<<< HEAD
   - enabled: 1
     path: Assets/_Scenes/MenuScene.unity
+=======
+>>>>>>> origin/master
   - enabled: 0
     path: Assets/_Scenes/RichardScene.unity
   - enabled: 1

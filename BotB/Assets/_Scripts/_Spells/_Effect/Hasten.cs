@@ -17,8 +17,16 @@ public class Hasten : Spell
     {
         base.Update();
     }
+    public override string Name
+    {
+        get { return "Hasten"; }
+    }
     public override Note[] Key
     {
         get { return new Note[] {Note.A, Note.A, Note.A, Note.E, Note.A}; }
+    }
+    public override SpellType Type
+    {
+        get{ return SpellType.Effect; }
     }
 }

@@ -8,7 +8,7 @@ Material:
   m_PrefabInternal: {fileID: 0}
   m_Name: Slime_Inner_Eye_Diffuse
   m_Shader: {fileID: 4800000, guid: 711a6280102e4ec42832ad43588ff32e, type: 3}
-  m_ShaderKeywords: 
+  m_ShaderKeywords: _SPECGLOSSMAP
   m_LightmapFlags: 5
   m_CustomRenderQueue: -1
   stringTagMap: {}
@@ -19,7 +19,7 @@ Material:
         first:
           name: _MainTex
         second:
-          m_Texture: {fileID: 0}
+          m_Texture: {fileID: 2800000, guid: ccc3135006dabf746a5b96b5c8f2ee38, type: 3}
           m_Scale: {x: 1, y: 1}
           m_Offset: {x: 0, y: 0}
       data:
@@ -82,7 +82,7 @@ Material:
         first:
           name: _SpecGlossMap
         second:
-          m_Texture: {fileID: 0}
+          m_Texture: {fileID: 2800000, guid: 0c84afb181868af48896f81ad162ca07, type: 3}
           m_Scale: {x: 1, y: 1}
           m_Offset: {x: 0, y: 0}
       data:
@@ -153,7 +153,7 @@ Material:
       data:
         first:
           name: _Color
-        second: {r: .453341246, g: .846076608, b: .948529422, a: 1}
+        second: {r: 1, g: 1, b: 1, a: 1}
       data:
         first:
           name: _SpecColor
