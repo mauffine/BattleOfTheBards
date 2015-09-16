@@ -1288,6 +1288,26 @@ Prefab:
       propertyPath: m_Name
       value: Bard
       objectReference: {fileID: 0}
+    - target: {fileID: 13739858, guid: 5e7174957fe37ca439f3a401f57f1681, type: 2}
+      propertyPath: m_AABB.m_Center.x
+      value: -.953991055
+      objectReference: {fileID: 0}
+    - target: {fileID: 13739858, guid: 5e7174957fe37ca439f3a401f57f1681, type: 2}
+      propertyPath: m_AABB.m_Center.y
+      value: 2.7270205
+      objectReference: {fileID: 0}
+    - target: {fileID: 13739858, guid: 5e7174957fe37ca439f3a401f57f1681, type: 2}
+      propertyPath: m_AABB.m_Extent.x
+      value: 1.99689972
+      objectReference: {fileID: 0}
+    - target: {fileID: 13739858, guid: 5e7174957fe37ca439f3a401f57f1681, type: 2}
+      propertyPath: m_AABB.m_Extent.z
+      value: 1.9495697
+      objectReference: {fileID: 0}
+    - target: {fileID: 13739858, guid: 5e7174957fe37ca439f3a401f57f1681, type: 2}
+      propertyPath: m_AABB.m_Center.z
+      value: -.00751399994
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 5e7174957fe37ca439f3a401f57f1681, type: 2}
   m_IsPrefabParent: 0
