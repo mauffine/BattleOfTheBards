@@ -14,7 +14,7 @@ public class Spell : MonoBehaviour
     {
         m_speedModifier = 80;
         m_damage = 20;
-        m_type = SpellType.Attack;
+        m_type = SpellType.Offencive;
 	}
 	// Update is called once per frame
 	protected void Update() 
@@ -33,7 +33,7 @@ public class Spell : MonoBehaviour
     {
         get { return null; }
     }
-    public SpellType Type
+    public virtual SpellType Type
     {
         get { return m_type; }
     }

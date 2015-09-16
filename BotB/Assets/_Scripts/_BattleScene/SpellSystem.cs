@@ -35,7 +35,7 @@ public class SpellSystem : MonoBehaviour
         }
         m_damage = 0;
         m_accuracy = 0; // this should always be out of 100;
-        m_flightTime = 1.0f;
+        m_flightTime = 0.7f;
     }
 
     // Update is called once per frame
@@ -51,11 +51,11 @@ public class SpellSystem : MonoBehaviour
             {
                 switch (m_playerSpell.GetComponent<Spell>().Type) //paper, scissors, rock aka Attack, Defense, Effect
                 {
-                    case SpellType.Attack:
+                    case SpellType.Offencive:
                         {
                             switch (m_enemySpell.GetComponent<Spell>().Type)
                             {
-                                case SpellType.Attack: //both Damage each other
+                                case SpellType.Offencive: //both Damage each other
                                     {
                                         m_damage = m_playerSpell.GetComponent<Spell>().Damage;
                                         m_damage += m_playerNotes.Count;
@@ -72,7 +72,7 @@ public class SpellSystem : MonoBehaviour
                                         m_enemySpell = null;
                                     }
                                     break;
-                                case SpellType.Defense: //reflect the player's spell back at him
+                                case SpellType.Defensive: //reflect the player's spell back at him
                                     {
                                         m_damage = m_playerSpell.GetComponent<Spell>().Damage;
                                         m_damage += m_enemyNotes.Count;
@@ -109,11 +109,11 @@ public class SpellSystem : MonoBehaviour
                             }
                         }
                         break;
-                    case SpellType.Defense:
+                    case SpellType.Defensive:
                         {
                             switch (m_enemySpell.GetComponent<Spell>().Type)
                             {
-                                case SpellType.Attack:
+                                case SpellType.Offencive:
                                     {
                                         m_damage = m_enemySpell.GetComponent<Spell>().Damage;
                                         m_damage += m_playerNotes.Count;
@@ -129,7 +129,7 @@ public class SpellSystem : MonoBehaviour
                                         m_playerSpell = null;
                                     }
                                     break;
-                                case SpellType.Defense:
+                                case SpellType.Defensive:
                                     {
                                         //just sit around looking stupid
                                         m_damage += m_playerNotes.Count;
@@ -168,9 +168,12 @@ public class SpellSystem : MonoBehaviour
                         break;
                     case SpellType.Effect:
                         {
+                            if (m_playerSpell.GetComponent<Spell>().Name == "Hasten")
+                            //if (m_playerSpell.GetComponent<Spell>().Type == SpellType.Effect)
+                                Battle.Instance.DealDamage(-5, true);
                             switch (m_enemySpell.GetComponent<Spell>().Type)
                             {
-                                case SpellType.Attack:
+                                case SpellType.Offencive:
                                     {
                                         m_damage += m_playerNotes.Count;
                                         Battle.Instance.DealDamage(m_damage, false);
@@ -186,7 +189,7 @@ public class SpellSystem : MonoBehaviour
                                         m_enemySpell = null;
                                     }
                                     break;
-                                case SpellType.Defense:
+                                case SpellType.Defensive:
                                     {
                                         m_damage = m_playerSpell.GetComponent<Spell>().Damage;
                                         m_damage += m_playerNotes.Count;
@@ -250,7 +253,7 @@ public class SpellSystem : MonoBehaviour
                 }
                 m_playerNotes.Clear();
                 m_enemyNotes.Clear();
-                m_flightTime = 1.0f;
+                m_flightTime = 0.7f;
                 m_accuracy = 0;
             }
         }
@@ -302,16 +305,65 @@ public class SpellSystem : MonoBehaviour
                         {
                             if (a_currentNotes[i].m_playerOwned)
                             {
-                                if (m_accuracy >= 50)
+                                if (m_accuracy >= 0)
                                 {
-                                    m_playerSpell = (GameObject)Instantiate(m_spellPrefabs[o], new Vector3(2, 1.3f, 1), Quaternion.AngleAxis(0, Vector3.up));
-                                    m_playerSpell.GetComponent<Spell>().m_velocity = new Vector3(-.03f, Random.Range(-.007f, 0.0f), 0.0f) * 2;
+                                    switch (m_spellPrefabs[o].GetComponent<Spell>().Type)
+                                    {
+                                        case (SpellType.Offencive):
+                                            {
+                                                if (SpellMenu.Selection == SpellType.Offencive)
+                                                {
+                                                    m_playerSpell = (GameObject)Instantiate(m_spellPrefabs[o], new Vector3(2, 1.3f, 1), Quaternion.AngleAxis(0, Vector3.up));
+                                                    m_playerSpell.GetComponent<Spell>().m_velocity = new Vector3(-.03f, Random.Range(-.007f, 0.0f), 0.0f) * 2;
+                                                }
+                                                break;
+                                            }
+                                        case SpellType.Defensive:
+                                            {
+                                                if (SpellMenu.Selection == SpellType.Defensive)
+                                                {
+                                                    m_playerSpell = (GameObject)Instantiate(m_spellPrefabs[o], new Vector3(1.5f, 1, 1.3f), Quaternion.AngleAxis(0, Vector3.up));
+                                                    m_playerSpell.GetComponent<Spell>().m_velocity = Vector3.zero;
+                                                }
+                                                break;
+                                            }
+                                        case SpellType.Effect:
+                                            {
+                                                if (SpellMenu.Selection == SpellType.Effect)
+                                                {
+                                                    m_playerSpell = (GameObject)Instantiate(m_spellPrefabs[o], new Vector3(2, 0, 1), Quaternion.AngleAxis(0, Vector3.up));
+                                                    m_playerSpell.GetComponent<Spell>().m_velocity = Vector3.zero;
+                                                }
+                                                break;
+                                            }
+                                    }
+                                    
                                 }
                             }
                             else
                             {
-                                m_enemySpell = (GameObject)Instantiate(m_spellPrefabs[o], new Vector3(-1.2f, 1f, 1.1f), Quaternion.AngleAxis(180, Vector3.up));
-                                m_enemySpell.GetComponent<Spell>().m_velocity = new Vector3(-.03f, Random.Range(-.007f, 0.0007f), 0.0f) * 2;
+                                
+                                switch (m_spellPrefabs[o].GetComponent<Spell>().Type)
+                                {
+                                    case (SpellType.Offencive):
+                                        {
+                                            m_enemySpell = (GameObject)Instantiate(m_spellPrefabs[o], new Vector3(-1.2f, 1f, 1.1f), Quaternion.AngleAxis(180, Vector3.up));
+                                            m_enemySpell.GetComponent<Spell>().m_velocity = new Vector3(-.03f, Random.Range(-.007f, 0.0007f), 0.0f) * 2;
+                                            break;
+                                        }
+                                    case SpellType.Defensive:
+                                        {
+                                            m_enemySpell = (GameObject)Instantiate(m_spellPrefabs[o], new Vector3(-1, 1, 1), Quaternion.AngleAxis(180, Vector3.up));
+                                            m_enemySpell.GetComponent<Spell>().m_velocity = Vector3.zero;
+                                            break;
+                                        }
+                                    case SpellType.Effect:
+                                        {
+                                            m_enemySpell = (GameObject)Instantiate(m_spellPrefabs[o], new Vector3(-1.5f, 1, 1), Quaternion.AngleAxis(0, Vector3.up));
+                                            m_enemySpell.GetComponent<Spell>().m_velocity = Vector3.zero;
+                                            break;
+                                        }
+                                }
                             }
                         }
                     }
@@ -320,8 +372,3 @@ public class SpellSystem : MonoBehaviour
         }
     }
 }
-//function for checking casting accuracy
-/*
- * float noteTime = note.m_time * 120.0f * (1.0f / 60.0f);
-    if (noteTime % 1 >= 0.9f || noteTime % 1 <= 0.1f)
-*/

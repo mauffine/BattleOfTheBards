@@ -40,11 +40,11 @@ public class SpellMenu : MonoBehaviour
 
         if(m_showMenu)
         {
-            if(Input.GetKey(KeyCode.A))
+            if (Input.GetButtonDown("Triangle"))
                 SelectOffence();
-            else if (Input.GetKey(KeyCode.S))
+            else if (Input.GetButtonDown("Square"))
                 SelectDefence();
-            else if (Input.GetKey(KeyCode.D))
+            else if (Input.GetButtonDown("Circle"))
                 SelectEffect();
         }
 	}
@@ -60,7 +60,7 @@ public class SpellMenu : MonoBehaviour
     }
     public void SelectOffence()
     {
-        m_currentSelection = SpellType.Attack;
+        m_currentSelection = SpellType.Offencive;
         m_offenceButtonScript.SetSelected();
 
         m_defenceButtonScript.SetUnselected();
@@ -68,7 +68,7 @@ public class SpellMenu : MonoBehaviour
     }
     public void SelectDefence()
     {
-        m_currentSelection = SpellType.Defense;
+        m_currentSelection = SpellType.Defensive;
         m_defenceButtonScript.SetSelected();
 
         m_offenceButtonScript.SetUnselected();

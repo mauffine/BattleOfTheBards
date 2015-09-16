@@ -18,7 +18,7 @@ public class SpellMenuButton : MonoBehaviour
 	void Update() 
     {
         if (!m_selected)
-            transform.localScale = new Vector3(50 + Mathf.Sin(Time.time * 5) * 5, 50 + Mathf.Sin(Time.time * 5) * 5, 50) * 1.25f;
+            transform.localScale = new Vector3(50 + Mathf.Sin(Time.time * 5) * 5, 50 + Mathf.Sin(Time.time * 5) * 5, 50) * 1.5f;
         else
             transform.localScale = new Vector3(60, 60, 60) * 1.5f;
 

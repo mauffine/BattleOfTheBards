@@ -4,15 +4,15 @@ using System.Collections;
 using System.Collections.Generic;
 public enum SpellType : byte //What type of spell it is
 {
-    Attack, 
-    Defense, 
+    Offencive,
+    Defensive, 
     Effect
 }
 public enum Turn : byte //Which turn it currently is
 {
     Casting, Menu
 }
-/// <summary>A musical note in an enum, _ means the note is flat</summary>
+///<summary>A musical note in an enum, _ means the note is flat</summary>
 public enum Note : byte
 {
     A_,
@@ -28,7 +28,7 @@ public enum Note : byte
     G,
     BLANK,
 };
-/// <summary>A struct for the time a note was played and the note itself</summary>
+///<summary>A struct for the time a note was played and the note itself</summary>
 public struct TimedNote
 {
     public float m_time;
@@ -47,7 +47,7 @@ public class Battle : MonoBehaviour
 {
     //Attributes
     public static Battle Instance; //singleton instance
-    public GameObject m_Player, m_currentEnemy; //the characters in the scene
+    [SerializeField] GameObject m_player, m_currentEnemy; //the characters in the scene
     public bool m_win, m_playing; //bools for the end of the battle
     //Behavious
     void Awake()
@@ -57,7 +57,6 @@ public class Battle : MonoBehaviour
     void Start()
     {
         Application.targetFrameRate = 300; //attampt this framerate
-
     }
     void Update()
     {
@@ -79,8 +78,16 @@ public class Battle : MonoBehaviour
     {
         //deal damage to the approriate character in the scene
         if (a_toPlayer)
-            m_Player.GetComponent<TheBard>().TakeDamage(a_damage);
+        {
+            TheBard playerRef = m_player.GetComponent<TheBard>();
+            playerRef.TakeDamage(a_damage);
+            TextGen.Instance.TakeDamage(a_damage * -1, playerRef.transform.position, m_player.GetComponentInChildren<SkinnedMeshRenderer>().bounds.size.y);
+        }
         else
-            m_currentEnemy.GetComponent<TheSlime>().TakeDamage(a_damage);
+        {
+            TheSlime slimeRef = m_currentEnemy.GetComponent<TheSlime>();
+            slimeRef.TakeDamage(a_damage);
+            TextGen.Instance.TakeDamage(a_damage * -1, slimeRef.transform.position, m_currentEnemy.GetComponentInChildren<SkinnedMeshRenderer>().bounds.size.y);
+        }
     }
 }

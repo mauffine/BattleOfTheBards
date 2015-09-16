@@ -21,13 +21,6 @@ public class SoundManager : MonoBehaviour
 	void Start() 
     {
         s_SoundManRef = this;
-        //m_noteArray = new AudioClip[7];
-        //char clipTitle = 'A';
-        //for (uint I = 0; I < 7; ++I)
-        //{
-        //    m_noteArray[I] = Resources.Load<AudioClip>("_Sound/Piano Notes/" + clipTitle);
-        //    ++clipTitle;
-        //}
 
         gameObject.AddComponent<AudioPool>();
         m_audioPool = GetComponent<AudioPool>();
