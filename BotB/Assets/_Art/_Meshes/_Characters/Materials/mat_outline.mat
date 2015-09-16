@@ -6,11 +6,11 @@ Material:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: tav_wallframe_mat
-  m_Shader: {fileID: 45, guid: 0000000000000000f000000000000000, type: 0}
-  m_ShaderKeywords: _NORMALMAP
+  m_Name: mat_outline
+  m_Shader: {fileID: 4800000, guid: 0380bd6aa33540a4ca1b081b5ecb8294, type: 3}
+  m_ShaderKeywords: _NORMALMAP _SPECGLOSSMAP
   m_LightmapFlags: 5
-  m_CustomRenderQueue: -1
+  m_CustomRenderQueue: 3000
   stringTagMap: {}
   m_SavedProperties:
     serializedVersion: 2
@@ -19,14 +19,14 @@ Material:
         first:
           name: _MainTex
         second:
-          m_Texture: {fileID: 2800000, guid: a293109496217074ca9a1b345ce7e4b7, type: 3}
+          m_Texture: {fileID: 2800000, guid: e7a08b45edb41f841b05636fc4f8834b, type: 3}
           m_Scale: {x: 1, y: 1}
           m_Offset: {x: 0, y: 0}
       data:
         first:
           name: _BumpMap
         second:
-          m_Texture: {fileID: 2800000, guid: ead6a2a5da890e24bb00858257bb422a, type: 3}
+          m_Texture: {fileID: 2800000, guid: 52efa3e165ea02c428a0b94ddba43a69, type: 3}
           m_Scale: {x: 1, y: 1}
           m_Offset: {x: 0, y: 0}
       data:
@@ -38,9 +38,23 @@ Material:
           m_Offset: {x: 0, y: 0}
       data:
         first:
+          name: _Ramp
+        second:
+          m_Texture: {fileID: 2800000, guid: b016c25f4bad2d6488a263f7ed0d91ba, type: 3}
+          m_Scale: {x: 1, y: 1}
+          m_Offset: {x: 0, y: 0}
+      data:
+        first:
           name: _ParallaxMap
         second:
           m_Texture: {fileID: 0}
+          m_Scale: {x: 1, y: 1}
+          m_Offset: {x: 0, y: 0}
+      data:
+        first:
+          name: _SpecGlossMap
+        second:
+          m_Texture: {fileID: 2800000, guid: c56f76260370188498ccdec5e377a52c, type: 3}
           m_Scale: {x: 1, y: 1}
           m_Offset: {x: 0, y: 0}
       data:
@@ -80,7 +94,7 @@ Material:
           m_Offset: {x: 0, y: 0}
       data:
         first:
-          name: _SpecGlossMap
+          name: _ToonShade
         second:
           m_Texture: {fileID: 0}
           m_Scale: {x: 1, y: 1}
@@ -100,6 +114,10 @@ Material:
         second: .5
       data:
         first:
+          name: _Outline
+        second: .00300000003
+      data:
+        first:
           name: _Parallax
         second: .0199999996
       data:
@@ -109,7 +127,7 @@ Material:
       data:
         first:
           name: _Glossiness
-        second: .200000003
+        second: 0
       data:
         first:
           name: _BumpScale
@@ -134,11 +152,39 @@ Material:
         first:
           name: _Metallic
         second: 0
+      data:
+        first:
+          name: _EmissionScaleUI
+        second: 0
+      data:
+        first:
+          name: _DiffuseScale
+        second: 1
+      data:
+        first:
+          name: _DiffuseBias
+        second: 0
+      data:
+        first:
+          name: _DiffuseExponent
+        second: 1
+      data:
+        first:
+          name: _RimPower
+        second: 4.5
+      data:
+        first:
+          name: _SpecPower
+        second: 3
+      data:
+        first:
+          name: _OutlineWidth
+        second: .0250000004
     m_Colors:
       data:
         first:
           name: _EmissionColor
-        second: {r: 0, g: 0, b: 0, a: 1}
+        second: {r: 0, g: 0, b: 0, a: 0}
       data:
         first:
           name: _Color
@@ -146,4 +192,16 @@ Material:
       data:
         first:
           name: _SpecColor
-        second: {r: .200000003, g: .200000003, b: .200000003, a: 1}
+        second: {r: .389705896, g: .389705896, b: .389705896, a: 1}
+      data:
+        first:
+          name: _OutlineColor
+        second: {r: 0, g: 0, b: 0, a: 1}
+      data:
+        first:
+          name: _EmissionColorUI
+        second: {r: 1, g: 1, b: 1, a: 1}
+      data:
+        first:
+          name: _RimColor
+        second: {r: .20588237, g: .150779366, b: .0681228489, a: 0}
