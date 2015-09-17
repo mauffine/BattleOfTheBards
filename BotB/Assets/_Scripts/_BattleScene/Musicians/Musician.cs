@@ -20,25 +20,26 @@ public class Musician : MonoBehaviour
     private static float turnTick = -1;
     private uint m_spellLoc = 0, m_noteCount = 0, m_notesPlayed = 0;
     
-	// Use this for initialization
     protected void Start() 
     {
         turnTick = TurnTimer.Instance.CastingTime - 1;
 	}
-	// Update is called once per frame
+    ///<summary> Updates the AI and calls Die if the enemey has no more health</summary>
     protected void Update() 
     {
         //choose a spell and play a spell
         SpellAI();
+        DisplayTell();
         if (m_health < 0)
             Die();
 	}
-    //Takes damage
+    /// <summary> Reduces health equal to the damage taken from the argument. Takes into account defence</summary>
+    /// <param name="a_damage">The number of damage delt</param>
     public virtual void TakeDamage(int a_damage)
     {
         m_health -= a_damage;
     }
-    //
+    /// <summary> The spell casting component of the AI</summary>
     private void SpellAI()
     {
         if (TurnTimer.Instance.CurrentTurn == Turn.Casting)
@@ -124,7 +125,8 @@ public class Musician : MonoBehaviour
         }
             
     }
-    //Playes a spell
+    /// <summary> Playes the selected Spell </summary>
+    /// <param name="a_spellKey">The Key used to Identify individual spells</param>
     public virtual void PlaySpell(string a_spellKey)
     {
         for (uint I = 0; I < m_spellList.Length; ++I)
@@ -143,6 +145,25 @@ public class Musician : MonoBehaviour
     protected virtual void Die() 
     { 
     }
+    ///<summary> This will display the NEXT spell the enemy will cast</summary>
+    private void DisplayTell()
+    {
+        switch (m_spellBehavior)
+        {
+            case SpellType.Offencive:
+                GetComponentInChildren<SpriteRenderer>().sprite = Tell.Defensive;
+                break;
+            case SpellType.Defensive:
+                GetComponentInChildren<SpriteRenderer>().sprite = Tell.Effect;
+                break;
+            case SpellType.Effect:
+                GetComponentInChildren<SpriteRenderer>().sprite = Tell.Offencive;
+                break;
+            default:
+                break;
+        }
+    }
+
     public int Health
     {
         get { return m_health; }
@@ -159,5 +180,28 @@ public class Musician : MonoBehaviour
     {
         get { return m_spellBehavior; }
         set { m_spellBehavior = value; }
+    }
+    public SpellType NextSpellBehavior
+    {
+        get 
+        {
+            SpellType returnVal;
+            switch (m_spellBehavior)
+            {
+                case SpellType.Offencive:
+                    returnVal = SpellType.Defensive;
+                    break;
+                case SpellType.Defensive:
+                    returnVal = SpellType.Effect;
+                    break;
+                case SpellType.Effect:
+                    returnVal = SpellType.Offencive;
+                    break;
+                default:
+                    returnVal = SpellType.Offencive;
+                    break;
+            }
+            return returnVal;
+        }
     }
 }
