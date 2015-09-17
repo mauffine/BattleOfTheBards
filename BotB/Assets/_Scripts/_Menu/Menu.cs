@@ -16,7 +16,7 @@ public class Menu : MonoBehaviour
     /// <summary>Switches to the main battle state </summary>
     public void SwitchToGame()
     {
-        Application.LoadLevel("MauffScene");
+        Application.LoadLevel("RichardScene");
     }
 
     /// <summary>Switches to the main menu state </summary
