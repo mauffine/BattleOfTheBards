@@ -133,7 +133,7 @@ public class SpellSystem : MonoBehaviour
                                                 if (SpellMenu.Selection == SpellType.Offencive)
                                                 {
                                                     m_playerSpell = (GameObject)Instantiate(m_spellPrefabs[o], new Vector3(2, 1.3f, 1), Quaternion.AngleAxis(0, Vector3.up));
-                                                    m_playerSpell.GetComponent<Spell>().m_velocity = new Vector3(-.03f, Random.Range(-.007f, 0.0f), 0.0f) * 2;
+                                                    m_playerSpell.GetComponent<Spell>().m_velocity = new Vector3(-0.04f, Random.Range(-0.00007f, 0.00007f), 0.0f) * 2;
                                                 }
                                                 break;
                                             }
@@ -269,10 +269,11 @@ public class SpellSystem : MonoBehaviour
         Battle.Instance.DealDamage(m_playerSpell.GetComponent<Spell>().Damage + m_enemyNotes.Count, true);
         
         Destroy(m_playerSpell);
-        m_enemySpell = null;
-        
-        Destroy(m_enemySpell);
         m_playerSpell = null;
+
+        Destroy(m_enemySpell);
+        m_enemySpell = null;
+
         Debug.Log("Your spell was deflected!");
     }
     void Attack_Effect()

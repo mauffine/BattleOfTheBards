@@ -44,6 +44,7 @@ public class Musician : MonoBehaviour
     {
         if (TurnTimer.Instance.CurrentTurn == Turn.Casting)
         {
+            GetComponentInChildren<SpriteRenderer>().enabled = false;
             if (m_spellPlay)
             {
                 m_reset = true;
@@ -99,21 +100,22 @@ public class Musician : MonoBehaviour
         }
         else
         {
+            GetComponentInChildren<SpriteRenderer>().enabled = true;
             if(m_reset)
             {
                 SpellType toMake = SpellType.Offencive;
                 switch (m_spellBehavior)
                 {
                     case SpellType.Offencive:
-                        PlaySpell(m_spellList[0]);
+                        PlaySpell(m_spellList[1]);
                         toMake = SpellType.Defensive;
                         break;
                     case SpellType.Defensive:
-                        PlaySpell(m_spellList[1]);
+                        PlaySpell(m_spellList[2]);
                         toMake = SpellType.Effect;
                         break;
                     case SpellType.Effect:
-                        PlaySpell(m_spellList[2]);
+                        PlaySpell(m_spellList[0]);
                         toMake = SpellType.Offencive;
                         break;
                     default:
@@ -151,13 +153,13 @@ public class Musician : MonoBehaviour
         switch (m_spellBehavior)
         {
             case SpellType.Offencive:
-                GetComponentInChildren<SpriteRenderer>().sprite = Tell.Defensive;
+                GetComponentInChildren<SpriteRenderer>().sprite = Tell.Offencive;
                 break;
             case SpellType.Defensive:
-                GetComponentInChildren<SpriteRenderer>().sprite = Tell.Effect;
+                GetComponentInChildren<SpriteRenderer>().sprite = Tell.Defensive;
                 break;
             case SpellType.Effect:
-                GetComponentInChildren<SpriteRenderer>().sprite = Tell.Offencive;
+                GetComponentInChildren<SpriteRenderer>().sprite = Tell.Effect;
                 break;
             default:
                 break;
