@@ -269,10 +269,10 @@ public class SpellSystem : MonoBehaviour
         Battle.Instance.DealDamage(m_playerSpell.GetComponent<Spell>().Damage + m_enemyNotes.Count, true);
         
         Destroy(m_playerSpell);
-        m_enemySpell = null;
+        m_playerSpell = null;
         
         Destroy(m_enemySpell);
-        m_playerSpell = null;
+        m_enemySpell = null;
         Debug.Log("Your spell was deflected!");
     }
     void Attack_Effect()
