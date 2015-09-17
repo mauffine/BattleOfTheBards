@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 public class TextGen : MonoBehaviour 
 {
-    private List<TextMesh> damageText;
+    private List<GameObject> damageText;
     private float m_timer = 3;
     private static TextGen s_instance;
     [SerializeField]//A link to the GUIText prefab to generate the text
@@ -11,18 +11,19 @@ public class TextGen : MonoBehaviour
 	// Use this for initialization
 	void Start() 
     {
-        damageText = new List<TextMesh>();
+        damageText = new List<GameObject>();
         s_instance = this;
 	}
 	
 	// Update is called once per frame
-	public void Update() 
+	public void Update()
     {
         for (int I = 0; I < damageText.Count; ++I )
         {
-            damageText[I].transform.position += new Vector3(0, Time.deltaTime, 0);
-            Color textCol = damageText[I].color;
-            damageText[I].color = Color.Lerp(textCol, Color.clear,Time.deltaTime * 9);
+            TextMesh currentText = damageText[I].GetComponent<TextMesh>();
+            currentText.transform.position += new Vector3(0, Time.deltaTime, 0);
+            Color textCol = currentText.color;
+            currentText.color = Color.Lerp(textCol, Color.clear, Time.deltaTime * 9);
             if(textCol.a <= 0.075f)
             {
                 Destroy(damageText[I]);
@@ -42,7 +43,7 @@ public class TextGen : MonoBehaviour
         Vector3 offset = new Vector3(0, a_pos.y + (a_length), 0);
         toWrite.transform.position = (a_pos + offset);
         toWrite.color = Color.red;
-        damageText.Add(toWrite);
+        damageText.Add(toConvert);
     }
     public void YouWin()
     {
