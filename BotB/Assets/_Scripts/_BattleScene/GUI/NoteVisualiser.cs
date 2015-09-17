@@ -55,29 +55,29 @@ public class NoteVisualiser : MonoBehaviour
         {
             case SpellType.Offencive:
                 {
-                    m_notePool.AddNote(new Vector3(-768, -305, 0), Note.B, true);
-                    m_notePool.AddNote(new Vector3(-384, -305, 0), Note.B, true);
+                    m_notePool.AddNote(new Vector3(-640, -305, 0), Note.B, true);
+                    m_notePool.AddNote(new Vector3(-320, -305, 0), Note.B, true);
                     m_notePool.AddNote(new Vector3(0, -305, 0), Note.E, true);
-                    m_notePool.AddNote(new Vector3(384, -305, 0), Note.D, true);
-                    m_notePool.AddNote(new Vector3(768, -305, 0), Note.C, true);
+                    m_notePool.AddNote(new Vector3(320, -305, 0), Note.D, true);
+                    m_notePool.AddNote(new Vector3(640, -305, 0), Note.C, true);
                     break;
                 }
             case SpellType.Defensive:
                 {
-                    m_notePool.AddNote(new Vector3(-768, -305, 0), Note.C, true);
-                    m_notePool.AddNote(new Vector3(-384, -305, 0), Note.D, true);
+                    m_notePool.AddNote(new Vector3(-640, -305, 0), Note.C, true);
+                    m_notePool.AddNote(new Vector3(-320, -305, 0), Note.D, true);
                     m_notePool.AddNote(new Vector3(0, -305, 0), Note.E, true);
-                    m_notePool.AddNote(new Vector3(384, -305, 0), Note.B, true);
-                    m_notePool.AddNote(new Vector3(768, -305, 0), Note.B, true);
+                    m_notePool.AddNote(new Vector3(320, -305, 0), Note.B, true);
+                    m_notePool.AddNote(new Vector3(640, -305, 0), Note.B, true);
                     break;
                 }
             case SpellType.Effect:
                 {
-                    m_notePool.AddNote(new Vector3(-768, -305, 0), Note.A, true);
-                    m_notePool.AddNote(new Vector3(-384, -305, 0), Note.A, true);
+                    m_notePool.AddNote(new Vector3(-640, -305, 0), Note.A, true);
+                    m_notePool.AddNote(new Vector3(-320, -305, 0), Note.A, true);
                     m_notePool.AddNote(new Vector3(0, -305, 0), Note.A, true);
-                    m_notePool.AddNote(new Vector3(384, -305, 0), Note.E, true);
-                    m_notePool.AddNote(new Vector3(768, -305, 0), Note.A, true);
+                    m_notePool.AddNote(new Vector3(320, -305, 0), Note.E, true);
+                    m_notePool.AddNote(new Vector3(640, -305, 0), Note.A, true);
                     break;
                 }
         }
