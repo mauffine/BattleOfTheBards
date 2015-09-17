@@ -57,6 +57,7 @@ public class SpellSystem : MonoBehaviour
         {
             m_playerNotes.Add(a_note);
             float noteTime = a_note.m_time * 120.0f * (1.0f / 60.0f);//gives how far off the beat that the note was played and which beat it was played on
+            float noteTime = (a_note.m_time + 0.35f) * 95.0f * (1.0f / 60.0f);//gives how far off the beat that the note was played and which beat it was played on
             float noteAccuracy = noteTime % 1; //converts the accuracy into a float from 0-1, the closer to 1 or 0 the closer to the beat the note was played
             if (noteAccuracy > .5f) // convert the accuracy to a value between 0 and 0.5, the higher the more accurate
             {
@@ -270,10 +271,16 @@ public class SpellSystem : MonoBehaviour
         
         Destroy(m_playerSpell);
         m_playerSpell = null;
+<<<<<<< HEAD
 
         Destroy(m_enemySpell);
         m_enemySpell = null;
 
+=======
+        
+        Destroy(m_enemySpell);
+        m_enemySpell = null;
+>>>>>>> origin/MauffBranch
         Debug.Log("Your spell was deflected!");
     }
     void Attack_Effect()
