@@ -4437,6 +4437,14 @@ Prefab:
       propertyPath: m_Name
       value: Slime
       objectReference: {fileID: 0}
+    - target: {fileID: 11495176, guid: cd4a5c53169fa4540bd539cb2e7f619e, type: 2}
+      propertyPath: m_spellList.Array.data[1]
+      value: CDEBB
+      objectReference: {fileID: 0}
+    - target: {fileID: 11495176, guid: cd4a5c53169fa4540bd539cb2e7f619e, type: 2}
+      propertyPath: m_spellList.Array.data[2]
+      value: AAAEA
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: cd4a5c53169fa4540bd539cb2e7f619e, type: 2}
   m_IsPrefabParent: 0
@@ -6196,7 +6204,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 11481506, guid: c2cb8aafa83d79f4bb15694996577265, type: 2}
       propertyPath: m_spellPrefabs.Array.size
-      value: 4
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 432036, guid: c2cb8aafa83d79f4bb15694996577265, type: 2}
       propertyPath: m_LocalPosition.x
@@ -6265,7 +6273,7 @@ Prefab:
     - target: {fileID: 11481506, guid: c2cb8aafa83d79f4bb15694996577265, type: 2}
       propertyPath: m_spellPrefabs.Array.data[4]
       value: 
-      objectReference: {fileID: 142226, guid: 9e2674d8bf83e7f4da56e1e185e34af4, type: 2}
+      objectReference: {fileID: 191680, guid: 7676f9e6a3785544fb2ea78dcbf3f7c0, type: 2}
     - target: {fileID: 11494406, guid: c2cb8aafa83d79f4bb15694996577265, type: 2}
       propertyPath: m_playing
       value: 1
@@ -6304,7 +6312,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 11404228, guid: c2cb8aafa83d79f4bb15694996577265, type: 2}
       propertyPath: s_inputDevice
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 11414214, guid: c2cb8aafa83d79f4bb15694996577265, type: 2}
       propertyPath: m_noteArray.Array.data[0]
@@ -6338,6 +6346,10 @@ Prefab:
       propertyPath: m_backgroundSong
       value: 
       objectReference: {fileID: 8300000, guid: 521626cdaca2b374a88cb17d35b18bb0, type: 3}
+    - target: {fileID: 11481506, guid: c2cb8aafa83d79f4bb15694996577265, type: 2}
+      propertyPath: m_spellPrefabs.Array.data[5]
+      value: 
+      objectReference: {fileID: 113786, guid: f504ea7b119576f42beab119dbe8243e, type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c2cb8aafa83d79f4bb15694996577265, type: 2}
   m_IsPrefabParent: 0

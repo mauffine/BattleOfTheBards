@@ -17,7 +17,6 @@ public class SpellSystem : MonoBehaviour
 
     Dictionary<string, Note[]> m_spellList = new Dictionary<string, Note[]>();
 
-    int m_damage;
     [SerializeField]
     float m_accuracy;
     float m_flightTime;
@@ -33,7 +32,6 @@ public class SpellSystem : MonoBehaviour
         {
             m_spellList.Add(m_spellPrefabs[i].GetComponent<Spell>().Name, m_spellPrefabs[i].GetComponent<Spell>().Key);
         }
-        m_damage = 0;
         m_accuracy = 0; // this should always be out of 100;
         m_flightTime = 0.7f;
     }
@@ -235,19 +233,13 @@ public class SpellSystem : MonoBehaviour
         {
             if (m_playerSpell != null)
             {
-                m_damage = m_playerSpell.GetComponent<Spell>().Damage;
-                m_damage += m_playerNotes.Count;
-                Battle.Instance.DealDamage(m_damage, false);
-                m_damage = 0;
+                Battle.Instance.DealDamage(m_playerSpell.GetComponent<Spell>().Damage + m_playerNotes.Count, false);
                 Destroy(m_playerSpell);
                 m_playerSpell = null;
             }
             if (m_enemySpell != null)
             {
-                m_damage = m_enemySpell.GetComponent<Spell>().Damage;
-                m_damage += m_enemyNotes.Count;
-                Battle.Instance.DealDamage(m_damage, true);
-                m_damage = 0;
+                Battle.Instance.DealDamage(m_enemySpell.GetComponent<Spell>().Damage + m_enemyNotes.Count, true);
                 Destroy(m_enemySpell);
                 m_enemySpell = null;
             }
@@ -259,17 +251,11 @@ public class SpellSystem : MonoBehaviour
     }
     void Attack_Attack()
     {
-        m_damage = m_playerSpell.GetComponent<Spell>().Damage;
-        m_damage += m_playerNotes.Count;
-        Battle.Instance.DealDamage(m_damage, false);
-        m_damage = 0;
+        Battle.Instance.DealDamage(m_playerSpell.GetComponent<Spell>().Damage + m_playerNotes.Count, false);
         Destroy(m_playerSpell);
         m_playerSpell = null;
 
-        m_damage = m_enemySpell.GetComponent<Spell>().Damage;
-        m_damage += m_enemyNotes.Count;
-        Battle.Instance.DealDamage(m_damage, true);
-        m_damage = 0;
+        Battle.Instance.DealDamage(m_enemySpell.GetComponent<Spell>().Damage + m_enemyNotes.Count, true);
         Destroy(m_enemySpell);
         m_enemySpell = null;
 
@@ -277,16 +263,11 @@ public class SpellSystem : MonoBehaviour
     }
     void Attack_Defence()
     {
-        m_damage += m_playerNotes.Count;
-        Battle.Instance.DealDamage(m_damage, false);
-        m_damage = 0;
+        Battle.Instance.DealDamage(m_playerNotes.Count, false);
         Destroy(m_playerSpell);
         m_playerSpell = null;
 
-        m_damage = m_playerSpell.GetComponent<Spell>().Damage;
-        m_damage += m_enemyNotes.Count;
-        Battle.Instance.DealDamage(m_damage, true);
-        m_damage = 0;
+        Battle.Instance.DealDamage(m_playerSpell.GetComponent<Spell>().Damage + m_enemyNotes.Count, true);
         Destroy(m_enemySpell);
         m_enemySpell = null;
 
@@ -294,16 +275,11 @@ public class SpellSystem : MonoBehaviour
     }
     void Attack_Effect()
     {
-        m_damage = m_playerSpell.GetComponent<Spell>().Damage;
-        m_damage += m_playerNotes.Count;
-        Battle.Instance.DealDamage(m_damage, false);
-        m_damage = 0;
+        Battle.Instance.DealDamage(m_playerSpell.GetComponent<Spell>().Damage + m_playerNotes.Count, false);
         Destroy(m_playerSpell);
         m_playerSpell = null;
 
-        m_damage += m_enemyNotes.Count;
-        Battle.Instance.DealDamage(m_damage, true);
-        m_damage = 0;
+        Battle.Instance.DealDamage(m_enemyNotes.Count, true);
         Destroy(m_enemySpell);
         m_enemySpell = null;
 
@@ -311,16 +287,11 @@ public class SpellSystem : MonoBehaviour
     }
     void Defence_Attack()
     {
-        m_damage = m_enemySpell.GetComponent<Spell>().Damage;
-        m_damage += m_playerNotes.Count;
-        Battle.Instance.DealDamage(m_damage, false);
-        m_damage = 0;
+        Battle.Instance.DealDamage(m_enemySpell.GetComponent<Spell>().Damage + m_playerNotes.Count, false);
         Destroy(m_enemySpell);
         m_enemySpell = null;
 
-        m_damage += m_enemyNotes.Count;
-        Battle.Instance.DealDamage(m_damage, true);
-        m_damage = 0;
+        Battle.Instance.DealDamage(m_enemyNotes.Count, true);
         Destroy(m_playerSpell);
         m_playerSpell = null;
 
@@ -328,15 +299,11 @@ public class SpellSystem : MonoBehaviour
     }
     void Defence_Defence()
     {
-        m_damage += m_playerNotes.Count;
-        Battle.Instance.DealDamage(m_damage, false);
-        m_damage = 0;
+        Battle.Instance.DealDamage(m_playerNotes.Count, false);
         Destroy(m_enemySpell);
         m_enemySpell = null;
 
-        m_damage += m_enemyNotes.Count;
-        Battle.Instance.DealDamage(m_damage, true);
-        m_damage = 0;
+        Battle.Instance.DealDamage(m_enemyNotes.Count, true);
         Destroy(m_playerSpell);
         m_playerSpell = null;
 
@@ -344,16 +311,11 @@ public class SpellSystem : MonoBehaviour
     }
     void Defence_Effect()
     {
-        m_damage += m_playerNotes.Count;
-        Battle.Instance.DealDamage(m_damage, false);
-        m_damage = 0;
+        Battle.Instance.DealDamage(m_playerNotes.Count, false);
         Destroy(m_playerSpell);
         m_playerSpell = null;
 
-        m_damage = m_enemySpell.GetComponent<Spell>().Damage;
-        m_damage += m_enemyNotes.Count;
-        Battle.Instance.DealDamage(m_damage, true);
-        m_damage = 0;
+        Battle.Instance.DealDamage(m_playerSpell.GetComponent<Spell>().Damage + m_enemyNotes.Count, true);
         Destroy(m_enemySpell);
         m_enemySpell = null;
 
@@ -361,16 +323,11 @@ public class SpellSystem : MonoBehaviour
     }
     void Effect_Attack()
     {
-        m_damage += m_playerNotes.Count;
-        Battle.Instance.DealDamage(m_damage, false);
-        m_damage = 0;
+        Battle.Instance.DealDamage(m_playerNotes.Count, false);
         Destroy(m_playerSpell);
         m_playerSpell = null;
 
-        m_damage = m_enemySpell.GetComponent<Spell>().Damage;
-        m_damage += m_enemyNotes.Count;
-        Battle.Instance.DealDamage(m_damage, true);
-        m_damage = 0;
+        Battle.Instance.DealDamage(m_enemySpell.GetComponent<Spell>().Damage + m_enemyNotes.Count, true);
         Destroy(m_enemySpell);
         m_enemySpell = null;
 
@@ -378,16 +335,12 @@ public class SpellSystem : MonoBehaviour
     }
     void Effect_Defence()
     {
-        m_damage = m_playerSpell.GetComponent<Spell>().Damage;
-        m_damage += m_playerNotes.Count;
-        Battle.Instance.DealDamage(m_damage, false);
-        m_damage = 0;
+
+        Battle.Instance.DealDamage(m_playerSpell.GetComponent<Spell>().Damage + m_playerNotes.Count, false);
         Destroy(m_playerSpell);
         m_playerSpell = null;
 
-        m_damage += m_enemyNotes.Count;
-        Battle.Instance.DealDamage(m_damage, true);
-        m_damage = 0;
+        Battle.Instance.DealDamage(m_enemyNotes.Count, true);
         Destroy(m_enemySpell);
         m_enemySpell = null;
 
@@ -395,200 +348,14 @@ public class SpellSystem : MonoBehaviour
     }
     void Effect_Effect()
     {
-        m_damage = m_playerSpell.GetComponent<Spell>().Damage;
-        m_damage += m_playerNotes.Count;
-        Battle.Instance.DealDamage(m_damage, false);
-        m_damage = 0;
+        Battle.Instance.DealDamage(m_playerSpell.GetComponent<Spell>().Damage + m_playerNotes.Count, false);
         Destroy(m_playerSpell);
         m_playerSpell = null;
 
-        m_damage = m_enemySpell.GetComponent<Spell>().Damage;
-        m_damage += m_enemyNotes.Count;
-        Battle.Instance.DealDamage(m_damage, true);
-        m_damage = 0;
+        Battle.Instance.DealDamage(m_enemySpell.GetComponent<Spell>().Damage + m_enemyNotes.Count, true);
         Destroy(m_enemySpell);
         m_enemySpell = null;
 
         Debug.Log("Both effects clash!");
     }
 }
-/*
- * case SpellType.Offencive:
-                    {
-                        switch (m_enemySpell.GetComponent<Spell>().Type)
-                        {
-                            case SpellType.Offencive: //both Damage each other
-                                {
-                                    m_damage = m_playerSpell.GetComponent<Spell>().Damage;
-                                    m_damage += m_playerNotes.Count;
-                                    Battle.Instance.DealDamage(m_damage, false);
-                                    m_damage = 0;
-                                    Destroy(m_playerSpell);
-                                    m_playerSpell = null;
-
-                                    m_damage = m_enemySpell.GetComponent<Spell>().Damage;
-                                    m_damage += m_enemyNotes.Count;
-                                    Battle.Instance.DealDamage(m_damage, true);
-                                    m_damage = 0;
-                                    Destroy(m_enemySpell);
-                                    m_enemySpell = null;
-                                }
-                                break;
-                            case SpellType.Defensive: //reflect the player's spell back at him
-                                {
-                                    m_damage = m_playerSpell.GetComponent<Spell>().Damage;
-                                    m_damage += m_enemyNotes.Count;
-                                    Battle.Instance.DealDamage(m_damage, true);
-                                    m_damage = 0;
-                                    Destroy(m_enemySpell);
-                                    m_enemySpell = null;
-
-                                    m_damage += m_playerNotes.Count;
-                                    Battle.Instance.DealDamage(m_damage, false);
-                                    m_damage = 0;
-                                    Destroy(m_playerSpell);
-                                    m_playerSpell = null;
-                                }
-                                break;
-                            case SpellType.Effect: //player spell breaks through the enemy's spell
-                                {
-                                    m_damage = m_playerSpell.GetComponent<Spell>().Damage;
-                                    m_damage += m_playerNotes.Count;
-                                    Battle.Instance.DealDamage(m_damage, false);
-                                    m_damage = 0;
-                                    Destroy(m_playerSpell);
-                                    m_playerSpell = null;
-
-                                    m_damage += m_enemyNotes.Count;
-                                    Battle.Instance.DealDamage(m_damage, true);
-                                    m_damage = 0;
-                                    Destroy(m_enemySpell);
-                                    m_enemySpell = null;
-                                }
-                                break;
-                            default:
-                                break;
-                        }
-                    }
-                    break;
-                case SpellType.Defensive:
-                    {
-                        switch (m_enemySpell.GetComponent<Spell>().Type)
-                        {
-                            case SpellType.Offencive:
-                                {
-                                    m_damage = m_enemySpell.GetComponent<Spell>().Damage;
-                                    m_damage += m_playerNotes.Count;
-                                    Battle.Instance.DealDamage(m_damage, false);
-                                    m_damage = 0;
-                                    Destroy(m_enemySpell);
-                                    m_enemySpell = null;
-
-                                    m_damage += m_enemyNotes.Count;
-                                    Battle.Instance.DealDamage(m_damage, true);
-                                    m_damage = 0;
-                                    Destroy(m_playerSpell);
-                                    m_playerSpell = null;
-                                }
-                                break;
-                            case SpellType.Defensive:
-                                {
-                                    //just sit around looking stupid
-                                    m_damage += m_playerNotes.Count;
-                                    Battle.Instance.DealDamage(m_damage, false);
-                                    m_damage = 0;
-                                    Destroy(m_enemySpell);
-                                    m_enemySpell = null;
-
-                                    m_damage += m_enemyNotes.Count;
-                                    Battle.Instance.DealDamage(m_damage, true);
-                                    m_damage = 0;
-                                    Destroy(m_playerSpell);
-                                    m_playerSpell = null;
-                                }
-                                break;
-                            case SpellType.Effect:
-                                {
-                                    m_damage += m_playerNotes.Count;
-                                    Battle.Instance.DealDamage(m_damage, false);
-                                    m_damage = 0;
-                                    Destroy(m_playerSpell);
-                                    m_playerSpell = null;
-
-                                    m_damage = m_enemySpell.GetComponent<Spell>().Damage;
-                                    m_damage += m_enemyNotes.Count;
-                                    Battle.Instance.DealDamage(m_damage, true);
-                                    m_damage = 0;
-                                    Destroy(m_enemySpell);
-                                    m_enemySpell = null;
-                                }
-                                break;
-                            default:
-                                break;
-                        }
-                    }
-                    break;
-                case SpellType.Effect:
-                    {
-                        if (m_playerSpell.GetComponent<Spell>().Name == "Hasten")
-                            //if (m_playerSpell.GetComponent<Spell>().Type == SpellType.Effect)
-                            Battle.Instance.DealDamage(-5, true);
-                        switch (m_enemySpell.GetComponent<Spell>().Type)
-                        {
-                            case SpellType.Offencive:
-                                {
-                                    m_damage += m_playerNotes.Count;
-                                    Battle.Instance.DealDamage(m_damage, false);
-                                    m_damage = 0;
-                                    Destroy(m_playerSpell);
-                                    m_playerSpell = null;
-
-                                    m_damage = m_enemySpell.GetComponent<Spell>().Damage;
-                                    m_damage += m_enemyNotes.Count;
-                                    Battle.Instance.DealDamage(m_damage, true);
-                                    m_damage = 0;
-                                    Destroy(m_enemySpell);
-                                    m_enemySpell = null;
-                                }
-                                break;
-                            case SpellType.Defensive:
-                                {
-                                    m_damage = m_playerSpell.GetComponent<Spell>().Damage;
-                                    m_damage += m_playerNotes.Count;
-                                    Battle.Instance.DealDamage(m_damage, false);
-                                    m_damage = 0;
-                                    Destroy(m_playerSpell);
-                                    m_playerSpell = null;
-
-                                    m_damage += m_enemyNotes.Count;
-                                    Battle.Instance.DealDamage(m_damage, true);
-                                    m_damage = 0;
-                                    Destroy(m_enemySpell);
-                                    m_enemySpell = null;
-                                }
-                                break;
-                            case SpellType.Effect:
-                                {
-                                    m_damage = m_playerSpell.GetComponent<Spell>().Damage;
-                                    m_damage += m_playerNotes.Count;
-                                    Battle.Instance.DealDamage(m_damage, false);
-                                    m_damage = 0;
-                                    Destroy(m_playerSpell);
-                                    m_playerSpell = null;
-
-                                    m_damage = m_enemySpell.GetComponent<Spell>().Damage;
-                                    m_damage += m_enemyNotes.Count;
-                                    Battle.Instance.DealDamage(m_damage, true);
-                                    m_damage = 0;
-                                    Destroy(m_enemySpell);
-                                    m_enemySpell = null;
-                                }
-                                break;
-                            default:
-                                break;
-                        }
-                    }
-                    break;
-                default:
-                    break;
-*/
