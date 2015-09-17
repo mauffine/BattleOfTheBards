@@ -252,10 +252,11 @@ public class SpellSystem : MonoBehaviour
     void Attack_Attack()
     {
         Battle.Instance.DealDamage(m_playerSpell.GetComponent<Spell>().Damage + m_playerNotes.Count, false);
-        Destroy(m_playerSpell);
-        m_playerSpell = null;
 
         Battle.Instance.DealDamage(m_enemySpell.GetComponent<Spell>().Damage + m_enemyNotes.Count, true);
+        Destroy(m_playerSpell);
+        m_playerSpell = null;
+        
         Destroy(m_enemySpell);
         m_enemySpell = null;
 
@@ -264,22 +265,25 @@ public class SpellSystem : MonoBehaviour
     void Attack_Defence()
     {
         Battle.Instance.DealDamage(m_playerNotes.Count, false);
-        Destroy(m_playerSpell);
-        m_playerSpell = null;
 
         Battle.Instance.DealDamage(m_playerSpell.GetComponent<Spell>().Damage + m_enemyNotes.Count, true);
-        Destroy(m_enemySpell);
+        
+        Destroy(m_playerSpell);
         m_enemySpell = null;
-
+        
+        Destroy(m_enemySpell);
+        m_playerSpell = null;
         Debug.Log("Your spell was deflected!");
     }
     void Attack_Effect()
     {
         Battle.Instance.DealDamage(m_playerSpell.GetComponent<Spell>().Damage + m_playerNotes.Count, false);
+
+        Battle.Instance.DealDamage(m_enemyNotes.Count, true);
+
         Destroy(m_playerSpell);
         m_playerSpell = null;
 
-        Battle.Instance.DealDamage(m_enemyNotes.Count, true);
         Destroy(m_enemySpell);
         m_enemySpell = null;
 
@@ -288,10 +292,12 @@ public class SpellSystem : MonoBehaviour
     void Defence_Attack()
     {
         Battle.Instance.DealDamage(m_enemySpell.GetComponent<Spell>().Damage + m_playerNotes.Count, false);
+
+        Battle.Instance.DealDamage(m_enemyNotes.Count, true);
+
         Destroy(m_enemySpell);
         m_enemySpell = null;
 
-        Battle.Instance.DealDamage(m_enemyNotes.Count, true);
         Destroy(m_playerSpell);
         m_playerSpell = null;
 
@@ -300,10 +306,12 @@ public class SpellSystem : MonoBehaviour
     void Defence_Defence()
     {
         Battle.Instance.DealDamage(m_playerNotes.Count, false);
+
+        Battle.Instance.DealDamage(m_enemyNotes.Count, true);
+
         Destroy(m_enemySpell);
         m_enemySpell = null;
 
-        Battle.Instance.DealDamage(m_enemyNotes.Count, true);
         Destroy(m_playerSpell);
         m_playerSpell = null;
 
@@ -312,10 +320,12 @@ public class SpellSystem : MonoBehaviour
     void Defence_Effect()
     {
         Battle.Instance.DealDamage(m_playerNotes.Count, false);
+
+        Battle.Instance.DealDamage(m_playerSpell.GetComponent<Spell>().Damage + m_enemyNotes.Count, true);
+
         Destroy(m_playerSpell);
         m_playerSpell = null;
 
-        Battle.Instance.DealDamage(m_playerSpell.GetComponent<Spell>().Damage + m_enemyNotes.Count, true);
         Destroy(m_enemySpell);
         m_enemySpell = null;
 
@@ -324,10 +334,12 @@ public class SpellSystem : MonoBehaviour
     void Effect_Attack()
     {
         Battle.Instance.DealDamage(m_playerNotes.Count, false);
+        
+        Battle.Instance.DealDamage(m_enemySpell.GetComponent<Spell>().Damage + m_enemyNotes.Count, true);
+
         Destroy(m_playerSpell);
         m_playerSpell = null;
 
-        Battle.Instance.DealDamage(m_enemySpell.GetComponent<Spell>().Damage + m_enemyNotes.Count, true);
         Destroy(m_enemySpell);
         m_enemySpell = null;
 
@@ -337,10 +349,12 @@ public class SpellSystem : MonoBehaviour
     {
 
         Battle.Instance.DealDamage(m_playerSpell.GetComponent<Spell>().Damage + m_playerNotes.Count, false);
+
+        Battle.Instance.DealDamage(m_enemyNotes.Count, true);
+
         Destroy(m_playerSpell);
         m_playerSpell = null;
 
-        Battle.Instance.DealDamage(m_enemyNotes.Count, true);
         Destroy(m_enemySpell);
         m_enemySpell = null;
 
@@ -349,10 +363,12 @@ public class SpellSystem : MonoBehaviour
     void Effect_Effect()
     {
         Battle.Instance.DealDamage(m_playerSpell.GetComponent<Spell>().Damage + m_playerNotes.Count, false);
-        Destroy(m_playerSpell);
-        m_playerSpell = null;
 
         Battle.Instance.DealDamage(m_enemySpell.GetComponent<Spell>().Damage + m_enemyNotes.Count, true);
+
+        Destroy(m_playerSpell);
+        m_playerSpell = null;
+        
         Destroy(m_enemySpell);
         m_enemySpell = null;
 

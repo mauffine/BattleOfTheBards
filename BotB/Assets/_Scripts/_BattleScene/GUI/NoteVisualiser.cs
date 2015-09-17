@@ -31,6 +31,8 @@ public class NoteVisualiser : MonoBehaviour
         {
             m_turn = TurnTimer.Instance.CurrentTurn;
             m_notePool.RemoveAllNotes();
+            if (m_turn == Turn.Casting)
+                ShowCombo();
         }
 	}
     public void ReceiveNote(TimedNote a_note)
@@ -45,9 +47,41 @@ public class NoteVisualiser : MonoBehaviour
         Vector3 pos = (Slider.LocalPosition) - new Vector3(0, 0, 0.5f) + modifier;
         Note toPlay = (a_Note.m_playerOwned)? a_Note.m_note : Note.BLANK;
 
-        m_notePool.AddNote(pos, toPlay);
+        m_notePool.AddNote(pos, toPlay, false);
     }
-
+    public void ShowCombo()
+    {
+        switch (SpellMenu.Selection)
+        {
+            case SpellType.Offencive:
+                {
+                    m_notePool.AddNote(new Vector3(-768, -305, 0), Note.B, true);
+                    m_notePool.AddNote(new Vector3(-384, -305, 0), Note.B, true);
+                    m_notePool.AddNote(new Vector3(0, -305, 0), Note.E, true);
+                    m_notePool.AddNote(new Vector3(384, -305, 0), Note.D, true);
+                    m_notePool.AddNote(new Vector3(768, -305, 0), Note.C, true);
+                    break;
+                }
+            case SpellType.Defensive:
+                {
+                    m_notePool.AddNote(new Vector3(-768, -305, 0), Note.C, true);
+                    m_notePool.AddNote(new Vector3(-384, -305, 0), Note.D, true);
+                    m_notePool.AddNote(new Vector3(0, -305, 0), Note.E, true);
+                    m_notePool.AddNote(new Vector3(384, -305, 0), Note.B, true);
+                    m_notePool.AddNote(new Vector3(768, -305, 0), Note.B, true);
+                    break;
+                }
+            case SpellType.Effect:
+                {
+                    m_notePool.AddNote(new Vector3(-768, -305, 0), Note.A, true);
+                    m_notePool.AddNote(new Vector3(-384, -305, 0), Note.A, true);
+                    m_notePool.AddNote(new Vector3(0, -305, 0), Note.A, true);
+                    m_notePool.AddNote(new Vector3(384, -305, 0), Note.E, true);
+                    m_notePool.AddNote(new Vector3(768, -305, 0), Note.A, true);
+                    break;
+                }
+        }
+    }
     public static NoteVisualiser Reference
     {
         get { return refToMe; }
