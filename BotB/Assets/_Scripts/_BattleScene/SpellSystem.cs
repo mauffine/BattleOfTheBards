@@ -68,9 +68,34 @@ public class SpellSystem : MonoBehaviour
             {
                 noteAccuracy = .5f - noteAccuracy;
             }
-            noteAccuracy = ((noteAccuracy / .5f) * 100.0f) / 5; //convert it into a percentage and divide it by how many notes there are to be played in a single turn
-            m_accuracy += noteAccuracy;
+            noteAccuracy = ((noteAccuracy / .5f) * 100.0f); //convert it into a percentage
+            m_accuracy += noteAccuracy / 5; //divided by the amount of notes in the spell
             //TODO: give a visual cue to how well the player has played
+            if (noteAccuracy > 40)//okay
+            {
+                if (noteAccuracy > 60)//good
+                {
+                    if (noteAccuracy > 80)//great
+                    {
+                        if (noteAccuracy > 90)//perfect
+                        {
+                            //show perfect
+                        }
+                        else
+                        {
+                            //show great
+                        }
+                    }
+                    else
+                    {
+                        //show good
+                    }
+                }
+                else
+                {
+                    //show okay
+                }
+            }
         }
         else
             m_enemyNotes.Add(a_note);
@@ -101,7 +126,7 @@ public class SpellSystem : MonoBehaviour
                         {
                             if (a_currentNotes[i].m_playerOwned)
                             {
-                                if (m_accuracy >= 0)
+                                if (m_accuracy >= 50)
                                 {
                                     switch (m_spellPrefabs[o].GetComponent<Spell>().Type)
                                     {
@@ -149,7 +174,7 @@ public class SpellSystem : MonoBehaviour
                                         }
                                     case SpellType.Defensive:
                                         {
-                                            m_enemySpell = (GameObject)Instantiate(m_spellPrefabs[o], new Vector3(-1, 1, 1), Quaternion.AngleAxis(180, Vector3.up));
+                                            m_enemySpell = (GameObject)Instantiate(m_spellPrefabs[o], new Vector3(-1, 1, 1.2f), Quaternion.AngleAxis(135, Vector3.up));
                                             m_enemySpell.GetComponent<Spell>().m_velocity = Vector3.zero;
                                             break;
                                         }
@@ -247,6 +272,8 @@ public class SpellSystem : MonoBehaviour
         m_damage = 0;
         Destroy(m_enemySpell);
         m_enemySpell = null;
+
+        Debug.Log("Both attacks clash!");
     }
     void Attack_Defence()
     {
@@ -262,6 +289,8 @@ public class SpellSystem : MonoBehaviour
         m_damage = 0;
         Destroy(m_enemySpell);
         m_enemySpell = null;
+
+        Debug.Log("Your spell was deflected!");
     }
     void Attack_Effect()
     {
@@ -277,6 +306,8 @@ public class SpellSystem : MonoBehaviour
         m_damage = 0;
         Destroy(m_enemySpell);
         m_enemySpell = null;
+
+        Debug.Log("Enemy's effect was blown away!");
     }
     void Defence_Attack()
     {
@@ -292,6 +323,8 @@ public class SpellSystem : MonoBehaviour
         m_damage = 0;
         Destroy(m_playerSpell);
         m_playerSpell = null;
+
+        Debug.Log("Enemy spell deflected!");
     }
     void Defence_Defence()
     {
@@ -306,6 +339,8 @@ public class SpellSystem : MonoBehaviour
         m_damage = 0;
         Destroy(m_playerSpell);
         m_playerSpell = null;
+
+        Debug.Log("Both of you defend...");
     }
     void Defence_Effect()
     {
@@ -321,6 +356,8 @@ public class SpellSystem : MonoBehaviour
         m_damage = 0;
         Destroy(m_enemySpell);
         m_enemySpell = null;
+
+        Debug.Log("The enemy's effect passes through your defences!");
     }
     void Effect_Attack()
     {
@@ -336,6 +373,8 @@ public class SpellSystem : MonoBehaviour
         m_damage = 0;
         Destroy(m_enemySpell);
         m_enemySpell = null;
+
+        Debug.Log("Your effect was blown away by the enemy attack!");
     }
     void Effect_Defence()
     {
@@ -351,15 +390,26 @@ public class SpellSystem : MonoBehaviour
         m_damage = 0;
         Destroy(m_enemySpell);
         m_enemySpell = null;
+
+        Debug.Log("Your effect passed through the enemy's defences!");
     }
     void Effect_Effect()
     {
+        m_damage = m_playerSpell.GetComponent<Spell>().Damage;
+        m_damage += m_playerNotes.Count;
+        Battle.Instance.DealDamage(m_damage, false);
+        m_damage = 0;
+        Destroy(m_playerSpell);
+        m_playerSpell = null;
+
         m_damage = m_enemySpell.GetComponent<Spell>().Damage;
         m_damage += m_enemyNotes.Count;
         Battle.Instance.DealDamage(m_damage, true);
         m_damage = 0;
         Destroy(m_enemySpell);
         m_enemySpell = null;
+
+        Debug.Log("Both effects clash!");
     }
 }
 /*

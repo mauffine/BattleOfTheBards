@@ -108,7 +108,7 @@ public class Musician : MonoBehaviour
                         toMake = SpellType.Defensive;
                         break;
                     case SpellType.Defensive:
-                        PlaySpell(m_spellList[0]);
+                        PlaySpell(m_spellList[1]);
                         toMake = SpellType.Effect;
                         break;
                     case SpellType.Effect:
