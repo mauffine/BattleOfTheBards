@@ -9,6 +9,12 @@ public class NoteVisualiser : MonoBehaviour
 	// Use this for initialization
     static NoteVisualiser refToMe;
     NotePool m_notePool;
+    [SerializeField]
+    private GameObject m_fireAttack, m_iceAttack, m_arcaneAttack;
+    [SerializeField]
+    private GameObject m_fireDefence, m_iceDefence, m_arcaneDefence;
+    [SerializeField]
+    private GameObject m_fireEffect, m_iceEffect, m_arcaneEffect;
 
 	void Start()
     {
@@ -57,27 +63,27 @@ public class NoteVisualiser : MonoBehaviour
                 {
                     if (SpellMenu.SelectedElement == Element.Fire)
                     {
-                        m_notePool.AddNote(new Vector3(-640, -305, 0), Note.B, true);
-                        m_notePool.AddNote(new Vector3(-320, -305, 0), Note.B, true);
-                        m_notePool.AddNote(new Vector3(0, -305, 0), Note.E, true);
-                        m_notePool.AddNote(new Vector3(320, -305, 0), Note.D, true);
-                        m_notePool.AddNote(new Vector3(640, -305, 0), Note.C, true);
+                        m_notePool.AddNote(new Vector3(-640, -305, 0), m_fireAttack.GetComponent<Spell>().Key[0], true);
+                        m_notePool.AddNote(new Vector3(-320, -305, 0), m_fireAttack.GetComponent<Spell>().Key[1], true);
+                        m_notePool.AddNote(new Vector3(0, -305, 0), m_fireAttack.GetComponent<Spell>().Key[2], true);
+                        m_notePool.AddNote(new Vector3(320, -305, 0), m_fireAttack.GetComponent<Spell>().Key[3], true);
+                        m_notePool.AddNote(new Vector3(640, -305, 0), m_fireAttack.GetComponent<Spell>().Key[4], true);
                     }
                     else if (SpellMenu.SelectedElement == Element.Ice)
                     {
-                        m_notePool.AddNote(new Vector3(-640, -305, 0), Note.C, true);
-                        m_notePool.AddNote(new Vector3(-320, -305, 0), Note.D, true);
-                        m_notePool.AddNote(new Vector3(0, -305, 0), Note.E, true);
-                        m_notePool.AddNote(new Vector3(320, -305, 0), Note.B, true);
-                        m_notePool.AddNote(new Vector3(640, -305, 0), Note.A, true);
+                        m_notePool.AddNote(new Vector3(-640, -305, 0), m_iceAttack.GetComponent<Spell>().Key[0], true);
+                        m_notePool.AddNote(new Vector3(-320, -305, 0), m_iceAttack.GetComponent<Spell>().Key[1], true);
+                        m_notePool.AddNote(new Vector3(0, -305, 0), m_iceAttack.GetComponent<Spell>().Key[2], true);
+                        m_notePool.AddNote(new Vector3(320, -305, 0), m_iceAttack.GetComponent<Spell>().Key[3], true);
+                        m_notePool.AddNote(new Vector3(640, -305, 0), m_iceAttack.GetComponent<Spell>().Key[4], true);
                     }
                     else
                     {
-                        m_notePool.AddNote(new Vector3(-640, -305, 0), Note.A, true);
-                        m_notePool.AddNote(new Vector3(-320, -305, 0), Note.A, true);
-                        m_notePool.AddNote(new Vector3(0, -305, 0), Note.D, true);
-                        m_notePool.AddNote(new Vector3(320, -305, 0), Note.E, true);
-                        m_notePool.AddNote(new Vector3(640, -305, 0), Note.B, true);
+                        m_notePool.AddNote(new Vector3(-640, -305, 0), m_arcaneAttack.GetComponent<Spell>().Key[0], true);
+                        m_notePool.AddNote(new Vector3(-320, -305, 0), m_arcaneAttack.GetComponent<Spell>().Key[1], true);
+                        m_notePool.AddNote(new Vector3(0, -305, 0), m_arcaneAttack.GetComponent<Spell>().Key[2], true);
+                        m_notePool.AddNote(new Vector3(320, -305, 0), m_arcaneAttack.GetComponent<Spell>().Key[3], true);
+                        m_notePool.AddNote(new Vector3(640, -305, 0), m_arcaneAttack.GetComponent<Spell>().Key[4], true);
                     }
                     break;
                 }
@@ -85,38 +91,58 @@ public class NoteVisualiser : MonoBehaviour
                 {
                     if (SpellMenu.SelectedElement == Element.Fire)
                     {
-                        m_notePool.AddNote(new Vector3(-640, -305, 0), Note.B, true);
-                        m_notePool.AddNote(new Vector3(-320, -305, 0), Note.E, true);
-                        m_notePool.AddNote(new Vector3(0, -305, 0), Note.E, true);
-                        m_notePool.AddNote(new Vector3(320, -305, 0), Note.D, true);
-                        m_notePool.AddNote(new Vector3(640, -305, 0), Note.C, true);
+                        m_notePool.AddNote(new Vector3(-640, -305, 0), m_fireDefence.GetComponent<Spell>().Key[0], true);
+                        m_notePool.AddNote(new Vector3(-320, -305, 0), m_fireDefence.GetComponent<Spell>().Key[1], true);
+                        m_notePool.AddNote(new Vector3(0, -305, 0), m_fireDefence.GetComponent<Spell>().Key[2], true);
+                        m_notePool.AddNote(new Vector3(320, -305, 0), m_fireDefence.GetComponent<Spell>().Key[3], true);
+                        m_notePool.AddNote(new Vector3(640, -305, 0), m_fireDefence.GetComponent<Spell>().Key[4], true);
                     }
                     else if (SpellMenu.SelectedElement == Element.Ice)
                     {
-                        m_notePool.AddNote(new Vector3(-640, -305, 0), Note.B, true);
-                        m_notePool.AddNote(new Vector3(-320, -305, 0), Note.B, true);
-                        m_notePool.AddNote(new Vector3(0, -305, 0), Note.E, true);
-                        m_notePool.AddNote(new Vector3(320, -305, 0), Note.D, true);
-                        m_notePool.AddNote(new Vector3(640, -305, 0), Note.D, true);
+                        m_notePool.AddNote(new Vector3(-640, -305, 0), m_iceDefence.GetComponent<Spell>().Key[0], true);
+                        m_notePool.AddNote(new Vector3(-320, -305, 0), m_iceDefence.GetComponent<Spell>().Key[1], true);
+                        m_notePool.AddNote(new Vector3(0, -305, 0), m_iceDefence.GetComponent<Spell>().Key[2], true);
+                        m_notePool.AddNote(new Vector3(320, -305, 0), m_iceDefence.GetComponent<Spell>().Key[3], true);
+                        m_notePool.AddNote(new Vector3(640, -305, 0), m_iceDefence.GetComponent<Spell>().Key[4], true);
                     }
                     else
                     {
-                        m_notePool.AddNote(new Vector3(-640, -305, 0), Note.A, true);
-                        m_notePool.AddNote(new Vector3(-320, -305, 0), Note.E, true);
-                        m_notePool.AddNote(new Vector3(0, -305, 0), Note.D, true);
-                        m_notePool.AddNote(new Vector3(320, -305, 0), Note.E, true);
-                        m_notePool.AddNote(new Vector3(640, -305, 0), Note.B, true);
+                        m_notePool.AddNote(new Vector3(-640, -305, 0), m_arcaneDefence.GetComponent<Spell>().Key[0], true);
+                        m_notePool.AddNote(new Vector3(-320, -305, 0), m_arcaneDefence.GetComponent<Spell>().Key[1], true);
+                        m_notePool.AddNote(new Vector3(0, -305, 0), m_arcaneDefence.GetComponent<Spell>().Key[2], true);
+                        m_notePool.AddNote(new Vector3(320, -305, 0), m_arcaneDefence.GetComponent<Spell>().Key[3], true);
+                        m_notePool.AddNote(new Vector3(640, -305, 0), m_arcaneDefence.GetComponent<Spell>().Key[4], true);
                     }
 
                     break;
                 }
             case SpellType.Effect:
                 {
-                    m_notePool.AddNote(new Vector3(-640, -305, 0), Note.A, true);
-                    m_notePool.AddNote(new Vector3(-320, -305, 0), Note.A, true);
-                    m_notePool.AddNote(new Vector3(0, -305, 0), Note.A, true);
-                    m_notePool.AddNote(new Vector3(320, -305, 0), Note.E, true);
-                    m_notePool.AddNote(new Vector3(640, -305, 0), Note.A, true);
+                    if (SpellMenu.SelectedElement == Element.Fire)
+                    {
+                        m_notePool.AddNote(new Vector3(-640, -305, 0), m_fireEffect.GetComponent<Spell>().Key[0], true);
+                        m_notePool.AddNote(new Vector3(-320, -305, 0), m_fireEffect.GetComponent<Spell>().Key[1], true);
+                        m_notePool.AddNote(new Vector3(0, -305, 0), m_fireEffect.GetComponent<Spell>().Key[2], true);
+                        m_notePool.AddNote(new Vector3(320, -305, 0), m_fireEffect.GetComponent<Spell>().Key[3], true);
+                        m_notePool.AddNote(new Vector3(640, -305, 0), m_fireEffect.GetComponent<Spell>().Key[4], true);
+                    }
+                    else if (SpellMenu.SelectedElement == Element.Ice)
+                    {
+                        m_notePool.AddNote(new Vector3(-640, -305, 0), m_iceEffect.GetComponent<Spell>().Key[0], true);
+                        m_notePool.AddNote(new Vector3(-320, -305, 0), m_iceEffect.GetComponent<Spell>().Key[1], true);
+                        m_notePool.AddNote(new Vector3(0, -305, 0), m_iceEffect.GetComponent<Spell>().Key[2], true);
+                        m_notePool.AddNote(new Vector3(320, -305, 0), m_iceEffect.GetComponent<Spell>().Key[3], true);
+                        m_notePool.AddNote(new Vector3(640, -305, 0), m_iceEffect.GetComponent<Spell>().Key[4], true);
+                    }
+                    else 
+                    {
+                        m_notePool.AddNote(new Vector3(-640, -305, 0), m_iceEffect.GetComponent<Spell>().Key[0], true);
+                        m_notePool.AddNote(new Vector3(-320, -305, 0), m_iceEffect.GetComponent<Spell>().Key[1], true);
+                        m_notePool.AddNote(new Vector3(0, -305, 0), m_iceEffect.GetComponent<Spell>().Key[2], true);
+                        m_notePool.AddNote(new Vector3(320, -305, 0), m_iceEffect.GetComponent<Spell>().Key[3], true);
+                        m_notePool.AddNote(new Vector3(640, -305, 0), m_iceEffect.GetComponent<Spell>().Key[4], true);
+                    }
+                   
                     break;
                 }
         }

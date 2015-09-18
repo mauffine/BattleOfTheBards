@@ -5345,6 +5345,42 @@ Prefab:
       propertyPath: m_prefabLink
       value: 
       objectReference: {fileID: 122868, guid: 0883f51bb10536041829b2742aae16b5, type: 2}
+    - target: {fileID: 11481688, guid: f63a92b0ec23fc24fa872e03a2c93ce2, type: 2}
+      propertyPath: m_arcaneAttack
+      value: 
+      objectReference: {fileID: 181932, guid: b7b852ffbf3421b42be8de8c12060633, type: 2}
+    - target: {fileID: 11481688, guid: f63a92b0ec23fc24fa872e03a2c93ce2, type: 2}
+      propertyPath: m_fireAttack
+      value: 
+      objectReference: {fileID: 189414, guid: c113d37227557e04581c3afa5eaacfad, type: 2}
+    - target: {fileID: 11481688, guid: f63a92b0ec23fc24fa872e03a2c93ce2, type: 2}
+      propertyPath: m_iceAttack
+      value: 
+      objectReference: {fileID: 157976, guid: 575e9aaea0d7ec349a619fade9fd9803, type: 2}
+    - target: {fileID: 11481688, guid: f63a92b0ec23fc24fa872e03a2c93ce2, type: 2}
+      propertyPath: m_arcaneDefence
+      value: 
+      objectReference: {fileID: 140594, guid: 5ecfbbf6bc70deb4abba009ffa103834, type: 2}
+    - target: {fileID: 11481688, guid: f63a92b0ec23fc24fa872e03a2c93ce2, type: 2}
+      propertyPath: m_fireDefence
+      value: 
+      objectReference: {fileID: 165596, guid: acfc6a8ef99c71d4f92c02fe3a9d3f00, type: 2}
+    - target: {fileID: 11481688, guid: f63a92b0ec23fc24fa872e03a2c93ce2, type: 2}
+      propertyPath: m_iceDefence
+      value: 
+      objectReference: {fileID: 191680, guid: 7676f9e6a3785544fb2ea78dcbf3f7c0, type: 2}
+    - target: {fileID: 11481688, guid: f63a92b0ec23fc24fa872e03a2c93ce2, type: 2}
+      propertyPath: m_arcaneEffect
+      value: 
+      objectReference: {fileID: 123338, guid: 5a80319b4763f5b4f9f8936220d85a7c, type: 2}
+    - target: {fileID: 11481688, guid: f63a92b0ec23fc24fa872e03a2c93ce2, type: 2}
+      propertyPath: m_fireEffect
+      value: 
+      objectReference: {fileID: 151588, guid: 1ec19802660b9314d85ec61d66e565a8, type: 2}
+    - target: {fileID: 11481688, guid: f63a92b0ec23fc24fa872e03a2c93ce2, type: 2}
+      propertyPath: m_iceEffect
+      value: 
+      objectReference: {fileID: 113786, guid: f504ea7b119576f42beab119dbe8243e, type: 2}
     m_RemovedComponents:
     - {fileID: 11495068, guid: f63a92b0ec23fc24fa872e03a2c93ce2, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: f63a92b0ec23fc24fa872e03a2c93ce2, type: 2}
@@ -6311,7 +6347,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 11481506, guid: c2cb8aafa83d79f4bb15694996577265, type: 2}
       propertyPath: m_spellPrefabs.Array.size
-      value: 10
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 432036, guid: c2cb8aafa83d79f4bb15694996577265, type: 2}
       propertyPath: m_LocalPosition.x
