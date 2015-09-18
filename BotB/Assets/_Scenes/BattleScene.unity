@@ -1429,7 +1429,7 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 349962833}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 911b278a3d5b39c4d81d4b511e9583fd, type: 3}
   m_Name: 
@@ -1480,7 +1480,7 @@ Prefab:
     m_Modifications:
     - target: {fileID: 422938, guid: 5e7174957fe37ca439f3a401f57f1681, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 2.11683536
+      value: 2.30299997
       objectReference: {fileID: 0}
     - target: {fileID: 422938, guid: 5e7174957fe37ca439f3a401f57f1681, type: 2}
       propertyPath: m_LocalPosition.y
@@ -1488,7 +1488,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 422938, guid: 5e7174957fe37ca439f3a401f57f1681, type: 2}
       propertyPath: m_LocalPosition.z
-      value: 1.14377642
+      value: 1.05599999
       objectReference: {fileID: 0}
     - target: {fileID: 422938, guid: 5e7174957fe37ca439f3a401f57f1681, type: 2}
       propertyPath: m_LocalRotation.x
@@ -1516,19 +1516,19 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 13739858, guid: 5e7174957fe37ca439f3a401f57f1681, type: 2}
       propertyPath: m_AABB.m_Center.x
-      value: -.953992009
+      value: -.953991771
       objectReference: {fileID: 0}
     - target: {fileID: 13739858, guid: 5e7174957fe37ca439f3a401f57f1681, type: 2}
       propertyPath: m_AABB.m_Center.y
-      value: 2.72702098
+      value: 2.72702074
       objectReference: {fileID: 0}
     - target: {fileID: 13739858, guid: 5e7174957fe37ca439f3a401f57f1681, type: 2}
       propertyPath: m_AABB.m_Extent.x
-      value: 1.94927478
+      value: 1.94927454
       objectReference: {fileID: 0}
     - target: {fileID: 13739858, guid: 5e7174957fe37ca439f3a401f57f1681, type: 2}
       propertyPath: m_AABB.m_Extent.z
-      value: 1.87382579
+      value: 1.87382531
       objectReference: {fileID: 0}
     - target: {fileID: 13739858, guid: 5e7174957fe37ca439f3a401f57f1681, type: 2}
       propertyPath: m_AABB.m_Center.z
@@ -4435,7 +4435,7 @@ Prefab:
     m_Modifications:
     - target: {fileID: 400000, guid: 3a3ef5be28aa5124e9034bfc3ed5547a, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -1.75800002
+      value: -1.99399996
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 3a3ef5be28aa5124e9034bfc3ed5547a, type: 3}
       propertyPath: m_LocalPosition.y
@@ -4463,7 +4463,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 3a3ef5be28aa5124e9034bfc3ed5547a, type: 3}
       propertyPath: m_RootOrder
-      value: 3
+      value: 4
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 3a3ef5be28aa5124e9034bfc3ed5547a, type: 3}
@@ -4543,7 +4543,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 457730, guid: cd4a5c53169fa4540bd539cb2e7f619e, type: 2}
       propertyPath: m_LocalPosition.x
-      value: -1.35899997
+      value: -1.59500003
       objectReference: {fileID: 0}
     - target: {fileID: 457730, guid: cd4a5c53169fa4540bd539cb2e7f619e, type: 2}
       propertyPath: m_LocalPosition.y
@@ -4571,7 +4571,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 457730, guid: cd4a5c53169fa4540bd539cb2e7f619e, type: 2}
       propertyPath: m_RootOrder
-      value: 7
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 11495176, guid: cd4a5c53169fa4540bd539cb2e7f619e, type: 2}
       propertyPath: m_sceneHandler
@@ -6364,7 +6364,7 @@ Prefab:
     - target: {fileID: 11481506, guid: c2cb8aafa83d79f4bb15694996577265, type: 2}
       propertyPath: m_spellPrefabs.Array.data[0]
       value: 
-      objectReference: {fileID: 113236, guid: 17af34c3227be4e49a112a4f56e55485, type: 2}
+      objectReference: {fileID: 124902, guid: 16580075fe32d244994a8ebd590d0c8e, type: 2}
     - target: {fileID: 11481506, guid: c2cb8aafa83d79f4bb15694996577265, type: 2}
       propertyPath: m_spellPrefabs.Array.data[1]
       value: 
