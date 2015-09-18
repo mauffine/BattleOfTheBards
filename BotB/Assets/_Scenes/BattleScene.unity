@@ -4587,7 +4587,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 11495176, guid: cd4a5c53169fa4540bd539cb2e7f619e, type: 2}
       propertyPath: m_spellList.Array.data[2]
-      value: AAAEA
+      value: ABAEA
       objectReference: {fileID: 0}
     - target: {fileID: 11495176, guid: cd4a5c53169fa4540bd539cb2e7f619e, type: 2}
       propertyPath: m_spellBehavior

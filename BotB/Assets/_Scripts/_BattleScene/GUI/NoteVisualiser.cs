@@ -74,7 +74,7 @@ public class NoteVisualiser : MonoBehaviour
             case SpellType.Effect:
                 {
                     m_notePool.AddNote(new Vector3(-640, -305, 0), Note.A, true);
-                    m_notePool.AddNote(new Vector3(-320, -305, 0), Note.A, true);
+                    m_notePool.AddNote(new Vector3(-320, -305, 0), Note.B, true);
                     m_notePool.AddNote(new Vector3(0, -305, 0), Note.A, true);
                     m_notePool.AddNote(new Vector3(320, -305, 0), Note.E, true);
                     m_notePool.AddNote(new Vector3(640, -305, 0), Note.A, true);
