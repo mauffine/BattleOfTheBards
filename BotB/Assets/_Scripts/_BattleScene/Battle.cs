@@ -8,6 +8,12 @@ public enum SpellType : byte //What type of spell it is
     Defensive, 
     Effect
 }
+public enum Element : byte //the element of the spell, probs gonna remove this later for something better
+{
+    Fire,
+    Ice,
+    Arcane
+}
 public enum Turn : byte //Which turn it currently is
 {
     Casting, Menu

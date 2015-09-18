@@ -7,6 +7,7 @@ public class SpellMenu : MonoBehaviour
     [SerializeField]
     static SpellType m_currentSelection;
 
+    static Element m_spellElement; //probs temp
     [SerializeField]
     GameObject m_offenceButton;
     SpellMenuButton m_offenceButtonScript;
@@ -40,12 +41,18 @@ public class SpellMenu : MonoBehaviour
 
         if(m_showMenu)
         {
-            if (Input.GetButtonDown("Triangle"))
+            if (Input.GetKeyDown(KeyCode.S))
                 SelectOffence();
-            else if (Input.GetButtonDown("Square"))
+            else if (Input.GetKeyDown(KeyCode.A))
                 SelectDefence();
-            else if (Input.GetButtonDown("Circle"))
+            else if (Input.GetKeyDown(KeyCode.D))
                 SelectEffect();
+            else if (Input.GetKeyDown(KeyCode.Q))
+                SelectIce();
+            else if (Input.GetKeyDown(KeyCode.W))
+                SelectFire();
+            else if (Input.GetKeyDown(KeyCode.E))
+                SelectArcane();
         }
 	}
 
@@ -57,6 +64,10 @@ public class SpellMenu : MonoBehaviour
     public static SpellType Selection
     {
         get { return m_currentSelection; }
+    }
+    public static Element SelectedElement
+    {
+        get { return m_spellElement; }
     }
     public void SelectOffence()
     {
@@ -79,9 +90,21 @@ public class SpellMenu : MonoBehaviour
         m_currentSelection = SpellType.Effect;
         m_effectSelectionScript.SetSelected();
 
-
         m_offenceButtonScript.SetUnselected();
         m_defenceButtonScript.SetUnselected();
+    }
+    //temp elements
+    public void SelectIce()
+    {
+        m_spellElement = Element.Ice;
+    }
+    public void SelectFire()
+    {
+        m_spellElement = Element.Fire;
+    }
+    public void SelectArcane()
+    {
+        m_spellElement = Element.Arcane;
     }
     public void ShowMenu()
     {
