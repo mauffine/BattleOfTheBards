@@ -1004,7 +1004,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 10
+  m_RootOrder: 11
 --- !u!1001 &210661535
 Prefab:
   m_ObjectHideFlags: 0
@@ -5552,7 +5552,7 @@ Transform:
   - {fileID: 2135439093}
   - {fileID: 1874151008}
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 8
 --- !u!114 &1368876203
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6753,6 +6753,20 @@ MonoBehaviour:
   m_offenceButton: {fileID: 1265472997}
   m_defenceButton: {fileID: 743468841}
   m_effectSelection: {fileID: 3203212}
+--- !u!114 &1727921407
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1727921404}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3d9a24583b8af214295a999f03b92e14, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_coverScreen: 0
+  m_initialAlpha: 1
+  m_texture: {fileID: 2800000, guid: 9d65c4bd8d4946b4784767a16edb6084, type: 3}
 --- !u!223 &1727921408 stripped
 Canvas:
   m_PrefabParentObject: {fileID: 22355298, guid: f63a92b0ec23fc24fa872e03a2c93ce2,

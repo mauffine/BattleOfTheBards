@@ -14,6 +14,9 @@ public class ScreenTransition : MonoBehaviour {
     float m_alpha;
     float m_deltaTimeModifier;
 
+    string m_sceneToLoad;
+    bool m_sceneQueued = false;
+
 	// Use this for initialization
 	void Start () {
         m_currentColor = GUI.color;
@@ -49,13 +52,26 @@ public class ScreenTransition : MonoBehaviour {
 
         //m_currentColor.a = Mathf.Lerp(1.0f, 0.0f, (Time.time / 2));
 
+        if(m_sceneQueued && m_alpha >=1.0f)
+        {
+            Application.LoadLevel(m_sceneToLoad);
+        }
+
+
 	}
 
-    public void SetScreen(bool a_coverScreen, float a_timeToFade)
+    public void SetScreen(bool a_coverScreen, float a_timeToFade = 1.0f)
     {
         m_coverScreen = a_coverScreen;
 
         m_deltaTimeModifier = a_timeToFade;
+    }
+
+    public void TransitionToScene(string a_sceneName)
+    {
+        m_sceneToLoad = a_sceneName;
+        m_sceneQueued = true;
+        SetScreen(true);
     }
 
     void OnGUI()
