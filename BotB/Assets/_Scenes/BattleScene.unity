@@ -6364,7 +6364,7 @@ Prefab:
     - target: {fileID: 11481506, guid: c2cb8aafa83d79f4bb15694996577265, type: 2}
       propertyPath: m_spellPrefabs.Array.data[0]
       value: 
-      objectReference: {fileID: 124902, guid: 16580075fe32d244994a8ebd590d0c8e, type: 2}
+      objectReference: {fileID: 124902, guid: b7b852ffbf3421b42be8de8c12060633, type: 2}
     - target: {fileID: 11481506, guid: c2cb8aafa83d79f4bb15694996577265, type: 2}
       propertyPath: m_spellPrefabs.Array.data[1]
       value: 
