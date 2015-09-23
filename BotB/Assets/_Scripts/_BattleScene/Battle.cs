@@ -66,7 +66,14 @@ public class Battle : MonoBehaviour
     }
     void Update()
     {
-
+        if (m_player.GetComponent<Musician>().Health <= 0)
+        {
+            m_currentEnemy.GetComponent<Musician>().Animate(8);
+        }
+        else if (m_currentEnemy.GetComponent<Musician>().Health <=0)
+        {
+            m_currentEnemy.GetComponent<Musician>().Animate(7);
+        }
     }
     public void ReceiveKey(TimedNote a_note)
     {
@@ -74,6 +81,23 @@ public class Battle : MonoBehaviour
         SpellSystem.Instance.ReceiveKey(a_note);
         SoundManager.Reference.ReceiveNote(a_note);
         NoteVisualiser.Reference.ReceiveNote(a_note);
+        if (a_note.m_playerOwned == true)
+        {
+            if (a_note.m_note == Note.A)
+                m_player.GetComponent<Musician>().Animate(1);
+            else if (a_note.m_note == Note.B)
+                m_player.GetComponent<Musician>().Animate(2);
+            else if (a_note.m_note == Note.C)
+                m_player.GetComponent<Musician>().Animate(3);
+            else if (a_note.m_note == Note.D)
+                m_player.GetComponent<Musician>().Animate(1);
+            else if (a_note.m_note == Note.E)
+                m_player.GetComponent<Musician>().Animate(4);
+        }
+        else
+        {
+            m_currentEnemy.GetComponent<Musician>().Animate((short)Random.Range(1, 4));
+        }
     }
     public void ReceiveTurnOver()
     {
@@ -88,12 +112,14 @@ public class Battle : MonoBehaviour
             TheBard playerRef = m_player.GetComponent<TheBard>();
             playerRef.TakeDamage(a_damage);
             TextGen.Instance.TakeDamage(a_damage * -1, playerRef.transform.position, m_player.GetComponentInChildren<SkinnedMeshRenderer>().bounds.size.y);
+            playerRef.Animate(5);
         }
         else
         {
             TheSlime slimeRef = m_currentEnemy.GetComponent<TheSlime>();
             slimeRef.TakeDamage(a_damage);
             TextGen.Instance.TakeDamage(a_damage * -1, slimeRef.transform.position, m_currentEnemy.GetComponentInChildren<SkinnedMeshRenderer>().bounds.size.y);
+            slimeRef.Animate(6);
         }
     }
 }

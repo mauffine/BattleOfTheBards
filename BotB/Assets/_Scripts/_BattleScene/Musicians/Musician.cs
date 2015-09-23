@@ -147,6 +147,9 @@ public class Musician : MonoBehaviour
     protected virtual void Die() 
     { 
     }
+    public virtual void Animate(short a_animationNum)
+    {
+    }
     ///<summary> This will display the NEXT spell the enemy will cast</summary>
     private void DisplayTell()
     {
