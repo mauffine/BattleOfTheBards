@@ -4148,6 +4148,10 @@ Prefab:
       propertyPath: m_RootOrder
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 124902, guid: 16580075fe32d244994a8ebd590d0c8e, type: 2}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 16580075fe32d244994a8ebd590d0c8e, type: 2}
   m_IsPrefabParent: 0
@@ -8252,6 +8256,22 @@ Prefab:
       propertyPath: m_backgroundSong
       value: 
       objectReference: {fileID: 8300000, guid: 521626cdaca2b374a88cb17d35b18bb0, type: 3}
+    - target: {fileID: 11414214, guid: c2cb8aafa83d79f4bb15694996577265, type: 2}
+      propertyPath: m_beatSound
+      value: 
+      objectReference: {fileID: 8300000, guid: 45a85808158081641a2ca15f4482beae, type: 3}
+    - target: {fileID: 11414214, guid: c2cb8aafa83d79f4bb15694996577265, type: 2}
+      propertyPath: m_beat
+      value: .5
+      objectReference: {fileID: 0}
+    - target: {fileID: 11414214, guid: c2cb8aafa83d79f4bb15694996577265, type: 2}
+      propertyPath: m_playingBeatSound
+      value: 
+      objectReference: {fileID: 8300000, guid: 8a6d6ae1be5ece7458b17648fd9f127d, type: 3}
+    - target: {fileID: 11414214, guid: c2cb8aafa83d79f4bb15694996577265, type: 2}
+      propertyPath: m_menuBeatSound
+      value: 
+      objectReference: {fileID: 8300000, guid: 9715c96a5621e314ab829e98e16015e6, type: 3}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c2cb8aafa83d79f4bb15694996577265, type: 2}
   m_IsPrefabParent: 0
