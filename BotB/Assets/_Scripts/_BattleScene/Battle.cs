@@ -49,6 +49,7 @@ public class Battle : MonoBehaviour
     public static Battle Instance; //singleton instance
     [SerializeField] GameObject m_player, m_currentEnemy; //the characters in the scene
     public bool m_win, m_playing; //bools for the end of the battle
+    private float m_winTimer = 5;
     //Behavious
     void Awake()
     {
@@ -60,7 +61,14 @@ public class Battle : MonoBehaviour
     }
     void Update()
     {
+        if(m_currentEnemy.GetComponent<Musician>().Health <= 0)
+        {
+            if (m_winTimer <= 0)
+                Application.Quit();
 
+            TextGen.Instance.YouWin();
+            m_winTimer -= Time.deltaTime;
+        }
     }
     public void ReceiveKey(TimedNote a_note)
     {

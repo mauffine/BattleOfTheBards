@@ -54,7 +54,7 @@ public class InputManager : MonoBehaviour
     {
         s_axisTick -= Time.deltaTime;
         if (s_controllerReset)//Make sure the axes have been reset so the inputs can't be spammed
-        {
+        {/*
             //Left Analog stick
             if (Input.GetAxis("Vertical") > 0.8f)
             {
@@ -79,7 +79,7 @@ public class InputManager : MonoBehaviour
                 s_controllerReset = false;
                 Battle.Instance.ReceiveKey(new TimedNote(Note.B, a_time, true)); ++s_noteCounter;
                 s_axisTick = axisTick;
-            }
+            } */
             //D-Pad are axes for some reason?
             if (Input.GetAxis("D-Pad X") >= 1.0f)
             {
