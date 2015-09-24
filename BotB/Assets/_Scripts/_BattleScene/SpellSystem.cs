@@ -67,7 +67,7 @@ public class SpellSystem : MonoBehaviour
     {
         CheckSpells(m_playerNotes, m_spellList);
         CheckSpells(m_enemyNotes, m_spellList);
-        m_flightTime = 1.0f;
+        m_flightTime = 0.7f;
     }
     /// <summary>checks if a spell has been cast in the list that's passed into this function</summary>
     /// <param name="a_currentNotes">List of notes to check for spells</param>

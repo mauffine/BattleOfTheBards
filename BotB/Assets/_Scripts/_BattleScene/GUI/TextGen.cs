@@ -32,9 +32,9 @@ public class TextGen : MonoBehaviour
         }
 	}
     ///<summary> Draws a damage number above the model</summary>
-    /// <param name="a_damage">The ammount of damage to display</param>
-    /// <param name="a_pos"> The charcters current position</param>
-    /// <param name="a_length">The length of the character</param>
+    ///<param name="a_damage">The ammount of damage to display</param>
+    ///<param name="a_pos"> The charcters current position</param>
+    ///<param name="a_length">The length of the character</param>
     public void TakeDamage(int a_damage, Vector3 a_pos, float a_length)
     {
         GameObject toConvert = Instantiate(m_prefabLink);
@@ -43,6 +43,16 @@ public class TextGen : MonoBehaviour
         Vector3 offset = new Vector3(0, a_pos.y + (a_length), 0);
         toWrite.transform.position = (a_pos + offset);
         toWrite.color = Color.red;
+        damageText.Add(toConvert);
+    }
+    public void DisplayRating(int a_damage, Vector3 a_pos, float a_length)
+    {
+        GameObject toConvert = Instantiate(m_prefabLink);
+        TextMesh toWrite = toConvert.GetComponent<TextMesh>();
+        toWrite.text = a_damage.ToString();
+        Vector3 offset = new Vector3(0, a_pos.y + (a_length), 0);
+        toWrite.transform.position = (a_pos + offset);
+        toWrite.color = Color.white;
         damageText.Add(toConvert);
     }
     public void YouWin()
