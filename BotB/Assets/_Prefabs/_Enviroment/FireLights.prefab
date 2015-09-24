@@ -344,8 +344,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 29014cd42b6d273408e0ceefd336c0b3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  minDuration: 600
-  maxDuration: 6000
+  minDuration: 60000
+  maxDuration: 60001
 --- !u!114 &11436134
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -7778,7 +7778,15 @@ Prefab:
   serializedVersion: 2
   m_Modification:
     m_TransformParent: {fileID: 0}
-    m_Modifications: []
+    m_Modifications:
+    - target: {fileID: 0}
+      propertyPath: minDuration
+      value: 60000
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: maxDuration
+      value: 60001
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 108386}
