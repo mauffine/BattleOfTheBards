@@ -6700,6 +6700,18 @@ Prefab:
       propertyPath: m_playerModel
       value: 
       objectReference: {fileID: 1752026928}
+    - target: {fileID: 11414214, guid: c2cb8aafa83d79f4bb15694996577265, type: 2}
+      propertyPath: m_playingBeatSound
+      value: 
+      objectReference: {fileID: 8300000, guid: 8a6d6ae1be5ece7458b17648fd9f127d, type: 3}
+    - target: {fileID: 11414214, guid: c2cb8aafa83d79f4bb15694996577265, type: 2}
+      propertyPath: m_menuBeatSound
+      value: 
+      objectReference: {fileID: 8300000, guid: 9715c96a5621e314ab829e98e16015e6, type: 3}
+    - target: {fileID: 11414214, guid: c2cb8aafa83d79f4bb15694996577265, type: 2}
+      propertyPath: m_beat
+      value: .631578922
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c2cb8aafa83d79f4bb15694996577265, type: 2}
   m_IsPrefabParent: 0
