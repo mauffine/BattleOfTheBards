@@ -35,7 +35,7 @@ public class AudioPool : MonoBehaviour
 	
 	}
 
-    public void PlayClip(AudioClip a_clip, float a_volume = 1) 
+    public void PlayClip(AudioClip a_clip, float a_volume = 1, bool a_loop = false) 
     {
         foreach (var source in m_audioSourceList)
         {
@@ -43,6 +43,7 @@ public class AudioPool : MonoBehaviour
             {
                 source.clip = a_clip;
                 source.volume = a_volume;
+                source.loop = a_loop;
                 source.Play();
                 //return source;
                 break;
