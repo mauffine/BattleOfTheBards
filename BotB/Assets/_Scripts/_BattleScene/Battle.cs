@@ -40,11 +40,13 @@ public struct TimedNote
     public float m_time;
     public Note m_note;
     public bool m_playerOwned; //need a better name...
+    public bool m_active; //Richard here; Apparently structs can't be nulled in C#
     public TimedNote(Note a_note, float a_time, bool a_playerOwned = false)
     {
         m_note = a_note;
         m_time = a_time;
         m_playerOwned = a_playerOwned;
+        m_active = true;
     }
 }
 //*********************************************************************************

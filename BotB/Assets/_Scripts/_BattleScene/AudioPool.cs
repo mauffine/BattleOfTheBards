@@ -1,12 +1,12 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class AudioPool : MonoBehaviour {
+public class AudioPool : MonoBehaviour 
+{
 
     public GameObject m_audioSourcePrefab;
 
-    AudioSource[] m_audioSourceList;
-
+    private AudioSource[] m_audioSourceList;
 
 	// Use this for initialization
 	void Start () 
@@ -45,8 +45,22 @@ public class AudioPool : MonoBehaviour {
                 source.volume = a_volume;
                 source.loop = a_loop;
                 source.Play();
+                //return source;
                 break;
             }
         }
+        //return null;
+    }
+
+    public AudioSource GetUnusedSource()
+    {
+        foreach (var source in m_audioSourceList)
+        {
+            if (!source.isPlaying)
+            {
+                return source;
+            }
+        }
+        return null;
     }
 }
