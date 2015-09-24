@@ -99,7 +99,6 @@ public class Battle : MonoBehaviour
         else
         {
             m_currentEnemy.GetComponent<Musician>().Animate((short)Random.Range(1, 4));
-            m_notetimes.Add(TurnTimer.Instance.CurrentTime);
         }
     }
     public void ReceiveTurnOver()

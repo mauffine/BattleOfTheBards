@@ -2219,6 +2219,10 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 11410114, guid: cd4a5c53169fa4540bd539cb2e7f619e, type: 2}
+      propertyPath: m_spellList.Array.size
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 469878, guid: cd4a5c53169fa4540bd539cb2e7f619e, type: 2}
       propertyPath: m_LocalPosition.x
       value: -1.35899997
@@ -2267,6 +2271,36 @@ Prefab:
       propertyPath: m_RootOrder
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 11410114, guid: cd4a5c53169fa4540bd539cb2e7f619e, type: 2}
+      propertyPath: m_spellList.Array.data[0]
+      value: 
+      objectReference: {fileID: 11416128, guid: b7b852ffbf3421b42be8de8c12060633,
+        type: 2}
+    - target: {fileID: 11410114, guid: cd4a5c53169fa4540bd539cb2e7f619e, type: 2}
+      propertyPath: m_spellList.Array.data[1]
+      value: 
+      objectReference: {fileID: 11486014, guid: c113d37227557e04581c3afa5eaacfad,
+        type: 2}
+    - target: {fileID: 11410114, guid: cd4a5c53169fa4540bd539cb2e7f619e, type: 2}
+      propertyPath: m_spellList.Array.data[2]
+      value: 
+      objectReference: {fileID: 11485838, guid: 5ecfbbf6bc70deb4abba009ffa103834,
+        type: 2}
+    - target: {fileID: 11410114, guid: cd4a5c53169fa4540bd539cb2e7f619e, type: 2}
+      propertyPath: m_spellList.Array.data[3]
+      value: 
+      objectReference: {fileID: 11490678, guid: acfc6a8ef99c71d4f92c02fe3a9d3f00,
+        type: 2}
+    - target: {fileID: 11410114, guid: cd4a5c53169fa4540bd539cb2e7f619e, type: 2}
+      propertyPath: m_spellList.Array.data[4]
+      value: 
+      objectReference: {fileID: 11460638, guid: 5a80319b4763f5b4f9f8936220d85a7c,
+        type: 2}
+    - target: {fileID: 11410114, guid: cd4a5c53169fa4540bd539cb2e7f619e, type: 2}
+      propertyPath: m_spellList.Array.data[5]
+      value: 
+      objectReference: {fileID: 11434816, guid: 1ec19802660b9314d85ec61d66e565a8,
+        type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: cd4a5c53169fa4540bd539cb2e7f619e, type: 2}
   m_IsPrefabParent: 0
@@ -6537,7 +6571,7 @@ Prefab:
     - target: {fileID: 11481506, guid: c2cb8aafa83d79f4bb15694996577265, type: 2}
       propertyPath: m_spellPrefabs.Array.data[0]
       value: 
-      objectReference: {fileID: 113236, guid: 17af34c3227be4e49a112a4f56e55485, type: 2}
+      objectReference: {fileID: 124902, guid: b7b852ffbf3421b42be8de8c12060633, type: 2}
     - target: {fileID: 11481506, guid: c2cb8aafa83d79f4bb15694996577265, type: 2}
       propertyPath: m_spellPrefabs.Array.data[1]
       value: 
