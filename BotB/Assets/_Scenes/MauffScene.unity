@@ -2274,7 +2274,7 @@ Prefab:
     - target: {fileID: 11410114, guid: cd4a5c53169fa4540bd539cb2e7f619e, type: 2}
       propertyPath: m_spellList.Array.data[0]
       value: 
-      objectReference: {fileID: 11416128, guid: b7b852ffbf3421b42be8de8c12060633,
+      objectReference: {fileID: 11416128, guid: 95fb434e7fcc2a44db247a80a10a6dd2,
         type: 2}
     - target: {fileID: 11410114, guid: cd4a5c53169fa4540bd539cb2e7f619e, type: 2}
       propertyPath: m_spellList.Array.data[1]
@@ -6571,7 +6571,7 @@ Prefab:
     - target: {fileID: 11481506, guid: c2cb8aafa83d79f4bb15694996577265, type: 2}
       propertyPath: m_spellPrefabs.Array.data[0]
       value: 
-      objectReference: {fileID: 124902, guid: b7b852ffbf3421b42be8de8c12060633, type: 2}
+      objectReference: {fileID: 124902, guid: 95fb434e7fcc2a44db247a80a10a6dd2, type: 2}
     - target: {fileID: 11481506, guid: c2cb8aafa83d79f4bb15694996577265, type: 2}
       propertyPath: m_spellPrefabs.Array.data[1]
       value: 
