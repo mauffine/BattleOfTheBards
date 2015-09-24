@@ -168,7 +168,7 @@ ModelImporter:
     animationImportErrors: 
     animationImportWarnings: 
     animationRetargetingWarnings: 
-    animationDoRetargetingWarnings: 0
+    animationDoRetargetingWarnings: 1
     animationCompression: 3
     animationRotationError: .5
     animationPositionError: .5
@@ -1596,7 +1596,7 @@ ModelImporter:
         length: 0
         modified: 0
     skeleton:
-    - name: BardTEST2(Clone)
+    - name: bard(Clone)
       position: {x: 0, y: 0, z: 0}
       rotation: {x: 0, y: 0, z: 0, w: 1}
       scale: {x: 1, y: 1, z: 1}
@@ -1612,14 +1612,14 @@ ModelImporter:
       scale: {x: 1, y: 1, z: 1}
       transformModified: 1
     - name: Keytar
-      position: {x: .65810132, y: 1.57020211, z: .182865247}
+      position: {x: .65810132, y: 1.57020235, z: .182865217}
       rotation: {x: .311653376, y: -.37456575, z: .225413546, w: .84365952}
       scale: {x: 1, y: .99999994, z: 1}
       transformModified: 1
     - name: mixamorig:Hips
-      position: {x: .000115177441, y: 2.60337663, z: -.0220428053}
-      rotation: {x: .0287644546, y: .0394650958, z: -.00110498734, w: .998806298}
-      scale: {x: 1, y: 1.00000012, z: 1}
+      position: {x: .000115177441, y: 2.52406001, z: -.0220428053}
+      rotation: {x: 1.50362803e-06, y: 9.06889272e-06, z: -.000279646192, w: 1}
+      scale: {x: 1.00000012, y: 1, z: 1}
       transformModified: 1
     - name: mixamorig:Spine
       position: {x: 4.85756438e-19, y: .227439269, z: -.007932771}
@@ -1628,7 +1628,7 @@ ModelImporter:
       transformModified: 1
     - name: mixamorig:Spine1
       position: {x: 5.66698904e-19, y: .265506804, z: -2.15178028e-10}
-      rotation: {x: 0, y: -.0711706877, z: -0, w: .99746418}
+      rotation: {x: -9.30756627e-09, y: 6.68696652e-13, z: 1.18527957e-11, w: 1}
       scale: {x: 1, y: 1, z: 1}
       transformModified: 1
     - name: mixamorig:Spine2
@@ -1643,7 +1643,7 @@ ModelImporter:
       transformModified: 1
     - name: mixamorig:Head
       position: {x: 7.00767304e-19, y: .259223312, z: -.0114447782}
-      rotation: {x: .00584028335, y: -2.02295036e-30, z: -3.46372891e-28, w: .999982953}
+      rotation: {x: 0, y: -0, z: -3.47511429e-28, w: 1}
       scale: {x: 1, y: 1, z: 1}
       transformModified: 1
     - name: mixamorig:HeadTop_End
@@ -1658,7 +1658,7 @@ ModelImporter:
       transformModified: 1
     - name: mixamorig:LeftArm
       position: {x: -3.86504967e-10, y: .277710497, z: 5.15204235e-09}
-      rotation: {x: -.0941776037, y: .0102719655, z: -.00150810159, w: .99550128}
+      rotation: {x: -.0918624625, y: .0114787593, z: .0112723699, w: .995641708}
       scale: {x: 1, y: 1, z: 1}
       transformModified: 1
     - name: mixamorig:LeftForeArm
@@ -1673,7 +1673,7 @@ ModelImporter:
       transformModified: 1
     - name: mixamorig:LeftHandThumb1
       position: {x: .0471845716, y: .101927117, z: .0400306396}
-      rotation: {x: .0702024624, y: .0460995398, z: -.34871462, w: .933458447}
+      rotation: {x: .0886629745, y: .0389240496, z: -.344522685, w: .933770776}
       scale: {x: 1, y: 1, z: 1}
       transformModified: 1
     - name: mixamorig:LeftHandThumb2
@@ -1783,7 +1783,7 @@ ModelImporter:
       transformModified: 1
     - name: mixamorig:RightForeArm
       position: {x: 7.67681141e-10, y: .496782362, z: -7.02421765e-09}
-      rotation: {x: -.0188555978, y: -.000906228786, z: .0360292122, w: .999172449}
+      rotation: {x: -.0199273601, y: -.000834847451, z: .0418498553, w: .998924851}
       scale: {x: 1, y: 1, z: 1}
       transformModified: 1
     - name: mixamorig:RightHand
@@ -1793,7 +1793,7 @@ ModelImporter:
       transformModified: 1
     - name: mixamorig:RightHandThumb1
       position: {x: -.0506225973, y: .106642142, z: .0444341078}
-      rotation: {x: .0789604485, y: -.0488899499, z: .324381143, w: .941356421}
+      rotation: {x: .0972623155, y: -.0413750112, z: .319927722, w: .941527665}
       scale: {x: 1, y: 1, z: 1}
       transformModified: 1
     - name: mixamorig:RightHandThumb2
@@ -1949,8 +1949,10 @@ ModelImporter:
     legStretch: .0500000007
     feetSpacing: 0
     rootMotionBoneName: 
+    hasTranslationDoF: 0
   lastHumanDescriptionAvatarSource: {instanceID: 0}
   animationType: 3
+  humanoidOversampling: 1
   additionalBone: 0
   userData: 
   assetBundleName: 

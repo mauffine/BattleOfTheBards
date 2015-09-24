@@ -55,6 +55,10 @@ public class Battle : MonoBehaviour
     public static Battle Instance; //singleton instance
     [SerializeField] GameObject m_player, m_currentEnemy; //the characters in the scene
     public bool m_win, m_playing; //bools for the end of the battle
+    [SerializeField]
+    GameObject m_playerModel;
+    [SerializeField]
+    List<float> m_notetimes = new List<float>();
     //Behavious
     void Awake()
     {
@@ -97,6 +101,7 @@ public class Battle : MonoBehaviour
         else
         {
             m_currentEnemy.GetComponent<Musician>().Animate((short)Random.Range(1, 4));
+            m_notetimes.Add(TurnTimer.Instance.CurrentTime);
         }
     }
     public void ReceiveTurnOver()
@@ -104,7 +109,7 @@ public class Battle : MonoBehaviour
         //notify these scripts that the casting turn is over
         SpellSystem.Instance.CastSpells();
     }
-    public void DealDamage(int a_damage, bool a_toPlayer)
+    public void DealDamage(int a_damage, bool a_toPlayer, bool a_animate = true)
     {
         //deal damage to the approriate character in the scene
         if (a_toPlayer)
@@ -112,14 +117,26 @@ public class Battle : MonoBehaviour
             TheBard playerRef = m_player.GetComponent<TheBard>();
             playerRef.TakeDamage(a_damage);
             TextGen.Instance.TakeDamage(a_damage * -1, playerRef.transform.position, m_player.GetComponentInChildren<SkinnedMeshRenderer>().bounds.size.y);
-            playerRef.Animate(5);
+            if (a_animate)
+            {
+                playerRef.Animate(5);
+            }
         }
         else
         {
             TheSlime slimeRef = m_currentEnemy.GetComponent<TheSlime>();
             slimeRef.TakeDamage(a_damage);
             TextGen.Instance.TakeDamage(a_damage * -1, slimeRef.transform.position, m_currentEnemy.GetComponentInChildren<SkinnedMeshRenderer>().bounds.size.y);
-            slimeRef.Animate(6);
+            if (a_animate)
+                slimeRef.Animate(6);
         }
+    }
+    public GameObject PlayerRef
+    {
+        get { return m_player; }
+    }
+    public GameObject EnemyRef
+    {
+        get { return m_currentEnemy; }
     }
 }

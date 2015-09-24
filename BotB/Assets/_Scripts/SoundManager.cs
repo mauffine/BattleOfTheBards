@@ -27,7 +27,7 @@ public class SoundManager : MonoBehaviour
         m_audioPool.Initialise(m_audioSourcePrefab);
         //m_audioPool.m_audioSourcePrefab = m_audioSourcePrefab;
 
-        m_audioPool.PlayClip(m_backgroundSong, m_Backgroundvolume);
+        m_audioPool.PlayClip(m_backgroundSong, m_Backgroundvolume, true);
         
 	}
     public void ReceiveNote(TimedNote a_note)
