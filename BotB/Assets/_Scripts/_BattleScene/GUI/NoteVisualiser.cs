@@ -9,12 +9,6 @@ public class NoteVisualiser : MonoBehaviour
     // Use this for initialization
     static NoteVisualiser refToMe;
     NotePool m_notePool;
-    [SerializeField]
-    private GameObject m_fireAttack, m_iceAttack, m_arcaneAttack;
-    [SerializeField]
-    private GameObject m_fireDefence, m_iceDefence, m_arcaneDefence;
-    [SerializeField]
-    private GameObject m_fireEffect, m_iceEffect, m_arcaneEffect;
 
     void Start()
     {
@@ -60,14 +54,11 @@ public class NoteVisualiser : MonoBehaviour
     public void ReceiveNote(TimedNote a_note) //This is called and overwrites m_noteType if both player and enemy play a note at the same time
     {
         m_putDown = true;
+
         if (m_noteType[0].m_active == false)
-        {
             m_noteType[0] = a_note;
-        }
         else
-        {
             m_noteType[1] = a_note;
-        }
 
     }
 
@@ -80,7 +71,7 @@ public class NoteVisualiser : MonoBehaviour
         m_notePool.AddNote(pos, toPlay, false);
     }
     public void ShowCombo()
-    {
+    {/*
         switch (SpellMenu.Selection)
         {
             case SpellType.Offencive:
@@ -169,7 +160,7 @@ public class NoteVisualiser : MonoBehaviour
                    
                     break;
                 }
-        }
+        } */
     }
     public static NoteVisualiser Reference
     {
