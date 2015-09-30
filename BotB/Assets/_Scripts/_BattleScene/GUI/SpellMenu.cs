@@ -19,7 +19,7 @@ public class SpellMenu : MonoBehaviour
     private static SpellMenu s_ref;
 
 	// Use this for initialization
-	void Start() 
+	void Start()
     {
         m_upScript = m_upButton.GetComponent<SpellMenuButton>();
         m_leftScript = m_leftButton.GetComponent<SpellMenuButton>();
@@ -35,11 +35,6 @@ public class SpellMenu : MonoBehaviour
 	//Updates the menu
 	void Update() 
     {
-        if (TurnTimer.Instance.CurrentTurn == Turn.Menu)
-            ShowMenu();
-        else
-            HideMenu();  
-
         if(m_showMenu)
         {
             /*
@@ -64,6 +59,12 @@ public class SpellMenu : MonoBehaviour
             if (m_currentSelection == SpellType.Effect)
                 SwitchMenu(m_effectMenu);
         }
+
+        if (TurnTimer.Instance.CurrentTurn == Turn.Menu)
+            ShowMenu();
+        else
+            HideMenu();  
+
 	}
 
     public static SpellMenu Instance
@@ -109,8 +110,8 @@ public class SpellMenu : MonoBehaviour
     {
         m_showMenu = false;
         m_upScript.Hide();
-        m_upScript.Hide();
-        m_upScript.Hide();
+        m_leftScript.Hide();
+        m_rightScript.Hide();
 
         m_upScript.SetUnselected();
         m_leftScript.SetUnselected();
@@ -120,13 +121,13 @@ public class SpellMenu : MonoBehaviour
     {
         a_menu.transform.parent = transform;
         //DEBUG HERE
-        m_top = a_menu.GetComponentsInChildren<SpriteRenderer>()[0].sprite;
-        m_left = a_menu.GetComponentsInChildren<SpriteRenderer>()[1].sprite;
-        m_right = a_menu.GetComponentsInChildren<SpriteRenderer>()[2].sprite;
+        m_top = a_menu.transform.GetChild(0).GetComponent<SpriteRenderer>().sprite;
+        m_left = a_menu.transform.GetChild(1).GetComponent<SpriteRenderer>().sprite;
+        m_right =  a_menu.transform.GetChild(2).GetComponent<SpriteRenderer>().sprite;
 
-        m_upScript = a_menu.GetComponentsInChildren<SpellMenuButton>()[0];
-        m_leftScript = a_menu.GetComponentsInChildren<SpellMenuButton>()[1];
-        m_rightScript = a_menu.GetComponentsInChildren<SpellMenuButton>()[2];
+        m_upScript = a_menu.transform.GetChild(0).GetComponent<SpellMenuButton>();
+        m_leftScript = a_menu.transform.GetChild(1).GetComponent<SpellMenuButton>();
+        m_rightScript = a_menu.transform.GetChild(2).GetComponent<SpellMenuButton>();
 
     }
 }
