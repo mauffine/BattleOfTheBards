@@ -13,9 +13,10 @@ public class SpellMenu : MonoBehaviour
     Sprite m_top, m_left, m_right;
 
     [SerializeField]
-    GameObject m_attackMenu, m_defenceMenu, m_effectMenu, m_centralMenu;
+    GameObject m_attackMenu, m_defenceMenu, m_effectMenu, m_centralMenu, m_currentMenu;
 
-    public static bool m_showMenu;
+    private bool m_resetMenu = true;
+    public static bool s_showMenu;
     private static SpellMenu s_ref;
 
 	// Use this for initialization
@@ -28,22 +29,21 @@ public class SpellMenu : MonoBehaviour
         m_top = m_upButton.GetComponent<SpriteRenderer>().sprite;
         m_left = m_leftButton.GetComponent<SpriteRenderer>().sprite;
         m_right = m_rightButton.GetComponent<SpriteRenderer>().sprite;
+        m_currentMenu = m_centralMenu;
         ShowMenu();
         s_ref = this;
-	}
-	
+	}	
 	//Updates the menu
 	void Update() 
     {
-        if(m_showMenu)
+        if(s_showMenu)
         {
-            /*
             if (Input.GetKeyDown(KeyCode.S))
                 SelectOffence();
             else if (Input.GetKeyDown(KeyCode.A))
                 SelectDefence();
             else if (Input.GetKeyDown(KeyCode.D))
-                SelectEffect(); */
+                SelectEffect(); 
 
             if (Input.GetButtonDown("Triangle"))
                 SelectOffence();
@@ -52,18 +52,28 @@ public class SpellMenu : MonoBehaviour
             else if (Input.GetButtonDown("Circle"))
                 SelectEffect();
 
-            if (m_currentSelection == SpellType.Offencive)
-                SwitchMenu(m_attackMenu);
-            if (m_currentSelection == SpellType.Defensive)
-                SwitchMenu(m_defenceMenu);
-            if (m_currentSelection == SpellType.Effect)
-                SwitchMenu(m_effectMenu);
+            if(!m_resetMenu)
+            { 
+                if (m_currentSelection == SpellType.Offencive)
+                    SwitchMenu(m_attackMenu);
+                if (m_currentSelection == SpellType.Defensive)
+                    SwitchMenu(m_defenceMenu);
+                if (m_currentSelection == SpellType.Effect)
+                    SwitchMenu(m_effectMenu);
+            }
+            else
+            {
+                SwitchMenu(m_centralMenu);
+            }
         }
 
         if (TurnTimer.Instance.CurrentTurn == Turn.Menu)
             ShowMenu();
         else
+        {
             HideMenu();  
+            m_resetMenu = true;
+        }
 
 	}
 
@@ -79,6 +89,8 @@ public class SpellMenu : MonoBehaviour
     public void SelectOffence()
     {
         m_currentSelection = SpellType.Offencive;
+        m_resetMenu = false;
+
         m_upScript.SetSelected();
         m_leftScript.SetUnselected();
         m_rightScript.SetUnselected();
@@ -86,29 +98,32 @@ public class SpellMenu : MonoBehaviour
     public void SelectDefence()
     {
         m_currentSelection = SpellType.Defensive;
-        m_leftScript.SetSelected();
+        m_resetMenu = false;
 
+        m_leftScript.SetSelected();
         m_upScript.SetUnselected();
         m_rightScript.SetUnselected();
     }
     public void SelectEffect()
     {
         m_currentSelection = SpellType.Effect;
-        m_rightScript.SetSelected();
+        m_resetMenu = false;
 
+        m_rightScript.SetSelected();
         m_upScript.SetUnselected();
         m_leftScript.SetUnselected();
     }
     public void ShowMenu()
     {
-        m_showMenu = true;
+        s_showMenu = true;
         m_upScript.Show();
         m_leftScript.Show();
         m_rightScript.Show();
     }
     public void HideMenu()
     {
-        m_showMenu = false;
+        s_showMenu = false;
+
         m_upScript.Hide();
         m_leftScript.Hide();
         m_rightScript.Hide();
@@ -119,7 +134,13 @@ public class SpellMenu : MonoBehaviour
     }
     private void SwitchMenu(GameObject a_menu)
     {
+        m_centralMenu.SetActive(false);
+        m_centralMenu = a_menu;
+        m_centralMenu.SetActive(true);
+
         a_menu.transform.parent = transform;
+        //Set to Active
+        a_menu.SetActive(true);
         //DEBUG HERE
         m_top = a_menu.transform.GetChild(0).GetComponent<SpriteRenderer>().sprite;
         m_left = a_menu.transform.GetChild(1).GetComponent<SpriteRenderer>().sprite;
@@ -128,6 +149,5 @@ public class SpellMenu : MonoBehaviour
         m_upScript = a_menu.transform.GetChild(0).GetComponent<SpellMenuButton>();
         m_leftScript = a_menu.transform.GetChild(1).GetComponent<SpellMenuButton>();
         m_rightScript = a_menu.transform.GetChild(2).GetComponent<SpellMenuButton>();
-
     }
 }
