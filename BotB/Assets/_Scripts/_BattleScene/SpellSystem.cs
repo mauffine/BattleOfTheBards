@@ -192,6 +192,12 @@ public class SpellSystem : MonoBehaviour
                     }
                     break;
             }
+
+            Destroy(m_playerSpell);
+            m_playerSpell = null;
+
+            Destroy(m_enemySpell);
+            m_enemySpell = null;
         }
         else
         {
@@ -217,12 +223,7 @@ public class SpellSystem : MonoBehaviour
     {
         Battle.Instance.DealDamage(m_playerSpell.GetComponent<Spell>().Damage + m_playerNotes.Count, false);
 
-        Battle.Instance.DealDamage(m_enemySpell.GetComponent<Spell>().Damage + m_enemyNotes.Count, true);
-        Destroy(m_playerSpell);
-        m_playerSpell = null;
-        
-        Destroy(m_enemySpell);
-        m_enemySpell = null;
+        Battle.Instance.DealDamage(m_enemySpell.GetComponent<Spell>().Damage + m_enemyNotes.Count, true);        
 
         Debug.Log("Both attacks clash!");
     }
@@ -231,12 +232,6 @@ public class SpellSystem : MonoBehaviour
         Battle.Instance.DealDamage(m_playerNotes.Count, false, false);
 
         Battle.Instance.DealDamage(m_playerSpell.GetComponent<Spell>().Damage + m_enemyNotes.Count, true);
-        
-        Destroy(m_playerSpell);
-        m_playerSpell = null;
-		
-        Destroy(m_enemySpell);
-        m_enemySpell = null;
 		
         Debug.Log("Your spell was deflected!");
     }
@@ -246,12 +241,6 @@ public class SpellSystem : MonoBehaviour
 
         Battle.Instance.DealDamage(m_enemyNotes.Count, true, false);
 
-        Destroy(m_playerSpell);
-        m_playerSpell = null;
-
-        Destroy(m_enemySpell);
-        m_enemySpell = null;
-
         Debug.Log("Enemy's effect was blown away!");
     }
     void Defence_Attack()
@@ -259,12 +248,6 @@ public class SpellSystem : MonoBehaviour
         Battle.Instance.DealDamage(m_enemySpell.GetComponent<Spell>().Damage + m_playerNotes.Count, false);
 
         Battle.Instance.DealDamage(m_enemyNotes.Count, true, false);
-
-        Destroy(m_enemySpell);
-        m_enemySpell = null;
-
-        Destroy(m_playerSpell);
-        m_playerSpell = null;
 
         Debug.Log("Enemy spell deflected!");
     }
@@ -274,12 +257,6 @@ public class SpellSystem : MonoBehaviour
 
         Battle.Instance.DealDamage(m_enemyNotes.Count, true, false);
 
-        Destroy(m_enemySpell);
-        m_enemySpell = null;
-
-        Destroy(m_playerSpell);
-        m_playerSpell = null;
-
         Debug.Log("Both of you defend...");
     }
     void Defence_Effect()
@@ -288,12 +265,6 @@ public class SpellSystem : MonoBehaviour
 
         Battle.Instance.DealDamage(m_playerSpell.GetComponent<Spell>().Damage + m_enemyNotes.Count, true);
 
-        Destroy(m_playerSpell);
-        m_playerSpell = null;
-
-        Destroy(m_enemySpell);
-        m_enemySpell = null;
-
         Debug.Log("The enemy's effect passes through your defences!");
     }
     void Effect_Attack()
@@ -301,12 +272,6 @@ public class SpellSystem : MonoBehaviour
         Battle.Instance.DealDamage(m_playerNotes.Count, false, false);
         
         Battle.Instance.DealDamage(m_enemySpell.GetComponent<Spell>().Damage + m_enemyNotes.Count, true);
-
-        Destroy(m_playerSpell);
-        m_playerSpell = null;
-
-        Destroy(m_enemySpell);
-        m_enemySpell = null;
 
         Debug.Log("Your effect was blown away by the enemy attack!");
     }
@@ -317,12 +282,6 @@ public class SpellSystem : MonoBehaviour
 
         Battle.Instance.DealDamage(m_enemyNotes.Count, true, false);
 
-        Destroy(m_playerSpell);
-        m_playerSpell = null;
-
-        Destroy(m_enemySpell);
-        m_enemySpell = null;
-
         Debug.Log("Your effect passed through the enemy's defences!");
     }
     void Effect_Effect()
@@ -330,12 +289,6 @@ public class SpellSystem : MonoBehaviour
         Battle.Instance.DealDamage(m_playerSpell.GetComponent<Spell>().Damage + m_playerNotes.Count, false);
 
         Battle.Instance.DealDamage(m_enemySpell.GetComponent<Spell>().Damage + m_enemyNotes.Count, true);
-
-        Destroy(m_playerSpell);
-        m_playerSpell = null;
-        
-        Destroy(m_enemySpell);
-        m_enemySpell = null;
 
         Debug.Log("Both effects clash!");
     }

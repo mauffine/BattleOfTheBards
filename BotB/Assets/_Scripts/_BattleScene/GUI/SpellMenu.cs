@@ -43,18 +43,18 @@ public class SpellMenu : MonoBehaviour
 
         if(m_showMenu)
         {
-            //if (Input.GetKeyDown(KeyCode.S))
-            //    SelectOffence();
-            //else if (Input.GetKeyDown(KeyCode.A))
-            //    SelectDefence();
-            //else if (Input.GetKeyDown(KeyCode.D))
-            //    SelectEffect();
-            //else if (Input.GetKeyDown(KeyCode.Q))
-            //    SelectIce();
-            //else if (Input.GetKeyDown(KeyCode.W))
-            //    SelectFire();
-            //else if (Input.GetKeyDown(KeyCode.E))
-            //    SelectArcane();
+            if (Input.GetKeyDown(KeyCode.S))
+                SelectOffence();
+            else if (Input.GetKeyDown(KeyCode.A))
+                SelectDefence();
+            else if (Input.GetKeyDown(KeyCode.D))
+                SelectEffect();
+            else if (Input.GetKeyDown(KeyCode.Q))
+                SelectIce();
+            else if (Input.GetKeyDown(KeyCode.W))
+                SelectFire();
+            else if (Input.GetKeyDown(KeyCode.E))
+                SelectArcane();
             if (Input.GetButtonDown("Triangle"))
                 SelectOffence();
             else if (Input.GetButtonDown("Square"))
