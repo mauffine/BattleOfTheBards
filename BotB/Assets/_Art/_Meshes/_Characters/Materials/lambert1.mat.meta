@@ -1,6 +1,11 @@
 fileFormatVersion: 2
+<<<<<<< HEAD
+guid: 7f6dffa7afdde7d4a89966d2ba874779
+timeCreated: 1442447124
+=======
 guid: 88281a7c99dfaa74ebf09b0e23c35609
 timeCreated: 1442364159
+>>>>>>> origin/RichardBranch
 licenseType: Free
 NativeFormatImporter:
   userData: 

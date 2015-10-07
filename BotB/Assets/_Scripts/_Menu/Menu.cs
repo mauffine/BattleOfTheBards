@@ -10,13 +10,16 @@ public class Menu : MonoBehaviour
 	
 	void Update() 
     {
-
+        if(Input.GetButtonDown("Cross"))
+            SwitchToGame();
+        else if(Input.GetButtonDown("Circle"))
+            Application.Quit();
 	}
 
     /// <summary>Switches to the main battle state </summary>
     public void SwitchToGame()
     {
-        Application.LoadLevel("RichardScene");
+        Application.LoadLevel("BattleScene");
     }
 
     /// <summary>Switches to the main menu state </summary

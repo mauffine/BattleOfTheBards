@@ -18,7 +18,7 @@ public class SoundManager : MonoBehaviour
     [SerializeField]
     AudioClip m_menuBeatSound;
     AudioSource m_beatSource;
-    public float m_beat;
+    public float m_beat = 0.5f;
     float m_beatTimer = 0;
 
     
@@ -103,7 +103,7 @@ public class SoundManager : MonoBehaviour
             }
             m_beatSource.Stop();
             m_beatSource.clip = a_beatClip;
-            m_beatSource.volume = 0.025f;
+            m_beatSource.volume = 0.05f;
             m_beatSource.Play();
         }
 
