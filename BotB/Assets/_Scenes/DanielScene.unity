@@ -6596,7 +6596,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 11404228, guid: c2cb8aafa83d79f4bb15694996577265, type: 2}
       propertyPath: s_inputDevice
-      value: 3
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 11414214, guid: c2cb8aafa83d79f4bb15694996577265, type: 2}
       propertyPath: m_noteArray.Array.data[0]

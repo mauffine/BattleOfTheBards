@@ -98,9 +98,7 @@ public class SoundManager : MonoBehaviour
         {
             m_beatTimer -= m_beat;
             if (m_beatSource.clip != a_beatClip)
-            {
                 m_beatSource = m_audioPool.GetUnusedSource();
-            }
             m_beatSource.Stop();
             m_beatSource.clip = a_beatClip;
             m_beatSource.volume = 0.05f;

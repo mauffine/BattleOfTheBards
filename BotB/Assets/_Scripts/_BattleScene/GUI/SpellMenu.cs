@@ -62,18 +62,13 @@ public class SpellMenu : MonoBehaviour
                     SwitchMenu(m_effectMenu);
             }
             else
-            {
                 SwitchMenu(m_centralMenu);
-            }
         }
 
         if (TurnTimer.Instance.CurrentTurn == Turn.Menu)
             ShowMenu();
         else
-        {
             HideMenu();  
-            m_resetMenu = true;
-        }
 
 	}
 
@@ -81,7 +76,7 @@ public class SpellMenu : MonoBehaviour
     {
         get { return s_ref; }
     }
-    ///<summary> Returns the current type of spell the player has selected</summary>
+    ///<summary>Returns the current type of spell the player has selected</summary>
     public static SpellType Selection
     {
         get { return m_currentSelection; }
@@ -123,6 +118,7 @@ public class SpellMenu : MonoBehaviour
     public void HideMenu()
     {
         s_showMenu = false;
+        m_resetMenu = true;
 
         m_upScript.Hide();
         m_leftScript.Hide();
@@ -134,9 +130,9 @@ public class SpellMenu : MonoBehaviour
     }
     private void SwitchMenu(GameObject a_menu)
     {
-        m_centralMenu.SetActive(false);
-        m_centralMenu = a_menu;
-        m_centralMenu.SetActive(true);
+        m_currentMenu.SetActive(false);
+        m_currentMenu = a_menu;
+        m_currentMenu.SetActive(true);
 
         a_menu.transform.parent = transform;
         //Set to Active
