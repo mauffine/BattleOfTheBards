@@ -6592,7 +6592,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 11414214, guid: c2cb8aafa83d79f4bb15694996577265, type: 2}
       propertyPath: m_noteVolume
-      value: .75
+      value: .150000006
       objectReference: {fileID: 0}
     - target: {fileID: 11404228, guid: c2cb8aafa83d79f4bb15694996577265, type: 2}
       propertyPath: s_inputDevice
@@ -6601,31 +6601,31 @@ Prefab:
     - target: {fileID: 11414214, guid: c2cb8aafa83d79f4bb15694996577265, type: 2}
       propertyPath: m_noteArray.Array.data[0]
       value: 
-      objectReference: {fileID: 8300000, guid: 3db170713b982164da3023d8c8c637af, type: 3}
+      objectReference: {fileID: 8300000, guid: 3766ea82de10d6e48b48d32fded2c3c5, type: 3}
     - target: {fileID: 11414214, guid: c2cb8aafa83d79f4bb15694996577265, type: 2}
       propertyPath: m_noteArray.Array.data[1]
       value: 
-      objectReference: {fileID: 8300000, guid: 598d3d58fc6a6c7439979404832525b7, type: 3}
+      objectReference: {fileID: 8300000, guid: c14735b2f8b3bfc4ca800943f0722619, type: 3}
     - target: {fileID: 11414214, guid: c2cb8aafa83d79f4bb15694996577265, type: 2}
       propertyPath: m_noteArray.Array.data[2]
       value: 
-      objectReference: {fileID: 8300000, guid: b07018714d9aa5d48b4c570f129fe9dd, type: 3}
+      objectReference: {fileID: 8300000, guid: 75acf26cd56fb3148bf3fb72891eb218, type: 3}
     - target: {fileID: 11414214, guid: c2cb8aafa83d79f4bb15694996577265, type: 2}
       propertyPath: m_noteArray.Array.data[3]
       value: 
-      objectReference: {fileID: 8300000, guid: a2c4a05fac7aef748bb45013a942725f, type: 3}
+      objectReference: {fileID: 8300000, guid: f7ca7e6e3544f9a4d853e19122bd53fb, type: 3}
     - target: {fileID: 11414214, guid: c2cb8aafa83d79f4bb15694996577265, type: 2}
       propertyPath: m_noteArray.Array.data[4]
       value: 
-      objectReference: {fileID: 8300000, guid: e04773427d973d042b886cda0dc539ea, type: 3}
+      objectReference: {fileID: 8300000, guid: ce60e18c69163184ba1814d56dafce9d, type: 3}
     - target: {fileID: 11414214, guid: c2cb8aafa83d79f4bb15694996577265, type: 2}
       propertyPath: m_noteArray.Array.data[5]
       value: 
-      objectReference: {fileID: 8300000, guid: 8e6fcd90395a9954fbd80acdd84b4280, type: 3}
+      objectReference: {fileID: 8300000, guid: a5c2845730d1b23418e3b56efb31601d, type: 3}
     - target: {fileID: 11414214, guid: c2cb8aafa83d79f4bb15694996577265, type: 2}
       propertyPath: m_noteArray.Array.data[6]
       value: 
-      objectReference: {fileID: 8300000, guid: d40e28b8c5c49f8438eb56b298858521, type: 3}
+      objectReference: {fileID: 8300000, guid: 15c8c883a0391df40aaf94f14ee24706, type: 3}
     - target: {fileID: 11414214, guid: c2cb8aafa83d79f4bb15694996577265, type: 2}
       propertyPath: m_backgroundSong
       value: 
@@ -6637,11 +6637,15 @@ Prefab:
     - target: {fileID: 11414214, guid: c2cb8aafa83d79f4bb15694996577265, type: 2}
       propertyPath: m_playingBeatSound
       value: 
-      objectReference: {fileID: 8300000, guid: 8a6d6ae1be5ece7458b17648fd9f127d, type: 3}
+      objectReference: {fileID: 8300000, guid: 8f0dc3f4299f323488c12881728082de, type: 3}
     - target: {fileID: 11414214, guid: c2cb8aafa83d79f4bb15694996577265, type: 2}
       propertyPath: m_menuBeatSound
       value: 
-      objectReference: {fileID: 8300000, guid: 9715c96a5621e314ab829e98e16015e6, type: 3}
+      objectReference: {fileID: 8300000, guid: b011fd411da1ad1499e09b74a01d158d, type: 3}
+    - target: {fileID: 11414214, guid: c2cb8aafa83d79f4bb15694996577265, type: 2}
+      propertyPath: m_beatVolume
+      value: .150000006
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c2cb8aafa83d79f4bb15694996577265, type: 2}
   m_IsPrefabParent: 0
