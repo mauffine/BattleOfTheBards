@@ -2322,8 +2322,7 @@ Prefab:
     - target: {fileID: 11410114, guid: cd4a5c53169fa4540bd539cb2e7f619e, type: 2}
       propertyPath: m_spellList.Array.data[2]
       value: 
-      objectReference: {fileID: 11485838, guid: 5ecfbbf6bc70deb4abba009ffa103834,
-        type: 2}
+      objectReference: {fileID: 0}
     - target: {fileID: 11410114, guid: cd4a5c53169fa4540bd539cb2e7f619e, type: 2}
       propertyPath: m_spellList.Array.data[3]
       value: 
@@ -3644,7 +3643,7 @@ RectTransform:
   m_RootOrder: 7
   m_AnchorMin: {x: .5, y: .5}
   m_AnchorMax: {x: .5, y: .5}
-  m_AnchoredPosition: {x: 0, y: -200}
+  m_AnchoredPosition: {x: -110, y: -200}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: .5, y: .5}
 --- !u!1 &1169765948
@@ -3682,7 +3681,7 @@ Transform:
   - {fileID: 1125331103}
   - {fileID: 1609958441}
   m_Father: {fileID: 0}
-  m_RootOrder: 20
+  m_RootOrder: 21
 --- !u!1001 &1173222283
 Prefab:
   m_ObjectHideFlags: 0
@@ -3846,7 +3845,7 @@ RectTransform:
   m_RootOrder: 8
   m_AnchorMin: {x: .5, y: .5}
   m_AnchorMax: {x: .5, y: .5}
-  m_AnchoredPosition: {x: 0, y: -200}
+  m_AnchoredPosition: {x: 110, y: -200}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: .5, y: .5}
 --- !u!212 &1191176334
@@ -4521,7 +4520,7 @@ Transform:
   - {fileID: 801156062}
   - {fileID: 1851200016}
   m_Father: {fileID: 0}
-  m_RootOrder: 21
+  m_RootOrder: 22
 --- !u!1001 &1314627368
 Prefab:
   m_ObjectHideFlags: 0
@@ -6904,7 +6903,7 @@ Prefab:
     - target: {fileID: 11481506, guid: c2cb8aafa83d79f4bb15694996577265, type: 2}
       propertyPath: m_spellPrefabs.Array.data[3]
       value: 
-      objectReference: {fileID: 142226, guid: 9e2674d8bf83e7f4da56e1e185e34af4, type: 2}
+      objectReference: {fileID: 140594, guid: 5ecfbbf6bc70deb4abba009ffa103834, type: 2}
     - target: {fileID: 11481506, guid: c2cb8aafa83d79f4bb15694996577265, type: 2}
       propertyPath: m_spellPrefabs.Array.data[4]
       value: 

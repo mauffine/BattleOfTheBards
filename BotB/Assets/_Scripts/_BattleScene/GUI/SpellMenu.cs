@@ -43,18 +43,18 @@ public class SpellMenu : MonoBehaviour
 
         if(m_showMenu)
         {
-            //if (Input.GetKeyDown(KeyCode.S))
-            //    SelectOffence();
-            //else if (Input.GetKeyDown(KeyCode.A))
-            //    SelectDefence();
-            //else if (Input.GetKeyDown(KeyCode.D))
-            //    SelectEffect();
-            //else if (Input.GetKeyDown(KeyCode.Q))
-            //    SelectIce();
-            //else if (Input.GetKeyDown(KeyCode.W))
-            //    SelectFire();
-            //else if (Input.GetKeyDown(KeyCode.E))
-            //    SelectArcane();
+            if (Input.GetKeyDown(KeyCode.S))
+                SelectOffence();
+            else if (Input.GetKeyDown(KeyCode.A))
+                SelectDefence();
+            else if (Input.GetKeyDown(KeyCode.D))
+                SelectEffect();
+            else if (Input.GetKeyDown(KeyCode.Q))
+                SelectIce();
+            else if (Input.GetKeyDown(KeyCode.W))
+                SelectFire();
+            else if (Input.GetKeyDown(KeyCode.E))
+                SelectArcane();
             if (Input.GetButtonDown("Triangle"))
                 SelectOffence();
             else if (Input.GetButtonDown("Square"))
@@ -135,10 +135,6 @@ public class SpellMenu : MonoBehaviour
         m_offenceButton.GetComponent<SpellMenuButton>().Show();
         m_defenceButton.GetComponent<SpellMenuButton>().Show();
         m_effectSelection.GetComponent<SpellMenuButton>().Show();
-
-        //m_fireButton.GetComponent<SpellMenuButton>().Show();
-        //m_iceButton.GetComponent<SpellMenuButton>().Show();
-        //m_arcaneButton.GetComponent<SpellMenuButton>().Show();
     }
     public void HideMenu()
     {
@@ -146,10 +142,6 @@ public class SpellMenu : MonoBehaviour
         m_offenceButton.GetComponent<SpellMenuButton>().Hide();
         m_defenceButton.GetComponent<SpellMenuButton>().Hide();
         m_effectSelection.GetComponent<SpellMenuButton>().Hide();
-
-        //m_fireButton.GetComponent<SpellMenuButton>().Hide();
-        //m_iceButton.GetComponent<SpellMenuButton>().Hide();
-        //m_arcaneButton.GetComponent<SpellMenuButton>().Hide();
 
         m_offenceButtonScript.SetUnselected();
         m_defenceButtonScript.SetUnselected();
