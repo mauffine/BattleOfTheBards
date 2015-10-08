@@ -4,6 +4,13 @@ using System.Collections;
 
 public class SpellMenu : MonoBehaviour 
 {
+    private enum MenuState
+    {
+        GeneralMenu,
+        GameMenu,
+        Casting
+    };
+    MenuState m_currentState;
     [SerializeField]
     static SpellType m_currentSelection;
 
@@ -22,6 +29,7 @@ public class SpellMenu : MonoBehaviour
 	// Use this for initialization
 	void Start()
     {
+        m_currentState = MenuState.GeneralMenu;
         m_upScript = m_upButton.GetComponent<SpellMenuButton>();
         m_leftScript = m_leftButton.GetComponent<SpellMenuButton>();
         m_rightScript = m_rightButton.GetComponent<SpellMenuButton>();
@@ -38,22 +46,24 @@ public class SpellMenu : MonoBehaviour
     {
         if(s_showMenu)
         {
-            if (Input.GetKeyDown(KeyCode.S))
-                SelectOffence();
-            else if (Input.GetKeyDown(KeyCode.A))
-                SelectDefence();
-            else if (Input.GetKeyDown(KeyCode.D))
-                SelectEffect(); 
+            if (!UpSelected && !LeftSelected && !RightSelected)
+            {
+                if (Input.GetKeyDown(KeyCode.S))
+                    SelectOffence();
+                else if (Input.GetKeyDown(KeyCode.A))
+                    SelectDefence();
+                else if (Input.GetKeyDown(KeyCode.D))
+                    SelectEffect();
 
-            if (Input.GetButtonDown("Triangle"))
-                SelectOffence();
-            else if (Input.GetButtonDown("Square"))
-                SelectDefence();
-            else if (Input.GetButtonDown("Circle"))
-                SelectEffect();
-
+                if (Input.GetButtonDown("Triangle"))
+                    SelectOffence();
+                else if (Input.GetButtonDown("Square"))
+                    SelectDefence();
+                else if (Input.GetButtonDown("Circle"))
+                    SelectEffect();
+            }
             if(!m_resetMenu)
-            { 
+            {
                 if (m_currentSelection == SpellType.Offencive)
                     SwitchMenu(m_attackMenu);
                 if (m_currentSelection == SpellType.Defensive)
@@ -65,10 +75,10 @@ public class SpellMenu : MonoBehaviour
                 SwitchMenu(m_centralMenu);
         }
 
-        if (TurnTimer.Instance.CurrentTurn == Turn.Menu)
-            ShowMenu();
-        else
-            HideMenu();  
+       if (TurnTimer.Instance.CurrentTurn == Turn.Menu)
+           ShowMenu();
+       else
+           HideMenu();  
 
 	}
 
@@ -130,13 +140,13 @@ public class SpellMenu : MonoBehaviour
     }
     private void SwitchMenu(GameObject a_menu)
     {
-        m_currentMenu.SetActive(false);
+        m_upScript.Hide();
+        m_leftScript.Hide();
+        m_rightScript.Hide();
+
         m_currentMenu = a_menu;
-        m_currentMenu.SetActive(true);
 
         a_menu.transform.parent = transform;
-        //Set to Active
-        a_menu.SetActive(true);
         //DEBUG HERE
         m_top = a_menu.transform.GetChild(0).GetComponent<SpriteRenderer>().sprite;
         m_left = a_menu.transform.GetChild(1).GetComponent<SpriteRenderer>().sprite;
@@ -145,5 +155,21 @@ public class SpellMenu : MonoBehaviour
         m_upScript = a_menu.transform.GetChild(0).GetComponent<SpellMenuButton>();
         m_leftScript = a_menu.transform.GetChild(1).GetComponent<SpellMenuButton>();
         m_rightScript = a_menu.transform.GetChild(2).GetComponent<SpellMenuButton>();
+
+        m_upScript.Show();
+        m_leftScript.Show();
+        m_rightScript.Show();
+    }
+    public bool UpSelected
+    {
+        get {return m_upButton.GetComponent<SpellMenuButton>().m_selected; }
+    }
+    public bool LeftSelected
+    {
+        get { return m_leftButton.GetComponent<SpellMenuButton>().m_selected; }
+    }
+    public bool RightSelected
+    {
+        get { return m_rightButton.GetComponent<SpellMenuButton>().m_selected; }
     }
 }

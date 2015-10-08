@@ -1,7 +1,8 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class ArcaneShield : Spell {
+public class ArcaneShield : Spell 
+{
 
     void Start()
     {
