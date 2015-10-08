@@ -21,6 +21,10 @@ public class SpellSystem : MonoBehaviour
     float m_accuracy;
     float m_flightTime;
     public static SpellSystem Instance;
+
+    float m_spellDeletionTimer;
+    bool m_spellInFlight;
+
     //Behaviours
     void Awake()
     {
@@ -43,9 +47,19 @@ public class SpellSystem : MonoBehaviour
         if (TurnTimer.Instance.CurrentTurn == Turn.Menu)
             m_flightTime -= Time.deltaTime;
 
-        if (m_flightTime <=0 && TurnTimer.Instance.CurrentTurn == Turn.Menu)
+        if (m_flightTime <= 0 && TurnTimer.Instance.CurrentTurn == Turn.Menu && m_spellInFlight == true)
         {
             PaperScissorsRock();
+        }
+
+        m_spellDeletionTimer -= Time.deltaTime;
+        if(m_spellDeletionTimer < 0 && (m_playerSpell != null || m_enemySpell != null))
+        {
+            Destroy(m_playerSpell);
+            m_playerSpell = null;
+
+            Destroy(m_enemySpell);
+            m_enemySpell = null;
         }
 
     }
@@ -68,6 +82,8 @@ public class SpellSystem : MonoBehaviour
         CheckSpells(m_playerNotes, m_spellList);
         CheckSpells(m_enemyNotes, m_spellList);
         m_flightTime = 0.7f;
+        m_spellDeletionTimer = 3;
+        m_spellInFlight = true;
     }
     /// <summary>checks if a spell has been cast in the list that's passed into this function</summary>
     /// <param name="a_currentNotes">List of notes to check for spells</param>
@@ -97,7 +113,7 @@ public class SpellSystem : MonoBehaviour
                                                 if (SpellMenu.Selection == SpellType.Offencive)
                                                 {
                                                     m_playerSpell = (GameObject)Instantiate(m_spellPrefabs[o], new Vector3(2, 1.3f, 1), Quaternion.AngleAxis(0, Vector3.up));
-                                                    m_playerSpell.GetComponent<Spell>().m_velocity = new Vector3(-0.04f, Random.Range(-0.00007f, 0.00007f), 0.0f) * 2;
+                                                    m_playerSpell.GetComponent<Spell>().m_velocity = new Vector3(-0.03f, Random.Range(-0.00007f, 0.00007f), 0.0f) * 2;
                                                 }
                                                 break;
                                             }
@@ -193,31 +209,33 @@ public class SpellSystem : MonoBehaviour
                     break;
             }
 
-            Destroy(m_playerSpell);
-            m_playerSpell = null;
-
-            Destroy(m_enemySpell);
-            m_enemySpell = null;
+            m_playerSpell.GetComponent<Spell>().TurnOffEmission();
+            m_enemySpell.GetComponent<Spell>().TurnOffEmission();
         }
         else
         {
             if (m_playerSpell != null)
             {
                 Battle.Instance.DealDamage(m_playerSpell.GetComponent<Spell>().Damage + m_playerNotes.Count, false);
-                Destroy(m_playerSpell);
-                m_playerSpell = null;
+                //Destroy(m_playerSpell);
+                //m_playerSpell = null;
+                m_playerSpell.GetComponent<Spell>().TurnOffEmission();
             }
             if (m_enemySpell != null)
             {
                 Battle.Instance.DealDamage(m_enemySpell.GetComponent<Spell>().Damage + m_enemyNotes.Count, true);
-                Destroy(m_enemySpell);
-                m_enemySpell = null;
+                //Destroy(m_enemySpell);
+                //m_enemySpell = null;
+                m_enemySpell.GetComponent<Spell>().TurnOffEmission();
             }
-            m_playerNotes.Clear();
-            m_enemyNotes.Clear();
+            
             m_flightTime = 0.7f;
             m_accuracy = 0;
         }
+
+        m_playerNotes.Clear();
+        m_enemyNotes.Clear();
+        m_spellInFlight = false;
     }
     void Attack_Attack()
     {

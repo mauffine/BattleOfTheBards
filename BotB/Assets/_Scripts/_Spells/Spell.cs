@@ -37,6 +37,8 @@ public class Spell : MonoBehaviour
 
     public void TurnOffEmission()
     {
+        m_velocity = new Vector3(0, 0, 0);
+
         if(m_localParticleSystem != null)
         {
             m_localParticleSystem.enableEmission = false;
