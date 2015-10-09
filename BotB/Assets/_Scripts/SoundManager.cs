@@ -101,10 +101,13 @@ public class SoundManager : MonoBehaviour
             {
                 m_beatSource = m_audioPool.GetUnusedSource();
             }
-            m_beatSource.Stop();
-            m_beatSource.clip = a_beatClip;
-            m_beatSource.volume = 0.05f;
-            m_beatSource.Play();
+            if (m_beatSource != null)
+            {
+                m_beatSource.Stop();
+                m_beatSource.clip = a_beatClip;
+                m_beatSource.volume = 0.05f;
+                m_beatSource.Play();
+            }
         }
 
         m_beatTimer += Time.deltaTime;

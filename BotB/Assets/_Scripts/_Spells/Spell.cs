@@ -13,6 +13,7 @@ public class Spell : MonoBehaviour
 
     private ParticleSystem m_localParticleSystem; //for this object, possibly temporary
     private List<ParticleSystem> m_particleSystemList; //for children
+    public bool m_dying = false; //this is true when the emission is turned off but the object persists
 
 	// Use this for initialization
 	protected void Start() 
@@ -22,8 +23,6 @@ public class Spell : MonoBehaviour
         m_type = SpellType.Offencive;
 
         m_localParticleSystem = GetComponent<ParticleSystem>();
-
-        //m_particleSystemList = new ParticleSystem[8];
         m_particleSystemList = new List<ParticleSystem>();
         foreach(Transform child in transform)
         {
@@ -38,6 +37,8 @@ public class Spell : MonoBehaviour
 
     public void TurnOffEmission()
     {
+        m_velocity = new Vector3(0, 0, 0);
+
         if(m_localParticleSystem != null)
         {
             m_localParticleSystem.enableEmission = false;
@@ -47,6 +48,8 @@ public class Spell : MonoBehaviour
         {
             system.enableEmission = false;
         }
+
+        m_dying = true;
     }
 
     public int Damage

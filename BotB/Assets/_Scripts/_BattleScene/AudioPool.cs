@@ -8,6 +8,8 @@ public class AudioPool : MonoBehaviour
 
     private AudioSource[] m_audioSourceList;
 
+    public int m_numberOfSources = 64;
+
 	// Use this for initialization
 	void Start () 
     {
@@ -18,7 +20,7 @@ public class AudioPool : MonoBehaviour
     {
         m_audioSourcePrefab = a_audioSourcePrefab;
 
-        m_audioSourceList = new AudioSource[32];
+        m_audioSourceList = new AudioSource[m_numberOfSources];
 
         for (int i = 0; i < m_audioSourceList.Length; i++)
         {

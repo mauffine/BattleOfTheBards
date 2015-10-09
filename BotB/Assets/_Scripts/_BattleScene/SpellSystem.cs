@@ -21,6 +21,10 @@ public class SpellSystem : MonoBehaviour
     float m_accuracy;
     float m_flightTime;
     public static SpellSystem Instance;
+
+    float m_spellDeletionTimer;
+    bool m_spellInFlight;
+
     //Behaviours
     void Awake()
     {
@@ -43,9 +47,19 @@ public class SpellSystem : MonoBehaviour
         if (TurnTimer.Instance.CurrentTurn == Turn.Menu)
             m_flightTime -= Time.deltaTime;
 
-        if (m_flightTime <=0 && TurnTimer.Instance.CurrentTurn == Turn.Menu)
+        if (m_flightTime <= 0 && TurnTimer.Instance.CurrentTurn == Turn.Menu && m_spellInFlight == true)
         {
             PaperScissorsRock();
+        }
+
+        m_spellDeletionTimer -= Time.deltaTime;
+        if(m_spellDeletionTimer < 0 && (m_playerSpell != null || m_enemySpell != null))
+        {
+            Destroy(m_playerSpell);
+            m_playerSpell = null;
+
+            Destroy(m_enemySpell);
+            m_enemySpell = null;
         }
 
     }
@@ -68,6 +82,8 @@ public class SpellSystem : MonoBehaviour
         CheckSpells(m_playerNotes, m_spellList);
         CheckSpells(m_enemyNotes, m_spellList);
         m_flightTime = 0.7f;
+        m_spellDeletionTimer = 3;
+        m_spellInFlight = true;
     }
     /// <summary>checks if a spell has been cast in the list that's passed into this function</summary>
     /// <param name="a_currentNotes">List of notes to check for spells</param>
@@ -99,16 +115,16 @@ public class SpellSystem : MonoBehaviour
                                 //Instantiates the spell in a position appropriate to the player and sets it's velocity
                                 case (SpellType.Offencive):
                                     {
-                                        if (SpellMenu.Selection == SpellType.Offencive) //Attack
+                                        if (SpellMenu.Selection == SpellType.Offencive)
                                         {
                                             m_playerSpell = (GameObject)Instantiate(m_spellPrefabs[o], new Vector3(2, 1.3f, 1), Quaternion.AngleAxis(0, Vector3.up));
-                                            m_playerSpell.GetComponent<Spell>().m_velocity = new Vector3(-0.04f, Random.Range(-0.00007f, 0.00007f), 0.0f) * 2;
+                                            m_playerSpell.GetComponent<Spell>().m_velocity = new Vector3(-0.03f, Random.Range(-0.00007f, 0.00007f), 0.0f) * 2;
                                         }
                                         break;
                                     }
                                 case SpellType.Defensive:
                                     {
-                                        if (SpellMenu.Selection == SpellType.Defensive) //Shield
+                                        if (SpellMenu.Selection == SpellType.Defensive)
                                         {
                                             m_playerSpell = (GameObject)Instantiate(m_spellPrefabs[o], new Vector3(1.5f, 1, 1.3f), Quaternion.AngleAxis(0, Vector3.up));
                                             m_playerSpell.GetComponent<Spell>().m_velocity = Vector3.zero;
@@ -117,16 +133,15 @@ public class SpellSystem : MonoBehaviour
                                     }
                                 case SpellType.Effect:
                                     {
-                                        if (SpellMenu.Selection == SpellType.Effect) //Effect
+                                        if (SpellMenu.Selection == SpellType.Effect)
                                         {
                                             m_playerSpell = (GameObject)Instantiate(m_spellPrefabs[o], new Vector3(2, 0, 1), Quaternion.AngleAxis(0, Vector3.up));
                                             m_playerSpell.GetComponent<Spell>().m_velocity = Vector3.zero;
                                         }
                                         break;
-                                    }
-                            }
-                            
-                        }
+                                    }                            
+                                }
+                         }
                         else if (spellEnumerator.Current.Key == m_spellPrefabs[o].GetComponent<Spell>().Name && !a_currentNotes[i].m_playerOwned)
                         {
                             Battle.Instance.EnemyRef.GetComponent<Musician>().Animate(4);
@@ -206,33 +221,41 @@ public class SpellSystem : MonoBehaviour
                     }
                     break;
             }
+
+            m_playerSpell.GetComponent<Spell>().TurnOffEmission();
+            m_enemySpell.GetComponent<Spell>().TurnOffEmission();
         }
         else
         {
             if (m_playerSpell != null)
             {
                 Battle.Instance.DealDamage(m_playerSpell.GetComponent<Spell>().Damage + m_playerNotes.Count, false);
-                Destroy(m_playerSpell);
+
+                //Destroy(m_playerSpell);
+                //m_playerSpell = null;
+                m_playerSpell.GetComponent<Spell>().TurnOffEmission();
             }
             if (m_enemySpell != null)
             {
                 Battle.Instance.DealDamage(m_enemySpell.GetComponent<Spell>().Damage + m_enemyNotes.Count, true);
-                Destroy(m_enemySpell);
+                //Destroy(m_enemySpell);
+                //m_enemySpell = null;
+                m_enemySpell.GetComponent<Spell>().TurnOffEmission();
             }
-            m_playerNotes.Clear();
-            m_enemyNotes.Clear();
+            
             m_flightTime = 0.7f;
             m_accuracy = 0;
         }
+
+        m_playerNotes.Clear();
+        m_enemyNotes.Clear();
+        m_spellInFlight = false;
     }
     void Attack_Attack()
     {
         //both attacks hit their intended targets and do damage
         Battle.Instance.DealDamage(m_playerSpell.GetComponent<Spell>().Damage + m_playerNotes.Count, false);
         Battle.Instance.DealDamage(m_enemySpell.GetComponent<Spell>().Damage + m_enemyNotes.Count, true);
-
-        Destroy(m_playerSpell);
-        Destroy(m_enemySpell);
 
         Debug.Log("Both attacks clash!");
     }
@@ -249,8 +272,6 @@ public class SpellSystem : MonoBehaviour
             Battle.Instance.DealDamage(m_enemySpell.GetComponent<Spell>().Damage + m_playerNotes.Count, false);
             Battle.Instance.DealDamage(m_enemyNotes.Count, true, false);
         }
-        Destroy(m_playerSpell);
-        Destroy(m_enemySpell);
 		
         Debug.Log("Your spell was deflected!");
     }
@@ -266,19 +287,12 @@ public class SpellSystem : MonoBehaviour
             Battle.Instance.DealDamage(m_playerNotes.Count, false, false);
             Battle.Instance.DealDamage(m_enemySpell.GetComponent<Spell>().Damage + m_enemyNotes.Count, true);
         }
-
-        Destroy(m_playerSpell);
-        Destroy(m_enemySpell);
-
         Debug.Log("Enemy's effect was blown away!");
     }
     void Defence_Defence()
     {
         Battle.Instance.DealDamage(m_playerNotes.Count, false, false);
         Battle.Instance.DealDamage(m_enemyNotes.Count, true, false);
-
-        Destroy(m_enemySpell);
-        Destroy(m_playerSpell);
 
         Debug.Log("Both of you defend...");
     }
@@ -295,19 +309,12 @@ public class SpellSystem : MonoBehaviour
             Battle.Instance.DealDamage(m_enemyNotes.Count, true, false);
         }
 
-        Destroy(m_playerSpell);
-        Destroy(m_enemySpell);
-
         Debug.Log("The enemy's effect passes through your defences!");
     }
     void Effect_Effect()
     {
         Battle.Instance.DealDamage(m_playerSpell.GetComponent<Spell>().Damage + m_playerNotes.Count, false);
         Battle.Instance.DealDamage(m_enemySpell.GetComponent<Spell>().Damage + m_enemyNotes.Count, true);
-
-        Destroy(m_playerSpell);
-        Destroy(m_enemySpell); 
-
         Debug.Log("Both effects clash!");
     }
     void CheckAccuracy(float a_noteTime)
