@@ -7,7 +7,7 @@ Material:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_Name: tav_chain_mat
-  m_Shader: {fileID: 46, guid: 0000000000000000f000000000000000, type: 0}
+  m_Shader: {fileID: 4800000, guid: 711a6280102e4ec42832ad43588ff32e, type: 3}
   m_ShaderKeywords: _ALPHATEST_ON _METALLICGLOSSMAP
   m_LightmapFlags: 5
   m_CustomRenderQueue: 2450
@@ -40,6 +40,13 @@ Material:
       data:
         first:
           name: _ParallaxMap
+        second:
+          m_Texture: {fileID: 0}
+          m_Scale: {x: 1, y: 1}
+          m_Offset: {x: 0, y: 0}
+      data:
+        first:
+          name: _SpecGlossMap
         second:
           m_Texture: {fileID: 0}
           m_Scale: {x: 1, y: 1}
@@ -103,7 +110,7 @@ Material:
       data:
         first:
           name: _Glossiness
-        second: .5
+        second: .850000024
       data:
         first:
           name: _BumpScale
@@ -136,4 +143,8 @@ Material:
       data:
         first:
           name: _Color
-        second: {r: 1, g: 1, b: 1, a: 1}
+        second: {r: .0823529437, g: .0823529437, b: .0823529437, a: 1}
+      data:
+        first:
+          name: _SpecColor
+        second: {r: .768627524, g: .78039223, b: .78039223, a: 1}

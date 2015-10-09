@@ -1444,7 +1444,7 @@ ModelImporter:
       name: Lose
       takeName: Take 001
       firstFrame: 400
-      lastFrame: 700
+      lastFrame: 680
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
