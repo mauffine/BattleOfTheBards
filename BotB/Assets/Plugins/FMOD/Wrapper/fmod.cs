@@ -4,9 +4,15 @@
 /*                                                                                            */
 /* ========================================================================================== */
 
+#if UNITY_EDITOR || ((UNITY_STANDALONE_WIN || UNITY_STANDALONE_OSX) && DEVELOPMENT_BUILD)
+#define FMOD_LOGGING
+#endif
+
 using System;
 using System.Text;
 using System.Runtime.InteropServices;
+
+
 
 namespace FMOD
 {
@@ -16,7 +22,7 @@ namespace FMOD
     */
     public class VERSION
     {
-        public const int    number = 0x00010607;
+        public const int    number = 0x00010700;
 #if UNITY_IPHONE && !UNITY_EDITOR
         public const string dll    = "__Internal";
 #elif (UNITY_PS4) && !UNITY_EDITOR
@@ -25,7 +31,7 @@ namespace FMOD
         public const string dll    = "libfmodstudio";
 #elif (UNITY_WIIU) && !UNITY_EDITOR
         public const string dll    = "libfmodstudio";
-#elif (UNITY_EDITOR || UNITY_STANDALONE_WIN || UNITY_STANDALONE_OSX) && FMOD_DEBUG
+#elif UNITY_EDITOR || ((UNITY_STANDALONE_WIN || UNITY_STANDALONE_OSX) && DEVELOPMENT_BUILD)
         public const string dll    = "fmodl";
 #else
         public const string dll    = "fmod";
@@ -211,10 +217,10 @@ namespace FMOD
     [StructLayout(LayoutKind.Sequential)]
     public struct ATTRIBUTES_3D
     {
-        VECTOR position;
-        VECTOR velocity;
-        VECTOR forward;
-        VECTOR up;
+        public VECTOR position;
+        public VECTOR velocity;
+        public VECTOR forward;
+        public VECTOR up;
     }
 
     /*
@@ -3879,9 +3885,9 @@ namespace FMOD
             return FMOD5_DSP_GetMeteringEnabled(rawPtr, out inputEnabled, out outputEnabled);
         }
 
-        public RESULT getMeteringInfo(out DSP_METERING_INFO info)
+        public RESULT getMeteringInfo(DSP_METERING_INFO inputInfo, DSP_METERING_INFO outputInfo)
         {
-            return FMOD5_DSP_GetMeteringInfo(rawPtr, out info);
+            return FMOD5_DSP_GetMeteringInfo(rawPtr, inputInfo, outputInfo);
         }
 
         #region importfunctions
@@ -3963,7 +3969,7 @@ namespace FMOD
         [DllImport(VERSION.dll)]
         public static extern RESULT FMOD5_DSP_GetMeteringEnabled         (IntPtr dsp, out bool inputEnabled, out bool outputEnabled);
         [DllImport(VERSION.dll)]
-        public static extern RESULT FMOD5_DSP_GetMeteringInfo            (IntPtr dsp, out DSP_METERING_INFO dspInfo);
+        public static extern RESULT FMOD5_DSP_GetMeteringInfo            (IntPtr dsp, [Out]DSP_METERING_INFO inputInfo, [Out]DSP_METERING_INFO outputInfo);
         #endregion
 
         #region wrapperinternal
