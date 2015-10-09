@@ -1,0 +1,315 @@
+fileFormatVersion: 2
+guid: da700a2a33ada9548a8177ca90f66fe8
+timeCreated: 1444272449
+licenseType: Free
+ModelImporter:
+  serializedVersion: 18
+  fileIDToRecycleName:
+    100000: chain
+    100002: chain_jnt_01
+    100004: chain_jnt_02
+    100006: chain_jnt_03
+    100008: chain_jnt_04
+    100010: chain_jnt_05
+    100012: chain_jnt_06
+    100014: chain_jnt_07
+    100016: chain_jnt_08
+    100018: chain_jnt_09
+    100020: chain_jnt_10
+    100022: chain_jnt_11
+    100024: chain_jnt_12
+    100026: chain_jnt_13
+    100028: chain_jnt_14
+    100030: chain_jnt_15
+    100032: chain_jnt_16
+    100034: chain_jnt_17
+    100036: chain_jnt_18
+    100038: chain_jnt_19
+    100040: chain_jnt_20
+    100042: chain_jnt_21
+    100044: chain_jnt_22
+    100046: chain_jnt_23
+    100048: chain_jnt_24
+    100050: chain_jnt_25
+    100052: chain_jnt_26
+    100054: chain_jnt_27
+    100056: chain_jnt_28
+    100058: chain_jnt_29
+    100060: chain_jnt_30
+    100062: chain_jnt_31
+    100064: chain_jnt_32
+    100066: chain_jnt_33
+    100068: chain_jnt_34
+    100070: chain_jnt_35
+    100072: chain_jnt_36
+    100074: chain_jnt_37
+    100076: chain_jnt_38
+    100078: chain_jnt_40
+    100080: chain_jnt_41
+    100082: chain_jnt_42
+    100084: chain_jnt_43
+    100086: chain_jnt_44
+    100088: chain_jnt_45
+    100090: chain_jnt_46
+    100092: chain_jnt_47
+    100094: chain_jnt_48
+    100096: chain_jnt_49
+    100098: chain_jnt_50
+    100100: lantern
+    100102: lantern_jnt
+    100104: //RootNode
+    400000: chain
+    400002: chain_jnt_01
+    400004: chain_jnt_02
+    400006: chain_jnt_03
+    400008: chain_jnt_04
+    400010: chain_jnt_05
+    400012: chain_jnt_06
+    400014: chain_jnt_07
+    400016: chain_jnt_08
+    400018: chain_jnt_09
+    400020: chain_jnt_10
+    400022: chain_jnt_11
+    400024: chain_jnt_12
+    400026: chain_jnt_13
+    400028: chain_jnt_14
+    400030: chain_jnt_15
+    400032: chain_jnt_16
+    400034: chain_jnt_17
+    400036: chain_jnt_18
+    400038: chain_jnt_19
+    400040: chain_jnt_20
+    400042: chain_jnt_21
+    400044: chain_jnt_22
+    400046: chain_jnt_23
+    400048: chain_jnt_24
+    400050: chain_jnt_25
+    400052: chain_jnt_26
+    400054: chain_jnt_27
+    400056: chain_jnt_28
+    400058: chain_jnt_29
+    400060: chain_jnt_30
+    400062: chain_jnt_31
+    400064: chain_jnt_32
+    400066: chain_jnt_33
+    400068: chain_jnt_34
+    400070: chain_jnt_35
+    400072: chain_jnt_36
+    400074: chain_jnt_37
+    400076: chain_jnt_38
+    400078: chain_jnt_40
+    400080: chain_jnt_41
+    400082: chain_jnt_42
+    400084: chain_jnt_43
+    400086: chain_jnt_44
+    400088: chain_jnt_45
+    400090: chain_jnt_46
+    400092: chain_jnt_47
+    400094: chain_jnt_48
+    400096: chain_jnt_49
+    400098: chain_jnt_50
+    400100: lantern
+    400102: lantern_jnt
+    400104: //RootNode
+    4300000: lantern
+    4300002: chain
+    7400000: Take 001
+    9500000: //RootNode
+    13700000: chain
+    13700002: lantern
+  materials:
+    importMaterials: 1
+    materialName: 1
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 0
+    animationRotationError: .5
+    animationPositionError: .5
+    animationScaleError: .5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: Take 001
+      takeName: Take 001
+      firstFrame: 1
+      lastFrame: 400
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 1
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: chain
+        weight: 1
+      - path: chain_jnt_01
+        weight: 1
+      - path: chain_jnt_01/chain_jnt_02
+        weight: 1
+      - path: chain_jnt_01/chain_jnt_02/chain_jnt_03
+        weight: 1
+      - path: chain_jnt_01/chain_jnt_02/chain_jnt_03/chain_jnt_04
+        weight: 1
+      - path: chain_jnt_01/chain_jnt_02/chain_jnt_03/chain_jnt_04/chain_jnt_05
+        weight: 1
+      - path: chain_jnt_01/chain_jnt_02/chain_jnt_03/chain_jnt_04/chain_jnt_05/chain_jnt_06
+        weight: 1
+      - path: chain_jnt_01/chain_jnt_02/chain_jnt_03/chain_jnt_04/chain_jnt_05/chain_jnt_06/chain_jnt_07
+        weight: 1
+      - path: chain_jnt_01/chain_jnt_02/chain_jnt_03/chain_jnt_04/chain_jnt_05/chain_jnt_06/chain_jnt_07/chain_jnt_08
+        weight: 1
+      - path: chain_jnt_01/chain_jnt_02/chain_jnt_03/chain_jnt_04/chain_jnt_05/chain_jnt_06/chain_jnt_07/chain_jnt_08/chain_jnt_09
+        weight: 1
+      - path: chain_jnt_01/chain_jnt_02/chain_jnt_03/chain_jnt_04/chain_jnt_05/chain_jnt_06/chain_jnt_07/chain_jnt_08/chain_jnt_09/chain_jnt_10
+        weight: 1
+      - path: chain_jnt_01/chain_jnt_02/chain_jnt_03/chain_jnt_04/chain_jnt_05/chain_jnt_06/chain_jnt_07/chain_jnt_08/chain_jnt_09/chain_jnt_10/chain_jnt_11
+        weight: 1
+      - path: chain_jnt_01/chain_jnt_02/chain_jnt_03/chain_jnt_04/chain_jnt_05/chain_jnt_06/chain_jnt_07/chain_jnt_08/chain_jnt_09/chain_jnt_10/chain_jnt_11/chain_jnt_12
+        weight: 1
+      - path: chain_jnt_01/chain_jnt_02/chain_jnt_03/chain_jnt_04/chain_jnt_05/chain_jnt_06/chain_jnt_07/chain_jnt_08/chain_jnt_09/chain_jnt_10/chain_jnt_11/chain_jnt_12/chain_jnt_13
+        weight: 1
+      - path: chain_jnt_01/chain_jnt_02/chain_jnt_03/chain_jnt_04/chain_jnt_05/chain_jnt_06/chain_jnt_07/chain_jnt_08/chain_jnt_09/chain_jnt_10/chain_jnt_11/chain_jnt_12/chain_jnt_13/chain_jnt_14
+        weight: 1
+      - path: chain_jnt_01/chain_jnt_02/chain_jnt_03/chain_jnt_04/chain_jnt_05/chain_jnt_06/chain_jnt_07/chain_jnt_08/chain_jnt_09/chain_jnt_10/chain_jnt_11/chain_jnt_12/chain_jnt_13/chain_jnt_14/chain_jnt_15
+        weight: 1
+      - path: chain_jnt_01/chain_jnt_02/chain_jnt_03/chain_jnt_04/chain_jnt_05/chain_jnt_06/chain_jnt_07/chain_jnt_08/chain_jnt_09/chain_jnt_10/chain_jnt_11/chain_jnt_12/chain_jnt_13/chain_jnt_14/chain_jnt_15/chain_jnt_16
+        weight: 1
+      - path: chain_jnt_01/chain_jnt_02/chain_jnt_03/chain_jnt_04/chain_jnt_05/chain_jnt_06/chain_jnt_07/chain_jnt_08/chain_jnt_09/chain_jnt_10/chain_jnt_11/chain_jnt_12/chain_jnt_13/chain_jnt_14/chain_jnt_15/chain_jnt_16/chain_jnt_17
+        weight: 1
+      - path: chain_jnt_01/chain_jnt_02/chain_jnt_03/chain_jnt_04/chain_jnt_05/chain_jnt_06/chain_jnt_07/chain_jnt_08/chain_jnt_09/chain_jnt_10/chain_jnt_11/chain_jnt_12/chain_jnt_13/chain_jnt_14/chain_jnt_15/chain_jnt_16/chain_jnt_17/chain_jnt_18
+        weight: 1
+      - path: chain_jnt_01/chain_jnt_02/chain_jnt_03/chain_jnt_04/chain_jnt_05/chain_jnt_06/chain_jnt_07/chain_jnt_08/chain_jnt_09/chain_jnt_10/chain_jnt_11/chain_jnt_12/chain_jnt_13/chain_jnt_14/chain_jnt_15/chain_jnt_16/chain_jnt_17/chain_jnt_18/chain_jnt_19
+        weight: 1
+      - path: chain_jnt_01/chain_jnt_02/chain_jnt_03/chain_jnt_04/chain_jnt_05/chain_jnt_06/chain_jnt_07/chain_jnt_08/chain_jnt_09/chain_jnt_10/chain_jnt_11/chain_jnt_12/chain_jnt_13/chain_jnt_14/chain_jnt_15/chain_jnt_16/chain_jnt_17/chain_jnt_18/chain_jnt_19/chain_jnt_20
+        weight: 1
+      - path: chain_jnt_01/chain_jnt_02/chain_jnt_03/chain_jnt_04/chain_jnt_05/chain_jnt_06/chain_jnt_07/chain_jnt_08/chain_jnt_09/chain_jnt_10/chain_jnt_11/chain_jnt_12/chain_jnt_13/chain_jnt_14/chain_jnt_15/chain_jnt_16/chain_jnt_17/chain_jnt_18/chain_jnt_19/chain_jnt_20/chain_jnt_21
+        weight: 1
+      - path: chain_jnt_01/chain_jnt_02/chain_jnt_03/chain_jnt_04/chain_jnt_05/chain_jnt_06/chain_jnt_07/chain_jnt_08/chain_jnt_09/chain_jnt_10/chain_jnt_11/chain_jnt_12/chain_jnt_13/chain_jnt_14/chain_jnt_15/chain_jnt_16/chain_jnt_17/chain_jnt_18/chain_jnt_19/chain_jnt_20/chain_jnt_21/chain_jnt_22
+        weight: 1
+      - path: chain_jnt_01/chain_jnt_02/chain_jnt_03/chain_jnt_04/chain_jnt_05/chain_jnt_06/chain_jnt_07/chain_jnt_08/chain_jnt_09/chain_jnt_10/chain_jnt_11/chain_jnt_12/chain_jnt_13/chain_jnt_14/chain_jnt_15/chain_jnt_16/chain_jnt_17/chain_jnt_18/chain_jnt_19/chain_jnt_20/chain_jnt_21/chain_jnt_22/chain_jnt_23
+        weight: 1
+      - path: chain_jnt_01/chain_jnt_02/chain_jnt_03/chain_jnt_04/chain_jnt_05/chain_jnt_06/chain_jnt_07/chain_jnt_08/chain_jnt_09/chain_jnt_10/chain_jnt_11/chain_jnt_12/chain_jnt_13/chain_jnt_14/chain_jnt_15/chain_jnt_16/chain_jnt_17/chain_jnt_18/chain_jnt_19/chain_jnt_20/chain_jnt_21/chain_jnt_22/chain_jnt_23/chain_jnt_24
+        weight: 1
+      - path: chain_jnt_01/chain_jnt_02/chain_jnt_03/chain_jnt_04/chain_jnt_05/chain_jnt_06/chain_jnt_07/chain_jnt_08/chain_jnt_09/chain_jnt_10/chain_jnt_11/chain_jnt_12/chain_jnt_13/chain_jnt_14/chain_jnt_15/chain_jnt_16/chain_jnt_17/chain_jnt_18/chain_jnt_19/chain_jnt_20/chain_jnt_21/chain_jnt_22/chain_jnt_23/chain_jnt_24/chain_jnt_25
+        weight: 1
+      - path: chain_jnt_01/chain_jnt_02/chain_jnt_03/chain_jnt_04/chain_jnt_05/chain_jnt_06/chain_jnt_07/chain_jnt_08/chain_jnt_09/chain_jnt_10/chain_jnt_11/chain_jnt_12/chain_jnt_13/chain_jnt_14/chain_jnt_15/chain_jnt_16/chain_jnt_17/chain_jnt_18/chain_jnt_19/chain_jnt_20/chain_jnt_21/chain_jnt_22/chain_jnt_23/chain_jnt_24/chain_jnt_25/chain_jnt_26
+        weight: 1
+      - path: chain_jnt_01/chain_jnt_02/chain_jnt_03/chain_jnt_04/chain_jnt_05/chain_jnt_06/chain_jnt_07/chain_jnt_08/chain_jnt_09/chain_jnt_10/chain_jnt_11/chain_jnt_12/chain_jnt_13/chain_jnt_14/chain_jnt_15/chain_jnt_16/chain_jnt_17/chain_jnt_18/chain_jnt_19/chain_jnt_20/chain_jnt_21/chain_jnt_22/chain_jnt_23/chain_jnt_24/chain_jnt_25/chain_jnt_26/chain_jnt_27
+        weight: 1
+      - path: chain_jnt_01/chain_jnt_02/chain_jnt_03/chain_jnt_04/chain_jnt_05/chain_jnt_06/chain_jnt_07/chain_jnt_08/chain_jnt_09/chain_jnt_10/chain_jnt_11/chain_jnt_12/chain_jnt_13/chain_jnt_14/chain_jnt_15/chain_jnt_16/chain_jnt_17/chain_jnt_18/chain_jnt_19/chain_jnt_20/chain_jnt_21/chain_jnt_22/chain_jnt_23/chain_jnt_24/chain_jnt_25/chain_jnt_26/chain_jnt_27/chain_jnt_28
+        weight: 1
+      - path: chain_jnt_01/chain_jnt_02/chain_jnt_03/chain_jnt_04/chain_jnt_05/chain_jnt_06/chain_jnt_07/chain_jnt_08/chain_jnt_09/chain_jnt_10/chain_jnt_11/chain_jnt_12/chain_jnt_13/chain_jnt_14/chain_jnt_15/chain_jnt_16/chain_jnt_17/chain_jnt_18/chain_jnt_19/chain_jnt_20/chain_jnt_21/chain_jnt_22/chain_jnt_23/chain_jnt_24/chain_jnt_25/chain_jnt_26/chain_jnt_27/chain_jnt_28/chain_jnt_29
+        weight: 1
+      - path: chain_jnt_01/chain_jnt_02/chain_jnt_03/chain_jnt_04/chain_jnt_05/chain_jnt_06/chain_jnt_07/chain_jnt_08/chain_jnt_09/chain_jnt_10/chain_jnt_11/chain_jnt_12/chain_jnt_13/chain_jnt_14/chain_jnt_15/chain_jnt_16/chain_jnt_17/chain_jnt_18/chain_jnt_19/chain_jnt_20/chain_jnt_21/chain_jnt_22/chain_jnt_23/chain_jnt_24/chain_jnt_25/chain_jnt_26/chain_jnt_27/chain_jnt_28/chain_jnt_29/chain_jnt_30
+        weight: 1
+      - path: chain_jnt_01/chain_jnt_02/chain_jnt_03/chain_jnt_04/chain_jnt_05/chain_jnt_06/chain_jnt_07/chain_jnt_08/chain_jnt_09/chain_jnt_10/chain_jnt_11/chain_jnt_12/chain_jnt_13/chain_jnt_14/chain_jnt_15/chain_jnt_16/chain_jnt_17/chain_jnt_18/chain_jnt_19/chain_jnt_20/chain_jnt_21/chain_jnt_22/chain_jnt_23/chain_jnt_24/chain_jnt_25/chain_jnt_26/chain_jnt_27/chain_jnt_28/chain_jnt_29/chain_jnt_30/chain_jnt_31
+        weight: 1
+      - path: chain_jnt_01/chain_jnt_02/chain_jnt_03/chain_jnt_04/chain_jnt_05/chain_jnt_06/chain_jnt_07/chain_jnt_08/chain_jnt_09/chain_jnt_10/chain_jnt_11/chain_jnt_12/chain_jnt_13/chain_jnt_14/chain_jnt_15/chain_jnt_16/chain_jnt_17/chain_jnt_18/chain_jnt_19/chain_jnt_20/chain_jnt_21/chain_jnt_22/chain_jnt_23/chain_jnt_24/chain_jnt_25/chain_jnt_26/chain_jnt_27/chain_jnt_28/chain_jnt_29/chain_jnt_30/chain_jnt_31/chain_jnt_32
+        weight: 1
+      - path: chain_jnt_01/chain_jnt_02/chain_jnt_03/chain_jnt_04/chain_jnt_05/chain_jnt_06/chain_jnt_07/chain_jnt_08/chain_jnt_09/chain_jnt_10/chain_jnt_11/chain_jnt_12/chain_jnt_13/chain_jnt_14/chain_jnt_15/chain_jnt_16/chain_jnt_17/chain_jnt_18/chain_jnt_19/chain_jnt_20/chain_jnt_21/chain_jnt_22/chain_jnt_23/chain_jnt_24/chain_jnt_25/chain_jnt_26/chain_jnt_27/chain_jnt_28/chain_jnt_29/chain_jnt_30/chain_jnt_31/chain_jnt_32/chain_jnt_33
+        weight: 1
+      - path: chain_jnt_01/chain_jnt_02/chain_jnt_03/chain_jnt_04/chain_jnt_05/chain_jnt_06/chain_jnt_07/chain_jnt_08/chain_jnt_09/chain_jnt_10/chain_jnt_11/chain_jnt_12/chain_jnt_13/chain_jnt_14/chain_jnt_15/chain_jnt_16/chain_jnt_17/chain_jnt_18/chain_jnt_19/chain_jnt_20/chain_jnt_21/chain_jnt_22/chain_jnt_23/chain_jnt_24/chain_jnt_25/chain_jnt_26/chain_jnt_27/chain_jnt_28/chain_jnt_29/chain_jnt_30/chain_jnt_31/chain_jnt_32/chain_jnt_33/chain_jnt_34
+        weight: 1
+      - path: chain_jnt_01/chain_jnt_02/chain_jnt_03/chain_jnt_04/chain_jnt_05/chain_jnt_06/chain_jnt_07/chain_jnt_08/chain_jnt_09/chain_jnt_10/chain_jnt_11/chain_jnt_12/chain_jnt_13/chain_jnt_14/chain_jnt_15/chain_jnt_16/chain_jnt_17/chain_jnt_18/chain_jnt_19/chain_jnt_20/chain_jnt_21/chain_jnt_22/chain_jnt_23/chain_jnt_24/chain_jnt_25/chain_jnt_26/chain_jnt_27/chain_jnt_28/chain_jnt_29/chain_jnt_30/chain_jnt_31/chain_jnt_32/chain_jnt_33/chain_jnt_34/chain_jnt_35
+        weight: 1
+      - path: chain_jnt_01/chain_jnt_02/chain_jnt_03/chain_jnt_04/chain_jnt_05/chain_jnt_06/chain_jnt_07/chain_jnt_08/chain_jnt_09/chain_jnt_10/chain_jnt_11/chain_jnt_12/chain_jnt_13/chain_jnt_14/chain_jnt_15/chain_jnt_16/chain_jnt_17/chain_jnt_18/chain_jnt_19/chain_jnt_20/chain_jnt_21/chain_jnt_22/chain_jnt_23/chain_jnt_24/chain_jnt_25/chain_jnt_26/chain_jnt_27/chain_jnt_28/chain_jnt_29/chain_jnt_30/chain_jnt_31/chain_jnt_32/chain_jnt_33/chain_jnt_34/chain_jnt_35/chain_jnt_36
+        weight: 1
+      - path: chain_jnt_01/chain_jnt_02/chain_jnt_03/chain_jnt_04/chain_jnt_05/chain_jnt_06/chain_jnt_07/chain_jnt_08/chain_jnt_09/chain_jnt_10/chain_jnt_11/chain_jnt_12/chain_jnt_13/chain_jnt_14/chain_jnt_15/chain_jnt_16/chain_jnt_17/chain_jnt_18/chain_jnt_19/chain_jnt_20/chain_jnt_21/chain_jnt_22/chain_jnt_23/chain_jnt_24/chain_jnt_25/chain_jnt_26/chain_jnt_27/chain_jnt_28/chain_jnt_29/chain_jnt_30/chain_jnt_31/chain_jnt_32/chain_jnt_33/chain_jnt_34/chain_jnt_35/chain_jnt_36/chain_jnt_37
+        weight: 1
+      - path: chain_jnt_01/chain_jnt_02/chain_jnt_03/chain_jnt_04/chain_jnt_05/chain_jnt_06/chain_jnt_07/chain_jnt_08/chain_jnt_09/chain_jnt_10/chain_jnt_11/chain_jnt_12/chain_jnt_13/chain_jnt_14/chain_jnt_15/chain_jnt_16/chain_jnt_17/chain_jnt_18/chain_jnt_19/chain_jnt_20/chain_jnt_21/chain_jnt_22/chain_jnt_23/chain_jnt_24/chain_jnt_25/chain_jnt_26/chain_jnt_27/chain_jnt_28/chain_jnt_29/chain_jnt_30/chain_jnt_31/chain_jnt_32/chain_jnt_33/chain_jnt_34/chain_jnt_35/chain_jnt_36/chain_jnt_37/chain_jnt_38
+        weight: 1
+      - path: chain_jnt_01/chain_jnt_02/chain_jnt_03/chain_jnt_04/chain_jnt_05/chain_jnt_06/chain_jnt_07/chain_jnt_08/chain_jnt_09/chain_jnt_10/chain_jnt_11/chain_jnt_12/chain_jnt_13/chain_jnt_14/chain_jnt_15/chain_jnt_16/chain_jnt_17/chain_jnt_18/chain_jnt_19/chain_jnt_20/chain_jnt_21/chain_jnt_22/chain_jnt_23/chain_jnt_24/chain_jnt_25/chain_jnt_26/chain_jnt_27/chain_jnt_28/chain_jnt_29/chain_jnt_30/chain_jnt_31/chain_jnt_32/chain_jnt_33/chain_jnt_34/chain_jnt_35/chain_jnt_36/chain_jnt_37/chain_jnt_38/chain_jnt_40
+        weight: 1
+      - path: chain_jnt_01/chain_jnt_02/chain_jnt_03/chain_jnt_04/chain_jnt_05/chain_jnt_06/chain_jnt_07/chain_jnt_08/chain_jnt_09/chain_jnt_10/chain_jnt_11/chain_jnt_12/chain_jnt_13/chain_jnt_14/chain_jnt_15/chain_jnt_16/chain_jnt_17/chain_jnt_18/chain_jnt_19/chain_jnt_20/chain_jnt_21/chain_jnt_22/chain_jnt_23/chain_jnt_24/chain_jnt_25/chain_jnt_26/chain_jnt_27/chain_jnt_28/chain_jnt_29/chain_jnt_30/chain_jnt_31/chain_jnt_32/chain_jnt_33/chain_jnt_34/chain_jnt_35/chain_jnt_36/chain_jnt_37/chain_jnt_38/chain_jnt_40/chain_jnt_41
+        weight: 1
+      - path: chain_jnt_01/chain_jnt_02/chain_jnt_03/chain_jnt_04/chain_jnt_05/chain_jnt_06/chain_jnt_07/chain_jnt_08/chain_jnt_09/chain_jnt_10/chain_jnt_11/chain_jnt_12/chain_jnt_13/chain_jnt_14/chain_jnt_15/chain_jnt_16/chain_jnt_17/chain_jnt_18/chain_jnt_19/chain_jnt_20/chain_jnt_21/chain_jnt_22/chain_jnt_23/chain_jnt_24/chain_jnt_25/chain_jnt_26/chain_jnt_27/chain_jnt_28/chain_jnt_29/chain_jnt_30/chain_jnt_31/chain_jnt_32/chain_jnt_33/chain_jnt_34/chain_jnt_35/chain_jnt_36/chain_jnt_37/chain_jnt_38/chain_jnt_40/chain_jnt_41/chain_jnt_42
+        weight: 1
+      - path: chain_jnt_01/chain_jnt_02/chain_jnt_03/chain_jnt_04/chain_jnt_05/chain_jnt_06/chain_jnt_07/chain_jnt_08/chain_jnt_09/chain_jnt_10/chain_jnt_11/chain_jnt_12/chain_jnt_13/chain_jnt_14/chain_jnt_15/chain_jnt_16/chain_jnt_17/chain_jnt_18/chain_jnt_19/chain_jnt_20/chain_jnt_21/chain_jnt_22/chain_jnt_23/chain_jnt_24/chain_jnt_25/chain_jnt_26/chain_jnt_27/chain_jnt_28/chain_jnt_29/chain_jnt_30/chain_jnt_31/chain_jnt_32/chain_jnt_33/chain_jnt_34/chain_jnt_35/chain_jnt_36/chain_jnt_37/chain_jnt_38/chain_jnt_40/chain_jnt_41/chain_jnt_42/chain_jnt_43
+        weight: 1
+      - path: chain_jnt_01/chain_jnt_02/chain_jnt_03/chain_jnt_04/chain_jnt_05/chain_jnt_06/chain_jnt_07/chain_jnt_08/chain_jnt_09/chain_jnt_10/chain_jnt_11/chain_jnt_12/chain_jnt_13/chain_jnt_14/chain_jnt_15/chain_jnt_16/chain_jnt_17/chain_jnt_18/chain_jnt_19/chain_jnt_20/chain_jnt_21/chain_jnt_22/chain_jnt_23/chain_jnt_24/chain_jnt_25/chain_jnt_26/chain_jnt_27/chain_jnt_28/chain_jnt_29/chain_jnt_30/chain_jnt_31/chain_jnt_32/chain_jnt_33/chain_jnt_34/chain_jnt_35/chain_jnt_36/chain_jnt_37/chain_jnt_38/chain_jnt_40/chain_jnt_41/chain_jnt_42/chain_jnt_43/chain_jnt_44
+        weight: 1
+      - path: chain_jnt_01/chain_jnt_02/chain_jnt_03/chain_jnt_04/chain_jnt_05/chain_jnt_06/chain_jnt_07/chain_jnt_08/chain_jnt_09/chain_jnt_10/chain_jnt_11/chain_jnt_12/chain_jnt_13/chain_jnt_14/chain_jnt_15/chain_jnt_16/chain_jnt_17/chain_jnt_18/chain_jnt_19/chain_jnt_20/chain_jnt_21/chain_jnt_22/chain_jnt_23/chain_jnt_24/chain_jnt_25/chain_jnt_26/chain_jnt_27/chain_jnt_28/chain_jnt_29/chain_jnt_30/chain_jnt_31/chain_jnt_32/chain_jnt_33/chain_jnt_34/chain_jnt_35/chain_jnt_36/chain_jnt_37/chain_jnt_38/chain_jnt_40/chain_jnt_41/chain_jnt_42/chain_jnt_43/chain_jnt_44/chain_jnt_45
+        weight: 1
+      - path: chain_jnt_01/chain_jnt_02/chain_jnt_03/chain_jnt_04/chain_jnt_05/chain_jnt_06/chain_jnt_07/chain_jnt_08/chain_jnt_09/chain_jnt_10/chain_jnt_11/chain_jnt_12/chain_jnt_13/chain_jnt_14/chain_jnt_15/chain_jnt_16/chain_jnt_17/chain_jnt_18/chain_jnt_19/chain_jnt_20/chain_jnt_21/chain_jnt_22/chain_jnt_23/chain_jnt_24/chain_jnt_25/chain_jnt_26/chain_jnt_27/chain_jnt_28/chain_jnt_29/chain_jnt_30/chain_jnt_31/chain_jnt_32/chain_jnt_33/chain_jnt_34/chain_jnt_35/chain_jnt_36/chain_jnt_37/chain_jnt_38/chain_jnt_40/chain_jnt_41/chain_jnt_42/chain_jnt_43/chain_jnt_44/chain_jnt_45/chain_jnt_46
+        weight: 1
+      - path: chain_jnt_01/chain_jnt_02/chain_jnt_03/chain_jnt_04/chain_jnt_05/chain_jnt_06/chain_jnt_07/chain_jnt_08/chain_jnt_09/chain_jnt_10/chain_jnt_11/chain_jnt_12/chain_jnt_13/chain_jnt_14/chain_jnt_15/chain_jnt_16/chain_jnt_17/chain_jnt_18/chain_jnt_19/chain_jnt_20/chain_jnt_21/chain_jnt_22/chain_jnt_23/chain_jnt_24/chain_jnt_25/chain_jnt_26/chain_jnt_27/chain_jnt_28/chain_jnt_29/chain_jnt_30/chain_jnt_31/chain_jnt_32/chain_jnt_33/chain_jnt_34/chain_jnt_35/chain_jnt_36/chain_jnt_37/chain_jnt_38/chain_jnt_40/chain_jnt_41/chain_jnt_42/chain_jnt_43/chain_jnt_44/chain_jnt_45/chain_jnt_46/chain_jnt_47
+        weight: 1
+      - path: chain_jnt_01/chain_jnt_02/chain_jnt_03/chain_jnt_04/chain_jnt_05/chain_jnt_06/chain_jnt_07/chain_jnt_08/chain_jnt_09/chain_jnt_10/chain_jnt_11/chain_jnt_12/chain_jnt_13/chain_jnt_14/chain_jnt_15/chain_jnt_16/chain_jnt_17/chain_jnt_18/chain_jnt_19/chain_jnt_20/chain_jnt_21/chain_jnt_22/chain_jnt_23/chain_jnt_24/chain_jnt_25/chain_jnt_26/chain_jnt_27/chain_jnt_28/chain_jnt_29/chain_jnt_30/chain_jnt_31/chain_jnt_32/chain_jnt_33/chain_jnt_34/chain_jnt_35/chain_jnt_36/chain_jnt_37/chain_jnt_38/chain_jnt_40/chain_jnt_41/chain_jnt_42/chain_jnt_43/chain_jnt_44/chain_jnt_45/chain_jnt_46/chain_jnt_47/chain_jnt_48
+        weight: 1
+      - path: chain_jnt_01/chain_jnt_02/chain_jnt_03/chain_jnt_04/chain_jnt_05/chain_jnt_06/chain_jnt_07/chain_jnt_08/chain_jnt_09/chain_jnt_10/chain_jnt_11/chain_jnt_12/chain_jnt_13/chain_jnt_14/chain_jnt_15/chain_jnt_16/chain_jnt_17/chain_jnt_18/chain_jnt_19/chain_jnt_20/chain_jnt_21/chain_jnt_22/chain_jnt_23/chain_jnt_24/chain_jnt_25/chain_jnt_26/chain_jnt_27/chain_jnt_28/chain_jnt_29/chain_jnt_30/chain_jnt_31/chain_jnt_32/chain_jnt_33/chain_jnt_34/chain_jnt_35/chain_jnt_36/chain_jnt_37/chain_jnt_38/chain_jnt_40/chain_jnt_41/chain_jnt_42/chain_jnt_43/chain_jnt_44/chain_jnt_45/chain_jnt_46/chain_jnt_47/chain_jnt_48/chain_jnt_49
+        weight: 1
+      - path: chain_jnt_01/chain_jnt_02/chain_jnt_03/chain_jnt_04/chain_jnt_05/chain_jnt_06/chain_jnt_07/chain_jnt_08/chain_jnt_09/chain_jnt_10/chain_jnt_11/chain_jnt_12/chain_jnt_13/chain_jnt_14/chain_jnt_15/chain_jnt_16/chain_jnt_17/chain_jnt_18/chain_jnt_19/chain_jnt_20/chain_jnt_21/chain_jnt_22/chain_jnt_23/chain_jnt_24/chain_jnt_25/chain_jnt_26/chain_jnt_27/chain_jnt_28/chain_jnt_29/chain_jnt_30/chain_jnt_31/chain_jnt_32/chain_jnt_33/chain_jnt_34/chain_jnt_35/chain_jnt_36/chain_jnt_37/chain_jnt_38/chain_jnt_40/chain_jnt_41/chain_jnt_42/chain_jnt_43/chain_jnt_44/chain_jnt_45/chain_jnt_46/chain_jnt_47/chain_jnt_48/chain_jnt_49/chain_jnt_50
+        weight: 1
+      - path: chain_jnt_01/chain_jnt_02/chain_jnt_03/chain_jnt_04/chain_jnt_05/chain_jnt_06/chain_jnt_07/chain_jnt_08/chain_jnt_09/chain_jnt_10/chain_jnt_11/chain_jnt_12/chain_jnt_13/chain_jnt_14/chain_jnt_15/chain_jnt_16/chain_jnt_17/chain_jnt_18/chain_jnt_19/chain_jnt_20/chain_jnt_21/chain_jnt_22/chain_jnt_23/chain_jnt_24/chain_jnt_25/chain_jnt_26/chain_jnt_27/chain_jnt_28/chain_jnt_29/chain_jnt_30/chain_jnt_31/chain_jnt_32/chain_jnt_33/chain_jnt_34/chain_jnt_35/chain_jnt_36/chain_jnt_37/chain_jnt_38/chain_jnt_40/chain_jnt_41/chain_jnt_42/chain_jnt_43/chain_jnt_44/chain_jnt_45/chain_jnt_46/chain_jnt_47/chain_jnt_48/chain_jnt_49/chain_jnt_50/lantern_jnt
+        weight: 1
+      - path: lantern
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    splitTangentsAcrossUV: 1
+    normalImportMode: 0
+    tangentImportMode: 1
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: .5
+    foreArmTwist: .5
+    upperLegTwist: .5
+    legTwist: .5
+    armStretch: .0500000007
+    legStretch: .0500000007
+    feetSpacing: 0
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

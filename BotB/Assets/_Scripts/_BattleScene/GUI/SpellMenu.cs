@@ -1,44 +1,39 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public enum MenuSelection
-{
-    offence,
-    defence,
-    effect
-}
 
 public class SpellMenu : MonoBehaviour 
 {
     [SerializeField]
-    static MenuSelection m_currentSelection;
+    static SpellType m_currentSelection;
 
+    static Element m_spellElement; //probs temp
     [SerializeField]
-    GameObject m_leftSelection;
-    SpellMenuButton m_leftSelectionScript;
+    GameObject m_offenceButton;
+    SpellMenuButton m_offenceButtonScript;
     [SerializeField]
-    GameObject m_upSelection;
-    SpellMenuButton m_upSelectionScript;
+    GameObject m_defenceButton;
+    SpellMenuButton m_defenceButtonScript;
     [SerializeField]
-    GameObject m_rightSelection;
-    SpellMenuButton m_rightSelectionScript;
+    GameObject m_effectSelection;
+    [SerializeField]
+    GameObject m_fireButton, m_iceButton, m_arcaneButton;
+    SpellMenuButton m_effectSelectionScript;
     public static bool m_showMenu;
-
+    public static SpellMenu s_ref;
 
 	// Use this for initialization
 	void Start() 
     {
         ShowMenu();
-        m_leftSelectionScript = m_leftSelection.GetComponent<SpellMenuButton>();
-        m_upSelectionScript = m_upSelection.GetComponent<SpellMenuButton>();
-        m_rightSelectionScript = m_rightSelection.GetComponent<SpellMenuButton>();
-        //m_leftSelection = (GameObject)Instantiate(Resources.Load("_Prefabs/Notes/Note A"), new Vector3(0, 0, 0), new Quaternion(0, 1, 0, 0));
-        //m_leftSelection.transform.SetParent(this.transform.parent);
-        //m_leftSelection.transform.localPosition = new Vector3(0, 0, 0);
+        m_offenceButtonScript = m_offenceButton.GetComponent<SpellMenuButton>();
+        m_defenceButtonScript = m_defenceButton.GetComponent<SpellMenuButton>();
+        m_effectSelectionScript = m_effectSelection.GetComponent<SpellMenuButton>();
+        s_ref = this;
         
 	}
 	
-	// Update is called once per frame
+	//Updates the menu
 	void Update() 
     {
         if (TurnTimer.Instance.CurrentTurn == Turn.Menu)
@@ -48,70 +43,116 @@ public class SpellMenu : MonoBehaviour
 
         if(m_showMenu)
         {
-            if(Input.GetKey(KeyCode.A))
-            {
-                m_leftSelectionScript.SetSelected();
-            }
-            else
-            {
-                m_leftSelectionScript.SetUnselected();
-            }
-
-            if (Input.GetKey(KeyCode.S))
-            {
-                m_upSelectionScript.SetSelected();
-            }
-            else
-            {
-                m_upSelectionScript.SetUnselected();
-            }
-
-            if (Input.GetKey(KeyCode.D))
-            {
-                m_rightSelectionScript.SetSelected();
-            }
-            else
-            {
-                m_rightSelectionScript.SetUnselected();
-            }
-
+            //if (Input.GetKeyDown(KeyCode.S))
+            //    SelectOffence();
+            //else if (Input.GetKeyDown(KeyCode.A))
+            //    SelectDefence();
+            //else if (Input.GetKeyDown(KeyCode.D))
+            //    SelectEffect();
+            //else if (Input.GetKeyDown(KeyCode.Q))
+            //    SelectIce();
+            //else if (Input.GetKeyDown(KeyCode.W))
+            //    SelectFire();
+            //else if (Input.GetKeyDown(KeyCode.E))
+            //    SelectArcane();
+            if (Input.GetButtonDown("Triangle"))
+                SelectOffence();
+            else if (Input.GetButtonDown("Square"))
+                SelectDefence();
+            else if (Input.GetButtonDown("Circle"))
+                SelectEffect();
+            else if (Input.GetAxis("D-Pad Y") <= -1.0f)
+                SelectIce();
+            else if (Input.GetAxis("D-Pad X") >= 1.0f)
+                SelectFire();
+            else if (Input.GetAxis("D-Pad Y") >= 1.0f)
+                SelectArcane();
         }
 	}
 
-    public static MenuSelection SpellType
+    public static SpellMenu Instance
+    {
+        get { return s_ref; }
+    }
+    ///  <summary> Returns the current type of spell the player has selected</summary>
+    public static SpellType Selection
     {
         get { return m_currentSelection; }
     }
-
-    public static void SelectOffence()
+    public static Element SelectedElement
     {
-        m_currentSelection = MenuSelection.offence;
+        get { return m_spellElement; }
     }
-
-    public static void SelectDefence()
+    public void SelectOffence()
     {
-        m_currentSelection = MenuSelection.defence;
-    }
+        m_currentSelection = SpellType.Offencive;
+        m_offenceButtonScript.SetSelected();
 
-    public static void SelectEffect()
+        m_defenceButtonScript.SetUnselected();
+        m_effectSelectionScript.SetUnselected();
+    }
+    public void SelectDefence()
     {
-        m_currentSelection = MenuSelection.effect;
-    }
+        m_currentSelection = SpellType.Defensive;
+        m_defenceButtonScript.SetSelected();
 
+        m_offenceButtonScript.SetUnselected();
+        m_effectSelectionScript.SetUnselected();
+    }
+    public void SelectEffect()
+    {
+        m_currentSelection = SpellType.Effect;
+        m_effectSelectionScript.SetSelected();
+
+        m_offenceButtonScript.SetUnselected();
+        m_defenceButtonScript.SetUnselected();
+    }
+    //temp elements
+    public void SelectIce()
+    {
+        m_spellElement = Element.Ice;
+        m_fireButton.GetComponent<SpriteRenderer>().enabled = false;
+        m_iceButton.GetComponent<SpriteRenderer>().enabled = true;
+        m_arcaneButton.GetComponent<SpriteRenderer>().enabled = false;
+    }
+    public void SelectFire()
+    {
+        m_spellElement = Element.Fire;
+        m_fireButton.GetComponent<SpriteRenderer>().enabled = true;
+        m_iceButton.GetComponent<SpriteRenderer>().enabled = false;
+        m_arcaneButton.GetComponent<SpriteRenderer>().enabled = false;
+    }
+    public void SelectArcane()
+    {
+        m_spellElement = Element.Arcane;
+        m_fireButton.GetComponent<SpriteRenderer>().enabled = false;
+        m_iceButton.GetComponent<SpriteRenderer>().enabled = false;
+        m_arcaneButton.GetComponent<SpriteRenderer>().enabled = true;
+    }
     public void ShowMenu()
     {
         m_showMenu = true;
-        m_leftSelection.GetComponent<SpellMenuButton>().Show();
-        m_upSelection.GetComponent<SpellMenuButton>().Show();
-        m_rightSelection.GetComponent<SpellMenuButton>().Show();
-        
-    }
+        m_offenceButton.GetComponent<SpellMenuButton>().Show();
+        m_defenceButton.GetComponent<SpellMenuButton>().Show();
+        m_effectSelection.GetComponent<SpellMenuButton>().Show();
 
+        //m_fireButton.GetComponent<SpellMenuButton>().Show();
+        //m_iceButton.GetComponent<SpellMenuButton>().Show();
+        //m_arcaneButton.GetComponent<SpellMenuButton>().Show();
+    }
     public void HideMenu()
     {
         m_showMenu = false;
-        m_leftSelection.GetComponent<SpellMenuButton>().Hide();
-        m_upSelection.GetComponent<SpellMenuButton>().Hide();
-        m_rightSelection.GetComponent<SpellMenuButton>().Hide();
+        m_offenceButton.GetComponent<SpellMenuButton>().Hide();
+        m_defenceButton.GetComponent<SpellMenuButton>().Hide();
+        m_effectSelection.GetComponent<SpellMenuButton>().Hide();
+
+        //m_fireButton.GetComponent<SpellMenuButton>().Hide();
+        //m_iceButton.GetComponent<SpellMenuButton>().Hide();
+        //m_arcaneButton.GetComponent<SpellMenuButton>().Hide();
+
+        m_offenceButtonScript.SetUnselected();
+        m_defenceButtonScript.SetUnselected();
+        m_effectSelectionScript.SetUnselected();
     }
 }

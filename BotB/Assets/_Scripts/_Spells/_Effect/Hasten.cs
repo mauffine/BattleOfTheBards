@@ -9,6 +9,7 @@ public class Hasten : Spell
     void Start()
     {
         base.Start();
+        m_type = SpellType.Effect;
     }
 
     // Update is called once per frame
@@ -16,8 +17,16 @@ public class Hasten : Spell
     {
         base.Update();
     }
+    public override string Name
+    {
+        get { return "Hasten"; }
+    }
     public override Note[] Key
     {
-        get { return new Note[] {Note.A, Note.A, Note.A, Note.E, Note.A}; }
+        get { return new Note[] {Note.A, Note.B, Note.A, Note.E, Note.A}; }
+    }
+    public override SpellType Type
+    {
+        get{ return SpellType.Effect; }
     }
 }

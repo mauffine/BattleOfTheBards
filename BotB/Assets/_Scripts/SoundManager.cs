@@ -12,6 +12,15 @@ public class SoundManager : MonoBehaviour
     AudioClip m_backgroundSong;
     [SerializeField]
     float m_Backgroundvolume = 0.0f;
+
+    [SerializeField]
+    AudioClip m_playingBeatSound;
+    [SerializeField]
+    AudioClip m_menuBeatSound;
+    AudioSource m_beatSource;
+    public float m_beat = 0.5f;
+    float m_beatTimer = 0;
+
     
     AudioPool m_audioPool;
     [SerializeField]
@@ -21,20 +30,14 @@ public class SoundManager : MonoBehaviour
 	void Start() 
     {
         s_SoundManRef = this;
-        m_noteArray = new AudioClip[7];
-        char clipTitle = 'A';
-        for (uint I = 0; I < 7; ++I)
-        {
-            m_noteArray[I] = Resources.Load<AudioClip>("_Sound/Piano Notes/" + clipTitle);
-            ++clipTitle;
-        }
 
         gameObject.AddComponent<AudioPool>();
         m_audioPool = GetComponent<AudioPool>();
         m_audioPool.Initialise(m_audioSourcePrefab);
         //m_audioPool.m_audioSourcePrefab = m_audioSourcePrefab;
 
-        m_audioPool.PlayClip(m_backgroundSong, m_Backgroundvolume);
+        //m_audioPool.PlayClip(m_backgroundSong, m_Backgroundvolume);
+        m_beatSource = m_audioPool.GetUnusedSource();
         
 	}
     public void ReceiveNote(TimedNote a_note)
@@ -78,11 +81,32 @@ public class SoundManager : MonoBehaviour
 	// Update is called once per frame
 	void Update() 
     {
-	
+        if (TurnTimer.Instance.CurrentTurn == Turn.Casting)
+            PlayBeat(m_playingBeatSound);
+        else
+            PlayBeat(m_menuBeatSound);
 	}
 
     public static SoundManager Reference
     {
         get { return s_SoundManRef; }
+    }
+
+    void PlayBeat(AudioClip a_beatClip)
+    {
+        if(m_beatTimer >= m_beat)
+        {
+            m_beatTimer -= m_beat;
+            if (m_beatSource.clip != a_beatClip)
+            {
+                m_beatSource = m_audioPool.GetUnusedSource();
+            }
+            m_beatSource.Stop();
+            m_beatSource.clip = a_beatClip;
+            m_beatSource.volume = 0.05f;
+            m_beatSource.Play();
+        }
+
+        m_beatTimer += Time.deltaTime;
     }
 }
