@@ -32,6 +32,10 @@ public class NotePool : MonoBehaviour
 	// Update is called once per frame
 	void Update() 
     {
+        //for (int i = 0; i < m_noteList.Length; i++)
+        //{
+        //    m_noteList[i].transform 
+        //}
         //AddNote(new Vector2(-50, 0), Note.C);
 	}
 
