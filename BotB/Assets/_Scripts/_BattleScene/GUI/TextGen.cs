@@ -57,7 +57,7 @@ public class TextGen : MonoBehaviour
     }
     public void YouWin()
     {
-        GameObject toConvert = (GameObject)TextMesh.Instantiate(Resources.Load("_Prefabs/Enviroment/GUIText"), new Vector3(0, 0, 0), new Quaternion(0, 1, 0, 0));
+        GameObject toConvert = (GameObject)TextMesh.Instantiate(Resources.Load("_Prefabs/Enviroment/GUIText"), new Vector3(0, 0, 0), new Quaternion(0, 1, 0, 0)); 
         TextMesh toWrite = toConvert.GetComponent<TextMesh>();
         toWrite.text = "You Win!";
         toWrite.fontSize = 1000;
