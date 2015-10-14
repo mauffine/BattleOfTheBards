@@ -37,10 +37,12 @@ public class SpellMenuButton : MonoBehaviour
     public void SetSelected()
     {
         m_selected = true;
+        GetComponent<SpriteRenderer>().color = new Color(0.5f, 0.5f, 0.5f, 0);
     }
 
     public void SetUnselected()
     {
         m_selected = false;
+        GetComponent<SpriteRenderer>().color = new Color(0, 0, 0, 0.5f);
     }
 }
