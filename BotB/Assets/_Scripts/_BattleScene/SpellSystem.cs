@@ -76,7 +76,7 @@ public class SpellSystem : MonoBehaviour
         else
             m_enemyNotes.Add(a_note);
     }
-    /// <summary>Called at the end of the casting turn to check what spells have been cast</summary>
+    ///<summary>Called at the end of the casting turn to check what spells have been cast</summary>
     public void CastSpells()
     {
         CheckSpells(m_playerNotes, m_spellList);
@@ -172,7 +172,7 @@ public class SpellSystem : MonoBehaviour
             }
         }
     }
-    /// <summary>Spells effect each character depending on what type they are</summary>
+    ///<summary>Spells effect each character depending on what type they are</summary>
     void PaperScissorsRock()
     {
         //both characters cast a spell

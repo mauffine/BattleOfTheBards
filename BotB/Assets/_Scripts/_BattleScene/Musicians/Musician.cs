@@ -101,7 +101,10 @@ public class Musician : MonoBehaviour
             GetComponentInChildren<SpriteRenderer>().enabled = true;
             if(m_reset)
             {
-                m_spellLoc = ((m_spellList.Length - 1) >= m_spellLoc) ? 0 : ++m_spellLoc;
+                if (m_spellList.Length - 1 > m_spellLoc)//Turnery operator didn't work here
+                    ++m_spellLoc;
+                else
+                    m_spellLoc = 0;
                 PlaySpell(m_spellLoc);
                 m_spellBehavior = m_spellList[m_spellLoc].Type;
                 m_reset = false;
