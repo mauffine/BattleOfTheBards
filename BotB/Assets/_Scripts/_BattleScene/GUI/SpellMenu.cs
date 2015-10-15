@@ -4,15 +4,21 @@ using System.Collections;
 
 public class SpellMenu : MonoBehaviour 
 {
+    private enum SelectorType
+    {
+        Offencive,
+        Defensive,
+        Effect,
+        None
+    };
+    SelectorType m_castingType;
     private enum MenuState
     {
-        GeneralMenu,
-        GameMenu,
+        TypeMenu,
+        CastingMenu,
         Casting
     };
-    MenuState m_currentState;
-    [SerializeField]
-    static SpellType m_currentSelection;
+    MenuState m_guiState;
 
     [SerializeField]
     GameObject m_upButton, m_leftButton, m_rightButton;
@@ -21,15 +27,14 @@ public class SpellMenu : MonoBehaviour
 
     [SerializeField]
     GameObject m_attackMenu, m_defenceMenu, m_effectMenu, m_centralMenu, m_currentMenu;
-
-    private bool m_resetMenu = true;
-    public static bool s_showMenu;
+    private bool m_pressed = false;
     private static SpellMenu s_ref;
-
 	// Use this for initialization
 	void Start()
     {
-        m_currentState = MenuState.GeneralMenu;
+        m_guiState = MenuState.TypeMenu;
+        m_castingType = SelectorType.None;
+
         m_upScript = m_upButton.GetComponent<SpellMenuButton>();
         m_leftScript = m_leftButton.GetComponent<SpellMenuButton>();
         m_rightScript = m_rightButton.GetComponent<SpellMenuButton>();
@@ -39,48 +44,62 @@ public class SpellMenu : MonoBehaviour
         m_right = m_rightButton.GetComponent<SpriteRenderer>().sprite;
         m_currentMenu = m_centralMenu;
         ShowMenu();
+        SwitchMenu(m_attackMenu);
+        HideMenu();
+        SwitchMenu(m_defenceMenu);
+        HideMenu();
+        SwitchMenu(m_effectMenu);
+        HideMenu();
+        SwitchMenu(m_centralMenu);
         s_ref = this;
 	}	
 	//Updates the menu
 	void Update() 
     {
-        if(s_showMenu)
+        if(m_guiState == MenuState.TypeMenu)
         {
-        if (!UpSelected && !LeftSelected && !RightSelected)
+            ShowMenu();
+            if (m_castingType == SelectorType.None)
+                SwitchMenu(m_centralMenu);
+            m_pressed = false;
+        }
+        else if (m_guiState == MenuState.CastingMenu)
+        {            
+            if (!m_pressed)
             {
-                if (Input.GetKeyDown(KeyCode.S))
-                    SelectOffence();
-                else if (Input.GetKeyDown(KeyCode.A))
-                    SelectDefence();
-                else if (Input.GetKeyDown(KeyCode.D))
-                    SelectEffect();
-                //else if (Input.GetKeyDown(KeyCode.Q))
-                //    SelectIce();
-                //else if (Input.GetKeyDown(KeyCode.W))
-                //    SelectFire();
-                //else if (Input.GetKeyDown(KeyCode.E))
-                //    SelectArcane();
+            if (Input.GetKeyDown(KeyCode.S)){
+                SelectOffence(); m_pressed = true;}
+            else if (Input.GetKeyDown(KeyCode.A)){
+                SelectDefence(); m_pressed = true;}
+            else if (Input.GetKeyDown(KeyCode.D)){
+                SelectEffect(); m_pressed = true;}
 
-                if (Input.GetButtonDown("Triangle"))
-                    SelectOffence();
-                else if (Input.GetButtonDown("Square"))
-                    SelectDefence();
-                else if (Input.GetButtonDown("Circle"))
-                    SelectEffect();
-                //else if (Input.GetAxis("D-Pad Y") <= -1.0f)
-                //    SelectIce();
-                //else if (Input.GetAxis("D-Pad X") >= 1.0f)
-                //    SelectFire();
-                //else if (Input.GetAxis("D-Pad Y") >= 1.0f)
-                //    SelectArcane();
+            if (Input.GetButtonDown("Triangle")){
+                SelectOffence(); m_pressed = true;}
+            else if (Input.GetButtonDown("Square")){
+                SelectDefence(); m_pressed = true;}
+            else if (Input.GetButtonDown("Circle")){
+                SelectEffect(); m_pressed = true;}
             }
+
+            if (m_castingType == SelectorType.Offencive)
+                SwitchMenu(m_attackMenu);
+            if (m_castingType == SelectorType.Defensive)
+                SwitchMenu(m_defenceMenu);
+            if (m_castingType == SelectorType.Effect)
+                SwitchMenu(m_effectMenu); 
+
+            ShowMenu();
+        }
+        else if (m_guiState == MenuState.Casting)
+        {
+            HideMenu();
+            m_currentMenu = m_centralMenu;
+            m_castingType = SelectorType.None;
         }
 
-       if (TurnTimer.Instance.CurrentTurn == Turn.Menu)
-           ShowMenu();
-       else
-           HideMenu();  
-
+        if (TurnTimer.Instance.CurrentTurn == Turn.Casting)
+            m_guiState = MenuState.Casting;
 	}
 
     public static SpellMenu Instance
@@ -90,12 +109,17 @@ public class SpellMenu : MonoBehaviour
     ///<summary>Returns the current type of spell the player has selected</summary>
     public static SpellType Selection
     {
-        get { return m_currentSelection; }
+        get 
+        {
+            SpellType returnVal;
+            returnVal = (Instance.m_castingType == SelectorType.Defensive) ? SpellType.Defensive : (Instance.m_castingType == SelectorType.Effect) ? SpellType.Effect : SpellType.Offencive;
+            return returnVal;        
+        }
     }
     public void SelectOffence()
     {
-        m_currentSelection = SpellType.Offencive;
-        m_resetMenu = false;
+        m_guiState = MenuState.CastingMenu;
+        m_castingType = SelectorType.Offencive;
 
         m_upScript.SetSelected();
         m_leftScript.SetUnselected();
@@ -103,8 +127,8 @@ public class SpellMenu : MonoBehaviour
     }
     public void SelectDefence()
     {
-        m_currentSelection = SpellType.Defensive;
-        m_resetMenu = false;
+        m_guiState = MenuState.CastingMenu;
+        m_castingType = SelectorType.Defensive;
 
         m_leftScript.SetSelected();
         m_upScript.SetUnselected();
@@ -112,37 +136,23 @@ public class SpellMenu : MonoBehaviour
     }
     public void SelectEffect()
     {
-        m_currentSelection = SpellType.Effect;
-        m_resetMenu = false;
+        m_guiState = MenuState.CastingMenu;
+
+        m_castingType = SelectorType.Effect;
 
         m_rightScript.SetSelected();
         m_upScript.SetUnselected();
         m_leftScript.SetUnselected();
     }
-    public void SelectArcane()
-    {
-
-    }
-    public void SelectIce()
-    {
-
-    }
-    public void SelectFire()
-    {
-
-    }
     public void ShowMenu()
     {
-        s_showMenu = true;
         m_upScript.Show();
         m_leftScript.Show();
         m_rightScript.Show();
     }
     public void HideMenu()
     {
-        s_showMenu = false;
-        m_resetMenu = true;
-
+        m_guiState = MenuState.TypeMenu;
         m_upScript.Hide();
         m_leftScript.Hide();
         m_rightScript.Hide();
@@ -158,6 +168,7 @@ public class SpellMenu : MonoBehaviour
         m_rightScript.Hide();
 
         m_currentMenu = a_menu;
+        m_guiState = MenuState.CastingMenu;
 
         a_menu.transform.parent = transform;
         //DEBUG HERE
@@ -173,6 +184,7 @@ public class SpellMenu : MonoBehaviour
         m_leftScript.Show();
         m_rightScript.Show();
     }
+
     public bool UpSelected
     {
         get {return m_upButton.GetComponent<SpellMenuButton>().m_selected; }
