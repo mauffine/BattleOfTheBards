@@ -1,0 +1,12 @@
+diff a/BotB/Assets/_Prefabs/_Enviroment/FireLights.prefab b/BotB/Assets/_Prefabs/_Enviroment/FireLights.prefab	(rejected hunks)
+@@ -344,8 +344,8 @@
+   m_Script: {fileID: 11500000, guid: 29014cd42b6d273408e0ceefd336c0b3, type: 3}
+   m_Name: 
+   m_EditorClassIdentifier: 
+-  minDuration: 600
+-  maxDuration: 6000
++  minDuration: 60000
++  maxDuration: 60001
+ --- !u!114 &11436134
+ MonoBehaviour:
+   m_ObjectHideFlags: 1

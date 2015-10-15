@@ -45,14 +45,14 @@ public class TextGen : MonoBehaviour
         toWrite.color = Color.red;
         damageText.Add(toConvert);
     }
-    public void DisplayRating(int a_damage, Vector3 a_pos, float a_length)
+    public void DisplayRating(string a_textDisplay, Vector3 a_pos, float a_length, Color a_color)
     {
         GameObject toConvert = Instantiate(m_prefabLink);
         TextMesh toWrite = toConvert.GetComponent<TextMesh>();
-        toWrite.text = a_damage.ToString();
+        toWrite.text = a_textDisplay;
         Vector3 offset = new Vector3(0, a_pos.y + (a_length), 0);
         toWrite.transform.position = (a_pos + offset);
-        toWrite.color = Color.white;
+        toWrite.color = a_color;
         damageText.Add(toConvert);
     }
     public void YouWin()

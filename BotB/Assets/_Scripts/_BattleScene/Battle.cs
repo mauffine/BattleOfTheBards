@@ -130,6 +130,20 @@ public class Battle : MonoBehaviour
                 slimeRef.Animate(6);
         }
     }
+
+    public void AccuracyText(float a_accuracy)
+    {
+        if (a_accuracy >= 95)
+            TextGen.Instance.DisplayRating("Perfect", Vector2.zero, 1, Color.white);
+        else if (a_accuracy >= 90 && a_accuracy < 95)
+            TextGen.Instance.DisplayRating("Great", Vector2.zero, 1, Color.yellow);
+        else if (a_accuracy >= 85 && a_accuracy < 90)
+            TextGen.Instance.DisplayRating("Good", Vector2.zero, 1, Color.blue);
+        else if (a_accuracy >= 80 && a_accuracy < 85)
+            TextGen.Instance.DisplayRating("Okay", Vector2.zero, 1, Color.magenta);
+        else
+            TextGen.Instance.DisplayRating("Poor", Vector2.zero, 1, Color.red);
+    }
     public GameObject PlayerRef
     {
         get { return m_player; }

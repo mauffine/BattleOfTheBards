@@ -331,31 +331,6 @@ public class SpellSystem : MonoBehaviour
         }
         noteAccuracy = ((noteAccuracy / .5f) * 100.0f); //convert it into a percentage
         m_accuracy += noteAccuracy / 5; //divided by the amount of notes in the spell
-        //TODO: give a visual cue to how well the player has played
-        if (noteAccuracy > 40)//okay
-        {
-            if (noteAccuracy > 60)//good
-            {
-                if (noteAccuracy > 80)//great
-                {
-                    if (noteAccuracy > 90)//perfect
-                    {
-                        //show perfect
-                    }
-                    else
-                    {
-                        //show great
-                    }
-                }
-                else
-                {
-                    //show good
-                }
-            }
-            else
-            {
-                //show okay
-            }
-        }
+        Battle.Instance.AccuracyText(noteAccuracy);
     }
 }
