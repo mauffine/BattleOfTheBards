@@ -35,7 +35,7 @@ namespace FMOD
     {
         public int              numbuffers;              /* [r/w] number of buffers */
         public int[]            buffernumchannels;       /* [r/w] array of number of channels for each buffer */
-        public uint[]           bufferchannelmask;       /* [r/w] array of channel masks for each buffer. IL2CPP workaround - real type is CHANNELMASK[] */
+        public CHANNELMASK[]    bufferchannelmask;       /* [r/w] array of channel masks for each buffer. */
         public IntPtr[]         buffers;                 /* [r/w] array of buffers */
         public SPEAKERMODE      speakermode;             /* [r/w] speaker mode for all buffers in the array */
     }
@@ -782,7 +782,7 @@ namespace FMOD
     ]
     */
     [StructLayout(LayoutKind.Sequential)]
-    public struct DSP_METERING_INFO
+    public class DSP_METERING_INFO
     {
         public int   numsamples;        /* [r] The number of samples considered for this metering info. */
         [MarshalAs(UnmanagedType.ByValArray, SizeConst=32)]
