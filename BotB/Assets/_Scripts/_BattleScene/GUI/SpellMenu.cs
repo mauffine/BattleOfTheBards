@@ -81,7 +81,21 @@ public class SpellMenu : MonoBehaviour
             else if (Input.GetButtonDown("Circle")){
                 SelectEffect(); m_pressed = true;}
             }
-
+            else
+            {
+                if (Input.GetKeyDown(KeyCode.S))
+                    SelectUp();
+                else if (Input.GetKeyDown(KeyCode.A))
+                    SelectLeft();
+                else if (Input.GetKeyDown(KeyCode.D))
+                    SelectRight();
+                if (Input.GetButtonDown("Triangle"))
+                    SelectUp();
+                else if (Input.GetButtonDown("Square"))
+                    SelectLeft();
+                else if (Input.GetButtonDown("Circle"))
+                    SelectRight();
+            }
             if (m_castingType == SelectorType.Offencive)
                 SwitchMenu(m_attackMenu);
             if (m_castingType == SelectorType.Defensive)
@@ -140,6 +154,24 @@ public class SpellMenu : MonoBehaviour
 
         m_castingType = SelectorType.Effect;
 
+        m_rightScript.SetSelected();
+        m_upScript.SetUnselected();
+        m_leftScript.SetUnselected();
+    }
+    public void SelectUp()
+    {
+        m_upScript.SetSelected();
+        m_leftScript.SetUnselected();
+        m_rightScript.SetUnselected();
+    }
+    public void SelectLeft()
+    {
+        m_leftScript.SetSelected();
+        m_upScript.SetUnselected();
+        m_rightScript.SetUnselected();
+    }
+    public void SelectRight()
+    {
         m_rightScript.SetSelected();
         m_upScript.SetUnselected();
         m_leftScript.SetUnselected();
