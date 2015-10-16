@@ -115,7 +115,7 @@ public class SpellSystem : MonoBehaviour
                                 //Instantiates the spell in a position appropriate to the player and sets it's velocity
                                 case (SpellType.Offencive):
                                     {
-                                        if (SpellMenu.Selection == SpellType.Offencive)
+                                        //if (SpellMenu.Selection == SpellType.Offencive)
                                         {
                                             m_playerSpell = (GameObject)Instantiate(m_spellPrefabs[o], new Vector3(2, 1.3f, 1), Quaternion.AngleAxis(0, Vector3.up));
                                             m_playerSpell.GetComponent<Spell>().m_velocity = new Vector3(-0.03f, Random.Range(-0.00007f, 0.00007f), 0.0f) * 2;
@@ -124,7 +124,7 @@ public class SpellSystem : MonoBehaviour
                                     }
                                 case SpellType.Defensive:
                                     {
-                                        if (SpellMenu.Selection == SpellType.Defensive)
+                                        //if (SpellMenu.Selection == SpellType.Defensive)
                                         {
                                             m_playerSpell = (GameObject)Instantiate(m_spellPrefabs[o], new Vector3(1.5f, 1, 1.3f), Quaternion.AngleAxis(0, Vector3.up));
                                             m_playerSpell.GetComponent<Spell>().m_velocity = Vector3.zero;
@@ -133,7 +133,7 @@ public class SpellSystem : MonoBehaviour
                                     }
                                 case SpellType.Effect:
                                     {
-                                        if (SpellMenu.Selection == SpellType.Effect)
+                                        //if (SpellMenu.Selection == SpellType.Effect)
                                         {
                                             m_playerSpell = (GameObject)Instantiate(m_spellPrefabs[o], new Vector3(2, 0, 1), Quaternion.AngleAxis(0, Vector3.up));
                                             m_playerSpell.GetComponent<Spell>().m_velocity = Vector3.zero;

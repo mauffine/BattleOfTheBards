@@ -96,6 +96,8 @@ public class NoteVisualiser : MonoBehaviour
                         m_notePool.AddNote(new Vector3(320, -305, 0), Note.E, true);
                         m_notePool.AddNote(new Vector3(640, -305, 0),  Note.B, true);
                     }
+                    else
+                        Debug.Log("offencive break");
                     break;
                 }
             case SpellType.Defensive:
@@ -124,6 +126,8 @@ public class NoteVisualiser : MonoBehaviour
                         m_notePool.AddNote(new Vector3(320, -305, 0), Note.E, true);
                         m_notePool.AddNote(new Vector3(640, -305, 0), Note.E, true);
                     }
+                    else
+                        Debug.Log("Defensive break");
 
                     break;
                 }
@@ -153,7 +157,8 @@ public class NoteVisualiser : MonoBehaviour
                         m_notePool.AddNote(new Vector3(320, -305, 0),  Note.E, true);
                         m_notePool.AddNote(new Vector3(640, -305, 0),  Note.A, true);
                     }
-                   
+                    else
+                        Debug.Log("Effect break");
                     break;
                 }
         }
