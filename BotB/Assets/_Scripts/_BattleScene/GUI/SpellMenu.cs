@@ -189,9 +189,9 @@ public class SpellMenu : MonoBehaviour
         m_leftScript.Hide();
         m_rightScript.Hide();
 
-        m_upScript.SetUnselected();
-        m_leftScript.SetUnselected();
-        m_rightScript.SetUnselected();
+        //m_upScript.SetUnselected();
+        //m_leftScript.SetUnselected();
+        //m_rightScript.SetUnselected();
     }
     private void SwitchMenu(GameObject a_menu)
     {
