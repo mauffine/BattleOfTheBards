@@ -13,6 +13,8 @@ public class Musician : MonoBehaviour
     protected int m_health, m_defence, m_attack;
     [SerializeField]
     protected SpellType m_spellBehavior;
+    [SerializeField]
+    private LifeBar m_lifeBar;
 
     private bool m_reset = true;
     private bool m_spellPlay = false;
