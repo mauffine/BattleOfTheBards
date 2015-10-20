@@ -3,6 +3,7 @@ using System.Collections;
 
 public class Musician : MonoBehaviour
 {
+    public SpriteRenderer sprRenderer;
     [SerializeField]
     protected string m_name;
     [SerializeField]
@@ -46,7 +47,7 @@ public class Musician : MonoBehaviour
     {
         if (TurnTimer.Instance.CurrentTurn == Turn.Casting)
         {
-            GetComponentInChildren<SpriteRenderer>().enabled = false;
+            sprRenderer.enabled = false;
             if (m_spellPlay)
             {
                 m_reset = true;
@@ -100,7 +101,7 @@ public class Musician : MonoBehaviour
         }
         else
         {
-            GetComponentInChildren<SpriteRenderer>().enabled = true;
+            sprRenderer.enabled = true;
             if(m_reset)
             {
                 if (m_spellList.Length - 1 > m_spellLoc)//Turnery operator didn't work here
@@ -137,13 +138,13 @@ public class Musician : MonoBehaviour
         switch (m_spellBehavior)
         {
             case SpellType.Offencive:
-                GetComponentInChildren<SpriteRenderer>().sprite = Tell.Offencive;
+                sprRenderer.sprite = Tell.Offencive;
                 break;
             case SpellType.Defensive:
-                GetComponentInChildren<SpriteRenderer>().sprite = Tell.Defensive;
+                sprRenderer.sprite = Tell.Defensive;
                 break;
             case SpellType.Effect:
-                GetComponentInChildren<SpriteRenderer>().sprite = Tell.Effect;
+                sprRenderer.sprite = Tell.Effect;
                 break;
             default:
                 break;
