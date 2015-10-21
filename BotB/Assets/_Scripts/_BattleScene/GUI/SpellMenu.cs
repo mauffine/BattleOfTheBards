@@ -56,64 +56,83 @@ public class SpellMenu : MonoBehaviour
 	//Updates the menu
 	void Update() 
     {
-        if(m_guiState == MenuState.TypeMenu)
+        if (Battle.Instance.m_activeBattle)
         {
-            ShowMenu();
-            if (m_castingType == SelectorType.None)
-                SwitchMenu(m_centralMenu);
-            m_pressed = false;
-        }
-        else if (m_guiState == MenuState.CastingMenu)
-        {            
-            if (!m_pressed)
+            if (m_guiState == MenuState.TypeMenu)
             {
-            if (Input.GetKeyDown(KeyCode.S)){
-                SelectOffence(); m_pressed = true;}
-            else if (Input.GetKeyDown(KeyCode.A)){
-                SelectDefence(); m_pressed = true;}
-            else if (Input.GetKeyDown(KeyCode.D)){
-                SelectEffect(); m_pressed = true;}
-
-            if (Input.GetButtonDown("Triangle")){
-                SelectOffence(); m_pressed = true;}
-            else if (Input.GetButtonDown("Square")){
-                SelectDefence(); m_pressed = true;}
-            else if (Input.GetButtonDown("Circle")){
-                SelectEffect(); m_pressed = true;}
+                ShowMenu();
+                if (m_castingType == SelectorType.None)
+                    SwitchMenu(m_centralMenu);
+                m_pressed = false;
             }
-            else
+            else if (m_guiState == MenuState.CastingMenu)
             {
-                if (Input.GetKeyDown(KeyCode.S))
-                    SelectUp();
-                else if (Input.GetKeyDown(KeyCode.A))
-                    SelectLeft();
-                else if (Input.GetKeyDown(KeyCode.D))
-                    SelectRight();
-                if (Input.GetButtonDown("Triangle"))
-                    SelectUp();
-                else if (Input.GetButtonDown("Square"))
-                    SelectLeft();
-                else if (Input.GetButtonDown("Circle"))
-                    SelectRight();
-            }
-            if (m_castingType == SelectorType.Offencive)
-                SwitchMenu(m_attackMenu);
-            if (m_castingType == SelectorType.Defensive)
-                SwitchMenu(m_defenceMenu);
-            if (m_castingType == SelectorType.Effect)
-                SwitchMenu(m_effectMenu); 
+                if (!m_pressed)
+                {
+                    if (Input.GetKeyDown(KeyCode.S))
+                    {
+                        SelectOffence(); m_pressed = true;
+                    }
+                    else if (Input.GetKeyDown(KeyCode.A))
+                    {
+                        SelectDefence(); m_pressed = true;
+                    }
+                    else if (Input.GetKeyDown(KeyCode.D))
+                    {
+                        SelectEffect(); m_pressed = true;
+                    }
 
-            ShowMenu();
+                    if (Input.GetButtonDown("Triangle"))
+                    {
+                        SelectOffence(); m_pressed = true;
+                    }
+                    else if (Input.GetButtonDown("Square"))
+                    {
+                        SelectDefence(); m_pressed = true;
+                    }
+                    else if (Input.GetButtonDown("Circle"))
+                    {
+                        SelectEffect(); m_pressed = true;
+                    }
+                }
+                else
+                {
+                    if (Input.GetKeyDown(KeyCode.S))
+                        SelectUp();
+                    else if (Input.GetKeyDown(KeyCode.A))
+                        SelectLeft();
+                    else if (Input.GetKeyDown(KeyCode.D))
+                        SelectRight();
+                    if (Input.GetButtonDown("Triangle"))
+                        SelectUp();
+                    else if (Input.GetButtonDown("Square"))
+                        SelectLeft();
+                    else if (Input.GetButtonDown("Circle"))
+                        SelectRight();
+                }
+                if (m_castingType == SelectorType.Offencive)
+                    SwitchMenu(m_attackMenu);
+                if (m_castingType == SelectorType.Defensive)
+                    SwitchMenu(m_defenceMenu);
+                if (m_castingType == SelectorType.Effect)
+                    SwitchMenu(m_effectMenu);
+
+                ShowMenu();
+            }
+            else if (m_guiState == MenuState.Casting)
+            {
+                HideMenu();
+                m_currentMenu = m_centralMenu;
+                m_castingType = SelectorType.None;
+            }
+
+            if (TurnTimer.Instance.CurrentTurn == Turn.Casting)
+                m_guiState = MenuState.Casting;
         }
-        else if (m_guiState == MenuState.Casting)
+        else
         {
             HideMenu();
-            m_currentMenu = m_centralMenu;
-            m_castingType = SelectorType.None;
         }
-
-        if (TurnTimer.Instance.CurrentTurn == Turn.Casting)
-            m_guiState = MenuState.Casting;
 	}
 
     public static SpellMenu Instance

@@ -1867,7 +1867,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 146360}
   m_LocalRotation: {x: 0, y: .675590277, z: 0, w: .737277269}
-  m_LocalPosition: {x: -1.35899997, y: .808000028, z: 1.07000005}
+  m_LocalPosition: {x: -1.35899997, y: .884000003, z: 1.07000005}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 485074}
@@ -2239,10 +2239,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_name: Slime
   m_spellList:
-  - AADEB
-  - CDEBB
-  - AAAEA
-  - BBEDC
+  - {fileID: 11416128, guid: 95fb434e7fcc2a44db247a80a10a6dd2, type: 2}
+  - {fileID: 11486014, guid: c113d37227557e04581c3afa5eaacfad, type: 2}
+  - {fileID: 11490406, guid: 7676f9e6a3785544fb2ea78dcbf3f7c0, type: 2}
+  - {fileID: 11490678, guid: acfc6a8ef99c71d4f92c02fe3a9d3f00, type: 2}
+  - {fileID: 11460638, guid: 5a80319b4763f5b4f9f8936220d85a7c, type: 2}
+  - {fileID: 11434816, guid: 1ec19802660b9314d85ec61d66e565a8, type: 2}
   m_sceneHandler: {fileID: 0}
   m_health: 300
   m_defence: 0
@@ -2529,7 +2531,35 @@ Prefab:
   serializedVersion: 2
   m_Modification:
     m_TransformParent: {fileID: 0}
-    m_Modifications: []
+    m_Modifications:
+    - target: {fileID: 0}
+      propertyPath: m_spellList.Array.size
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_spellList.Array.data[0]
+      value: 
+      objectReference: {fileID: 11416128, guid: 95fb434e7fcc2a44db247a80a10a6dd2,
+        type: 2}
+    - target: {fileID: 0}
+      propertyPath: m_spellList.Array.data[1]
+      value: 
+      objectReference: {fileID: 11486014, guid: c113d37227557e04581c3afa5eaacfad,
+        type: 2}
+    - target: {fileID: 0}
+      propertyPath: m_spellList.Array.data[2]
+      value: 
+      objectReference: {fileID: 11490406, guid: 7676f9e6a3785544fb2ea78dcbf3f7c0,
+        type: 2}
+    - target: {fileID: 0}
+      propertyPath: m_spellList.Array.data[3]
+      value: 
+      objectReference: {fileID: 11490678, guid: acfc6a8ef99c71d4f92c02fe3a9d3f00,
+        type: 2}
+    - target: {fileID: 0}
+      propertyPath: m_LocalPosition.y
+      value: .884000003
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 146360}
