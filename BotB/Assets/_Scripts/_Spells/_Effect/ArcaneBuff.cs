@@ -23,7 +23,7 @@ public class ArcaneBuff : Spell
     }
     public override Note[] Key
     {
-        get { return new Note[] {Note.A, Note.E, Note.D, Note.E, Note.B}; }
+        get { return new Note[] { Note.A, Note.E, Note.D, Note.E, Note.B, Note.A, Note.B, Note.A }; }
     }
     public override SpellType Type
     {

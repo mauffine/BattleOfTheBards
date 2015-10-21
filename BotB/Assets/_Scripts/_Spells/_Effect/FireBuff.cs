@@ -23,7 +23,7 @@ public class FireBuff : Spell
     }
     public override Note[] Key
     {
-        get { return new Note[] {Note.B, Note.E, Note.E, Note.D, Note.C}; }
+        get { return new Note[] { Note.B, Note.E, Note.E, Note.D, Note.C, Note.A, Note.B, Note.A }; }
     }
     public override SpellType Type
     {

@@ -20,7 +20,7 @@ public class ArcaneBolt : Spell
 	}
     public override Note[] Key
     {
-        get { return new Note[] { Note.A, Note.A, Note.D, Note.E, Note.B }; }
+        get { return new Note[] { Note.A, Note.A, Note.D, Note.E, Note.B, Note.D, Note.E, Note.B }; }
     }
     public override string Name
     {

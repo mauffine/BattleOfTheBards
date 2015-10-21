@@ -17,7 +17,7 @@ public class IceShield : Spell {
     }
     public override Note[] Key
     {
-        get { return new Note[] { Note.C, Note.D, Note.E, Note.B, Note.B }; }
+        get { return new Note[] { Note.C, Note.D, Note.E, Note.B, Note.B, Note.C, Note.D, Note.E }; }
     }
     public override string Name
     {

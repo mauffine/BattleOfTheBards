@@ -18,7 +18,7 @@ public class FireBolt : Spell {
     }
     public override Note[] Key
     {
-        get { return new Note[] { Note.B, Note.B, Note.E, Note.D, Note.C }; }
+        get { return new Note[] { Note.B, Note.B, Note.E, Note.D, Note.C, Note.D, Note.E, Note.B }; }
     }
     public override string Name
     {
