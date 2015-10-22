@@ -59,6 +59,7 @@ public class Battle : MonoBehaviour
     [SerializeField]
     List<GameObject> m_enemyList;
     int m_enemyListIndex;
+    [HideInInspector]
     public bool m_activeBattle; //IMPORTANT, this variable now controls the activities of many objects in the scene to avoid glitches. When the musician has died, this should be set to false alongside.
 
     public bool m_win, m_playing; //bools for the end of the battle
@@ -81,14 +82,13 @@ public class Battle : MonoBehaviour
         {
             if (m_currentEnemy.GetComponent<Musician>().Health <= 0)
             {                
-                m_currentEnemy.GetComponent<Musician>().Animate(7);
-                Destroy(m_currentEnemy); //
+                m_currentEnemy.GetComponent<Musician>().Animate(7); //currently not playing because it's immediately deleted
                 m_activeBattle = false; //
-                if (m_winTimer <= 0)
-                    Application.Quit();
+                //if (m_winTimer <= 0)
+                //    Application.Quit();
 
-                TextGen.Instance.YouWin();
-                m_winTimer -= Time.deltaTime;
+                //TextGen.Instance.YouWin();
+                //m_winTimer -= Time.deltaTime;
             }
         }
 
@@ -121,6 +121,7 @@ public class Battle : MonoBehaviour
     {
         if(m_enemyListIndex < m_enemyList.Count) //one off?
         {
+            Destroy(m_currentEnemy); //
             m_currentEnemy = Instantiate(m_enemyList[m_enemyListIndex]);
             m_enemyListIndex++;
             m_activeBattle = true;
