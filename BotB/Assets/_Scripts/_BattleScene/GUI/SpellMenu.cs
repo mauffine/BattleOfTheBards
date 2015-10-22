@@ -112,7 +112,7 @@ public class SpellMenu : MonoBehaviour
             m_castingType = SelectorType.None;
         }
 
-        if (TurnTimer.Instance.CurrentTurn == Turn.Casting)
+        if (TurnTimer.Instance.CurrentTurn == Turn.Casting || TurnTimer.Instance.CurrentTurn == Turn.SpellEffect)
             m_guiState = MenuState.Casting;
 	}
 
@@ -163,18 +163,21 @@ public class SpellMenu : MonoBehaviour
         m_upScript.SetSelected();
         m_leftScript.SetUnselected();
         m_rightScript.SetUnselected();
+        TurnTimer.Instance.NextTurn();
     }
     public void SelectLeft()
     {
         m_leftScript.SetSelected();
         m_upScript.SetUnselected();
         m_rightScript.SetUnselected();
+        TurnTimer.Instance.NextTurn();
     }
     public void SelectRight()
     {
         m_rightScript.SetSelected();
         m_upScript.SetUnselected();
         m_leftScript.SetUnselected();
+        TurnTimer.Instance.NextTurn();
     }
     public void ShowMenu()
     {
@@ -219,7 +222,7 @@ public class SpellMenu : MonoBehaviour
 
     public bool UpSelected
     {
-        get {return m_upButton.GetComponent<SpellMenuButton>().m_selected; }
+        get {return m_upScript.GetComponent<SpellMenuButton>().m_selected; }
     }
     public bool LeftSelected
     {
@@ -228,7 +231,7 @@ public class SpellMenu : MonoBehaviour
         //m_offenceButton.GetComponent<SpellMenuButton>().Show();
         //m_defenceButton.GetComponent<SpellMenuButton>().Show();
         //m_effectSelection.GetComponent<SpellMenuButton>().Show();
-        get { return m_leftButton.GetComponent<SpellMenuButton>().m_selected; }
+        get { return m_leftScript.GetComponent<SpellMenuButton>().m_selected; }
     }
     public bool RightSelected
     {
@@ -240,6 +243,6 @@ public class SpellMenu : MonoBehaviour
         //m_offenceButtonScript.SetUnselected();
         //m_defenceButtonScript.SetUnselected();
         //m_effectSelectionScript.SetUnselected();
-        get { return m_rightButton.GetComponent<SpellMenuButton>().m_selected; }
+        get { return m_rightScript.GetComponent<SpellMenuButton>().m_selected; }
     }
 }

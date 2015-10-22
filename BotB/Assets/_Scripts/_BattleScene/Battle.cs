@@ -16,7 +16,9 @@ public enum Element : byte //the element of the spell, probs gonna remove this l
 }
 public enum Turn : byte //Which turn it currently is
 {
-    Casting, Menu
+    Casting,
+    Menu,
+    SpellEffect
 }
 ///<summary>A musical note in an enum, _ means the note is flat</summary>
 public enum Note : byte
@@ -78,6 +80,8 @@ public class Battle : MonoBehaviour
             TextGen.Instance.YouWin();
             m_winTimer -= Time.deltaTime;
         }
+        if ((TurnTimer.Instance.CurrentTime + 0.35f) * 95.0f * (1.0f / 60.0f) % 1 > 0.9f || (TurnTimer.Instance.CurrentTime + 0.35f) * 95.0f * (1.0f / 60.0f) % 1 < 0.1f)
+            TextGen.Instance.DisplayRating("Beat", new Vector2(1, 0), 1, Color.white);
     }
     public void ReceiveKey(TimedNote a_note)
     {
@@ -105,6 +109,7 @@ public class Battle : MonoBehaviour
     }
     public void ReceiveTurnOver()
     {
+
         //notify these scripts that the casting turn is over
         SpellSystem.Instance.CastSpells();
     }
@@ -133,13 +138,13 @@ public class Battle : MonoBehaviour
 
     public void AccuracyText(float a_accuracy)
     {
-        if (a_accuracy >= 95)
+        if (a_accuracy >= 90)
             TextGen.Instance.DisplayRating("Perfect", Vector2.zero, 1, Color.white);
-        else if (a_accuracy >= 90 && a_accuracy < 95)
+        else if (a_accuracy >= 80 && a_accuracy < 90)
             TextGen.Instance.DisplayRating("Great", Vector2.zero, 1, Color.yellow);
-        else if (a_accuracy >= 85 && a_accuracy < 90)
+        else if (a_accuracy >= 70 && a_accuracy < 80)
             TextGen.Instance.DisplayRating("Good", Vector2.zero, 1, Color.blue);
-        else if (a_accuracy >= 80 && a_accuracy < 85)
+        else if (a_accuracy >= 60 && a_accuracy < 80)
             TextGen.Instance.DisplayRating("Okay", Vector2.zero, 1, Color.magenta);
         else
             TextGen.Instance.DisplayRating("Poor", Vector2.zero, 1, Color.red);

@@ -25,19 +25,33 @@ public class TurnTimer : MonoBehaviour
     }
     void Update()
     {
-        m_countDown -= Time.deltaTime;
-        if(m_countDown <= 0 && m_currentTurn == Turn.Menu)
-        {
-            m_countDown = m_castingTime;
-            m_currentTurn = Turn.Casting;
-        }
-        else if (m_countDown <= 0 && m_currentTurn == Turn.Casting)
+        if (m_currentTurn == Turn.Casting)
+            m_countDown -= Time.deltaTime;
+        if (m_countDown <= 0 && m_currentTurn == Turn.Casting)
         {
             m_countDown = m_menuTime;
-            m_currentTurn = Turn.Menu;
-            Battle.Instance.ReceiveTurnOver();
+            NextTurn();
         }
         
+    }
+    public void NextTurn()
+    {
+        switch (m_currentTurn)
+        {
+            case Turn.Casting:
+                m_currentTurn = Turn.SpellEffect;
+                Battle.Instance.ReceiveTurnOver();
+                break;
+            case Turn.Menu:
+                m_currentTurn = Turn.Casting;
+                m_countDown = m_castingTime;
+                break;
+            case Turn.SpellEffect:
+                m_currentTurn = Turn.Menu;
+                break;
+            default:
+                break;
+        }
     }
     public Turn CurrentTurn //the current turn
     { 

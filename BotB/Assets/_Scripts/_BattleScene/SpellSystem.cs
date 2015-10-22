@@ -44,10 +44,10 @@ public class SpellSystem : MonoBehaviour
     void Update()
     {
 
-        if (TurnTimer.Instance.CurrentTurn == Turn.Menu)
+        if (TurnTimer.Instance.CurrentTurn == Turn.SpellEffect)
             m_flightTime -= Time.deltaTime;
 
-        if (m_flightTime <= 0 && TurnTimer.Instance.CurrentTurn == Turn.Menu && m_spellInFlight == true)
+        if (m_flightTime <= 0 && TurnTimer.Instance.CurrentTurn == Turn.SpellEffect && m_spellInFlight == true)
         {
             PaperScissorsRock();
         }
@@ -60,6 +60,8 @@ public class SpellSystem : MonoBehaviour
 
             Destroy(m_enemySpell);
             m_enemySpell = null;
+
+            TurnTimer.Instance.NextTurn();
         }
 
     }
