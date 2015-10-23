@@ -66,7 +66,7 @@ LightmapSettings:
     m_FinalGather: 0
     m_FinalGatherRayCount: 1024
     m_ReflectionCompression: 2
-  m_LightmapSnapshot: {fileID: 112000124, guid: caa39e64501d0d54caa872de3e781583,
+  m_LightmapSnapshot: {fileID: 112000124, guid: acd527cfb3a8c2b42bb0001615556dbd,
     type: 2}
   m_RuntimeCPUUsage: 50
 --- !u!196 &5
@@ -3386,11 +3386,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   visualizeFocus: 0
-  focalLength: 3.1500001
-  focalSize: .300000012
-  aperture: 11.5
+  focalLength: 2.0999999
+  focalSize: .649999976
+  aperture: 13.5
   focalTransform: {fileID: 0}
-  maxBlurSize: 2
+  maxBlurSize: 5
   highResolution: 1
   blurType: 1
   blurSampleCount: 2
@@ -6781,7 +6781,7 @@ Prefab:
     - target: {fileID: 9500000, guid: da700a2a33ada9548a8177ca90f66fe8, type: 3}
       propertyPath: m_Controller
       value: 
-      objectReference: {fileID: 9100000, guid: 2722b1bb1e30f604cbe3b54f2a124895, type: 2}
+      objectReference: {fileID: 9100000, guid: eb6b0ad9f1603f1449b3f44f8e97eca4, type: 2}
     - target: {fileID: 100104, guid: da700a2a33ada9548a8177ca90f66fe8, type: 3}
       propertyPath: m_Name
       value: tav_lanternAnimTest (1)
@@ -7411,7 +7411,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 22482554, guid: f63a92b0ec23fc24fa872e03a2c93ce2, type: 2}
       propertyPath: m_RootOrder
-      value: 14
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 22482554, guid: f63a92b0ec23fc24fa872e03a2c93ce2, type: 2}
       propertyPath: m_AnchoredPosition.x
@@ -7508,6 +7508,38 @@ Prefab:
     - target: {fileID: 475858, guid: f63a92b0ec23fc24fa872e03a2c93ce2, type: 2}
       propertyPath: m_LocalScale.x
       value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 401168, guid: f63a92b0ec23fc24fa872e03a2c93ce2, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: -5
+      objectReference: {fileID: 0}
+    - target: {fileID: 401168, guid: f63a92b0ec23fc24fa872e03a2c93ce2, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 22355298, guid: f63a92b0ec23fc24fa872e03a2c93ce2, type: 2}
+      propertyPath: m_PixelPerfect
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 22355298, guid: f63a92b0ec23fc24fa872e03a2c93ce2, type: 2}
+      propertyPath: m_RenderMode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 22482554, guid: f63a92b0ec23fc24fa872e03a2c93ce2, type: 2}
+      propertyPath: m_LocalScale.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 22482554, guid: f63a92b0ec23fc24fa872e03a2c93ce2, type: 2}
+      propertyPath: m_LocalScale.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 22482554, guid: f63a92b0ec23fc24fa872e03a2c93ce2, type: 2}
+      propertyPath: m_LocalScale.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 11486974, guid: f63a92b0ec23fc24fa872e03a2c93ce2, type: 2}
+      propertyPath: m_MatchWidthOrHeight
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 11495068, guid: f63a92b0ec23fc24fa872e03a2c93ce2, type: 2}
@@ -7809,7 +7841,7 @@ Prefab:
     - target: {fileID: 9500000, guid: da700a2a33ada9548a8177ca90f66fe8, type: 3}
       propertyPath: m_Controller
       value: 
-      objectReference: {fileID: 9100000, guid: 2722b1bb1e30f604cbe3b54f2a124895, type: 2}
+      objectReference: {fileID: 9100000, guid: 412d45a522e1d3f46bf3eb7b6cc116bd, type: 2}
     - target: {fileID: 100104, guid: da700a2a33ada9548a8177ca90f66fe8, type: 3}
       propertyPath: m_Name
       value: tav_lanternAnimTest (2)
@@ -8245,7 +8277,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!108 &1937121256
 Light:
   m_ObjectHideFlags: 0
