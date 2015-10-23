@@ -24,26 +24,34 @@ public class NoteVisualiser : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (m_putDown)
+        if (Battle.Instance.m_activeBattle)
         {
-            for (int i = 0; i < m_noteType.Length; i++)
+            Show();
+            if (m_putDown)
             {
-                if (m_noteType[i].m_active)
-                    PushNote(m_noteType[i]);
+                for (int i = 0; i < m_noteType.Length; i++)
+                {
+                    if (m_noteType[i].m_active)
+                        PushNote(m_noteType[i]);
+                }
+
+                m_putDown = false;
+                m_noteType[0].m_active = false;
+                m_noteType[1].m_active = false;
+
             }
 
-            m_putDown = false;
-            m_noteType[0].m_active = false;
-            m_noteType[1].m_active = false;
-
+            if (m_turn != TurnTimer.Instance.CurrentTurn)
+            {
+                m_turn = TurnTimer.Instance.CurrentTurn;
+                m_notePool.RemoveAllNotes();
+                if (m_turn == Turn.Casting)
+                    ShowCombo();
+            }
         }
-
-        if (m_turn != TurnTimer.Instance.CurrentTurn)
+        else
         {
-            m_turn = TurnTimer.Instance.CurrentTurn;
-            m_notePool.RemoveAllNotes();
-            if (m_turn == Turn.Casting)
-                ShowCombo();
+            Hide();
         }
 
 
@@ -68,97 +76,93 @@ public class NoteVisualiser : MonoBehaviour
     }
     public void ShowCombo()
     {
+        float scrollSpeed = 1;
+
         switch (SpellMenu.Selection)
         {
             case SpellType.Offencive:
                 {
                     if (SpellMenu.Instance.UpSelected)
                     {
-                        m_notePool.AddNote(new Vector3(-640, -305, 0), Note.B, true);
-                        m_notePool.AddNote(new Vector3(-320, -305, 0), Note.B, true);
-                        m_notePool.AddNote(new Vector3(0, -305, 0), Note.E, true);
-                        m_notePool.AddNote(new Vector3(320, -305, 0), Note.D, true);
-                        m_notePool.AddNote(new Vector3(640, -305, 0), Note.C, true);
+                        m_notePool.AddNote(new Vector3(-640, -305, 0), Note.B, true, scrollSpeed);
+                        m_notePool.AddNote(new Vector3(-320, -305, 0), Note.B, true, scrollSpeed);
+                        m_notePool.AddNote(new Vector3(0, -305, 0), Note.E, true   , scrollSpeed);
+                        m_notePool.AddNote(new Vector3(320, -305, 0), Note.D, true , scrollSpeed);
+                        m_notePool.AddNote(new Vector3(640, -305, 0), Note.C, true , scrollSpeed);
+                    }                                                              
+                    else if (SpellMenu.Instance.LeftSelected)                      
+                    {                                                              
+                        m_notePool.AddNote(new Vector3(-640, -305, 0), Note.C, true, scrollSpeed);
+                        m_notePool.AddNote(new Vector3(-320, -305, 0), Note.D, true, scrollSpeed);
+                        m_notePool.AddNote(new Vector3(0, -305, 0), Note.E, true   , scrollSpeed);
+                        m_notePool.AddNote(new Vector3(320, -305, 0), Note.B, true , scrollSpeed);
+                        m_notePool.AddNote(new Vector3(640, -305, 0), Note.A, true , scrollSpeed);
+                    }                                                              
+                    else if (SpellMenu.Instance.RightSelected)                     
+                    {                                                              
+                        m_notePool.AddNote(new Vector3(-640, -305, 0), Note.A, true, scrollSpeed);
+                        m_notePool.AddNote(new Vector3(-320, -305, 0), Note.A, true, scrollSpeed);
+                        m_notePool.AddNote(new Vector3(0, -305, 0), Note.D, true   , scrollSpeed);
+                        m_notePool.AddNote(new Vector3(320, -305, 0), Note.E, true , scrollSpeed);
+                        m_notePool.AddNote(new Vector3(640, -305, 0),  Note.B, true, scrollSpeed);
+                    }                                                              
+                    break;                                                         
+                }                                                                  
+            case SpellType.Defensive:                                              
+                {                                                                  
+                    if (SpellMenu.Instance.UpSelected)                             
+                    {                                                              
+                        m_notePool.AddNote(new Vector3(-640, -305, 0), Note.B, true, scrollSpeed);
+                        m_notePool.AddNote(new Vector3(-320, -305, 0), Note.B, true, scrollSpeed);
+                        m_notePool.AddNote(new Vector3(0, -305, 0), Note.E, true   , scrollSpeed);
+                        m_notePool.AddNote(new Vector3(320, -305, 0), Note.D, true , scrollSpeed);
+                        m_notePool.AddNote(new Vector3(640, -305, 0), Note.D, true , scrollSpeed);
+                    }                                                              
+                    else if (SpellMenu.Instance.LeftSelected)                      
+                    {                                                              
+                        m_notePool.AddNote(new Vector3(-640, -305, 0), Note.C, true, scrollSpeed);
+                        m_notePool.AddNote(new Vector3(-320, -305, 0), Note.D, true, scrollSpeed);
+                        m_notePool.AddNote(new Vector3(0, -305, 0), Note.E, true   , scrollSpeed);
+                        m_notePool.AddNote(new Vector3(320, -305, 0), Note.B, true , scrollSpeed);
+                        m_notePool.AddNote(new Vector3(640, -305, 0), Note.B, true , scrollSpeed);
+                    }                                                              
+                    else if (SpellMenu.Instance.RightSelected)                     
+                    {                                                              
+                        m_notePool.AddNote(new Vector3(-640, -305, 0), Note.A, true, scrollSpeed);
+                        m_notePool.AddNote(new Vector3(-320, -305, 0), Note.A, true, scrollSpeed);
+                        m_notePool.AddNote(new Vector3(0, -305, 0), Note.D, true   , scrollSpeed);
+                        m_notePool.AddNote(new Vector3(320, -305, 0), Note.E, true , scrollSpeed);
+                        m_notePool.AddNote(new Vector3(640, -305, 0), Note.E, true , scrollSpeed);
+                    }                                                              
+                                                                                   
+                    break;                                                         
+                }                                                                  
+            case SpellType.Effect:                                                 
+                {                                                                  
+                    if (SpellMenu.Instance.UpSelected)                             
+                    {                                                              
+                        m_notePool.AddNote(new Vector3(-640, -305, 0), Note.A, true, scrollSpeed);
+                        m_notePool.AddNote(new Vector3(-320, -305, 0), Note.E, true, scrollSpeed);
+                        m_notePool.AddNote(new Vector3(0, -305, 0), Note.D, true   , scrollSpeed);
+                        m_notePool.AddNote(new Vector3(320, -305, 0), Note.E, true , scrollSpeed);
+                        m_notePool.AddNote(new Vector3(640, -305, 0), Note.B, true , scrollSpeed);
+                    }                                                              
+                    else if (SpellMenu.Instance.LeftSelected)                      
+                    {                                                              
+                        m_notePool.AddNote(new Vector3(-640, -305, 0), Note.B, true, scrollSpeed);
+                        m_notePool.AddNote(new Vector3(-320, -305, 0), Note.E, true, scrollSpeed);
+                        m_notePool.AddNote(new Vector3(0, -305, 0),    Note.E, true, scrollSpeed);
+                        m_notePool.AddNote(new Vector3(320, -305, 0),  Note.D, true, scrollSpeed);
+                        m_notePool.AddNote(new Vector3(640, -305, 0),  Note.C, true, scrollSpeed);
+                    }                                                              
+                    else if (SpellMenu.Instance.RightSelected)                     
+                    {                                                              
+                        m_notePool.AddNote(new Vector3(-640, -305, 0), Note.A, true, scrollSpeed);
+                        m_notePool.AddNote(new Vector3(-320, -305, 0), Note.B, true, scrollSpeed);
+                        m_notePool.AddNote(new Vector3(0, -305, 0),    Note.A, true, scrollSpeed);
+                        m_notePool.AddNote(new Vector3(320, -305, 0),  Note.E, true, scrollSpeed);
+                        m_notePool.AddNote(new Vector3(640, -305, 0),  Note.A, true, scrollSpeed);
                     }
-                    else if (SpellMenu.Instance.LeftSelected)
-                    {
-                        m_notePool.AddNote(new Vector3(-640, -305, 0), Note.C, true);
-                        m_notePool.AddNote(new Vector3(-320, -305, 0), Note.D, true);
-                        m_notePool.AddNote(new Vector3(0, -305, 0), Note.E, true);
-                        m_notePool.AddNote(new Vector3(320, -305, 0), Note.B, true);
-                        m_notePool.AddNote(new Vector3(640, -305, 0), Note.A, true);
-                    }
-                    else if (SpellMenu.Instance.RightSelected)
-                    {
-                        m_notePool.AddNote(new Vector3(-640, -305, 0), Note.A, true);
-                        m_notePool.AddNote(new Vector3(-320, -305, 0), Note.A, true);
-                        m_notePool.AddNote(new Vector3(0, -305, 0), Note.D, true);
-                        m_notePool.AddNote(new Vector3(320, -305, 0), Note.E, true);
-                        m_notePool.AddNote(new Vector3(640, -305, 0),  Note.B, true);
-                    }
-                    else
-                        Debug.Log("offencive break");
-                    break;
-                }
-            case SpellType.Defensive:
-                {
-                    if (SpellMenu.Instance.UpSelected)
-                    {
-                        m_notePool.AddNote(new Vector3(-640, -305, 0), Note.B, true);
-                        m_notePool.AddNote(new Vector3(-320, -305, 0), Note.B, true);
-                        m_notePool.AddNote(new Vector3(0, -305, 0), Note.E, true);
-                        m_notePool.AddNote(new Vector3(320, -305, 0), Note.D, true);
-                        m_notePool.AddNote(new Vector3(640, -305, 0), Note.D, true);
-                    }
-                    else if (SpellMenu.Instance.LeftSelected)
-                    {
-                        m_notePool.AddNote(new Vector3(-640, -305, 0), Note.C, true);
-                        m_notePool.AddNote(new Vector3(-320, -305, 0), Note.D, true);
-                        m_notePool.AddNote(new Vector3(0, -305, 0), Note.E, true);
-                        m_notePool.AddNote(new Vector3(320, -305, 0), Note.B, true);
-                        m_notePool.AddNote(new Vector3(640, -305, 0), Note.B, true);
-                    }
-                    else if (SpellMenu.Instance.RightSelected)
-                    {
-                        m_notePool.AddNote(new Vector3(-640, -305, 0), Note.A, true);
-                        m_notePool.AddNote(new Vector3(-320, -305, 0), Note.A, true);
-                        m_notePool.AddNote(new Vector3(0, -305, 0), Note.D, true);
-                        m_notePool.AddNote(new Vector3(320, -305, 0), Note.E, true);
-                        m_notePool.AddNote(new Vector3(640, -305, 0), Note.E, true);
-                    }
-                    else
-                        Debug.Log("Defensive break");
-
-                    break;
-                }
-            case SpellType.Effect:
-                {
-                    if (SpellMenu.Instance.UpSelected)
-                    {
-                        m_notePool.AddNote(new Vector3(-640, -305, 0), Note.A, true);
-                        m_notePool.AddNote(new Vector3(-320, -305, 0), Note.E, true);
-                        m_notePool.AddNote(new Vector3(0, -305, 0), Note.D, true);
-                        m_notePool.AddNote(new Vector3(320, -305, 0), Note.E, true);
-                        m_notePool.AddNote(new Vector3(640, -305, 0), Note.B, true);
-                    }
-                    else if (SpellMenu.Instance.LeftSelected)
-                    {
-                        m_notePool.AddNote(new Vector3(-640, -305, 0), Note.B, true);
-                        m_notePool.AddNote(new Vector3(-320, -305, 0), Note.E, true);
-                        m_notePool.AddNote(new Vector3(0, -305, 0),    Note.E, true);
-                        m_notePool.AddNote(new Vector3(320, -305, 0),  Note.D, true);
-                        m_notePool.AddNote(new Vector3(640, -305, 0),  Note.C, true);
-                    }
-                    else if (SpellMenu.Instance.RightSelected)
-                    {
-                        m_notePool.AddNote(new Vector3(-640, -305, 0), Note.A, true);
-                        m_notePool.AddNote(new Vector3(-320, -305, 0), Note.B, true);
-                        m_notePool.AddNote(new Vector3(0, -305, 0),    Note.A, true);
-                        m_notePool.AddNote(new Vector3(320, -305, 0),  Note.E, true);
-                        m_notePool.AddNote(new Vector3(640, -305, 0),  Note.A, true);
-                    }
-                    else
-                        Debug.Log("Effect break");
                     break;
                 }
         }
@@ -166,5 +170,15 @@ public class NoteVisualiser : MonoBehaviour
     public static NoteVisualiser Reference
     {
         get { return refToMe; }
+    }
+
+    void Hide()
+    {
+        GetComponent<SpriteRenderer>().enabled = false;
+    }
+
+    void Show()
+    {
+        GetComponent<SpriteRenderer>().enabled = true;
     }
 }

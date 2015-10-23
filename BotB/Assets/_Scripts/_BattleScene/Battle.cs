@@ -58,6 +58,11 @@ public class Battle : MonoBehaviour
     //Attributes
     public static Battle Instance; //singleton instance
     [SerializeField] GameObject m_player, m_currentEnemy; //the characters in the scene
+    [SerializeField]
+    List<GameObject> m_enemyList;
+    int m_enemyListIndex;
+    public bool m_activeBattle; //IMPORTANT, this variable now controls the activities of many objects in the scene to avoid glitches. When the musician has died, this should be set to false alongside.
+
     public bool m_win, m_playing; //bools for the end of the battle
     private float m_winTimer = 5;
     //Behavious
@@ -68,21 +73,70 @@ public class Battle : MonoBehaviour
     void Start()
     {
         Application.targetFrameRate = 300; //attampt this framerate
+        m_currentEnemy = Instantiate(m_enemyList[0]);
+        m_activeBattle = true;
+        m_enemyListIndex = 1;
     }
     void Update()
     {
-        if(m_currentEnemy.GetComponent<Musician>().Health <= 0)
+        if (m_activeBattle)
         {
-			m_currentEnemy.GetComponent<Musician>().Animate(7);
-            if (m_winTimer <= 0)
-                Application.Quit();
+            if (m_currentEnemy.GetComponent<Musician>().Health <= 0)
+            {                
+                m_currentEnemy.GetComponent<Musician>().Animate(7);
+                Destroy(m_currentEnemy); //
+                m_activeBattle = false; //
+                if (m_winTimer <= 0)
+                    Application.Quit();
 
-            TextGen.Instance.YouWin();
-            m_winTimer -= Time.deltaTime;
+                TextGen.Instance.YouWin();
+                m_winTimer -= Time.deltaTime;
+            }
+        }
+
+        //debug
+        if(Input.GetKeyDown(KeyCode.T))
+        {
+            m_currentEnemy.GetComponent<Musician>().TakeDamage(500);
         }
         if ((TurnTimer.Instance.CurrentTime + 0.35f) * 95.0f * (1.0f / 60.0f) % 1 > 0.9f || (TurnTimer.Instance.CurrentTime + 0.35f) * 95.0f * (1.0f / 60.0f) % 1 < 0.1f)
             TextGen.Instance.DisplayRating("Beat", new Vector2(1, 0), 1, Color.white);
+
+        if(Input.GetKeyDown(KeyCode.Y))
+        {
+            SetNextEnemy();
+        }
+
+
+        //}
+
+        //if (Time.time > 1 && Time.time < 2)
+        //{
+        //    Destroy(m_currentEnemy);
+        //    m_activeBattle = false;
+        //}
+        //if(Time.time > 3 && m_activeBattle == false)
+        //{
+        //    m_currentEnemy = Instantiate(m_enemyList[1]);
+        //    m_activeBattle = true;
+        //}
     }
+
+    bool SetNextEnemy() //There must be at least one frame before running
+    {
+        if(m_enemyListIndex < m_enemyList.Count) //one off?
+        {
+            m_currentEnemy = Instantiate(m_enemyList[m_enemyListIndex]);
+            m_enemyListIndex++;
+            m_activeBattle = true;
+            return true;
+        }
+        else
+        {
+            return false;
+        }
+    }
+
     public void ReceiveKey(TimedNote a_note)
     {
         //send the keypress notifications to the following scripts

@@ -25,12 +25,20 @@ public class TurnTimer : MonoBehaviour
     }
     void Update()
     {
-        if (m_currentTurn == Turn.Casting)
-            m_countDown -= Time.deltaTime;
-        if (m_countDown <= 0 && m_currentTurn == Turn.Casting)
+        if (Battle.Instance.m_activeBattle)
         {
-            m_countDown = m_menuTime;
-            NextTurn();
+            if (m_currentTurn == Turn.Casting)
+            m_countDown -= Time.deltaTime;
+            if (m_countDown <= 0 && m_currentTurn == Turn.Casting)
+            {
+                m_countDown = m_menuTime;
+                NextTurn();
+            }
+            else
+            {
+                m_countDown = m_menuTime;
+                m_currentTurn = Turn.Menu;
+            }
         }
         
     }

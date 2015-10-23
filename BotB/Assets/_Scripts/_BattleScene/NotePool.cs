@@ -39,7 +39,7 @@ public class NotePool : MonoBehaviour
         //AddNote(new Vector2(-50, 0), Note.C);
 	}
 
-    public void AddNote(Vector3 a_pos, Note a_note, bool a_faded)
+    public void AddNote(Vector3 a_pos, Note a_note, bool a_faded, float a_scrollSpeed = 0)
     {
         foreach(var note in m_noteList)
         {
@@ -47,6 +47,7 @@ public class NotePool : MonoBehaviour
             {
                 note.SetActive(true);
                 note.transform.localPosition = a_pos;
+                //note.GetComponent<ScrollingNote>().Initialise(a_scrollSpeed);
 
                 var spriteRenderer = note.GetComponent<SpriteRenderer>();
                 switch (a_note)
