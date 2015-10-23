@@ -34,11 +34,6 @@ public class TurnTimer : MonoBehaviour
                 m_countDown = m_menuTime;
                 NextTurn();
             }
-            else
-            {
-                m_countDown = m_menuTime;
-                m_currentTurn = Turn.Menu;
-            }
         }
         
     }

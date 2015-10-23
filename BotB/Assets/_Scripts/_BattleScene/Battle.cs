@@ -84,13 +84,12 @@ public class Battle : MonoBehaviour
             if (m_currentEnemy.GetComponent<Musician>().Health <= 0)
             {                
                 m_currentEnemy.GetComponent<Musician>().Animate(7);
-                Destroy(m_currentEnemy); //
                 m_activeBattle = false; //
-                if (m_winTimer <= 0)
-                    Application.Quit();
+                //if (m_winTimer <= 0)
+                //    Application.Quit();
 
-                TextGen.Instance.YouWin();
-                m_winTimer -= Time.deltaTime;
+                //TextGen.Instance.YouWin();
+                //m_winTimer -= Time.deltaTime;
             }
         }
 
@@ -126,6 +125,7 @@ public class Battle : MonoBehaviour
     {
         if(m_enemyListIndex < m_enemyList.Count) //one off?
         {
+            Destroy(m_currentEnemy);
             m_currentEnemy = Instantiate(m_enemyList[m_enemyListIndex]);
             m_enemyListIndex++;
             m_activeBattle = true;
@@ -198,7 +198,7 @@ public class Battle : MonoBehaviour
             TextGen.Instance.DisplayRating("Great", Vector2.zero, 1, Color.yellow);
         else if (a_accuracy >= 70 && a_accuracy < 80)
             TextGen.Instance.DisplayRating("Good", Vector2.zero, 1, Color.blue);
-        else if (a_accuracy >= 60 && a_accuracy < 80)
+        else if (a_accuracy >= 60 && a_accuracy < 70)
             TextGen.Instance.DisplayRating("Okay", Vector2.zero, 1, Color.magenta);
         else
             TextGen.Instance.DisplayRating("Poor", Vector2.zero, 1, Color.red);

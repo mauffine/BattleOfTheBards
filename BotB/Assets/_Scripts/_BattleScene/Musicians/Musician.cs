@@ -7,8 +7,8 @@ public class Musician : MonoBehaviour
     protected string m_name;
     [SerializeField]
     protected Spell[] m_spellList;// = { "BBEDC", "DEBCA", "CDEBA", "AADEB" };//Cap the spell list for now to make it easier to work with
-    [SerializeField]
-    GameObject m_sceneHandler;
+    //[SerializeField]
+    //GameObject m_sceneHandler;
     [SerializeField]
     protected int m_health, m_defence, m_attack;
     [SerializeField]
