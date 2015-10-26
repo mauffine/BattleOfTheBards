@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
+
 public class Musician : MonoBehaviour
 {
     public SpriteRenderer sprRenderer;
@@ -36,6 +37,7 @@ public class Musician : MonoBehaviour
         if (m_health < 0)
             Die(); */
         //FMOD HERE
+     
 	}
     ///<summary> Reduces health equal to the damage taken from the argument. Takes into account defence</summary>
     ///<param name="a_damage">The number of damage delt</param>
@@ -151,7 +153,6 @@ public class Musician : MonoBehaviour
                 break;
         }
     }
-
     public int Health
     {
         get { return m_health; }
@@ -191,5 +192,9 @@ public class Musician : MonoBehaviour
             }
             return returnVal;
         }
+    }
+    public void PlayInstrument()
+    {
+
     }
 }
