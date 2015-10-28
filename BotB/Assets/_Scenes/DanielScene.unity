@@ -2169,6 +2169,64 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 8ce39ed18539e774688bbdbcc6703f64, type: 3}
   m_IsPrefabParent: 0
+--- !u!1 &448608164
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 448608167}
+  - 114: {fileID: 448608166}
+  - 114: {fileID: 448608165}
+  m_Layer: 0
+  m_Name: BankTrigger
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &448608165
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 448608164}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Event:
+    Path: 
+  PlayEvent: 1
+  StopEvent: 1
+  CollisionTag: 
+  AllowFadeout: 1
+  TriggerOnce: 0
+--- !u!114 &448608166
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 448608164}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ffbc0c90dc06b1842a35f095fa1514a1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!4 &448608167
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 448608164}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 7
 --- !u!1001 &459485341
 Prefab:
   m_ObjectHideFlags: 0
@@ -7893,6 +7951,17 @@ Transform:
 GameObject:
   m_PrefabParentObject: {fileID: 151446, guid: c2cb8aafa83d79f4bb15694996577265, type: 2}
   m_PrefabInternal: {fileID: 2085469330}
+--- !u!114 &1775765537
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1775765530}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 86c6556701af9e04380698b89f691b6e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1782530209
 Prefab:
   m_ObjectHideFlags: 0
@@ -8673,7 +8742,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 432036, guid: c2cb8aafa83d79f4bb15694996577265, type: 2}
       propertyPath: m_RootOrder
-      value: 11
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 11494406, guid: c2cb8aafa83d79f4bb15694996577265, type: 2}
       propertyPath: m_player
