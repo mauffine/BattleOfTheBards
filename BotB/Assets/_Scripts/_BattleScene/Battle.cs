@@ -55,12 +55,19 @@ public class Battle : MonoBehaviour
 {
     //Attributes
     public static Battle Instance; //singleton instance
-    [SerializeField] GameObject m_player, m_currentEnemy; //the characters in the scene
+    [SerializeField]
+    GameObject m_player, m_currentEnemy; //the characters in the scene
+
     [SerializeField]
     List<GameObject> m_enemyList;
     int m_enemyListIndex;
+    [SerializeField]
+    List<TransitionScreens> m_screenList;
     [HideInInspector]
     public bool m_activeBattle; //IMPORTANT, this variable now controls the activities of many objects in the scene to avoid glitches. When the musician has died, this should be set to false alongside.
+    bool m_displayingScreens = false;
+    int m_screenTransitionIndex; //can use the enemy index for which transition set
+    ScreenTransition m_screenTransition;
 
     public bool m_win, m_playing; //bools for the end of the battle
     private float m_winTimer = 5;
@@ -75,6 +82,7 @@ public class Battle : MonoBehaviour
         m_currentEnemy = Instantiate(m_enemyList[0]);
         m_activeBattle = true;
         m_enemyListIndex = 1;
+        m_screenTransition = GetComponent<ScreenTransition>();
     }
     void Update()
     {
@@ -84,11 +92,6 @@ public class Battle : MonoBehaviour
             {                
                 m_currentEnemy.GetComponent<Musician>().Animate(7); //currently not playing because it's immediately deleted
                 m_activeBattle = false; //
-                //if (m_winTimer <= 0)
-                //    Application.Quit();
-
-                //TextGen.Instance.YouWin();
-                //m_winTimer -= Time.deltaTime;
             }
         }
 
@@ -96,25 +99,18 @@ public class Battle : MonoBehaviour
         if(Input.GetKeyDown(KeyCode.T))
         {
             m_currentEnemy.GetComponent<Musician>().TakeDamage(500);
+            m_screenTransition.SetTexture(m_screenList[0].m_textures[0]);
+            m_screenTransition.SetScreen(true, 0.5f);
         }
         if(Input.GetKeyDown(KeyCode.Y))
         {
-            SetNextEnemy();
+            m_screenTransition.SetScreen(false, 0.5f);
+            bool enemiesLeft = SetNextEnemy();
+            if(!enemiesLeft)
+            {
+                //scene is over
+            }
         }
-
-
-        //}
-
-        //if (Time.time > 1 && Time.time < 2)
-        //{
-        //    Destroy(m_currentEnemy);
-        //    m_activeBattle = false;
-        //}
-        //if(Time.time > 3 && m_activeBattle == false)
-        //{
-        //    m_currentEnemy = Instantiate(m_enemyList[1]);
-        //    m_activeBattle = true;
-        //}
     }
 
     bool SetNextEnemy() //There must be at least one frame before running
@@ -132,6 +128,8 @@ public class Battle : MonoBehaviour
             return false;
         }
     }
+
+
 
     public void ReceiveKey(TimedNote a_note)
     {
@@ -206,4 +204,11 @@ public class Battle : MonoBehaviour
     {
         get { return m_currentEnemy; }
     }
+}
+
+[System.Serializable]
+struct TransitionScreens
+{
+    public bool m_useTransition;
+    public List<Texture2D> m_textures;
 }
