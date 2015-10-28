@@ -82,11 +82,11 @@ public class NoteVisualiser : MonoBehaviour
     {
         float scrollSpeed = 1;
 
-        Vector3 pos1 = new Vector3(-720, -305, 0);
-        Vector3 pos2 = new Vector3(-480, -305, 0);
-        Vector3 pos3 = new Vector3(-240, -305, 0);
-        Vector3 pos4 = new Vector3(0, -305, 0);
-        Vector3 pos5 = new Vector3(240, -305, 0);
+        Vector3 pos1 = new Vector3(-746.6666666666667f, -305, 0);
+        Vector3 pos2 = new Vector3(-533.3333333333334f, -305, 0);
+        Vector3 pos3 = new Vector3(-320.0000000000001f, -305, 0);
+        Vector3 pos4 = new Vector3(-106.6666666666668f, -305, 0);
+        Vector3 pos5 = new Vector3(106.6666666666665f, -305, 0);
 
         GameObject spell = null;
 

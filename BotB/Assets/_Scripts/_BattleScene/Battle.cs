@@ -98,8 +98,8 @@ public class Battle : MonoBehaviour
         {
             m_currentEnemy.GetComponent<Musician>().TakeDamage(500);
         }
-        if ((TurnTimer.Instance.CurrentTime + 0.35f) * 95.0f * (1.0f / 60.0f) % 1 > 0.9f || (TurnTimer.Instance.CurrentTime + 0.35f) * 95.0f * (1.0f / 60.0f) % 1 < 0.1f)
-            TextGen.Instance.DisplayRating("Beat", new Vector2(1, 0), 1, Color.white);
+        //if (TurnTimer.Instance.CurrentTime * 75.0f * (1.0f / 60.0f) % 1 > 0.9f || (TurnTimer.Instance.CurrentTime + 0.35f) * 95.0f * (1.0f / 60.0f) % 1 < 0.1f)
+        //    TextGen.Instance.DisplayRating("Beat", new Vector2(1, 0), 1, Color.white);
 
         if(Input.GetKeyDown(KeyCode.Y))
         {

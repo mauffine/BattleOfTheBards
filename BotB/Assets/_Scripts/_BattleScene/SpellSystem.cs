@@ -25,6 +25,11 @@ public class SpellSystem : MonoBehaviour
     float m_spellDeletionTimer;
     bool m_spellInFlight;
 
+    [SerializeField]
+    float m_BPM;
+    [SerializeField]
+    float m_offset;
+
     //Behaviours
     void Awake()
     {
@@ -321,7 +326,7 @@ public class SpellSystem : MonoBehaviour
     }
     void CheckAccuracy(float a_noteTime)
     {
-        float noteTime = (a_noteTime + 0.35f) * 95.0f * (1.0f / 60.0f);//gives how far off the beat that the note was played and which beat it was played on
+        float noteTime = (a_noteTime + m_offset) * m_BPM * (1.0f / 60.0f);//gives how far off the beat that the note was played and which beat it was played on
         float noteAccuracy = noteTime % 1; //converts the accuracy into a float from 0-1, the closer to 1 or 0 the closer to the beat the note was played
         if (noteAccuracy > .5f) // convert the accuracy to a value between 0 and 0.5, the higher the more accurate
         {
