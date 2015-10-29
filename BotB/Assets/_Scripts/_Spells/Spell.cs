@@ -28,11 +28,12 @@ public class Spell : MonoBehaviour
         {
             m_particleSystemList.Add(child.GetComponent<ParticleSystem>());
         }
+
 	}
 	// Update is called once per frame
 	protected void Update() 
     {
-        //transform.Translate(m_velocity * Time.deltaTime * m_speedModifier);
+        transform.Translate(m_velocity * Time.deltaTime * m_speedModifier);
 	}
 
     public void TurnOffEmission()
@@ -51,7 +52,9 @@ public class Spell : MonoBehaviour
 
         m_dying = true;
     }
-
+    public virtual void Bounce()
+    {
+    }
     public int Damage
     {
         get { return m_damage; }

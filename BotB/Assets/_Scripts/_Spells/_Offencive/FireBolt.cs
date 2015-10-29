@@ -16,6 +16,10 @@ public class FireBolt : Spell {
     {
         base.Update();
     }
+    public override void Bounce()
+    {
+        transform.Rotate(new Vector3(0, 1, 0), 180);
+    }
     public override Note[] Key
     {
         get { return new Note[] { Note.B, Note.B, Note.E, Note.D, Note.C, Note.A, Note.B, Note.C }; }
