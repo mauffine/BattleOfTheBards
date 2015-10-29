@@ -20,7 +20,7 @@ public class IceBolt : Spell
     }
     public override Note[] Key
     {
-        get { return new Note[] { Note.C, Note.D, Note.E, Note.B, Note.A }; }
+        get { return new Note[] { Note.C, Note.D, Note.E, Note.B, Note.A, Note.A, Note.B, Note.C }; }
     }
     public override string Name
     {

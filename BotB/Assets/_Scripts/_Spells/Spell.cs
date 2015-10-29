@@ -32,7 +32,7 @@ public class Spell : MonoBehaviour
 	// Update is called once per frame
 	protected void Update() 
     {
-        transform.Translate(m_velocity * Time.deltaTime * m_speedModifier);
+        //transform.Translate(m_velocity * Time.deltaTime * m_speedModifier);
 	}
 
     public void TurnOffEmission()

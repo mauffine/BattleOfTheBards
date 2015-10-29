@@ -87,6 +87,9 @@ public class NoteVisualiser : MonoBehaviour
         Vector3 pos3 = new Vector3(-320.0000000000001f, -305, 0);
         Vector3 pos4 = new Vector3(-106.6666666666668f, -305, 0);
         Vector3 pos5 = new Vector3(106.6666666666665f, -305, 0);
+        Vector3 pos6 = new Vector3(320.0000000000001f, -305, 0);
+        Vector3 pos7 = new Vector3(533.3333333333334f, -305, 0);
+        Vector3 pos8 = new Vector3(746.6666666666667f, -305, 0);
 
         GameObject spell = null;
 
@@ -147,6 +150,10 @@ public class NoteVisualiser : MonoBehaviour
         m_notePool.AddNote(pos3, spell.GetComponent<Spell>().Key[2], true, scrollSpeed);
         m_notePool.AddNote(pos4, spell.GetComponent<Spell>().Key[3], true, scrollSpeed);
         m_notePool.AddNote(pos5, spell.GetComponent<Spell>().Key[4], true, scrollSpeed);
+        m_notePool.AddNote(pos6, spell.GetComponent<Spell>().Key[5], true, scrollSpeed);
+        m_notePool.AddNote(pos7, spell.GetComponent<Spell>().Key[6], true, scrollSpeed);
+        m_notePool.AddNote(pos8, spell.GetComponent<Spell>().Key[7], true, scrollSpeed);
+        
     }
     public static NoteVisualiser Reference
     {

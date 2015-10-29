@@ -18,7 +18,7 @@ public class ArcaneShield : Spell
     }
     public override Note[] Key
     {
-        get { return new Note[] { Note.A, Note.A, Note.D, Note.E, Note.E }; }
+        get { return new Note[] { Note.A, Note.A, Note.D, Note.E, Note.E, Note.A, Note.B, Note.C}; }
     }
     public override string Name
     {

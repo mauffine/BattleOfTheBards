@@ -86,7 +86,7 @@ public class SpellSystem : MonoBehaviour
     ///<summary>Called at the end of the casting turn to check what spells have been cast</summary>
     public void CastSpells()
     {
-        CheckSpells(m_playerNotes, m_spellList);
+        CheckSpells(m_playerNotes, m_spellList, true);
         CheckSpells(m_enemyNotes, m_spellList);
         m_flightTime = 0.7f;
         m_spellDeletionTimer = 3;
@@ -95,17 +95,17 @@ public class SpellSystem : MonoBehaviour
     /// <summary>checks if a spell has been cast in the list that's passed into this function</summary>
     /// <param name="a_currentNotes">List of notes to check for spells</param>
     /// <param name="a_spellList">dictionary list of spells that exist in the game, can be replaced by a limited list for spells known</param>
-    void CheckSpells(List<TimedNote> a_currentNotes, Dictionary<string, Note[]> a_spellList)
+    void CheckSpells(List<TimedNote> a_currentNotes, Dictionary<string, Note[]> a_spellList, bool a_playerNotes = false)
     {
         var spellEnumerator = a_spellList.GetEnumerator();
         while (spellEnumerator.MoveNext())
         {
             //run through the list of notes in a_current and check in groups of 5 for spells
-            for (int i = 0; i + 4 < a_currentNotes.Count; ++i) 
+            for (int i = 0; i + 7 < a_currentNotes.Count; ++i) 
             {
                 //the group of five notes that we're currently checking 
                 Note[] currentSequence = new Note[] { a_currentNotes[i].m_note, a_currentNotes[i + 1].m_note, a_currentNotes[i + 2].m_note, 
-                    a_currentNotes[i + 3].m_note, a_currentNotes[i + 4].m_note }; 
+                    a_currentNotes[i + 3].m_note, a_currentNotes[i + 4].m_note, a_currentNotes[i + 5].m_note, a_currentNotes[i + 6].m_note, a_currentNotes[i + 7].m_note}; 
 
                 if (currentSequence.SequenceEqual(spellEnumerator.Current.Value))
                 {
@@ -114,7 +114,7 @@ public class SpellSystem : MonoBehaviour
                     {
                         //get that prefab and check if the player cast it
                         if (spellEnumerator.Current.Key == m_spellPrefabs[o].GetComponent<Spell>().Name && 
-                            a_currentNotes[i].m_playerOwned && m_accuracy >= 50)
+                            a_playerNotes && m_accuracy >= 50)
                         {
                             //instantiate it as the spell type that was selected
                             switch (m_spellPrefabs[o].GetComponent<Spell>().Type)
