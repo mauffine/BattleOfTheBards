@@ -95,20 +95,44 @@ public class Battle : MonoBehaviour
             }
         }
 
+        if(Input.GetKeyDown(KeyCode.Space) && m_activeBattle == false && m_displayingScreens) //note the very first list of textures is to be used for the intro
+        {
+            if(m_screenList[m_enemyListIndex].m_textures.Count > m_screenTransitionIndex)
+            {
+                m_screenTransition.SetTexture(m_screenList[m_enemyListIndex].m_textures[m_screenTransitionIndex]);
+                m_screenTransitionIndex++;
+            }
+            else
+            {
+                m_screenTransitionIndex = 0;
+                m_displayingScreens = false;
+                m_screenTransition.SetScreen(false, 0.5f);
+                bool enemiesLeft = SetNextEnemy();
+                if (!enemiesLeft)
+                {
+                    //scene is over
+                }
+            }
+        }
+
+        Debug.Log(m_enemyListIndex);
+
         //debug
         if(Input.GetKeyDown(KeyCode.T))
         {
             m_currentEnemy.GetComponent<Musician>().TakeDamage(500);
-            m_screenTransition.SetTexture(m_screenList[0].m_textures[0]);
-            m_screenTransition.SetScreen(true, 0.5f);
-        }
-        if(Input.GetKeyDown(KeyCode.Y))
-        {
-            m_screenTransition.SetScreen(false, 0.5f);
-            bool enemiesLeft = SetNextEnemy();
-            if(!enemiesLeft)
+            //past here is the death sequence
+            m_screenTransitionIndex = 0;
+            m_displayingScreens = true;
+            if (m_screenList.Count > m_enemyListIndex)
             {
-                //scene is over
+                m_screenTransition.SetTexture(m_screenList[m_enemyListIndex].m_textures[0]);
+                m_screenTransitionIndex++;
+                m_screenTransition.SetScreen(true, 0.5f);
+            }
+            else
+            {
+                //endgame
             }
         }
     }
