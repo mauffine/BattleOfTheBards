@@ -16,6 +16,8 @@ public class Musician : MonoBehaviour
     protected SpellType m_spellBehavior;
     [SerializeField]
     private LifeBar m_lifeBar;
+    [SerializeField]
+    private string[] m_audioClips;
 
     private bool m_reset = true;
     private bool m_spellPlay = false;
@@ -36,7 +38,6 @@ public class Musician : MonoBehaviour
         if (m_health < 0)
             Die(); */
         //FMOD HERE
-       
 	}
     ///<summary> Reduces health equal to the damage taken from the argument. Takes into account defence</summary>
     ///<param name="a_damage">The number of damage delt</param>

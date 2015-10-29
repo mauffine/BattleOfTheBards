@@ -74,27 +74,27 @@ public class NoteVisualiser : MonoBehaviour
                 {
                     if (SpellMenu.Instance.UpSelected)
                     {
-                        m_notePool.AddNote(new Vector3(-640, -305, 0), Note.B, true);
-                        m_notePool.AddNote(new Vector3(-320, -305, 0), Note.B, true);
-                        m_notePool.AddNote(new Vector3(0, -305, 0), Note.E, true);
-                        m_notePool.AddNote(new Vector3(320, -305, 0), Note.D, true);
-                        m_notePool.AddNote(new Vector3(640, -305, 0), Note.C, true);
+                        m_notePool.AddNote(-640, Note.B, true);
+                        m_notePool.AddNote(-320, Note.B, true);
+                        m_notePool.AddNote(0,    Note.E, true);
+                        m_notePool.AddNote(320,  Note.D, true);
+                        m_notePool.AddNote(640,  Note.C, true);
                     }
                     else if (SpellMenu.Instance.LeftSelected)
                     {
-                        m_notePool.AddNote(new Vector3(-640, -305, 0), Note.C, true);
-                        m_notePool.AddNote(new Vector3(-320, -305, 0), Note.D, true);
-                        m_notePool.AddNote(new Vector3(0, -305, 0), Note.E, true);
-                        m_notePool.AddNote(new Vector3(320, -305, 0), Note.B, true);
-                        m_notePool.AddNote(new Vector3(640, -305, 0), Note.A, true);
+                        m_notePool.AddNote(-640, Note.C, true);
+                        m_notePool.AddNote(-320, Note.D, true);
+                        m_notePool.AddNote(0,    Note.E, true);
+                        m_notePool.AddNote(320,  Note.B, true);
+                        m_notePool.AddNote(640,  Note.A, true);
                     }
                     else if (SpellMenu.Instance.RightSelected)
                     {
-                        m_notePool.AddNote(new Vector3(-640, -305, 0), Note.A, true);
-                        m_notePool.AddNote(new Vector3(-320, -305, 0), Note.A, true);
-                        m_notePool.AddNote(new Vector3(0, -305, 0), Note.D, true);
-                        m_notePool.AddNote(new Vector3(320, -305, 0), Note.E, true);
-                        m_notePool.AddNote(new Vector3(640, -305, 0),  Note.B, true);
+                        m_notePool.AddNote(-640, Note.A, true);
+                        m_notePool.AddNote(-320, Note.A, true);
+                        m_notePool.AddNote(0,   Note.D, true);
+                        m_notePool.AddNote(320, Note.E, true);
+                        m_notePool.AddNote(640, Note.B, true);
                     }
                     break;
                 }
@@ -102,27 +102,27 @@ public class NoteVisualiser : MonoBehaviour
                 {
                     if (SpellMenu.Instance.UpSelected)
                     {
-                        m_notePool.AddNote(new Vector3(-640, -305, 0), Note.B, true);
-                        m_notePool.AddNote(new Vector3(-320, -305, 0), Note.B, true);
-                        m_notePool.AddNote(new Vector3(0, -305, 0), Note.E, true);
-                        m_notePool.AddNote(new Vector3(320, -305, 0), Note.D, true);
-                        m_notePool.AddNote(new Vector3(640, -305, 0), Note.D, true);
+                        m_notePool.AddNote(-640, Note.B, true);
+                        m_notePool.AddNote(-320, Note.B, true);
+                        m_notePool.AddNote(0, Note.E, true);
+                        m_notePool.AddNote(320, Note.D, true);
+                        m_notePool.AddNote(640, Note.D, true);
                     }
                     else if (SpellMenu.Instance.LeftSelected)
                     {
-                        m_notePool.AddNote(new Vector3(-640, -305, 0), Note.C, true);
-                        m_notePool.AddNote(new Vector3(-320, -305, 0), Note.D, true);
-                        m_notePool.AddNote(new Vector3(0, -305, 0), Note.E, true);
-                        m_notePool.AddNote(new Vector3(320, -305, 0), Note.B, true);
-                        m_notePool.AddNote(new Vector3(640, -305, 0), Note.B, true);
+                        m_notePool.AddNote(-640, Note.C, true);
+                        m_notePool.AddNote(-320, Note.D, true);
+                        m_notePool.AddNote(0, Note.E, true);
+                        m_notePool.AddNote(320, Note.B, true);
+                        m_notePool.AddNote(640, Note.B, true);
                     }
                     else if (SpellMenu.Instance.RightSelected)
                     {
-                        m_notePool.AddNote(new Vector3(-640, -305, 0), Note.A, true);
-                        m_notePool.AddNote(new Vector3(-320, -305, 0), Note.A, true);
-                        m_notePool.AddNote(new Vector3(0, -305, 0), Note.D, true);
-                        m_notePool.AddNote(new Vector3(320, -305, 0), Note.E, true);
-                        m_notePool.AddNote(new Vector3(640, -305, 0), Note.E, true);
+                        m_notePool.AddNote(-640, Note.A, true);
+                        m_notePool.AddNote(-320, Note.A, true);
+                        m_notePool.AddNote(0, Note.D, true);
+                        m_notePool.AddNote(320, Note.E, true);
+                        m_notePool.AddNote(640, Note.E, true);
                     }
 
                     break;
@@ -131,29 +131,28 @@ public class NoteVisualiser : MonoBehaviour
                 {
                     if (SpellMenu.Instance.UpSelected)
                     {
-                        m_notePool.AddNote(new Vector3(-640, -305, 0), Note.A, true);
-                        m_notePool.AddNote(new Vector3(-320, -305, 0), Note.E, true);
-                        m_notePool.AddNote(new Vector3(0, -305, 0), Note.D, true);
-                        m_notePool.AddNote(new Vector3(320, -305, 0), Note.E, true);
-                        m_notePool.AddNote(new Vector3(640, -305, 0), Note.B, true);
+                        m_notePool.AddNote(-640, Note.A, true);
+                        m_notePool.AddNote(-320, Note.E, true);
+                        m_notePool.AddNote(0, Note.D, true);
+                        m_notePool.AddNote(320, Note.E, true);
+                        m_notePool.AddNote(640, Note.B, true);
                     }
                     else if (SpellMenu.Instance.LeftSelected)
                     {
-                        m_notePool.AddNote(new Vector3(-640, -305, 0), Note.B, true);
-                        m_notePool.AddNote(new Vector3(-320, -305, 0), Note.E, true);
-                        m_notePool.AddNote(new Vector3(0, -305, 0),    Note.E, true);
-                        m_notePool.AddNote(new Vector3(320, -305, 0),  Note.D, true);
-                        m_notePool.AddNote(new Vector3(640, -305, 0),  Note.C, true);
+                        m_notePool.AddNote(-640, Note.B, true);
+                        m_notePool.AddNote(-320, Note.E, true);
+                        m_notePool.AddNote(0, Note.E, true);
+                        m_notePool.AddNote(320, Note.D, true);
+                        m_notePool.AddNote(640, Note.C, true);
                     }
                     else if (SpellMenu.Instance.RightSelected)
                     {
-                        m_notePool.AddNote(new Vector3(-640, -305, 0), Note.A, true);
-                        m_notePool.AddNote(new Vector3(-320, -305, 0), Note.B, true);
-                        m_notePool.AddNote(new Vector3(0, -305, 0),    Note.A, true);
-                        m_notePool.AddNote(new Vector3(320, -305, 0),  Note.E, true);
-                        m_notePool.AddNote(new Vector3(640, -305, 0),  Note.A, true);
+                        m_notePool.AddNote(-640, Note.A, true);
+                        m_notePool.AddNote(-320, Note.B, true);
+                        m_notePool.AddNote(0, Note.A, true);
+                        m_notePool.AddNote(320, Note.E, true);
+                        m_notePool.AddNote(640, Note.A, true);
                     }
-                   
                     break;
                 }
         }
