@@ -12,12 +12,12 @@ MonoBehaviour:
   m_Name: FMODStudioCache
   m_EditorClassIdentifier: 
   EditorBanks:
-  - {fileID: 11447140}
+  - {fileID: 11469836}
   EditorEvents:
-  - {fileID: 11429874}
-  MasterBankRef: {fileID: 11447140}
+  - {fileID: 11451476}
+  MasterBankRef: {fileID: 11469836}
   stringsBankWriteTime: 635817290283064503
---- !u!114 &11429874
+--- !u!114 &11451476
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
@@ -31,14 +31,14 @@ MonoBehaviour:
   Path: event:/Drum Mix One
   guid: 5303685005dd1c41a21b7c1dcec97855
   Banks:
-  - {fileID: 11447140}
+  - {fileID: 11469836}
   IsStream: 0
   Is3D: 1
   IsOneShot: 1
   Parameters: []
   MinDistance: 1
   MaxDistance: 20
---- !u!114 &11447140
+--- !u!114 &11469836
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}

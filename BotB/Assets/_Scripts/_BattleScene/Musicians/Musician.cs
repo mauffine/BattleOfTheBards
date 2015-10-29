@@ -33,10 +33,10 @@ public class Musician : MonoBehaviour
     protected void Update() 
     {
         //choose a spell and play a spell
-      /*  SpellAI();
+        SpellAI();
         DisplayTell();
         if (m_health < 0)
-            Die(); */
+            Die();
         //FMOD HERE
 	}
     ///<summary> Reduces health equal to the damage taken from the argument. Takes into account defence</summary>
