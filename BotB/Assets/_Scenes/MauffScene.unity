@@ -8518,11 +8518,11 @@ Prefab:
       objectReference: {fileID: 146360, guid: cd4a5c53169fa4540bd539cb2e7f619e, type: 2}
     - target: {fileID: 11481506, guid: c2cb8aafa83d79f4bb15694996577265, type: 2}
       propertyPath: m_BPM
-      value: 80
+      value: 78
       objectReference: {fileID: 0}
     - target: {fileID: 11481506, guid: c2cb8aafa83d79f4bb15694996577265, type: 2}
       propertyPath: m_offset
-      value: .370000005
+      value: .49000001
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c2cb8aafa83d79f4bb15694996577265, type: 2}
