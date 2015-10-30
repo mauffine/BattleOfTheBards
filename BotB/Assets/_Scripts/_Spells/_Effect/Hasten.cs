@@ -23,7 +23,7 @@ public class Hasten : Spell
     }
     public override Note[] Key
     {
-        get { return new Note[] { Note.A, Note.B, Note.A, Note.E, Note.A, Note.A, Note.B, Note.C }; }
+        get { return new Note[] { Note.A, Note.B, Note.A, Note.E, Note.A, Note.A, Note.B, Note.A }; }
     }
     public override SpellType Type
     {

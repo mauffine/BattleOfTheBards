@@ -3,6 +3,7 @@ using System.Collections;
 
 public class Musician : MonoBehaviour
 {
+    public SpriteRenderer sprRenderer;
     [SerializeField]
     protected string m_name;
     [SerializeField]
@@ -13,6 +14,10 @@ public class Musician : MonoBehaviour
     protected int m_health, m_defence, m_attack;
     [SerializeField]
     protected SpellType m_spellBehavior;
+    [SerializeField]
+    private LifeBar m_lifeBar;
+    [SerializeField]
+    private string[] m_audioClips;
 
     private bool m_reset = true;
     private bool m_spellPlay = false;
@@ -32,6 +37,7 @@ public class Musician : MonoBehaviour
         DisplayTell();
         if (m_health < 0)
             Die();
+        //FMOD HERE
 	}
     ///<summary> Reduces health equal to the damage taken from the argument. Takes into account defence</summary>
     ///<param name="a_damage">The number of damage delt</param>
@@ -44,7 +50,7 @@ public class Musician : MonoBehaviour
     {
         if (TurnTimer.Instance.CurrentTurn == Turn.Casting)
         {
-            GetComponentInChildren<SpriteRenderer>().enabled = false;
+            sprRenderer.enabled = false;
             if (m_spellPlay)
             {
                 m_reset = true;
@@ -98,7 +104,7 @@ public class Musician : MonoBehaviour
         }
         else
         {
-            GetComponentInChildren<SpriteRenderer>().enabled = true;
+            sprRenderer.enabled = true;
             if(m_reset)
             {
                 if (m_spellList.Length - 1 > m_spellLoc)//Turnery operator didn't work here
@@ -135,19 +141,18 @@ public class Musician : MonoBehaviour
         switch (m_spellBehavior)
         {
             case SpellType.Offencive:
-                GetComponentInChildren<SpriteRenderer>().sprite = Tell.Offencive;
+                sprRenderer.sprite = Tell.Offencive;
                 break;
             case SpellType.Defensive:
-                GetComponentInChildren<SpriteRenderer>().sprite = Tell.Defensive;
+                sprRenderer.sprite = Tell.Defensive;
                 break;
             case SpellType.Effect:
-                GetComponentInChildren<SpriteRenderer>().sprite = Tell.Effect;
+                sprRenderer.sprite = Tell.Effect;
                 break;
             default:
                 break;
         }
     }
-
     public int Health
     {
         get { return m_health; }
@@ -187,5 +192,9 @@ public class Musician : MonoBehaviour
             }
             return returnVal;
         }
+    }
+    public void PlayInstrument()
+    {
+
     }
 }

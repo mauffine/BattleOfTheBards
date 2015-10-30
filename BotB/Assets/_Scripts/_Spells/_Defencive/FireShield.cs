@@ -17,7 +17,7 @@ public class FireShield : Spell {
     }
     public override Note[] Key
     {
-        get { return new Note[] { Note.B, Note.B, Note.E, Note.D, Note.D, Note.A, Note.B, Note.C }; }
+        get { return new Note[] { Note.B, Note.B, Note.E, Note.D, Note.D, Note.C, Note.D, Note.E }; }
     }
     public override string Name
     {

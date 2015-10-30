@@ -118,6 +118,49 @@ public class NotePool : MonoBehaviour
         }
     }
 
+    public void AddNote(float a_xLoc, Note a_note, bool a_faded)
+    {
+        Vector3 notePos = new Vector3(0,0,0);
+        switch (a_note)
+	    {
+		case Note.A_:
+         break;
+        case Note.A:
+         notePos.y = -305;
+         break;
+        case Note.B_:
+         break;
+        case Note.B:
+                notePos.y = -260;
+         break;
+        case Note.C:
+         notePos.y = -210;
+         break;
+        case Note.D_:
+         break;
+        case Note.D:
+         notePos.y = -160;
+         break;
+        case Note.E:
+         notePos.y = -110;
+         break;
+        case Note.F_:
+         break;
+        case Note.F:
+         notePos.y = -60;
+         break;
+        case Note.G:
+         notePos.y = -10;
+         break;
+        case Note.BLANK:
+         break;
+        default:
+         break;
+	    }
+        notePos.x = a_xLoc;
+        notePos.y -= 200;
+        AddNote(notePos, a_note,a_faded);
+    }
     public void RemoveAllNotes()
     {
         foreach (var note in m_noteList)

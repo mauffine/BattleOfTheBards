@@ -108,7 +108,7 @@ public class NoteVisualiser : MonoBehaviour
                     else if (SpellMenu.Instance.RightSelected)                     
                     {
                         spell = m_offensiveRightSpell;
-                    }                                                              
+                    }                                                             
                     break;
                 }                                                                  
             case SpellType.Defensive:                                              
