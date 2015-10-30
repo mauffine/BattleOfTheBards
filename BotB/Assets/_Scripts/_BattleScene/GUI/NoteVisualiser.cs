@@ -80,16 +80,15 @@ public class NoteVisualiser : MonoBehaviour
     }
     public void ShowCombo()
     {
-        float scrollSpeed = 1;
 
-        Vector3 pos1 = new Vector3(-746.6666666666667f, -305, 0);
-        Vector3 pos2 = new Vector3(-533.3333333333334f, -305, 0);
-        Vector3 pos3 = new Vector3(-320.0000000000001f, -305, 0);
-        Vector3 pos4 = new Vector3(-106.6666666666668f, -305, 0);
-        Vector3 pos5 = new Vector3(106.6666666666665f, -305, 0);
-        Vector3 pos6 = new Vector3(320.0000000000001f, -305, 0);
-        Vector3 pos7 = new Vector3(533.3333333333334f, -305, 0);
-        Vector3 pos8 = new Vector3(746.6666666666667f, -305, 0);
+        float pos1 = -746.6666666666667f;
+        float pos2 = -533.3333333333334f;
+        float pos3 = -320.0000000000001f;
+        float pos4 = -106.6666666666668f;
+        float pos5 = 106.6666666666665f;
+        float pos6 = 320.0000000000001f;
+        float pos7 = 533.3333333333334f;
+        float pos8 = 746.6666666666667f;
 
         GameObject spell = null;
 
@@ -145,14 +144,14 @@ public class NoteVisualiser : MonoBehaviour
                     break;
                 }
         }
-        m_notePool.AddNote(pos1, spell.GetComponent<Spell>().Key[0], true, scrollSpeed);
-        m_notePool.AddNote(pos2, spell.GetComponent<Spell>().Key[1], true, scrollSpeed);
-        m_notePool.AddNote(pos3, spell.GetComponent<Spell>().Key[2], true, scrollSpeed);
-        m_notePool.AddNote(pos4, spell.GetComponent<Spell>().Key[3], true, scrollSpeed);
-        m_notePool.AddNote(pos5, spell.GetComponent<Spell>().Key[4], true, scrollSpeed);
-        m_notePool.AddNote(pos6, spell.GetComponent<Spell>().Key[5], true, scrollSpeed);
-        m_notePool.AddNote(pos7, spell.GetComponent<Spell>().Key[6], true, scrollSpeed);
-        m_notePool.AddNote(pos8, spell.GetComponent<Spell>().Key[7], true, scrollSpeed);
+        m_notePool.AddNote(pos1, spell.GetComponent<Spell>().Key[0], true);
+        m_notePool.AddNote(pos2, spell.GetComponent<Spell>().Key[1], true);
+        m_notePool.AddNote(pos3, spell.GetComponent<Spell>().Key[2], true);
+        m_notePool.AddNote(pos4, spell.GetComponent<Spell>().Key[3], true);
+        m_notePool.AddNote(pos5, spell.GetComponent<Spell>().Key[4], true);
+        m_notePool.AddNote(pos6, spell.GetComponent<Spell>().Key[5], true);
+        m_notePool.AddNote(pos7, spell.GetComponent<Spell>().Key[6], true);
+        m_notePool.AddNote(pos8, spell.GetComponent<Spell>().Key[7], true);
         
     }
     public static NoteVisualiser Reference
