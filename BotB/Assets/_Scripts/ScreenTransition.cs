@@ -8,6 +8,7 @@ public class ScreenTransition : MonoBehaviour {
     [SerializeField]
     float m_initialAlpha;
     [SerializeField]
+    Texture2D m_defaultTexture;
     Texture2D m_texture;
 
     Color m_currentColor;
@@ -22,11 +23,11 @@ public class ScreenTransition : MonoBehaviour {
         m_currentColor = GUI.color;
         m_alpha = m_initialAlpha;
         m_deltaTimeModifier = 1.0f;
+        m_texture = m_defaultTexture;
 	}
 	
 	// Update is called once per frame
 	void Update () {
-        //m_currentColor = GUI.color;
 
         if (m_coverScreen)
         {
@@ -65,6 +66,16 @@ public class ScreenTransition : MonoBehaviour {
         m_coverScreen = a_coverScreen;
 
         m_deltaTimeModifier = a_timeToFade;
+    }
+
+    public void SetTexture(Texture2D a_texture)
+    {
+        m_texture = a_texture;
+    }
+
+    public void ResetTexture()
+    {
+        m_texture = m_defaultTexture;
     }
 
     public void TransitionToScene(string a_sceneName)
