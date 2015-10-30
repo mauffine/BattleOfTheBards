@@ -1250,6 +1250,24 @@ Prefab:
 Transform:
   m_PrefabParentObject: {fileID: 400000, guid: 8ce39ed18539e774688bbdbcc6703f64, type: 3}
   m_PrefabInternal: {fileID: 427801062}
+--- !u!1 &245097039 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 151446, guid: c2cb8aafa83d79f4bb15694996577265, type: 2}
+  m_PrefabInternal: {fileID: 2085469330}
+--- !u!114 &245097046
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 245097039}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3d9a24583b8af214295a999f03b92e14, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_coverScreen: 0
+  m_initialAlpha: 1
+  m_defaultTexture: {fileID: 0}
 --- !u!1001 &248880892
 Prefab:
   m_ObjectHideFlags: 0
@@ -7310,20 +7328,6 @@ MonoBehaviour:
   m_effectMenu: {fileID: 1410062107}
   m_centralMenu: {fileID: 1166084668}
   m_currentMenu: {fileID: 0}
---- !u!114 &1727921407
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1727921404}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3d9a24583b8af214295a999f03b92e14, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_coverScreen: 0
-  m_initialAlpha: 1
-  m_texture: {fileID: 2800000, guid: 9d65c4bd8d4946b4784767a16edb6084, type: 3}
 --- !u!223 &1727921408 stripped
 Canvas:
   m_PrefabParentObject: {fileID: 22355298, guid: f63a92b0ec23fc24fa872e03a2c93ce2,
@@ -8304,9 +8308,21 @@ Prefab:
       propertyPath: m_enemyList.Array.size
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 11494406, guid: c2cb8aafa83d79f4bb15694996577265, type: 2}
+      propertyPath: m_screenList.Array.size
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 11481506, guid: c2cb8aafa83d79f4bb15694996577265, type: 2}
       propertyPath: m_spellPrefabs.Array.size
       value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 11494406, guid: c2cb8aafa83d79f4bb15694996577265, type: 2}
+      propertyPath: m_screenList.Array.data[1].m_textures.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 11494406, guid: c2cb8aafa83d79f4bb15694996577265, type: 2}
+      propertyPath: m_screenList.Array.data[0].m_textures.Array.size
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 432036, guid: c2cb8aafa83d79f4bb15694996577265, type: 2}
       propertyPath: m_LocalPosition.x
@@ -8524,6 +8540,26 @@ Prefab:
       propertyPath: m_offset
       value: .49000001
       objectReference: {fileID: 0}
+    - target: {fileID: 11494406, guid: c2cb8aafa83d79f4bb15694996577265, type: 2}
+      propertyPath: m_screenList.Array.data[1].m_textures.Array.data[0]
+      value: 
+      objectReference: {fileID: 2800000, guid: 9eb40f7878c18d64fa4be4a8bdef225a, type: 3}
+    - target: {fileID: 11494406, guid: c2cb8aafa83d79f4bb15694996577265, type: 2}
+      propertyPath: m_screenList.Array.data[1].m_textures.Array.data[1]
+      value: 
+      objectReference: {fileID: 2800000, guid: 937b86dac9e2355459ab0cbd5c3e5806, type: 3}
+    - target: {fileID: 11494406, guid: c2cb8aafa83d79f4bb15694996577265, type: 2}
+      propertyPath: m_screenList.Array.data[1].m_textures.Array.data[2]
+      value: 
+      objectReference: {fileID: 2800000, guid: 699d3a6566d4db94f857d7027d553cbe, type: 3}
+    - target: {fileID: 11494406, guid: c2cb8aafa83d79f4bb15694996577265, type: 2}
+      propertyPath: m_screenList.Array.data[0].m_textures.Array.data[0]
+      value: 
+      objectReference: {fileID: 2800000, guid: 03260aaddc8dfd24490a923b8f691a2c, type: 3}
+    - target: {fileID: 11494406, guid: c2cb8aafa83d79f4bb15694996577265, type: 2}
+      propertyPath: m_screenList.Array.data[0].m_textures.Array.data[1]
+      value: 
+      objectReference: {fileID: 2800000, guid: 61e907c260c8cc54294f5488cc99589f, type: 3}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c2cb8aafa83d79f4bb15694996577265, type: 2}
   m_IsPrefabParent: 0
