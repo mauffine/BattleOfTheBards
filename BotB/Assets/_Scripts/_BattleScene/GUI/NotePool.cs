@@ -28,7 +28,6 @@ public class NotePool : MonoBehaviour
             noteObject.SetActive(false);
         }
 	}
-	
 	// Update is called once per frame
 	void Update() 
     {
@@ -38,7 +37,6 @@ public class NotePool : MonoBehaviour
         //}
         //AddNote(new Vector2(-50, 0), Note.C);
 	}
-
     public void AddNote(Vector3 a_pos, Note a_note, bool a_faded, float a_scrollSpeed = 0)
     {
         foreach(var note in m_noteList)
@@ -117,7 +115,6 @@ public class NotePool : MonoBehaviour
             }
         }
     }
-
     public void AddNote(float a_xLoc, Note a_note, bool a_faded)
     {
         Vector3 notePos = new Vector3(0,0,0);

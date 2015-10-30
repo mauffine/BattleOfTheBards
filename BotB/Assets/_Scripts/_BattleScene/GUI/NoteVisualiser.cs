@@ -71,12 +71,15 @@ public class NoteVisualiser : MonoBehaviour
 
     }
     private void PushNote(TimedNote a_Note)
-    {
+    {//CHANGE THIS BIT TO GET PLAYER NOTE HIGHT WORKING
         Vector3 modifier = (a_Note.m_playerOwned) ? new Vector3(0, 25, 0) : new Vector3(0, -110, 0);
         Vector3 pos = (Slider.LocalPosition) - new Vector3(0, 0, 0.5f) + modifier;
         Note toPlay = (a_Note.m_playerOwned) ? a_Note.m_note : Note.BLANK;
 
-        m_notePool.AddNote(pos, toPlay, false);
+        if (a_Note.m_playerOwned)
+            m_notePool.AddNote(pos.x, toPlay, false);
+        else
+            m_notePool.AddNote(pos, toPlay, false);
     }
     public void ShowCombo()
     {
