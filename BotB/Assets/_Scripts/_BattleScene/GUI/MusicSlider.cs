@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class Slider : MonoBehaviour
+public class MusicSlider : MonoBehaviour
 {
     [SerializeField]
     Transform m_transform;
@@ -16,7 +16,7 @@ public class Slider : MonoBehaviour
 	void Start() 
     {
         m_resetTick = TurnTimer.Instance.CastingTime;
-        m_turnTime = (1 / TurnTimer.Instance.CastingTime) + 0.02f;//Scales the time for the slider, add 0.02f to let the slider get off the screen before reseting
+        m_turnTime = (1 / TurnTimer.Instance.CastingTime) + 0.02f;//Scales the time for the MusicSlider, add 0.02f to let the MusicSlider get off the screen before reseting
 	}
 	
 	// Update is called once per frame

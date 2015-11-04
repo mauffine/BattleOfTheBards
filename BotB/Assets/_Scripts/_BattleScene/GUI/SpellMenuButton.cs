@@ -18,31 +18,31 @@ public class SpellMenuButton : MonoBehaviour
 	void Update() 
     {
         if (!m_selected)
-            transform.localScale = new Vector3(50 + Mathf.Sin(Time.time * 5) * 5, 50 + Mathf.Sin(Time.time * 5) * 5, 50) * 1.5f;
+            transform.localScale = new Vector3(3.8f + Mathf.Sin(Time.time * 3) * 1.1f, 3.8f + Mathf.Sin(Time.time * 3) * 1.1f, 1) * 0.3f;
         else
-            transform.localScale = new Vector3(60, 60, 60) * 1.5f;
+            transform.localScale = new Vector3(1, 1, 1) * 1.5f;
         //transform.localPosition = new Vector3(m_initialPosition.x, m_initialPosition.y + 20 * Mathf.Sin((Time.time + m_hoverOffset) * 1.5f), m_initialPosition.z);
 	}
 
     public void Hide()
     {
-        GetComponent<SpriteRenderer>().enabled = false;
+        GetComponent<CanvasRenderer>().SetAlpha(0);
     }
 
     public void Show()
     {
-        GetComponent<SpriteRenderer>().enabled = true;
+        GetComponent<CanvasRenderer>().SetAlpha(255);
     }
 
     public void SetSelected()
     {
         m_selected = true;
-        GetComponent<SpriteRenderer>().color = (Color.Lerp(Color.clear,Color.blue,0.5f));
+        GetComponent<CanvasRenderer>().SetColor(Color.Lerp(Color.clear, Color.blue, 0.5f));
     }
 
     public void SetUnselected()
     {
         m_selected = false;
-        GetComponent<SpriteRenderer>().color = Color.white;
+        GetComponent<CanvasRenderer>().SetColor(Color.white);
     }
 }

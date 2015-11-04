@@ -73,7 +73,7 @@ public class NoteVisualiser : MonoBehaviour
     private void PushNote(TimedNote a_Note)
     {//CHANGE THIS BIT TO GET PLAYER NOTE HIGHT WORKING
         Vector3 modifier = (a_Note.m_playerOwned) ? new Vector3(0, 25, 0) : new Vector3(0, -110, 0);
-        Vector3 pos = (Slider.LocalPosition) - new Vector3(0, 0, 0.5f) + modifier;
+        Vector3 pos = (MusicSlider.LocalPosition) - new Vector3(0, 0, 0.5f) + modifier;
         Note toPlay = (a_Note.m_playerOwned) ? a_Note.m_note : Note.BLANK;
 
         if (a_Note.m_playerOwned)
@@ -164,11 +164,12 @@ public class NoteVisualiser : MonoBehaviour
 
     void Hide()
     {
-        GetComponent<SpriteRenderer>().enabled = false;
+        GetComponent<CanvasRenderer>().SetAlpha(0);
     }
 
     void Show()
     {
-        GetComponent<SpriteRenderer>().enabled = true;
+        GetComponent<CanvasRenderer>().SetAlpha(255);
+
     }
 }
