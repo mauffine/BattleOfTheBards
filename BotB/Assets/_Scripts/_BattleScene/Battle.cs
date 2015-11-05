@@ -81,10 +81,27 @@ public class Battle : MonoBehaviour
     void Start()
     {
         Application.targetFrameRate = 300; //attampt this framerate
-        m_currentEnemy = Instantiate(m_enemyList[0]);
-        m_activeBattle = true;
-        m_enemyListIndex = 1;
+        //m_currentEnemy = Instantiate(m_enemyList[0]);
+        //m_activeBattle = true;
+        //m_enemyListIndex = 1;
+        m_activeBattle = false;
+        m_displayingScreens = true;
+        m_enemyListIndex = 0;
         m_screenTransition = GetComponent<ScreenTransition>();
+
+        //past here is the death sequence
+        m_screenTransitionIndex = 0;
+        m_displayingScreens = true;
+        if (m_screenList.Count > m_enemyListIndex)
+        {
+            m_screenTransition.SetTexture(m_screenList[m_enemyListIndex].m_textures[0]);
+            m_screenTransitionIndex++;
+            m_screenTransition.SetScreen(true, 0.5f);
+        }
+        else
+        {
+            //endgame
+        }
     }
     void Update()
     {
@@ -93,7 +110,21 @@ public class Battle : MonoBehaviour
             if (m_currentEnemy.GetComponent<Musician>().Health <= 0)
             {                
                 m_currentEnemy.GetComponent<Musician>().Animate(7); //currently not playing because it's immediately deleted
-                m_activeBattle = false; //
+                m_activeBattle = false;
+                //past here is the death sequence
+                m_screenTransitionIndex = 0;
+                m_displayingScreens = true;
+                if (m_screenList.Count > m_enemyListIndex + 1)
+                {
+                    m_screenTransition.SetTexture(m_screenList[m_enemyListIndex].m_textures[0]);
+                    m_screenTransitionIndex++;
+                    m_screenTransition.SetScreen(true, 0.5f);
+                }
+                else
+                {
+                    //endgame
+                }
+
             }
         }
 
@@ -123,19 +154,6 @@ public class Battle : MonoBehaviour
         if(Input.GetKeyDown(KeyCode.T))
         {
             m_currentEnemy.GetComponent<Musician>().TakeDamage(500);
-            //past here is the death sequence
-            m_screenTransitionIndex = 0;
-            m_displayingScreens = true;
-            if (m_screenList.Count > m_enemyListIndex)
-            {
-                m_screenTransition.SetTexture(m_screenList[m_enemyListIndex].m_textures[0]);
-                m_screenTransitionIndex++;
-                m_screenTransition.SetScreen(true, 0.5f);
-            }
-            else
-            {
-                //endgame
-            }
         }
     }
 
