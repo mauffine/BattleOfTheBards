@@ -11,47 +11,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d32cf7c32a3ed8347bac48ef5ed56d82, type: 3}
   m_Name: FMODStudioCache
   m_EditorClassIdentifier: 
-  EditorBanks:
-  - {fileID: 11469836}
-  EditorEvents:
-  - {fileID: 11451476}
-  MasterBankRef: {fileID: 11469836}
-  stringsBankWriteTime: 635817290283064503
---- !u!114 &11451476
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Path: event:/Drum Mix One
-  guid: 5303685005dd1c41a21b7c1dcec97855
-  Banks:
-  - {fileID: 11469836}
-  IsStream: 0
-  Is3D: 1
-  IsOneShot: 1
-  Parameters: []
-  MinDistance: 1
-  MaxDistance: 20
---- !u!114 &11469836
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Path: C:/Users/daniel.waterston/Documents/FMOD Studio/BOTB Slime/Build/Desktop\Master
-    Bank.bank
-  lastModified: 635817290284924281
-  LoadResult: 0
-  FileSizes: []
-  Exists: 1
+  EditorBanks: []
+  EditorEvents: []
+  MasterBankRef: {fileID: 0}
+  stringsBankWriteTime: 0

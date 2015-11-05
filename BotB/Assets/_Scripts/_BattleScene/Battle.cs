@@ -81,38 +81,74 @@ public class Battle : MonoBehaviour
     void Start()
     {
         Application.targetFrameRate = 300; //attampt this framerate
-        m_currentEnemy = Instantiate(m_enemyList[0]);
-        m_activeBattle = true;
-        m_enemyListIndex = 1;
+        //m_currentEnemy = Instantiate(m_enemyList[0]);
+        //m_activeBattle = true;
+        //m_enemyListIndex = 1;
+        m_activeBattle = false;
+        m_displayingScreens = true;
+        m_enemyListIndex = 0;
         m_screenTransition = GetComponent<ScreenTransition>();
+
+        //past here is the death sequence
+        m_screenTransitionIndex = 0;
+        m_displayingScreens = true;
+        if (m_screenList.Count > m_enemyListIndex)
+        {
+            m_screenTransition.SetTexture(m_screenList[m_enemyListIndex].m_textures[0]);
+            m_screenTransitionIndex++;
+            m_screenTransition.SetScreen(true, 0.5f);
+        }
+        else
+        {
+            //endgame
+        }
     }
     void Update()
     {
+        //Debug.Log(m_enemyListIndex);
+
         if (m_activeBattle)
         {
             if (m_currentEnemy.GetComponent<Musician>().Health <= 0)
             {                
                 m_currentEnemy.GetComponent<Musician>().Animate(7); //currently not playing because it's immediately deleted
-                m_activeBattle = false; //
+                m_activeBattle = false;
+                //past here is the death sequence
+                m_screenTransitionIndex = 0;
+                m_displayingScreens = true;
+                if (m_enemyListIndex < m_enemyList.Count)
+                {
+                    m_screenTransition.SetTexture(m_screenList[m_enemyListIndex].m_textures[0]);
+                    m_screenTransitionIndex++;
+                    m_screenTransition.SetScreen(true, 0.5f);
+                }
+                else
+                {
+                    //endgame
+                }
+
             }
         }
 
         if(Input.GetKeyDown(KeyCode.Space) && m_activeBattle == false && m_displayingScreens) //note the very first list of textures is to be used for the intro
         {
-            if(m_screenList[m_enemyListIndex].m_textures.Count > m_screenTransitionIndex)
+            if(m_enemyListIndex < m_enemyList.Count)
             {
-                m_screenTransition.SetTexture(m_screenList[m_enemyListIndex].m_textures[m_screenTransitionIndex]);
-                m_screenTransitionIndex++;
-            }
-            else
-            {
-                m_screenTransitionIndex = 0;
-                m_displayingScreens = false;
-                m_screenTransition.SetScreen(false, 0.5f);
-                bool enemiesLeft = SetNextEnemy();
-                if (!enemiesLeft)
+                if(m_screenList[m_enemyListIndex].m_textures.Count > m_screenTransitionIndex)
                 {
-                    //scene is over
+                    m_screenTransition.SetTexture(m_screenList[m_enemyListIndex].m_textures[m_screenTransitionIndex]);
+                    m_screenTransitionIndex++;
+                }
+                else
+                {
+                    m_screenTransitionIndex = 0;
+                    m_displayingScreens = false;
+                    m_screenTransition.SetScreen(false, 0.5f);
+                    bool enemiesLeft = SetNextEnemy();
+                    if (!enemiesLeft)
+                    {
+                        //scene is over
+                    }
                 }
             }
         }
@@ -123,19 +159,6 @@ public class Battle : MonoBehaviour
         if(Input.GetKeyDown(KeyCode.T))
         {
             m_currentEnemy.GetComponent<Musician>().TakeDamage(500);
-            //past here is the death sequence
-            m_screenTransitionIndex = 0;
-            m_displayingScreens = true;
-            if (m_screenList.Count > m_enemyListIndex)
-            {
-                m_screenTransition.SetTexture(m_screenList[m_enemyListIndex].m_textures[0]);
-                m_screenTransitionIndex++;
-                m_screenTransition.SetScreen(true, 0.5f);
-            }
-            else
-            {
-                //endgame
-            }
         }
     }
 
@@ -145,6 +168,8 @@ public class Battle : MonoBehaviour
         {
             Destroy(m_currentEnemy); //
             m_currentEnemy = Instantiate(m_enemyList[m_enemyListIndex]);
+            Debug.Log(m_enemyListIndex);
+            Debug.Log(m_screenTransitionIndex);
             m_enemyListIndex++;
             m_activeBattle = true;
             return true;
