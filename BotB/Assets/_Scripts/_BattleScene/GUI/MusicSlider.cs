@@ -4,8 +4,6 @@ using System.Collections;
 public class MusicSlider : MonoBehaviour
 {
     [SerializeField]
-    Transform m_transform;
-    [SerializeField]
     private bool m_active;
     [SerializeField]
     float m_screenWidth = 1920;
@@ -31,7 +29,7 @@ public class MusicSlider : MonoBehaviour
             m_resetTick -= Time.deltaTime;
             bool playerTurn = (m_resetTick < 0);
 
-            m_transform.localPosition += new Vector3(m_screenWidth * modTime, 0, 0);
+            transform.localPosition += new Vector3(m_screenWidth * modTime, 0, 0);
             if (playerTurn)
             {
                 m_resetTick = TurnTimer.Instance.CastingTime;
@@ -40,13 +38,13 @@ public class MusicSlider : MonoBehaviour
         }
         else
             Reset();
-        pos = m_transform.position;
-        locPos = m_transform.localPosition;
+        pos = transform.position;
+        locPos = transform.localPosition;
 	}
     private void Reset()
     {
-        Vector3 myPos = m_transform.localPosition;
-        m_transform.localPosition = new Vector3(-985, myPos.y, myPos.z);
+        Vector3 myPos = transform.localPosition;
+        transform.localPosition = new Vector3(-985, myPos.y, myPos.z);
     }
     public static Vector3 Position
     {

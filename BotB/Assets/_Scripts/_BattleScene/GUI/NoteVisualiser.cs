@@ -5,14 +5,14 @@ public class NoteVisualiser : MonoBehaviour
 {
     [SerializeField]
     private GameObject m_offensiveUpSpell, m_offensiveLeftSpell, m_offensiveRightSpell,
-    m_defensiveUpSpell, m_defensiveLeftSpell, m_defensiveRightSpell,
-    m_EffectUpSpell, m_EffectLeftSpell, m_EffectRightSpell;
+                       m_defensiveUpSpell, m_defensiveLeftSpell, m_defensiveRightSpell,
+                       m_effectUpSpell,    m_effectLeftSpell,    m_effectRightSpell;
     private bool m_putDown = false;
     private Turn m_turn;
     private TimedNote[] m_noteType;
     // Use this for initialization
     static NoteVisualiser refToMe;
-    NotePool m_notePool;
+    private NotePool m_notePool;
 
     void Start()
     {
@@ -134,15 +134,15 @@ public class NoteVisualiser : MonoBehaviour
                 {                                                                  
                     if (SpellMenu.Instance.UpSelected)                             
                     {
-                        spell = m_EffectUpSpell;
+                        spell = m_effectUpSpell;
                     }                                                              
                     else if (SpellMenu.Instance.LeftSelected)                      
                     {
-                        spell = m_EffectLeftSpell;
+                        spell = m_effectLeftSpell;
                     }                                                              
                     else if (SpellMenu.Instance.RightSelected)                     
                     {
-                        spell = m_EffectRightSpell;
+                        spell = m_effectRightSpell;
                     }
                     break;
                 }
