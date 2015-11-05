@@ -18,6 +18,10 @@ public class IceBolt : Spell
     {
         base.Update();
     }
+    public override void Bounce()
+    {
+        transform.Rotate(new Vector3(0, 1, 0), 180);
+    }
     public override Note[] Key
     {
         get { return new Note[] { Note.C, Note.D, Note.E, Note.B, Note.A, Note.D, Note.E, Note.B }; }
