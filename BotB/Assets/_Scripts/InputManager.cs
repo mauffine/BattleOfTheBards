@@ -93,13 +93,13 @@ public class InputManager : MonoBehaviour
                 Battle.Instance.ReceiveKey(new TimedNote(Note.B, a_time, true)); ++s_noteCounter;
                 s_axisTick = axisTick;
             }
-            if (Input.GetAxis("D-Pad Y") >= 1.0f)
+            if (Input.GetAxis("D-Pad Y") <= -1.0f)
             {
                 s_controllerReset = false;
                 Battle.Instance.ReceiveKey(new TimedNote(Note.D, a_time, true)); ++s_noteCounter;
                 s_axisTick = axisTick;
             }
-            if (Input.GetAxis("D-Pad Y") <= -1.0f)
+            if (Input.GetAxis("D-Pad Y") >= 1.0f)
             {
                 s_controllerReset = false;
                 Battle.Instance.ReceiveKey(new TimedNote(Note.C, a_time, true)); ++s_noteCounter;

@@ -71,6 +71,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_speedModifier: 0
   m_velocity: {x: 0, y: 0, z: 0}
+  m_dying: 0
 --- !u!198 &19832758
 ParticleSystem:
   m_ObjectHideFlags: 1
@@ -1124,7 +1125,7 @@ ParticleSystemRenderer:
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_Materials:
-  - {fileID: 2100000, guid: 1d1542b3943d3784483ccab828f3de6a, type: 2}
+  - {fileID: 2100000, guid: 607b5477cfebca14b90726e83f046e78, type: 2}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_UseLightProbes: 1
@@ -1161,6 +1162,10 @@ Prefab:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 607b5477cfebca14b90726e83f046e78, type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 113786}

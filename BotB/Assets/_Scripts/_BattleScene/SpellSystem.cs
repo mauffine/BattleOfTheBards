@@ -229,7 +229,7 @@ public class SpellSystem : MonoBehaviour
                                     }
                                 case SpellType.Defensive:
                                     {
-                                        m_enemySpell = (GameObject)Instantiate(m_spellPrefabs[o], new Vector3(-1, 1, 1.2f), Quaternion.AngleAxis(135, Vector3.up));
+                                        m_enemySpell = (GameObject)Instantiate(m_spellPrefabs[o], new Vector3(-1, 1, 1.2f), Quaternion.AngleAxis(160, Vector3.up));
                                         m_enemySpell.GetComponent<Spell>().m_velocity = Vector3.zero;
                                         break;
                                     }

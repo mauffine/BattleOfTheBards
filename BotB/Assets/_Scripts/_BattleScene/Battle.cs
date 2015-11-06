@@ -130,7 +130,7 @@ public class Battle : MonoBehaviour
             }
         }
 
-        if(Input.GetKeyDown(KeyCode.Space) && m_activeBattle == false && m_displayingScreens) //note the very first list of textures is to be used for the intro
+        if((Input.GetKeyDown(KeyCode.Space) || Input.GetButtonDown("Cross")) && m_activeBattle == false && m_displayingScreens) //note the very first list of textures is to be used for the intro
         {
             if(m_enemyListIndex < m_enemyList.Count)
             {
@@ -227,9 +227,9 @@ public class Battle : MonoBehaviour
         }
         else
         {
-            TheSlime slimeRef = m_currentEnemy.GetComponent<TheSlime>();
+            Musician slimeRef = m_currentEnemy.GetComponent<Musician>();
             slimeRef.TakeDamage(a_damage);
-            TextGen.Instance.TakeDamage(a_damage * -1, slimeRef.transform.position, m_currentEnemy.GetComponentInChildren<SkinnedMeshRenderer>().bounds.size.y);
+            TextGen.Instance.TakeDamage(a_damage * -1, slimeRef.transform.position, m_currentEnemy.GetComponentInChildren<MeshRenderer>().bounds.size.y);
             if (a_animate)
                 slimeRef.Animate(6);
         }

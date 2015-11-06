@@ -78,8 +78,8 @@ public class NoteVisualiser : MonoBehaviour
 
         if (a_Note.m_playerOwned)
             m_notePool.AddNote(pos.x, toPlay, false);
-        else
-            m_notePool.AddNote(pos, toPlay, false);
+        //else
+            //m_notePool.AddNote(pos, toPlay, false);
     }
     public void ShowCombo()
     {
