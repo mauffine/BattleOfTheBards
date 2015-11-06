@@ -1,10 +1,8 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class Slider : MonoBehaviour
+public class MusicSlider : MonoBehaviour
 {
-    [SerializeField]
-    Transform m_transform;
     [SerializeField]
     private bool m_active;
     [SerializeField]
@@ -16,7 +14,7 @@ public class Slider : MonoBehaviour
 	void Start() 
     {
         m_resetTick = TurnTimer.Instance.CastingTime;
-        m_turnTime = (1 / TurnTimer.Instance.CastingTime) + 0.02f;//Scales the time for the slider, add 0.02f to let the slider get off the screen before reseting
+        m_turnTime = (1 / TurnTimer.Instance.CastingTime) + 0.02f;//Scales the time for the MusicSlider, add 0.02f to let the MusicSlider get off the screen before reseting
 	}
 	
 	// Update is called once per frame
@@ -31,7 +29,7 @@ public class Slider : MonoBehaviour
             m_resetTick -= Time.deltaTime;
             bool playerTurn = (m_resetTick < 0);
 
-            m_transform.localPosition += new Vector3(m_screenWidth * modTime, 0, 0);
+            transform.localPosition += new Vector3(m_screenWidth * modTime, 0, 0);
             if (playerTurn)
             {
                 m_resetTick = TurnTimer.Instance.CastingTime;
@@ -40,13 +38,13 @@ public class Slider : MonoBehaviour
         }
         else
             Reset();
-        pos = m_transform.position;
-        locPos = m_transform.localPosition;
+        pos = transform.position;
+        locPos = transform.localPosition;
 	}
     private void Reset()
     {
-        Vector3 myPos = m_transform.localPosition;
-        m_transform.localPosition = new Vector3(-985, myPos.y, myPos.z);
+        Vector3 myPos = transform.localPosition;
+        transform.localPosition = new Vector3(-985, myPos.y, myPos.z);
     }
     public static Vector3 Position
     {

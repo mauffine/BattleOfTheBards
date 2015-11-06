@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using UnityEngine.UI;
 
 public class NotePool : MonoBehaviour 
 {
@@ -21,14 +22,15 @@ public class NotePool : MonoBehaviour
         for (int i = 0; i < m_noteList.Length; i++)
         {
             var noteObject = Instantiate(m_notePrefab);
-            noteObject.transform.SetParent(this.transform);
+            noteObject.transform.SetParent(transform);
             noteObject.transform.rotation = new Quaternion(0, 1, 0, 0);
             noteObject.name = "NotePool " + i;
+            Vector3 lastScale = noteObject.transform.localScale *= 600;
+            noteObject.transform.localScale = new Vector3(lastScale.x, lastScale.y,1);
             m_noteList[i] = noteObject;
             noteObject.SetActive(false);
         }
 	}
-	
 	// Update is called once per frame
 	void Update() 
     {
@@ -38,7 +40,6 @@ public class NotePool : MonoBehaviour
         //}
         //AddNote(new Vector2(-50, 0), Note.C);
 	}
-
     public void AddNote(Vector3 a_pos, Note a_note, bool a_faded, float a_scrollSpeed = 0)
     {
         foreach(var note in m_noteList)
@@ -46,56 +47,43 @@ public class NotePool : MonoBehaviour
             if(!note.activeSelf)
             {
                 note.SetActive(true);
-                note.transform.localPosition = a_pos;
+                Vector3 newNotePos = new Vector3(a_pos.x,a_pos.y,1);
+                note.transform.localPosition = newNotePos;
                 //note.GetComponent<ScrollingNote>().Initialise(a_scrollSpeed);
 
-                var spriteRenderer = note.GetComponent<SpriteRenderer>();
+                var spriteRenderer = note.GetComponent<Image>();
+
                 switch (a_note)
                 {
                     case Note.A_:
                         break;
                     case Note.A:
                         {
-                            if (a_faded)
-                                spriteRenderer.sprite = m_fadedNotes[0];
-                            else
-                                spriteRenderer.sprite = m_noteA;
+                            spriteRenderer.sprite = (a_faded) ? m_fadedNotes[0] : m_noteA;
                         }
                         break;
                     case Note.B_:
                         break;
                     case Note.B:
                         {
-                            if (a_faded)
-                                spriteRenderer.sprite = m_fadedNotes[1];
-                            else
-                                spriteRenderer.sprite = m_noteB;
+                            spriteRenderer.sprite = (a_faded) ? m_fadedNotes[1] : m_noteB;
                         }
                         break;
                     case Note.C:
                         {
-                            if (a_faded)
-                                spriteRenderer.sprite = m_fadedNotes[2];
-                            else
-                                spriteRenderer.sprite = m_noteC;
+                            spriteRenderer.sprite = (a_faded) ? m_fadedNotes[2] : m_noteC;
                         }
                         break;
                     case Note.D_:
                         break;
                     case Note.D:
                         {
-                            if (a_faded)
-                                spriteRenderer.sprite = m_fadedNotes[3];
-                            else
-                                spriteRenderer.sprite = m_noteD;
+                            spriteRenderer.sprite = (a_faded) ? m_fadedNotes[3] : m_noteD;
                         }
                         break;
                     case Note.E:
                         {
-                            if (a_faded)
-                                spriteRenderer.sprite = m_fadedNotes[4];
-                            else
-                                spriteRenderer.sprite = m_noteE;
+                            spriteRenderer.sprite = (a_faded) ? m_fadedNotes[4] : m_noteE;
                         }
                         break;
                     case Note.F_:
@@ -112,12 +100,10 @@ public class NotePool : MonoBehaviour
                     default:
                         break;
                 }
-
                 break;
             }
         }
     }
-
     public void AddNote(float a_xLoc, Note a_note, bool a_faded)
     {
         Vector3 notePos = new Vector3(0,0,0);

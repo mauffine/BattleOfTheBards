@@ -23,7 +23,7 @@ public class SpellMenu : MonoBehaviour
     [SerializeField]
     GameObject m_upButton, m_leftButton, m_rightButton;
     SpellMenuButton m_upScript, m_leftScript, m_rightScript;
-    Sprite m_top, m_left, m_right;
+    UnityEngine.UI.Image m_top, m_left, m_right;
 
     [SerializeField]
     GameObject m_attackMenu, m_defenceMenu, m_effectMenu, m_centralMenu, m_currentMenu;
@@ -39,9 +39,9 @@ public class SpellMenu : MonoBehaviour
         m_leftScript = m_leftButton.GetComponent<SpellMenuButton>();
         m_rightScript = m_rightButton.GetComponent<SpellMenuButton>();
 
-        m_top = m_upButton.GetComponent<SpriteRenderer>().sprite;
-        m_left = m_leftButton.GetComponent<SpriteRenderer>().sprite;
-        m_right = m_rightButton.GetComponent<SpriteRenderer>().sprite;
+        m_top = m_upButton.GetComponent<UnityEngine.UI.Image>();
+        m_left = m_leftButton.GetComponent<UnityEngine.UI.Image>();
+        m_right = m_rightButton.GetComponent<UnityEngine.UI.Image>();
         m_currentMenu = m_centralMenu;
         ShowMenu();
         SwitchMenu(m_attackMenu);
@@ -228,9 +228,9 @@ public class SpellMenu : MonoBehaviour
 
         a_menu.transform.parent = transform;
         //DEBUG HERE
-        m_top = a_menu.transform.GetChild(0).GetComponent<SpriteRenderer>().sprite;
-        m_left = a_menu.transform.GetChild(1).GetComponent<SpriteRenderer>().sprite;
-        m_right =  a_menu.transform.GetChild(2).GetComponent<SpriteRenderer>().sprite;
+        m_top = a_menu.transform.GetChild(0).GetComponent<UnityEngine.UI.Image>();
+        m_left = a_menu.transform.GetChild(1).GetComponent<UnityEngine.UI.Image>();
+        m_right = a_menu.transform.GetChild(2).GetComponent<UnityEngine.UI.Image>();
 
         m_upScript = a_menu.transform.GetChild(0).GetComponent<SpellMenuButton>();
         m_leftScript = a_menu.transform.GetChild(1).GetComponent<SpellMenuButton>();
@@ -247,23 +247,10 @@ public class SpellMenu : MonoBehaviour
     }
     public bool LeftSelected
     {
-
-        //m_showMenu = true;
-        //m_offenceButton.GetComponent<SpellMenuButton>().Show();
-        //m_defenceButton.GetComponent<SpellMenuButton>().Show();
-        //m_effectSelection.GetComponent<SpellMenuButton>().Show();
         get { return m_leftScript.GetComponent<SpellMenuButton>().m_selected; }
     }
     public bool RightSelected
     {
-        //m_showMenu = false;
-        //m_offenceButton.GetComponent<SpellMenuButton>().Hide();
-        //m_defenceButton.GetComponent<SpellMenuButton>().Hide();
-        //m_effectSelection.GetComponent<SpellMenuButton>().Hide();
-
-        //m_offenceButtonScript.SetUnselected();
-        //m_defenceButtonScript.SetUnselected();
-        //m_effectSelectionScript.SetUnselected();
         get { return m_rightScript.GetComponent<SpellMenuButton>().m_selected; }
     }
 }

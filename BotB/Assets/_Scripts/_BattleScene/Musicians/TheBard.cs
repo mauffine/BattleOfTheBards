@@ -11,6 +11,7 @@ public class TheBard : Musician
 	// Update is called once per frame
 	void Update() 
     {
+        m_lifeBar.value = m_health;
 	}
     //
     protected override void Die()

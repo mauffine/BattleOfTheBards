@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using UnityEngine.UI;
 
 public class Musician : MonoBehaviour
 {
@@ -11,11 +12,13 @@ public class Musician : MonoBehaviour
     //[SerializeField]
     //GameObject m_sceneHandler;
     [SerializeField]
-    protected int m_health, m_defence, m_attack;
+    protected int m_maxHealth, m_defence, m_attack;
+    [SerializeField]
+    protected int m_health;
     [SerializeField]
     protected SpellType m_spellBehavior;
     [SerializeField]
-    private LifeBar m_lifeBar;
+    protected Slider m_lifeBar;
     [SerializeField]
     private string[] m_audioClips;
 
@@ -28,6 +31,11 @@ public class Musician : MonoBehaviour
     protected void Start() 
     {
         turnTick = TurnTimer.Instance.CastingTime - 1;
+        m_health = m_maxHealth;
+        if (m_lifeBar == null)
+            m_lifeBar = GUIHandler.Instance.EnemyLifeBar;
+        m_lifeBar.maxValue = m_maxHealth;
+
 	}
     ///<summary> Updates the AI and calls Die if the enemey has no more health</summary>
     protected void Update() 
@@ -35,6 +43,8 @@ public class Musician : MonoBehaviour
         //choose a spell and play a spell
         SpellAI();
         DisplayTell();
+       
+        m_lifeBar.value = m_health;
         if (m_health < 0)
             Die();
         //FMOD HERE
