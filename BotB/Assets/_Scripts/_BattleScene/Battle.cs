@@ -238,15 +238,15 @@ public class Battle : MonoBehaviour
     public void AccuracyText(float a_accuracy)
     {
         if (a_accuracy >= 90)
-            TextGen.Instance.DisplayRating("Perfect", new Vector2(MusicSlider.Position.x, 210), 1, Color.white);
+            TextGen.Instance.DisplayRating("Perfect", new Vector2(MusicSlider.Position.x, 195), 1, Color.white);
         else if (a_accuracy >= 80 && a_accuracy < 90)
-            TextGen.Instance.DisplayRating("Great", new Vector2(MusicSlider.Position.x, 210), 1, Color.yellow);
+            TextGen.Instance.DisplayRating("Great", new Vector2(MusicSlider.Position.x, 195), 1, Color.yellow);
         else if (a_accuracy >= 70 && a_accuracy < 80)
-            TextGen.Instance.DisplayRating("Good", new Vector2(MusicSlider.Position.x, 210), 1, Color.blue);
+            TextGen.Instance.DisplayRating("Good", new Vector2(MusicSlider.Position.x, 195), 1, Color.blue);
         else if (a_accuracy >= 60 && a_accuracy < 70)
-            TextGen.Instance.DisplayRating("Okay", new Vector2(MusicSlider.Position.x, 210), 1, Color.magenta);
+            TextGen.Instance.DisplayRating("Okay", new Vector2(MusicSlider.Position.x, 195), 1, Color.magenta);
         else
-            TextGen.Instance.DisplayRating("Poor", new Vector2(MusicSlider.Position.x, 210), 1, Color.red);
+            TextGen.Instance.DisplayRating("Poor", new Vector2(MusicSlider.Position.x, 195), 1, Color.red);
     }
     public GameObject PlayerRef
     {

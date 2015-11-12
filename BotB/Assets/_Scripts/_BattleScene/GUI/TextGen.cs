@@ -43,7 +43,7 @@ public class TextGen : MonoBehaviour
             m_ratingText[I].GetComponent<RectTransform>().position += new Vector3(0, Time.deltaTime, 0);
             Text currentText = m_ratingText[I].GetComponent<Text>();
             Color textCol = currentText.color;
-            currentText.color = Color.Lerp(textCol, Color.clear, Time.deltaTime * 9);
+            currentText.color = Color.Lerp(textCol, Color.clear, Time.deltaTime);
             if (textCol.a <= 0.075f)
             {
                 Destroy(m_ratingText[I]);
