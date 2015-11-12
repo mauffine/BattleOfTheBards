@@ -59,7 +59,8 @@ public class Battle : MonoBehaviour
     public static Battle Instance; //singleton instance
     [SerializeField]
     GameObject m_player, m_currentEnemy; //the characters in the scene
-
+    [SerializeField]
+    GameObject m_eventBank;
     [SerializeField]
     List<GameObject> m_enemyList;
     int m_enemyListIndex;
@@ -81,7 +82,6 @@ public class Battle : MonoBehaviour
     void Start()
     {
         Application.targetFrameRate = 300; //attampt this framerate
-        m_currentEnemy = Instantiate(m_enemyList[0]);
         m_activeBattle = true;
         m_enemyListIndex = 1;
         m_screenTransition = GetComponent<ScreenTransition>();
@@ -146,6 +146,7 @@ public class Battle : MonoBehaviour
             Destroy(m_currentEnemy); //
             m_currentEnemy = Instantiate(m_enemyList[m_enemyListIndex]);
             m_enemyListIndex++;
+            LoadAudioEvents();
             m_activeBattle = true;
             return true;
         }
@@ -154,9 +155,6 @@ public class Battle : MonoBehaviour
             return false;
         }
     }
-
-
-
     public void ReceiveKey(TimedNote a_note)
     {
         //send the keypress notifications to the following scripts
@@ -209,7 +207,6 @@ public class Battle : MonoBehaviour
                 slimeRef.Animate(6);
         }
     }
-
     public void AccuracyText(float a_accuracy)
     {
         if (a_accuracy >= 90)
@@ -222,6 +219,16 @@ public class Battle : MonoBehaviour
             TextGen.Instance.DisplayRating("Okay", Vector2.zero, 1, Color.magenta);
         else
             TextGen.Instance.DisplayRating("Poor", Vector2.zero, 1, Color.red);
+    }
+    public void LoadAudioEvents()
+    {
+        int arrayMod = (m_enemyListIndex * 4);
+        FMODUnity.StudioEventEmitter[] enemyEvents = {null,null,null,null};
+        enemyEvents[0] = m_eventBank.GetComponentsInChildren<FMODUnity.StudioEventEmitter>()[m_enemyListIndex];
+        enemyEvents[1] = m_eventBank.GetComponentsInChildren<FMODUnity.StudioEventEmitter>()[m_enemyListIndex + 1];
+        enemyEvents[2] = m_eventBank.GetComponentsInChildren<FMODUnity.StudioEventEmitter>()[m_enemyListIndex + 2];
+        enemyEvents[3] = m_eventBank.GetComponentsInChildren<FMODUnity.StudioEventEmitter>()[m_enemyListIndex + 3];
+        m_currentEnemy.GetComponent<Musician>().AddEvents(enemyEvents);
     }
     public GameObject PlayerRef
     {

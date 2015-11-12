@@ -12,10 +12,11 @@ MonoBehaviour:
   m_Name: FMODStudioSettings
   m_EditorClassIdentifier: 
   HasSourceProject: 0
-  HasPlatforms: 0
-  SourceProjectPath: C:/Users/daniel.waterston/Documents/FMOD Studio/BOTB Slime/BOTB
-    Slime.fspro
-  SourceBankPath: C:/Users/daniel.waterston/Documents/FMOD Studio/BOTB Slime/Build/Desktop
+  HasPlatforms: 1
+  SourceProjectPath: C:/Users/daniel.waterston/Desktop/BattleOfTheBards/BotB/Assets/FMOD
+    Banks/BOTB Slime.fspro
+  SourceBankPath: C:/Users/daniel.waterston/Desktop/BattleOfTheBards/BotB/Assets/FMOD
+    Banks\Build
   SpeakerModeSettings:
   - Platform: 2
     Value: 0
@@ -36,9 +37,9 @@ MonoBehaviour:
     Value: 0
   BankDirectorySettings:
   - Platform: 1
-    Value: 
+    Value: Desktop
   - Platform: 2
-    Value: 
+    Value: Desktop
   VirtualChannelSettings:
   - Platform: 2
     Value: 128
