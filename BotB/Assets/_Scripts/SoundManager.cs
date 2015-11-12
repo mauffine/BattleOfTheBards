@@ -83,10 +83,15 @@ public class SoundManager : MonoBehaviour
 	// Update is called once per frame
 	void Update() 
     {
-        if (m_murray)
-            PlayBeat(m_playingBeatSound);
+        if (TurnTimer.Instance.CurrentTurn == Turn.Casting)
+        {
+            if (m_murray)
+                PlayBeat(m_playingBeatSound);
+            else
+                PlayBeat(m_menuBeatSound);
+        }
         else
-            PlayBeat(m_menuBeatSound);
+            m_beatTimer = 0;
 	}
 
     public static SoundManager Reference

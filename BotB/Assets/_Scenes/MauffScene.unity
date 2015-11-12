@@ -10704,6 +10704,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_prefabLink: {fileID: 122868, guid: 0883f51bb10536041829b2742aae16b5, type: 2}
+  m_GUITextLink: {fileID: 141542, guid: 5953649ca89ec8849b76877782a7e893, type: 2}
+  m_canvas: {fileID: 0}
 --- !u!114 &1902048321
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11541,12 +11543,32 @@ Prefab:
       objectReference: {fileID: 2800000, guid: 4b4f29cfa133d5043adda736b51ee995, type: 3}
     - target: {fileID: 11444266, guid: c2cb8aafa83d79f4bb15694996577265, type: 2}
       propertyPath: s_inputDevice
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 11439744, guid: c2cb8aafa83d79f4bb15694996577265, type: 2}
       propertyPath: m_enemyList.Array.data[1]
       value: 
       objectReference: {fileID: 118206, guid: 5e72d7f175b5dab4296c9f6a3d56e7a6, type: 2}
+    - target: {fileID: 11444266, guid: c2cb8aafa83d79f4bb15694996577265, type: 2}
+      propertyPath: cNote
+      value: 275
+      objectReference: {fileID: 0}
+    - target: {fileID: 11444266, guid: c2cb8aafa83d79f4bb15694996577265, type: 2}
+      propertyPath: dNote
+      value: 276
+      objectReference: {fileID: 0}
+    - target: {fileID: 11439642, guid: c2cb8aafa83d79f4bb15694996577265, type: 2}
+      propertyPath: m_BPM
+      value: 143
+      objectReference: {fileID: 0}
+    - target: {fileID: 11439642, guid: c2cb8aafa83d79f4bb15694996577265, type: 2}
+      propertyPath: m_offset
+      value: .540000021
+      objectReference: {fileID: 0}
+    - target: {fileID: 11466068, guid: c2cb8aafa83d79f4bb15694996577265, type: 2}
+      propertyPath: m_beat
+      value: .41958043
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c2cb8aafa83d79f4bb15694996577265, type: 2}
   m_IsPrefabParent: 0
