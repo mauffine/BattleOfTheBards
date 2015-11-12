@@ -9625,6 +9625,20 @@ Transform:
 GameObject:
   m_PrefabParentObject: {fileID: 103574, guid: c2cb8aafa83d79f4bb15694996577265, type: 2}
   m_PrefabInternal: {fileID: 2085469330}
+--- !u!114 &1775765531
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1775765530}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 41b4221bb2f8a034d95bf0518445e2d0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_switchOnEnemy: 2
+  m_turnAssetOff: {fileID: 485610742}
+  m_turnAssetOn: {fileID: 1887277213}
 --- !u!114 &1775765538
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11688,6 +11702,10 @@ Prefab:
       objectReference: {fileID: 1887277213}
     - target: {fileID: 11439744, guid: c2cb8aafa83d79f4bb15694996577265, type: 2}
       propertyPath: m_switchOnEnemy
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 11498634, guid: c2cb8aafa83d79f4bb15694996577265, type: 2}
+      propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []

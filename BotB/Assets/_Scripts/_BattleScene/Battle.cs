@@ -62,7 +62,7 @@ public class Battle : MonoBehaviour
 
     [SerializeField]
     List<GameObject> m_enemyList;
-    int m_enemyListIndex;
+    public int m_enemyListIndex;
     [SerializeField]
     List<TransitionScreens> m_screenList;
     [HideInInspector]
@@ -74,10 +74,10 @@ public class Battle : MonoBehaviour
     public bool m_win, m_playing; //bools for the end of the battle
     private float m_winTimer = 5;
 
-    public int m_switchOnEnemy;
-    public GameObject m_turnAssetOff;
-    public GameObject m_turnAssetOn;
-    bool m_assetsSwitched = false;
+    //public int m_switchOnEnemy;
+    //public GameObject m_turnAssetOff;
+    //public GameObject m_turnAssetOn;
+    //bool m_assetsSwitched = false;
 
     //Behavious
     void Awake()
@@ -206,12 +206,12 @@ public class Battle : MonoBehaviour
 
     bool SetNextEnemy() //There must be at least one frame before running
     {
-        if (!m_assetsSwitched && m_enemyListIndex == m_switchOnEnemy)
-        {
-            m_turnAssetOff.SetActive(false);
-            m_turnAssetOn.SetActive(true);
-            m_assetsSwitched = true;
-        }
+        //if (!m_assetsSwitched && m_enemyListIndex == m_switchOnEnemy)
+        //{
+        //    m_turnAssetOff.SetActive(false);
+        //    m_turnAssetOn.SetActive(true);
+        //    m_assetsSwitched = true;
+        //}
 
         if(m_enemyListIndex < m_enemyList.Count) //one off?
         {
