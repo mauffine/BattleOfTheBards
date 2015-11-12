@@ -373,7 +373,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_coverScreen: 0
   m_initialAlpha: 1
-  m_defaultTexture: {fileID: 0}
+  m_defaultTexture: {fileID: 2800000, guid: 9d65c4bd8d4946b4784767a16edb6084, type: 3}
 --- !u!1 &1063007352
 GameObject:
   m_ObjectHideFlags: 0

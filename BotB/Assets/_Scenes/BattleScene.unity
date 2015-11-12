@@ -3960,7 +3960,7 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 787869999}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: bd70d448b18cfbc46af26466f752332c, type: 3}
   m_Name: 
@@ -11541,12 +11541,20 @@ Prefab:
       objectReference: {fileID: 2800000, guid: 4b4f29cfa133d5043adda736b51ee995, type: 3}
     - target: {fileID: 11444266, guid: c2cb8aafa83d79f4bb15694996577265, type: 2}
       propertyPath: s_inputDevice
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 11439744, guid: c2cb8aafa83d79f4bb15694996577265, type: 2}
       propertyPath: m_enemyList.Array.data[1]
       value: 
       objectReference: {fileID: 118206, guid: 5e72d7f175b5dab4296c9f6a3d56e7a6, type: 2}
+    - target: {fileID: 11444266, guid: c2cb8aafa83d79f4bb15694996577265, type: 2}
+      propertyPath: cNote
+      value: 275
+      objectReference: {fileID: 0}
+    - target: {fileID: 11444266, guid: c2cb8aafa83d79f4bb15694996577265, type: 2}
+      propertyPath: dNote
+      value: 276
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c2cb8aafa83d79f4bb15694996577265, type: 2}
   m_IsPrefabParent: 0

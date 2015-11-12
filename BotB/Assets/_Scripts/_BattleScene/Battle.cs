@@ -73,6 +73,12 @@ public class Battle : MonoBehaviour
 
     public bool m_win, m_playing; //bools for the end of the battle
     private float m_winTimer = 5;
+
+    public int m_switchOnEnemy;
+    public GameObject m_turnAssetOff;
+    public GameObject m_turnAssetOn;
+    bool m_assetsSwitched = false;
+
     //Behavious
     void Awake()
     {
@@ -88,6 +94,7 @@ public class Battle : MonoBehaviour
         m_displayingScreens = true;
         m_enemyListIndex = 0;
         m_screenTransition = GetComponent<ScreenTransition>();
+        m_win = false;
 
         //past here is the death sequence
         m_screenTransitionIndex = 0;
@@ -124,12 +131,25 @@ public class Battle : MonoBehaviour
                 }
                 else
                 {
+                    m_activeBattle = false;
+                    m_win = true;
+                    m_playing = false;
+                    m_winTimer = 3;
                     //endgame
                 }
 
             }
+            else if(m_player.GetComponent<Musician>().Health <= 0)
+            {
+                m_activeBattle = false;
+                m_win = false;
+                m_playing = false;
+                m_winTimer = 3;
+                //player dies
+            }
         }
 
+        //Handles the screen transitions
         if((Input.GetKeyDown(KeyCode.Space) || Input.GetButtonDown("Cross")) && m_activeBattle == false && m_displayingScreens) //note the very first list of textures is to be used for the intro
         {
             if(m_enemyListIndex < m_enemyList.Count)
@@ -145,9 +165,10 @@ public class Battle : MonoBehaviour
                     m_displayingScreens = false;
                     m_screenTransition.SetScreen(false, 0.5f);
                     bool enemiesLeft = SetNextEnemy();
+                    m_player.GetComponent<Musician>().Reset();
                     if (!enemiesLeft)
                     {
-                        //scene is over
+                        //not currently used, scene is over
                     }
                 }
             }
@@ -160,10 +181,38 @@ public class Battle : MonoBehaviour
         {
             m_currentEnemy.GetComponent<Musician>().TakeDamage(500);
         }
+        if(Input.GetKeyDown(KeyCode.Y))
+        {
+            m_player.GetComponent<Musician>().TakeDamage(500);
+        }
+
+        if(m_playing == false)
+        {
+            m_winTimer -= Time.deltaTime;
+            if(m_winTimer <= 0)
+            {
+                if(m_win)
+                {
+                    m_screenTransition.TransitionToScene("MenuScene");
+                    //win, queue transition
+                }
+                else
+                {
+                    m_screenTransition.TransitionToScene("MenuScene");
+                }
+            }
+        }
     }
 
     bool SetNextEnemy() //There must be at least one frame before running
     {
+        if (!m_assetsSwitched && m_enemyListIndex == m_switchOnEnemy)
+        {
+            m_turnAssetOff.SetActive(false);
+            m_turnAssetOn.SetActive(true);
+            m_assetsSwitched = true;
+        }
+
         if(m_enemyListIndex < m_enemyList.Count) //one off?
         {
             Destroy(m_currentEnemy); //

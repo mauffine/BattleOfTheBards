@@ -207,4 +207,9 @@ public class Musician : MonoBehaviour
     {
 
     }
+
+    public void Reset()
+    {
+        m_health = m_maxHealth;
+    }
 }
