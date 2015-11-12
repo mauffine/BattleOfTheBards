@@ -82,6 +82,7 @@ public class ScreenTransition : MonoBehaviour {
     {
         m_sceneToLoad = a_sceneName;
         m_sceneQueued = true;
+        m_texture = m_defaultTexture;
         SetScreen(true);
     }
 
