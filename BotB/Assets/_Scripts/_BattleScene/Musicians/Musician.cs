@@ -24,7 +24,7 @@ public class Musician : MonoBehaviour
     private float m_noteTime = -1;
     private static float turnTick = -1;
     private uint m_spellLoc = 0, m_noteCount = 0, m_notesPlayed = 0;
-    
+    private bool m_songPlay = true;
     protected void Start() 
     {
         turnTick = TurnTimer.Instance.CastingTime - 1;
@@ -44,16 +44,27 @@ public class Musician : MonoBehaviour
         if (m_health < 0)
             Die();
         //FMOD HERE
-        /*
-        switch (m_spellLoc)
+        if (m_reset) 
         {
-            case 0: m_events[0].Play(); break;
-            case 1: m_events[1].Play(); break;
-            case 2: m_events[2].Play(); break;
-            case 3: m_events[3].Play(); break;
-            default:
-                break;
-        } */
+            if (m_songPlay)
+            {
+                switch (m_spellLoc)
+                {
+                    case 0: m_events[0].Play(); break;
+                    case 1: m_events[1].Play(); break;
+                    case 2: m_events[2].Play(); break;
+                    case 3: m_events[3].Play(); break;
+                    default:
+                        break;
+                }
+                m_songPlay = false;
+            }
+        }
+        else
+        {
+            m_songPlay = true;
+        }
+
 	}
     ///<summary> Reduces health equal to the damage taken from the argument. Takes into account defence</summary>
     ///<param name="a_damage">The number of damage delt</param>

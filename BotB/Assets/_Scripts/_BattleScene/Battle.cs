@@ -66,6 +66,8 @@ public class Battle : MonoBehaviour
     List<GameObject> m_enemyList;
     public int m_enemyListIndex;
     [SerializeField]
+    FMODUnity.StudioEventEmitter m_screwUpSound;
+    [SerializeField]
     List<TransitionScreens> m_screenList;
     [HideInInspector]
     public bool m_activeBattle; //IMPORTANT, this variable now controls the activities of many objects in the scene to avoid glitches. When the musician has died, this should be set to false alongside.
@@ -293,8 +295,11 @@ public class Battle : MonoBehaviour
             TextGen.Instance.DisplayRating("Good", new Vector2(MusicSlider.Position.x, 195), 1, Color.blue);
         else if (a_accuracy >= 60 && a_accuracy < 70)
             TextGen.Instance.DisplayRating("Okay", new Vector2(MusicSlider.Position.x, 195), 1, Color.magenta);
-        else
-            TextGen.Instance.DisplayRating("Poor", new Vector2(MusicSlider.Position.x, 195), 1, Color.red);
+        else 
+        {
+            TextGen.Instance.DisplayRating("Poor", new Vector2(MusicSlider.Position.x, 195), 1, Color.red); 
+            //PlAY
+        }
     }
     public void LoadAudioEvents()
     {
