@@ -74,6 +74,8 @@ public class Battle : MonoBehaviour
     public bool m_win, m_playing; //bools for the end of the battle
     private float m_winTimer = 5;
 
+    float m_timeUntilNextSlide;
+
     //public int m_switchOnEnemy;
     //public GameObject m_turnAssetOff;
     //public GameObject m_turnAssetOn;
@@ -104,6 +106,7 @@ public class Battle : MonoBehaviour
             m_screenTransition.SetTexture(m_screenList[m_enemyListIndex].m_textures[0]);
             m_screenTransitionIndex++;
             m_screenTransition.SetScreen(true, 0.5f);
+            m_timeUntilNextSlide = 5;
         }
         else
         {
@@ -128,6 +131,7 @@ public class Battle : MonoBehaviour
                     m_screenTransition.SetTexture(m_screenList[m_enemyListIndex].m_textures[0]);
                     m_screenTransitionIndex++;
                     m_screenTransition.SetScreen(true, 0.5f);
+                    m_timeUntilNextSlide = 5.0f;
                 }
                 else
                 {
@@ -149,9 +153,15 @@ public class Battle : MonoBehaviour
             }
         }
 
-        //Handles the screen transitions
-        if((Input.GetKeyDown(KeyCode.Space) || Input.GetButtonDown("Cross")) && m_activeBattle == false && m_displayingScreens) //note the very first list of textures is to be used for the intro
+        if(m_timeUntilNextSlide > 0)
         {
+            m_timeUntilNextSlide -= Time.deltaTime;
+        }
+
+        //Handles the screen transitions
+        if(((Input.GetKeyDown(KeyCode.Space) || Input.GetButtonDown("Cross")) || m_timeUntilNextSlide <= 0) && m_activeBattle == false && m_displayingScreens) //note the very first list of textures is to be used for the intro
+        {
+            m_timeUntilNextSlide = 5;
             if(m_enemyListIndex < m_enemyList.Count)
             {
                 if(m_screenList[m_enemyListIndex].m_textures.Count > m_screenTransitionIndex)
