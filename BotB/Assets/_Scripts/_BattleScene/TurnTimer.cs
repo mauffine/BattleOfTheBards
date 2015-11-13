@@ -27,11 +27,14 @@ public class TurnTimer : MonoBehaviour
     {
         if (Battle.Instance.m_activeBattle)
         {
-            if (m_currentTurn == Turn.Casting)
+            if (m_currentTurn == Turn.Casting || m_currentTurn == Turn.Pause)
             m_countDown -= Time.deltaTime;
-            if (m_countDown <= 0 && m_currentTurn == Turn.Casting)
+            if (m_countDown <= 0 && m_currentTurn == Turn.Casting )
             {
-                m_countDown = m_menuTime;
+                NextTurn();
+            }
+            else if (m_countDown <= 0 && m_currentTurn == Turn.Pause)
+            {
                 NextTurn();
             }
         }
@@ -46,11 +49,15 @@ public class TurnTimer : MonoBehaviour
                 Battle.Instance.ReceiveTurnOver();
                 break;
             case Turn.Menu:
-                m_currentTurn = Turn.Casting;
-                m_countDown = m_castingTime;
+                m_currentTurn = Turn.Pause;
+                m_countDown = m_menuTime;
                 break;
             case Turn.SpellEffect:
                 m_currentTurn = Turn.Menu;
+                break;
+            case Turn.Pause:
+                m_currentTurn = Turn.Casting;
+                m_countDown = m_castingTime;
                 break;
             default:
                 break;

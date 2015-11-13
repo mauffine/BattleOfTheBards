@@ -49,7 +49,7 @@ public class NoteVisualiser : MonoBehaviour
             {
                 m_turn = TurnTimer.Instance.CurrentTurn;
                 m_notePool.RemoveAllNotes();
-                if (m_turn == Turn.Casting)
+                if (m_turn == Turn.Casting || m_turn == Turn.Pause)
                     ShowCombo();
             }
         }

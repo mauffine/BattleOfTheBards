@@ -18,7 +18,8 @@ public enum Turn : byte //Which turn it currently is
 {
     Casting,
     Menu,
-    SpellEffect
+    SpellEffect,
+    Pause
 }
 ///<summary>A musical note in an enum, _ means the note is flat</summary>
 public enum Note : byte
