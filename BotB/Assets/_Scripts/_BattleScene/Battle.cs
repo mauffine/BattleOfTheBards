@@ -60,7 +60,8 @@ public class Battle : MonoBehaviour
     public static Battle Instance; //singleton instance
     [SerializeField]
     GameObject m_player, m_currentEnemy; //the characters in the scene
-
+    [SerializeField]
+    GameObject m_eventBank;
     [SerializeField]
     List<GameObject> m_enemyList;
     public int m_enemyListIndex;
@@ -221,6 +222,7 @@ public class Battle : MonoBehaviour
             Debug.Log(m_enemyListIndex);
             Debug.Log(m_screenTransitionIndex);
             m_enemyListIndex++;
+            LoadAudioEvents();
             m_activeBattle = true;
             return true;
         }
@@ -229,9 +231,6 @@ public class Battle : MonoBehaviour
             return false;
         }
     }
-
-
-
     public void ReceiveKey(TimedNote a_note)
     {
         //send the keypress notifications to the following scripts
@@ -284,7 +283,6 @@ public class Battle : MonoBehaviour
                 slimeRef.Animate(6);
         }
     }
-
     public void AccuracyText(float a_accuracy)
     {
         if (a_accuracy >= 90)
@@ -297,6 +295,17 @@ public class Battle : MonoBehaviour
             TextGen.Instance.DisplayRating("Okay", new Vector2(MusicSlider.Position.x, 195), 1, Color.magenta);
         else
             TextGen.Instance.DisplayRating("Poor", new Vector2(MusicSlider.Position.x, 195), 1, Color.red);
+    }
+    public void LoadAudioEvents()
+    {
+        int arrayMod = (m_enemyListIndex * 4);
+        Debug.Log(m_enemyListIndex);
+        FMODUnity.StudioEventEmitter[] enemyEvents = {null,null,null,null};
+        enemyEvents[0] = m_eventBank.GetComponentsInChildren<FMODUnity.StudioEventEmitter>()[m_enemyListIndex - 1];
+        enemyEvents[1] = m_eventBank.GetComponentsInChildren<FMODUnity.StudioEventEmitter>()[m_enemyListIndex];
+        enemyEvents[2] = m_eventBank.GetComponentsInChildren<FMODUnity.StudioEventEmitter>()[m_enemyListIndex + 1];
+        enemyEvents[3] = m_eventBank.GetComponentsInChildren<FMODUnity.StudioEventEmitter>()[m_enemyListIndex + 2];
+        m_currentEnemy.GetComponent<Musician>().AddEvents(enemyEvents);
     }
     public GameObject PlayerRef
     {
