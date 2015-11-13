@@ -11585,6 +11585,14 @@ Prefab:
       propertyPath: dNote
       value: 276
       objectReference: {fileID: 0}
+    - target: {fileID: 11498634, guid: c2cb8aafa83d79f4bb15694996577265, type: 2}
+      propertyPath: m_menuTime
+      value: .83916086
+      objectReference: {fileID: 0}
+    - target: {fileID: 11466068, guid: c2cb8aafa83d79f4bb15694996577265, type: 2}
+      propertyPath: m_beat
+      value: .41958043
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c2cb8aafa83d79f4bb15694996577265, type: 2}
   m_IsPrefabParent: 0
