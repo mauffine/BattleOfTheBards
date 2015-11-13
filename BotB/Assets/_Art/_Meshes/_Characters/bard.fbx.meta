@@ -74,6 +74,9 @@ ModelImporter:
     100132: mixamorig:Spine
     100134: mixamorig:Spine1
     100136: mixamorig:Spine2
+    100138: Bod1
+    100140: Keytar1
+    100142: Keytar2
     400000: //RootNode
     400002: Bod
     400004: Cloak
@@ -143,9 +146,13 @@ ModelImporter:
     400132: mixamorig:Spine
     400134: mixamorig:Spine1
     400136: mixamorig:Spine2
+    400138: Bod1
+    400140: Keytar1
+    400142: Keytar2
     4300000: Cloak
     4300002: Bod
     4300004: Keytar
+    4300006: Bod1
     7400000: Idle
     7400002: Chord_1
     7400004: Chord_2
@@ -156,6 +163,7 @@ ModelImporter:
     13700000: Bod
     13700002: Cloak
     13700004: Keytar
+    13700006: Bod1
   materials:
     importMaterials: 1
     materialName: 0
@@ -171,16 +179,16 @@ ModelImporter:
       improve retargeting quality.\n\t'mixamorig:Spine1' is inbetween humanoid transforms
       and has rotation animation that will be discarded.\n"
     animationRetargetingWarnings: "\nRetargeting quality report for clip 'Take 001':\n\tLeftUpperArm
-      average position error 3.4 mm and maximum position error 35.2 mm at time 3:40
-      (83.0%) Frame 220\n\tLeftLowerArm average position error 1.8 mm and maximum
-      position error 19.7 mm at time 3:40 (83.0%) Frame 220\n\tLeftHand average position
-      error 0.9 mm and maximum position error 12.1 mm at time 3:40 (83.0%) Frame 220\n\tRightUpperArm
-      average position error 3.4 mm and maximum position error 35.2 mm at time 3:40
-      (83.0%) Frame 220\n\tRightLowerArm average position error 2.3 mm and maximum
-      position error 28.7 mm at time 3:40 (83.0%) Frame 220\n\tRightHand average position
-      error 1.9 mm and maximum position error 29.3 mm at time 3:40 (83.0%) Frame 220\n\tHead
-      average position error 3.4 mm and maximum position error 35.2 mm at time 3:40
-      (83.0%) Frame 220\n"
+      average position error 18.0 mm and maximum position error 46.5 mm at time 47:
+      9 (98.2%) Frame 2829\n\tLeftLowerArm average position error 11.8 mm and maximum
+      position error 41.5 mm at time 47: 9 (98.2%) Frame 2829\n\tLeftHand average
+      position error 9.3 mm and maximum position error 40.2 mm at time 47: 9 (98.2%)
+      Frame 2829\n\tRightUpperArm average position error 18.0 mm and maximum position
+      error 46.5 mm at time 47: 1 (98.0%) Frame 2821\n\tRightLowerArm average position
+      error 16.5 mm and maximum position error 43.1 mm at time 41:50 (87.2%) Frame
+      2510\n\tRightHand average position error 13.7 mm and maximum position error
+      41.5 mm at time 47: 9 (98.2%) Frame 2829\n\tHead average position error 18.0
+      mm and maximum position error 46.4 mm at time 47: 8 (98.2%) Frame 2828\n"
     animationDoRetargetingWarnings: 1
     animationCompression: 3
     animationRotationError: .5
