@@ -296,10 +296,7 @@ public class Battle : MonoBehaviour
         else if (a_accuracy >= 60 && a_accuracy < 70)
             TextGen.Instance.DisplayRating("Okay", new Vector2(MusicSlider.Position.x, 195), 1, Color.magenta);
         else 
-        {
-            TextGen.Instance.DisplayRating("Poor", new Vector2(MusicSlider.Position.x, 195), 1, Color.red); 
-            //PlAY
-        }
+            TextGen.Instance.DisplayRating("Poor", new Vector2(MusicSlider.Position.x, 195), 1, Color.red);
     }
     public void LoadAudioEvents()
     {

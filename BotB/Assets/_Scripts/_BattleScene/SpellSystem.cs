@@ -249,6 +249,7 @@ public class SpellSystem : MonoBehaviour
     ///<summary>Spells effect each character depending on what type they are</summary>
     void PaperScissorsRock()
     {
+        Debug.Log("Success Noise");
         //both characters cast a spell
         if (m_playerSpell != null && m_enemySpell != null) 
         {
@@ -417,6 +418,11 @@ public class SpellSystem : MonoBehaviour
         }
         noteAccuracy = ((noteAccuracy / .5f) * 100.0f); //convert it into a percentage
         m_accuracy += noteAccuracy / 5; //divided by the amount of notes in the spell
+        if(noteAccuracy < 60)
+        {
+            Debug.Log("Play Screw Up sound");
+            Debug.Log("Stop Spell Cast");
+        }
         Battle.Instance.AccuracyText(noteAccuracy);
     }
 }
