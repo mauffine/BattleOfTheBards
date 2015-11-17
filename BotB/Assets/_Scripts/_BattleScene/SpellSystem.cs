@@ -74,14 +74,14 @@ public class SpellSystem : MonoBehaviour
         m_spellDeletionTimer -= Time.deltaTime;
         if(m_spellDeletionTimer < 0 && (m_playerSpell != null || m_enemySpell != null))
         {
+            Destroy(m_enemySpell);
+            m_enemySpell = null;
             Destroy(m_playerSpell);
             m_playerSpell = null;
 
-            Destroy(m_enemySpell);
-            m_enemySpell = null;
-
             TurnTimer.Instance.NextTurn();
             m_clashed = false;
+            m_playerNotes.Clear();
         }
 
         if (!m_clashed && m_flightTime < 0.7f && m_playerSpell != null && m_enemySpell != null)
@@ -249,11 +249,11 @@ public class SpellSystem : MonoBehaviour
     ///<summary>Spells effect each character depending on what type they are</summary>
     void PaperScissorsRock()
     {
-        Debug.Log("Success Noise");
         //both characters cast a spell
         if (m_playerSpell != null && m_enemySpell != null) 
         {
-            //check the spells against each other
+            //check the spells against each other 
+            Debug.Log("Success Noise");
             switch (m_playerSpell.GetComponent<Spell>().Type)
             {
                 //player casts an offencive spell
@@ -264,7 +264,6 @@ public class SpellSystem : MonoBehaviour
 
                         else if (m_enemySpell.GetComponent<Spell>().Type == SpellType.Defensive)
                             Attack_Defence();
-                        
                         else
                             Attack_Effect();
                         }
@@ -408,21 +407,47 @@ public class SpellSystem : MonoBehaviour
     {
         float noteTime = (a_noteTime + m_offset) * m_BPM * (1.0f / 60.0f);//gives how far off the beat that the note was played and which beat it was played on
         float noteAccuracy = noteTime % 1; //converts the accuracy into a float from 0-1, the closer to 1 or 0 the closer to the beat the note was played
-        if (noteAccuracy > .5f) // convert the accuracy to a value between 0 and 0.5, the higher the more accurate
-        {
-            noteAccuracy -= .5f;
-        }
+        if (noteAccuracy > 0.5f) // convert the accuracy to a value between 0 and 0.5, the higher the more accurate
+            noteAccuracy -= 0.5f;
         else
-        {
-            noteAccuracy = .5f - noteAccuracy;
-        }
-        noteAccuracy = ((noteAccuracy / .5f) * 100.0f); //convert it into a percentage
+            noteAccuracy = 0.5f - noteAccuracy;
+        noteAccuracy = ((noteAccuracy / 0.5f) * 100.0f); //convert it into a percentage
         m_accuracy += noteAccuracy / 5; //divided by the amount of notes in the spell
-        if(noteAccuracy < 60)
-        {
-            Debug.Log("Play Screw Up sound");
-            Debug.Log("Stop Spell Cast");
-        }
+        if(noteAccuracy < 50)
+            PlayerSpellFaill();
         Battle.Instance.AccuracyText(noteAccuracy);
+    }
+    void PlayerSpellFaill()
+    {
+        Destroy(m_playerSpell);
+        m_playerSpell = null;
+
+        TurnTimer.Instance.NextTurn();
+        m_clashed = false;
+        m_playerNotes.Clear();
+
+        Battle.Instance.EnemyRef.GetComponent<Musician>().Animate(4);
+        m_enemySpell = Battle.Instance.EnemyRef.GetComponent<TheSlime>().CurrentSpell.gameObject;
+        switch (m_enemySpell.GetComponent<Spell>().Type)//
+        {
+            case (SpellType.Offencive):
+                {
+                    m_enemySpell = (GameObject)Instantiate(m_enemySpell, new Vector3(-1.2f, 1f, 1.1f), Quaternion.AngleAxis(180, Vector3.up));
+                    m_enemySpell.GetComponent<Spell>().m_velocity = new Vector3(-.03f, Random.Range(-.007f, 0.0007f), 0.0f) * 2;
+                    break;
+                }
+            case SpellType.Defensive:
+                {
+                    m_enemySpell = (GameObject)Instantiate(m_enemySpell, new Vector3(-1, 1, 1.2f), Quaternion.AngleAxis(160, Vector3.up));
+                    m_enemySpell.GetComponent<Spell>().m_velocity = Vector3.zero;
+                    break;
+                }
+            case SpellType.Effect:
+                {
+                    m_enemySpell = (GameObject)Instantiate(m_enemySpell, new Vector3(2, 0, 1), Quaternion.AngleAxis(0, Vector3.up));
+                    m_enemySpell.GetComponent<Spell>().m_velocity = Vector3.zero;
+                    break;
+                }
+        }
     }
 }

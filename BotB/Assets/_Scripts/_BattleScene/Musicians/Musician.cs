@@ -31,7 +31,7 @@ public class Musician : MonoBehaviour
         m_health = m_maxHealth;
         if (m_lifeBar == null)
             m_lifeBar = GUIHandler.Instance.EnemyLifeBar;
-
+        m_lifeBar.maxValue = m_maxHealth;
 	}
     ///<summary> Updates the AI and calls Die if the enemey has no more health</summary>
     protected void Update() 
@@ -219,6 +219,10 @@ public class Musician : MonoBehaviour
             }
             return returnVal;
         }
+    }
+    public Spell CurrentSpell
+    {
+        get { return m_spellList[m_spellLoc]; }
     }
     public void PlayInstrument()
     {
