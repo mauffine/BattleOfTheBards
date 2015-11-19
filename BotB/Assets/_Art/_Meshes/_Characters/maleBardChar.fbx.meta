@@ -157,18 +157,19 @@ ModelImporter:
     7400008: Note04
     7400010: Note05
     7400012: Note06
-    7400014: Fire01
-    7400016: Fire02
-    7400018: Fire03
-    7400020: Win01
-    7400022: Win02
-    7400024: Win03
-    7400026: Lose01
-    7400028: Lose02
-    7400030: Lose03
-    7400032: Hit01
-    7400034: Hit02
-    7400036: Hit03
+    7400014: Note07
+    7400016: Fire01
+    7400018: Fire02
+    7400020: Fire03
+    7400022: Win01
+    7400024: Win02
+    7400026: Win03
+    7400028: Lose01
+    7400030: Lose02
+    7400032: Lose03
+    7400034: Hit03
+    7400036: Hit02
+    7400038: Hit01
     9500000: //RootNode
     13700000: Bod1
     13700002: Cloak
@@ -183,21 +184,8 @@ ModelImporter:
     optimizeGameObjects: 0
     motionNodeName: 
     animationImportErrors: 
-    animationImportWarnings: "\nClip 'Take 001' has import animation warnings that
-      might lower retargeting quality:\nNote: Activate translation DOF on avatar to
-      improve retargeting quality.\n\t'mixamorig:Spine2' is inbetween humanoid transforms
-      and has rotation animation that will be discarded.\n"
-    animationRetargetingWarnings: "\nRetargeting quality report for clip 'Take 001':\n\tLeftUpperArm
-      average position error 7.7 mm and maximum position error 31.9 mm at time 47:10
-      (98.3%) Frame 2830\n\tLeftLowerArm average position error 5.1 mm and maximum
-      position error 25.9 mm at time 47:10 (98.3%) Frame 2830\n\tLeftHand average
-      position error 4.0 mm and maximum position error 22.1 mm at time 47:10 (98.3%)
-      Frame 2830\n\tRightUpperArm average position error 6.9 mm and maximum position
-      error 42.3 mm at time 45:40 (95.1%) Frame 2740\n\tRightLowerArm average position
-      error 6.6 mm and maximum position error 28.8 mm at time 47:10 (98.3%) Frame
-      2830\n\tRightHand average position error 4.8 mm and maximum position error 26.6
-      mm at time 47:10 (98.3%) Frame 2830\n\tHead average position error 7.9 mm and
-      maximum position error 37.2 mm at time 47:10 (98.3%) Frame 2830\n"
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
     animationDoRetargetingWarnings: 1
     animationCompression: 3
     animationRotationError: .5
@@ -1383,7 +1371,7 @@ ModelImporter:
       maskType: 0
       maskSource: {instanceID: 0}
     - serializedVersion: 16
-      name: Fire01
+      name: Note07
       takeName: Take 001
       firstFrame: 430
       lastFrame: 470
@@ -1551,7 +1539,7 @@ ModelImporter:
       maskType: 0
       maskSource: {instanceID: 0}
     - serializedVersion: 16
-      name: Fire02
+      name: Fire01
       takeName: Take 001
       firstFrame: 480
       lastFrame: 550
@@ -1719,7 +1707,7 @@ ModelImporter:
       maskType: 0
       maskSource: {instanceID: 0}
     - serializedVersion: 16
-      name: Fire03
+      name: Fire02
       takeName: Take 001
       firstFrame: 560
       lastFrame: 630
@@ -1887,7 +1875,7 @@ ModelImporter:
       maskType: 0
       maskSource: {instanceID: 0}
     - serializedVersion: 16
-      name: Win01
+      name: Fire03
       takeName: Take 001
       firstFrame: 640
       lastFrame: 710
@@ -2055,7 +2043,7 @@ ModelImporter:
       maskType: 0
       maskSource: {instanceID: 0}
     - serializedVersion: 16
-      name: Win02
+      name: Win01
       takeName: Take 001
       firstFrame: 720
       lastFrame: 1030
@@ -2223,7 +2211,7 @@ ModelImporter:
       maskType: 0
       maskSource: {instanceID: 0}
     - serializedVersion: 16
-      name: Win03
+      name: Win02
       takeName: Take 001
       firstFrame: 1040
       lastFrame: 1350
@@ -2391,7 +2379,7 @@ ModelImporter:
       maskType: 0
       maskSource: {instanceID: 0}
     - serializedVersion: 16
-      name: Lose01
+      name: Win03
       takeName: Take 001
       firstFrame: 1360
       lastFrame: 1670
@@ -2559,7 +2547,7 @@ ModelImporter:
       maskType: 0
       maskSource: {instanceID: 0}
     - serializedVersion: 16
-      name: Lose02
+      name: Lose01
       takeName: Take 001
       firstFrame: 1680
       lastFrame: 1990.00012
@@ -2727,7 +2715,7 @@ ModelImporter:
       maskType: 0
       maskSource: {instanceID: 0}
     - serializedVersion: 16
-      name: Lose03
+      name: Lose02
       takeName: Take 001
       firstFrame: 1999.99988
       lastFrame: 2870
@@ -2895,7 +2883,7 @@ ModelImporter:
       maskType: 0
       maskSource: {instanceID: 0}
     - serializedVersion: 16
-      name: Hit01
+      name: Lose03
       takeName: Take 001
       firstFrame: 2320
       lastFrame: 2630
@@ -3063,7 +3051,7 @@ ModelImporter:
       maskType: 0
       maskSource: {instanceID: 0}
     - serializedVersion: 16
-      name: Hit02
+      name: Hit01
       takeName: Take 001
       firstFrame: 2640
       lastFrame: 2710
@@ -3231,7 +3219,7 @@ ModelImporter:
       maskType: 0
       maskSource: {instanceID: 0}
     - serializedVersion: 16
-      name: Hit03
+      name: Hit02
       takeName: Take 001
       firstFrame: 2800
       lastFrame: 2870
