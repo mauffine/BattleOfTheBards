@@ -19,7 +19,8 @@ public class ScreenTransition : MonoBehaviour {
     bool m_sceneQueued = false;
 
 	// Use this for initialization
-	void Start () {
+	void Start() 
+    {
         m_currentColor = GUI.color;
         m_alpha = m_initialAlpha;
         m_deltaTimeModifier = 1.0f;
@@ -27,7 +28,8 @@ public class ScreenTransition : MonoBehaviour {
 	}
 	
 	// Update is called once per frame
-	void Update () {
+	void Update() 
+    {
 
         if (m_coverScreen)
         {

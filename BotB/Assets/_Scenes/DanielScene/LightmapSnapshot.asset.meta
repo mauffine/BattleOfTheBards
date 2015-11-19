@@ -1,6 +1,11 @@
 fileFormatVersion: 2
+<<<<<<< HEAD:BotB/Assets/_Scenes/DanielScene/LightmapSnapshot.asset.meta
 guid: 6d6e0a01e8099dc49893976d39471c5c
 timeCreated: 1445219612
+=======
+guid: acd527cfb3a8c2b42bb0001615556dbd
+timeCreated: 1446179824
+>>>>>>> origin/BrockBranch:BotB/Assets/_Scenes/BrockScene/LightmapSnapshot.asset.meta
 licenseType: Free
 NativeFormatImporter:
   userData: 

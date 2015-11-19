@@ -1,6 +1,11 @@
 fileFormatVersion: 2
+<<<<<<< HEAD:BotB/Assets/_Scenes/DanielScene/ReflectionProbe-0.exr.meta
 guid: 67806953c25aa3f4d9368676ec57f279
 timeCreated: 1445219612
+=======
+guid: 6dadb7c8455c53e48bcd9e716cdf3c08
+timeCreated: 1446179823
+>>>>>>> origin/BrockBranch:BotB/Assets/_Scenes/BrockScene/ReflectionProbe-0.exr.meta
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
