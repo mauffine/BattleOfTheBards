@@ -56,14 +56,18 @@ public struct TimedNote
 public class Battle : MonoBehaviour
 {
     //Attributes
+    [Header("Base Attributes")]
     public static Battle Instance; //singleton instance
     [SerializeField]
     GameObject m_player, m_currentEnemy; //the characters in the scene
 
     [SerializeField]
     List<GameObject> m_enemyList;
-    public int m_enemyListIndex;
+    [HideInInspector]
+    public int m_enemyListIndex = 0;
     [SerializeField]
+
+    [Header("Slide Attributes")]
     List<TransitionScreens> m_screenList;
     [HideInInspector]
     public bool m_activeBattle; //IMPORTANT, this variable now controls the activities of many objects in the scene to avoid glitches. When the musician has died, this should be set to false alongside.
