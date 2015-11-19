@@ -42,6 +42,10 @@ public class SpellSystem : MonoBehaviour
     float m_BPM;
     [SerializeField]
     float m_offset;
+    [SerializeField]
+    FMODUnity.StudioEventEmitter m_faillureSound;
+    [SerializeField]
+    FMODUnity.StudioEventEmitter m_successSound;
 
     ClashType m_cType;
     //Behaviours
@@ -253,7 +257,7 @@ public class SpellSystem : MonoBehaviour
         if (m_playerSpell != null && m_enemySpell != null) 
         {
             //check the spells against each other 
-            Debug.Log("Success Noise");
+            m_successSound.Play();
             switch (m_playerSpell.GetComponent<Spell>().Type)
             {
                 //player casts an offencive spell
@@ -422,7 +426,10 @@ public class SpellSystem : MonoBehaviour
         Destroy(m_playerSpell);
         m_playerSpell = null;
 
+        m_faillureSound.Play();
         TurnTimer.Instance.NextTurn();
+
+        //iain working
         m_clashed = false;
         m_playerNotes.Clear();
 

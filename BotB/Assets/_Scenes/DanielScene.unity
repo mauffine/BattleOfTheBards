@@ -926,6 +926,52 @@ CapsuleCollider:
   m_Height: .986877382
   m_Direction: 1
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!1 &140248065
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 140248066}
+  - 114: {fileID: 140248067}
+  m_Layer: 0
+  m_Name: Faillure Sound
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &140248066
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 140248065}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 432781182}
+  m_RootOrder: 5
+--- !u!114 &140248067
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 140248065}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Event:
+    Path: event:/Drum Mix Two
+  PlayEvent: 0
+  StopEvent: 0
+  CollisionTag: 
+  AllowFadeout: 1
+  TriggerOnce: 0
 --- !u!4 &141267567 stripped
 Transform:
   m_PrefabParentObject: {fileID: 400000, guid: 3d389661ef4f86e46ad882d050e753bd, type: 3}
@@ -2261,6 +2307,8 @@ Transform:
   - {fileID: 1527030338}
   - {fileID: 785627541}
   - {fileID: 1442790733}
+  - {fileID: 2106059084}
+  - {fileID: 140248066}
   m_Father: {fileID: 0}
   m_RootOrder: 8
 --- !u!1 &436857115
@@ -5346,17 +5394,17 @@ Prefab:
     - target: {fileID: 11467586, guid: f4fc1ad7dcabe0240b27dcc9d30dd5ad, type: 2}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: 08f0f414986db184f870f6fb54434e9f,
+      objectReference: {fileID: 21300010, guid: 03e800e4ca623fc449d8bc8be8693a9b,
         type: 3}
     - target: {fileID: 11466582, guid: f4fc1ad7dcabe0240b27dcc9d30dd5ad, type: 2}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: edd2d029eebabe54a80155b549931421,
+      objectReference: {fileID: 21300008, guid: 03e800e4ca623fc449d8bc8be8693a9b,
         type: 3}
     - target: {fileID: 11437126, guid: f4fc1ad7dcabe0240b27dcc9d30dd5ad, type: 2}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: dd246fcd2d39f9145bfc7c1a4f2547fe,
+      objectReference: {fileID: 21300014, guid: 03e800e4ca623fc449d8bc8be8693a9b,
         type: 3}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: f4fc1ad7dcabe0240b27dcc9d30dd5ad, type: 2}
@@ -6003,7 +6051,7 @@ RectTransform:
   m_RootOrder: 4
   m_AnchorMin: {x: .5, y: .5}
   m_AnchorMax: {x: .5, y: .5}
-  m_AnchoredPosition: {x: 633, y: -235}
+  m_AnchoredPosition: {x: 633, y: -185.5}
   m_SizeDelta: {x: 160, y: 20}
   m_Pivot: {x: .5, y: .5}
 --- !u!114 &1165198318
@@ -6553,17 +6601,17 @@ Prefab:
     - target: {fileID: 11467586, guid: f4fc1ad7dcabe0240b27dcc9d30dd5ad, type: 2}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: 19b40a303e2f15c40a2ecc94d98b8069,
+      objectReference: {fileID: 21300022, guid: 03e800e4ca623fc449d8bc8be8693a9b,
         type: 3}
     - target: {fileID: 11466582, guid: f4fc1ad7dcabe0240b27dcc9d30dd5ad, type: 2}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: d7bcc2b47dd3d3e4aae2240f2620e46d,
+      objectReference: {fileID: 21300020, guid: 03e800e4ca623fc449d8bc8be8693a9b,
         type: 3}
     - target: {fileID: 11437126, guid: f4fc1ad7dcabe0240b27dcc9d30dd5ad, type: 2}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: 0a36cd56ad994864bb345e75759e2b3e,
+      objectReference: {fileID: 21300018, guid: 03e800e4ca623fc449d8bc8be8693a9b,
         type: 3}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: f4fc1ad7dcabe0240b27dcc9d30dd5ad, type: 2}
@@ -8333,7 +8381,7 @@ Prefab:
     - target: {fileID: 11467586, guid: f4fc1ad7dcabe0240b27dcc9d30dd5ad, type: 2}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: 810ce1e51a5b7044e9b8b1763f2649d9,
+      objectReference: {fileID: 21300000, guid: 03e800e4ca623fc449d8bc8be8693a9b,
         type: 3}
     - target: {fileID: 107516, guid: f4fc1ad7dcabe0240b27dcc9d30dd5ad, type: 2}
       propertyPath: m_IsActive
@@ -8342,12 +8390,12 @@ Prefab:
     - target: {fileID: 11466582, guid: f4fc1ad7dcabe0240b27dcc9d30dd5ad, type: 2}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: e70b1b1ab5cf00443b134042c65a317e,
+      objectReference: {fileID: 21300002, guid: 03e800e4ca623fc449d8bc8be8693a9b,
         type: 3}
     - target: {fileID: 11437126, guid: f4fc1ad7dcabe0240b27dcc9d30dd5ad, type: 2}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: a76c705ae1a0b72479d57d97cd2f6f3f,
+      objectReference: {fileID: 21300004, guid: 03e800e4ca623fc449d8bc8be8693a9b,
         type: 3}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: f4fc1ad7dcabe0240b27dcc9d30dd5ad, type: 2}
@@ -9708,7 +9756,7 @@ RectTransform:
   m_RootOrder: 3
   m_AnchorMin: {x: .5, y: .5}
   m_AnchorMax: {x: .5, y: .5}
-  m_AnchoredPosition: {x: -612.971619, y: -235}
+  m_AnchoredPosition: {x: -612.971619, y: -185.5}
   m_SizeDelta: {x: 160, y: 20}
   m_Pivot: {x: .5, y: .5}
 --- !u!114 &1790364301
@@ -10523,6 +10571,25 @@ Prefab:
       propertyPath: m_RootOrder
       value: 5
       objectReference: {fileID: 0}
+    - target: {fileID: 11467586, guid: f4fc1ad7dcabe0240b27dcc9d30dd5ad, type: 2}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 8fe21fc4208420a449d9b4d6715eda2b,
+        type: 3}
+    - target: {fileID: 11466582, guid: f4fc1ad7dcabe0240b27dcc9d30dd5ad, type: 2}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300004, guid: 8fe21fc4208420a449d9b4d6715eda2b,
+        type: 3}
+    - target: {fileID: 11437126, guid: f4fc1ad7dcabe0240b27dcc9d30dd5ad, type: 2}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300002, guid: 8fe21fc4208420a449d9b4d6715eda2b,
+        type: 3}
+    - target: {fileID: 107516, guid: f4fc1ad7dcabe0240b27dcc9d30dd5ad, type: 2}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: f4fc1ad7dcabe0240b27dcc9d30dd5ad, type: 2}
   m_IsPrefabParent: 0
@@ -10690,19 +10757,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_notePrefab: {fileID: 121142, guid: 9b473cfd2979ce645bbe846119a8e7ba, type: 2}
-  m_noteA: {fileID: 21300000, guid: 715be61205baec94e881784e56cddaea, type: 3}
-  m_noteB: {fileID: 21300002, guid: 715be61205baec94e881784e56cddaea, type: 3}
-  m_noteC: {fileID: 21300004, guid: 715be61205baec94e881784e56cddaea, type: 3}
-  m_noteD: {fileID: 21300006, guid: 715be61205baec94e881784e56cddaea, type: 3}
-  m_noteE: {fileID: 21300008, guid: 715be61205baec94e881784e56cddaea, type: 3}
-  m_noteBLANK: {fileID: 21300010, guid: 715be61205baec94e881784e56cddaea, type: 3}
+  m_noteA: {fileID: 21300008, guid: 429a20d25cc627245b46a71a17f3dfe3, type: 3}
+  m_noteB: {fileID: 21300010, guid: 429a20d25cc627245b46a71a17f3dfe3, type: 3}
+  m_noteC: {fileID: 21300012, guid: 429a20d25cc627245b46a71a17f3dfe3, type: 3}
+  m_noteD: {fileID: 21300014, guid: 429a20d25cc627245b46a71a17f3dfe3, type: 3}
+  m_noteE: {fileID: 21300006, guid: 429a20d25cc627245b46a71a17f3dfe3, type: 3}
+  m_noteBLANK: {fileID: 21300000, guid: 429a20d25cc627245b46a71a17f3dfe3, type: 3}
   m_fadedNotes:
-  - {fileID: 21300000, guid: b9d6d9aada20b70408d3571d22c3a43b, type: 3}
-  - {fileID: 21300002, guid: b9d6d9aada20b70408d3571d22c3a43b, type: 3}
-  - {fileID: 21300004, guid: b9d6d9aada20b70408d3571d22c3a43b, type: 3}
-  - {fileID: 21300006, guid: b9d6d9aada20b70408d3571d22c3a43b, type: 3}
-  - {fileID: 21300008, guid: b9d6d9aada20b70408d3571d22c3a43b, type: 3}
-  - {fileID: 21300010, guid: b9d6d9aada20b70408d3571d22c3a43b, type: 3}
+  - {fileID: 21300008, guid: 1641433a56ae689489c4ab6a4e0ea583, type: 3}
+  - {fileID: 21300010, guid: 1641433a56ae689489c4ab6a4e0ea583, type: 3}
+  - {fileID: 21300012, guid: 1641433a56ae689489c4ab6a4e0ea583, type: 3}
+  - {fileID: 21300014, guid: 1641433a56ae689489c4ab6a4e0ea583, type: 3}
+  - {fileID: 21300006, guid: 1641433a56ae689489c4ab6a4e0ea583, type: 3}
+  - {fileID: 21300000, guid: 1641433a56ae689489c4ab6a4e0ea583, type: 3}
 --- !u!114 &1902048319
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11593,9 +11660,63 @@ Prefab:
       propertyPath: m_beat
       value: .41958043
       objectReference: {fileID: 0}
+    - target: {fileID: 11439642, guid: c2cb8aafa83d79f4bb15694996577265, type: 2}
+      propertyPath: m_faillureSound
+      value: 
+      objectReference: {fileID: 140248067}
+    - target: {fileID: 11439642, guid: c2cb8aafa83d79f4bb15694996577265, type: 2}
+      propertyPath: m_successSound
+      value: 
+      objectReference: {fileID: 2106059085}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c2cb8aafa83d79f4bb15694996577265, type: 2}
   m_IsPrefabParent: 0
+--- !u!1 &2106059083
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 2106059084}
+  - 114: {fileID: 2106059085}
+  m_Layer: 0
+  m_Name: Sucess Noise
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2106059084
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2106059083}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 432781182}
+  m_RootOrder: 4
+--- !u!114 &2106059085
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2106059083}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Event:
+    Path: event:/Drum Mix Two
+  PlayEvent: 0
+  StopEvent: 0
+  CollisionTag: 
+  AllowFadeout: 1
+  TriggerOnce: 0
 --- !u!1 &2107288807
 GameObject:
   m_ObjectHideFlags: 0
@@ -11764,8 +11885,8 @@ RectTransform:
   m_RootOrder: 0
   m_AnchorMin: {x: .5, y: .5}
   m_AnchorMax: {x: .5, y: .5}
-  m_AnchoredPosition: {x: 0, y: -364}
-  m_SizeDelta: {x: 1980, y: 415}
+  m_AnchoredPosition: {x: 0, y: -385}
+  m_SizeDelta: {x: 1980, y: 410}
   m_Pivot: {x: .5, y: .5}
 --- !u!114 &2126801853
 MonoBehaviour:
