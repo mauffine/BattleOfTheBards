@@ -1,19 +1,21 @@
 fileFormatVersion: 2
-guid: b9d6d9aada20b70408d3571d22c3a43b
-timeCreated: 1442464723
+guid: 1641433a56ae689489c4ab6a4e0ea583
+timeCreated: 1447900847
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
-    21300000: NotesFaded_0
-    21300002: NotesFaded_1
-    21300004: NotesFaded_2
-    21300006: NotesFaded_3
-    21300008: NotesFaded_4
-    21300010: NotesFaded_5
+    21300000: Facebutton spritesheet_0
+    21300002: Facebutton spritesheet_1
+    21300004: Facebutton spritesheet_2
+    21300006: Facebutton spritesheet_3
+    21300008: Facebutton spritesheet_4
+    21300010: Facebutton spritesheet_5
+    21300012: Facebutton spritesheet_6
+    21300014: Facebutton spritesheet_7
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
-    enableMipMap: 1
+    enableMipMap: 0
     linearTexture: 0
     correctGamma: 0
     fadeOut: 0
@@ -32,10 +34,10 @@ TextureImporter:
   cubemapConvolutionSteps: 8
   cubemapConvolutionExponent: 1.5
   seamlessCubemap: 0
-  textureFormat: -1
-  maxTextureSize: 2048
+  textureFormat: -3
+  maxTextureSize: 1024
   textureSettings:
-    filterMode: -1
+    filterMode: 0
     aniso: 16
     mipBias: -1
     wrapMode: 1
@@ -50,69 +52,89 @@ TextureImporter:
   alignment: 0
   spritePivot: {x: .5, y: .5}
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
-  spritePixelsToUnits: 72
+  spritePixelsToUnits: 100
   alphaIsTransparency: 1
   textureType: 8
   buildTargetSettings: []
   spriteSheet:
     sprites:
-    - name: NotesFaded_0
+    - name: Facebutton spritesheet_0
       rect:
         serializedVersion: 2
-        x: 4
-        y: 4
-        width: 121
-        height: 120
+        x: 0
+        y: 256
+        width: 256
+        height: 256
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: NotesFaded_1
+    - name: Facebutton spritesheet_1
       rect:
         serializedVersion: 2
-        x: 132
-        y: 4
-        width: 120
-        height: 120
+        x: 256
+        y: 256
+        width: 256
+        height: 256
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: NotesFaded_2
+    - name: Facebutton spritesheet_2
       rect:
         serializedVersion: 2
-        x: 260
-        y: 4
-        width: 120
-        height: 120
+        x: 512
+        y: 256
+        width: 256
+        height: 256
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: NotesFaded_3
+    - name: Facebutton spritesheet_3
       rect:
         serializedVersion: 2
-        x: 388
-        y: 4
-        width: 120
-        height: 120
+        x: 768
+        y: 256
+        width: 256
+        height: 256
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: NotesFaded_4
+    - name: Facebutton spritesheet_4
       rect:
         serializedVersion: 2
-        x: 516
-        y: 4
-        width: 120
-        height: 120
+        x: 0
+        y: 0
+        width: 256
+        height: 256
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: NotesFaded_5
+    - name: Facebutton spritesheet_5
       rect:
         serializedVersion: 2
-        x: 644
-        y: 4
-        width: 120
-        height: 120
+        x: 256
+        y: 0
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Facebutton spritesheet_6
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 0
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Facebutton spritesheet_7
+      rect:
+        serializedVersion: 2
+        x: 768
+        y: 0
+        width: 256
+        height: 256
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
