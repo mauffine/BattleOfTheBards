@@ -57,6 +57,7 @@ public struct TimedNote
 public class Battle : MonoBehaviour
 {
     //Attributes
+    [Header("Base Attributes")]
     public static Battle Instance; //singleton instance
     [SerializeField]
     GameObject m_player, m_currentEnemy; //the characters in the scene
@@ -64,9 +65,12 @@ public class Battle : MonoBehaviour
     GameObject m_eventBank;
     [SerializeField]
     List<GameObject> m_enemyList;
-    public int m_enemyListIndex;
-    [SerializeField]
+    [HideInInspector]
+    public int m_enemyListIndex = 0;
+	
     FMODUnity.StudioEventEmitter m_screwUpSound;
+	
+    [Header("Slide Attributes")]
     [SerializeField]
     List<TransitionScreens> m_screenList;
     [HideInInspector]
@@ -77,6 +81,8 @@ public class Battle : MonoBehaviour
 
     public bool m_win, m_playing; //bools for the end of the battle
     private float m_winTimer = 5;
+
+    float m_timeUntilNextSlide;
 
     //public int m_switchOnEnemy;
     //public GameObject m_turnAssetOff;
@@ -108,6 +114,7 @@ public class Battle : MonoBehaviour
             m_screenTransition.SetTexture(m_screenList[m_enemyListIndex].m_textures[0]);
             m_screenTransitionIndex++;
             m_screenTransition.SetScreen(true, 0.5f);
+            m_timeUntilNextSlide = 5;
         }
         else
         {
@@ -132,6 +139,7 @@ public class Battle : MonoBehaviour
                     m_screenTransition.SetTexture(m_screenList[m_enemyListIndex].m_textures[0]);
                     m_screenTransitionIndex++;
                     m_screenTransition.SetScreen(true, 0.5f);
+                    m_timeUntilNextSlide = 5.0f;
                 }
                 else
                 {
@@ -153,9 +161,15 @@ public class Battle : MonoBehaviour
             }
         }
 
-        //Handles the screen transitions
-        if((Input.GetKeyDown(KeyCode.Space) || Input.GetButtonDown("Cross")) && m_activeBattle == false && m_displayingScreens) //note the very first list of textures is to be used for the intro
+        if(m_timeUntilNextSlide > 0)
         {
+            m_timeUntilNextSlide -= Time.deltaTime;
+        }
+
+        //Handles the screen transitions
+        if(((Input.GetKeyDown(KeyCode.Space) || Input.GetButtonDown("Cross")) || m_timeUntilNextSlide <= 0) && m_activeBattle == false && m_displayingScreens) //note the very first list of textures is to be used for the intro
+        {
+            m_timeUntilNextSlide = 5;
             if(m_enemyListIndex < m_enemyList.Count)
             {
                 if(m_screenList[m_enemyListIndex].m_textures.Count > m_screenTransitionIndex)

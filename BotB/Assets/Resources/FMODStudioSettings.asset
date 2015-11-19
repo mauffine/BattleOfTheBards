@@ -13,9 +13,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   HasSourceProject: 1
   HasPlatforms: 1
-  SourceProjectPath: C:/Users/daniel.waterston/Desktop/BattleOfTheBards/BotB/Assets/FMOD
+  SourceProjectPath: C:/Users/richard.murray/Desktop/BattleOfTheBards/BotB/Assets/FMOD
     Banks/BOTB Slime.fspro
-  SourceBankPath: C:/Users/daniel.waterston/Desktop/BattleOfTheBards/BotB/Assets/FMOD
+  SourceBankPath: C:/Users/richard.murray/Desktop/BattleOfTheBards/BotB/Assets/FMOD
     Banks\Build
   SpeakerModeSettings:
   - Platform: 2
