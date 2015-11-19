@@ -1,6 +1,11 @@
 fileFormatVersion: 2
+<<<<<<< HEAD
 guid: 579a85fd1ad27a343b07e9233fa471f2
 timeCreated: 1447388051
+=======
+guid: 903ae68554c84fc4fb3ded5b1e7d22e0
+timeCreated: 1447387789
+>>>>>>> origin/BrockBranch
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName: {}

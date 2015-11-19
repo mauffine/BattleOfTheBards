@@ -134,7 +134,15 @@ public class Battle : MonoBehaviour
                 //past here is the death sequence
                 m_screenTransitionIndex = 0;
                 m_displayingScreens = true;
-                if (m_enemyListIndex < m_enemyList.Count)
+                if (m_enemyListIndex > 1)
+                {
+                    m_screenTransition.SetTexture(m_screenList[m_enemyListIndex].m_textures[0]);
+                    m_screenTransitionIndex++;
+                    m_screenTransition.SetScreen(true, 0.5f);
+                    m_timeUntilNextSlide = 5.0f;
+                    Application.LoadLevel("BrockLavaMineScene");
+                }
+                else if (m_enemyListIndex < m_enemyList.Count)
                 {
                     m_screenTransition.SetTexture(m_screenList[m_enemyListIndex].m_textures[0]);
                     m_screenTransitionIndex++;

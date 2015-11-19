@@ -12,55 +12,15 @@ MonoBehaviour:
   m_Name: FMODStudioCache
   m_EditorClassIdentifier: 
   EditorBanks:
-  - {fileID: 11431946}
+  - {fileID: 11452184}
   EditorEvents:
-  - {fileID: 11454366}
-  - {fileID: 11456392}
-  - {fileID: 11414292}
-  - {fileID: 11456888}
-  MasterBankRef: {fileID: 11431946}
-  stringsBankWriteTime: 635835301455997678
---- !u!114 &11414292
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Path: event:/Drum Mix One
-  guid: 5303685005dd1c41a21b7c1dcec97855
-  Banks:
-  - {fileID: 11431946}
-  IsStream: 0
-  Is3D: 1
-  IsOneShot: 1
-  Parameters: []
-  MinDistance: 1
-  MaxDistance: 20
---- !u!114 &11431946
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Path: C:/Users/richard.murray/Desktop/BattleOfTheBards/BotB/Assets/FMOD Banks\Build\Desktop\Master
-    Bank.bank
-  lastModified: 635835301456287707
-  LoadResult: 0
-  FileSizes:
-  - Name: Desktop
-    Value: 211552
-  Exists: 1
---- !u!114 &11454366
+  - {fileID: 11405576}
+  - {fileID: 11452258}
+  - {fileID: 11469050}
+  - {fileID: 11419754}
+  MasterBankRef: {fileID: 11452184}
+  stringsBankWriteTime: 635829422306210388
+--- !u!114 &11405576
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
@@ -74,35 +34,14 @@ MonoBehaviour:
   Path: event:/Drum Mix Two
   guid: 14c5f58cb6ead14fb50746fb48c21105
   Banks:
-  - {fileID: 11431946}
+  - {fileID: 11452184}
   IsStream: 0
   Is3D: 1
   IsOneShot: 1
   Parameters: []
   MinDistance: 1
   MaxDistance: 20
---- !u!114 &11456392
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Path: event:/Drum Mix Four
-  guid: 29658ba0ae90c6488d8ec1dc8e316123
-  Banks:
-  - {fileID: 11431946}
-  IsStream: 0
-  Is3D: 1
-  IsOneShot: 1
-  Parameters: []
-  MinDistance: 1
-  MaxDistance: 20
---- !u!114 &11456888
+--- !u!114 &11419754
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
@@ -116,7 +55,68 @@ MonoBehaviour:
   Path: event:/Drum Mix Three
   guid: d55d4053bd80f445a1026bc995c9727d
   Banks:
-  - {fileID: 11431946}
+  - {fileID: 11452184}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+--- !u!114 &11452184
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: C:/Users/daniel.waterston/Desktop/BattleOfTheBards/BotB/Assets/FMOD Banks\Build\Desktop\Master
+    Bank.bank
+  lastModified: 635829422306480378
+  LoadResult: 0
+  FileSizes:
+  - Name: Desktop
+    Value: 211552
+  Exists: 1
+--- !u!114 &11452258
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: event:/Drum Mix Four
+  guid: 29658ba0ae90c6488d8ec1dc8e316123
+  Banks:
+  - {fileID: 11452184}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+--- !u!114 &11469050
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: event:/Drum Mix One
+  guid: 5303685005dd1c41a21b7c1dcec97855
+  Banks:
+  - {fileID: 11452184}
   IsStream: 0
   Is3D: 1
   IsOneShot: 1

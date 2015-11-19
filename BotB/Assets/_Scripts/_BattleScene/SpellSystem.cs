@@ -417,7 +417,7 @@ public class SpellSystem : MonoBehaviour
             noteAccuracy = 0.5f - noteAccuracy;
         noteAccuracy = ((noteAccuracy / 0.5f) * 100.0f); //convert it into a percentage
         m_accuracy += noteAccuracy / 5; //divided by the amount of notes in the spell
-        if(noteAccuracy < 50)
+        if(noteAccuracy < 30)
             PlayerSpellFaill();
         Battle.Instance.AccuracyText(noteAccuracy);
     }

@@ -11545,6 +11545,10 @@ Prefab:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 11439744, guid: c2cb8aafa83d79f4bb15694996577265, type: 2}
+      propertyPath: m_enemyList.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 11439744, guid: c2cb8aafa83d79f4bb15694996577265, type: 2}
       propertyPath: m_screenList.Array.size
       value: 3
       objectReference: {fileID: 0}
@@ -11668,6 +11672,14 @@ Prefab:
       propertyPath: m_successSound
       value: 
       objectReference: {fileID: 2106059085}
+    - target: {fileID: 11439744, guid: c2cb8aafa83d79f4bb15694996577265, type: 2}
+      propertyPath: m_enemyList.Array.data[1]
+      value: 
+      objectReference: {fileID: 118206, guid: 5e72d7f175b5dab4296c9f6a3d56e7a6, type: 2}
+    - target: {fileID: 11439744, guid: c2cb8aafa83d79f4bb15694996577265, type: 2}
+      propertyPath: m_enemyList.Array.data[2]
+      value: 
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c2cb8aafa83d79f4bb15694996577265, type: 2}
   m_IsPrefabParent: 0

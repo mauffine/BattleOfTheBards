@@ -1802,9 +1802,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spriteList:
-  - {fileID: 21300000, guid: 7ac6760692ef33342a725d41b517b048, type: 3}
-  - {fileID: 21300000, guid: 76756a21ac509984c8522e0cdd790aec, type: 3}
-  - {fileID: 21300000, guid: d5960743d60e3ff49bdbb1cba4926f41, type: 3}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
 --- !u!114 &11479172
 MonoBehaviour:
   m_ObjectHideFlags: 1
