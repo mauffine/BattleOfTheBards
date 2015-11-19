@@ -12,36 +12,15 @@ MonoBehaviour:
   m_Name: FMODStudioCache
   m_EditorClassIdentifier: 
   EditorBanks:
-  - {fileID: 11431946}
+  - {fileID: 11439808}
   EditorEvents:
-  - {fileID: 11454366}
-  - {fileID: 11456392}
-  - {fileID: 11414292}
-  - {fileID: 11456888}
-  MasterBankRef: {fileID: 11431946}
+  - {fileID: 11455912}
+  - {fileID: 11446752}
+  - {fileID: 11456928}
+  - {fileID: 11479972}
+  MasterBankRef: {fileID: 11439808}
   stringsBankWriteTime: 635835301455997678
---- !u!114 &11414292
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Path: event:/Drum Mix One
-  guid: 5303685005dd1c41a21b7c1dcec97855
-  Banks:
-  - {fileID: 11431946}
-  IsStream: 0
-  Is3D: 1
-  IsOneShot: 1
-  Parameters: []
-  MinDistance: 1
-  MaxDistance: 20
---- !u!114 &11431946
+--- !u!114 &11439808
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
@@ -60,28 +39,7 @@ MonoBehaviour:
   - Name: Desktop
     Value: 211552
   Exists: 1
---- !u!114 &11454366
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Path: event:/Drum Mix Two
-  guid: 14c5f58cb6ead14fb50746fb48c21105
-  Banks:
-  - {fileID: 11431946}
-  IsStream: 0
-  Is3D: 1
-  IsOneShot: 1
-  Parameters: []
-  MinDistance: 1
-  MaxDistance: 20
---- !u!114 &11456392
+--- !u!114 &11446752
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
@@ -95,14 +53,56 @@ MonoBehaviour:
   Path: event:/Drum Mix Four
   guid: 29658ba0ae90c6488d8ec1dc8e316123
   Banks:
-  - {fileID: 11431946}
+  - {fileID: 11439808}
   IsStream: 0
   Is3D: 1
   IsOneShot: 1
   Parameters: []
   MinDistance: 1
   MaxDistance: 20
---- !u!114 &11456888
+--- !u!114 &11455912
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: event:/Drum Mix Two
+  guid: 14c5f58cb6ead14fb50746fb48c21105
+  Banks:
+  - {fileID: 11439808}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+--- !u!114 &11456928
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: event:/Drum Mix One
+  guid: 5303685005dd1c41a21b7c1dcec97855
+  Banks:
+  - {fileID: 11439808}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+--- !u!114 &11479972
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
@@ -116,7 +116,7 @@ MonoBehaviour:
   Path: event:/Drum Mix Three
   guid: d55d4053bd80f445a1026bc995c9727d
   Banks:
-  - {fileID: 11431946}
+  - {fileID: 11439808}
   IsStream: 0
   Is3D: 1
   IsOneShot: 1

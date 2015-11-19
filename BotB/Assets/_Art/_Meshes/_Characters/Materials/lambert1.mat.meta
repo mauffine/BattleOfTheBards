@@ -1,6 +1,11 @@
 fileFormatVersion: 2
+<<<<<<< HEAD
 guid: e05ba8275f8d41344a2cc81c78dcb90d
 timeCreated: 1447384520
+=======
+guid: 9ecada27dbb4e414a9cf6dc93ff6aabf
+timeCreated: 1445386103
+>>>>>>> origin/BrockBranch
 licenseType: Free
 NativeFormatImporter:
   userData: 

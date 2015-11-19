@@ -67,6 +67,7 @@ public class Battle : MonoBehaviour
     List<GameObject> m_enemyList;
     [HideInInspector]
     public int m_enemyListIndex = 0;
+    public string m_sceneToTransitionTo = "BrockLava";
 	
     FMODUnity.StudioEventEmitter m_screwUpSound;
 	
@@ -211,7 +212,7 @@ public class Battle : MonoBehaviour
             {
                 if(m_win)
                 {
-                    m_screenTransition.TransitionToScene("MenuScene");
+                    m_screenTransition.TransitionToScene(m_sceneToTransitionTo);
                     //win, queue transition
                 }
                 else
