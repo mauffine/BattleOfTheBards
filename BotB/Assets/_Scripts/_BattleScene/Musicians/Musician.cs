@@ -9,8 +9,6 @@ public class Musician : MonoBehaviour
     protected string m_name;
     [SerializeField]
     protected Spell[] m_spellList;// = { "BBEDC", "DEBCA", "CDEBA", "AADEB" };//Cap the spell list for now to make it easier to work with
-    //[SerializeField]
-    //GameObject m_sceneHandler;
     [SerializeField]
     protected int m_maxHealth, m_defence, m_attack;
     [SerializeField]
@@ -19,15 +17,14 @@ public class Musician : MonoBehaviour
     protected SpellType m_spellBehavior;
     [SerializeField]
     protected Slider m_lifeBar;
-    [SerializeField]
-    private string[] m_audioClips;
+    FMODUnity.StudioEventEmitter[] m_events = {null,null,null,null};
 
     private bool m_reset = true;
     private bool m_spellPlay = false;
     private float m_noteTime = -1;
     private static float turnTick = -1;
     private uint m_spellLoc = 0, m_noteCount = 0, m_notesPlayed = 0;
-    
+    private bool m_songPlay = true;
     protected void Start() 
     {
         turnTick = TurnTimer.Instance.CastingTime - 1;
@@ -35,7 +32,6 @@ public class Musician : MonoBehaviour
         if (m_lifeBar == null)
             m_lifeBar = GUIHandler.Instance.EnemyLifeBar;
         m_lifeBar.maxValue = m_maxHealth;
-
 	}
     ///<summary> Updates the AI and calls Die if the enemey has no more health</summary>
     protected void Update() 
@@ -48,6 +44,27 @@ public class Musician : MonoBehaviour
         if (m_health < 0)
             Die();
         //FMOD HERE
+        if (m_reset) 
+        {
+            if (m_songPlay)
+            {
+                switch (m_spellLoc)
+                {
+                    case 0: m_events[0].Play(); break;
+                    case 1: m_events[1].Play(); break;
+                    case 2: m_events[2].Play(); break;
+                    case 3: m_events[3].Play(); break;
+                    default:
+                        break;
+                }
+                m_songPlay = false;
+            }
+        }
+        else
+        {
+            m_songPlay = true;
+        }
+
 	}
     ///<summary> Reduces health equal to the damage taken from the argument. Takes into account defence</summary>
     ///<param name="a_damage">The number of damage delt</param>
@@ -203,13 +220,23 @@ public class Musician : MonoBehaviour
             return returnVal;
         }
     }
+    public Spell CurrentSpell
+    {
+        get { return m_spellList[m_spellLoc]; }
+    }
     public void PlayInstrument()
     {
 
     }
-
     public void Reset()
     {
         m_health = m_maxHealth;
+    }
+    public void AddEvents(FMODUnity.StudioEventEmitter[] a_event)
+    {
+        m_events[0] = a_event[0];
+        m_events[1] = a_event[1];
+        m_events[2] = a_event[2];
+        m_events[3] = a_event[3];
     }
 }

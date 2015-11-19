@@ -18,7 +18,8 @@ public enum Turn : byte //Which turn it currently is
 {
     Casting,
     Menu,
-    SpellEffect
+    SpellEffect,
+    Pause
 }
 ///<summary>A musical note in an enum, _ means the note is flat</summary>
 public enum Note : byte
@@ -60,14 +61,17 @@ public class Battle : MonoBehaviour
     public static Battle Instance; //singleton instance
     [SerializeField]
     GameObject m_player, m_currentEnemy; //the characters in the scene
-
+    [SerializeField]
+    GameObject m_eventBank;
     [SerializeField]
     List<GameObject> m_enemyList;
     [HideInInspector]
     public int m_enemyListIndex = 0;
-    [SerializeField]
-
+	
+    FMODUnity.StudioEventEmitter m_screwUpSound;
+	
     [Header("Slide Attributes")]
+    [SerializeField]
     List<TransitionScreens> m_screenList;
     [HideInInspector]
     public bool m_activeBattle; //IMPORTANT, this variable now controls the activities of many objects in the scene to avoid glitches. When the musician has died, this should be set to false alongside.
@@ -234,6 +238,7 @@ public class Battle : MonoBehaviour
             Debug.Log(m_enemyListIndex);
             Debug.Log(m_screenTransitionIndex);
             m_enemyListIndex++;
+            LoadAudioEvents();
             m_activeBattle = true;
             return true;
         }
@@ -242,9 +247,6 @@ public class Battle : MonoBehaviour
             return false;
         }
     }
-
-
-
     public void ReceiveKey(TimedNote a_note)
     {
         //send the keypress notifications to the following scripts
@@ -297,19 +299,29 @@ public class Battle : MonoBehaviour
                 slimeRef.Animate(6);
         }
     }
-
     public void AccuracyText(float a_accuracy)
     {
         if (a_accuracy >= 90)
-            TextGen.Instance.DisplayRating("Perfect", Vector2.zero, 1, Color.white);
+            TextGen.Instance.DisplayRating("Perfect", new Vector2(MusicSlider.Position.x, 195), 1, Color.white);
         else if (a_accuracy >= 80 && a_accuracy < 90)
-            TextGen.Instance.DisplayRating("Great", Vector2.zero, 1, Color.yellow);
+            TextGen.Instance.DisplayRating("Great", new Vector2(MusicSlider.Position.x, 195), 1, Color.yellow);
         else if (a_accuracy >= 70 && a_accuracy < 80)
-            TextGen.Instance.DisplayRating("Good", Vector2.zero, 1, Color.blue);
+            TextGen.Instance.DisplayRating("Good", new Vector2(MusicSlider.Position.x, 195), 1, Color.blue);
         else if (a_accuracy >= 60 && a_accuracy < 70)
-            TextGen.Instance.DisplayRating("Okay", Vector2.zero, 1, Color.magenta);
+            TextGen.Instance.DisplayRating("Okay", new Vector2(MusicSlider.Position.x, 195), 1, Color.magenta);
         else
-            TextGen.Instance.DisplayRating("Poor", Vector2.zero, 1, Color.red);
+            TextGen.Instance.DisplayRating("Poor", new Vector2(MusicSlider.Position.x, 195), 1, Color.red);
+    }
+    public void LoadAudioEvents()
+    {
+        int arrayMod = (m_enemyListIndex * 4);
+        Debug.Log(m_enemyListIndex);
+        FMODUnity.StudioEventEmitter[] enemyEvents = {null,null,null,null};
+        enemyEvents[0] = m_eventBank.GetComponentsInChildren<FMODUnity.StudioEventEmitter>()[m_enemyListIndex - 1];
+        enemyEvents[1] = m_eventBank.GetComponentsInChildren<FMODUnity.StudioEventEmitter>()[m_enemyListIndex];
+        enemyEvents[2] = m_eventBank.GetComponentsInChildren<FMODUnity.StudioEventEmitter>()[m_enemyListIndex + 1];
+        enemyEvents[3] = m_eventBank.GetComponentsInChildren<FMODUnity.StudioEventEmitter>()[m_enemyListIndex + 2];
+        m_currentEnemy.GetComponent<Musician>().AddEvents(enemyEvents);
     }
     public GameObject PlayerRef
     {

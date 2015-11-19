@@ -2282,7 +2282,11 @@ MonoBehaviour:
   m_health: 300
   m_spellBehavior: 2
   m_lifeBar: {fileID: 0}
-  m_audioClips: []
+  m_events:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
 --- !u!114 &11477054
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2591,6 +2595,10 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 0}
+      propertyPath: m_events.Array.size
+      value: 4
+      objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: m_spellList.Array.size
       value: 6

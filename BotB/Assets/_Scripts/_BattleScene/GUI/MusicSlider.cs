@@ -27,14 +27,14 @@ public class MusicSlider : MonoBehaviour
             float modTime = (m_turnTime * Time.deltaTime);
 
             m_resetTick -= Time.deltaTime;
-            bool playerTurn = (m_resetTick < 0);
+            //bool playerTurn = (m_resetTick < 0);
 
             transform.localPosition += new Vector3(m_screenWidth * modTime, 0, 0);
-            if (playerTurn)
-            {
-                m_resetTick = TurnTimer.Instance.CastingTime;
-                Reset();
-            }
+            //if (playerTurn)
+            //{
+            //    m_resetTick = TurnTimer.Instance.CastingTime;
+            //    Reset();
+            //}
         }
         else
             Reset();

@@ -126,7 +126,7 @@ public class SpellMenu : MonoBehaviour
                 m_castingType = SelectorType.None;
             }
 
-            if (TurnTimer.Instance.CurrentTurn == Turn.Casting)
+            if (TurnTimer.Instance.CurrentTurn == Turn.Casting || TurnTimer.Instance.CurrentTurn == Turn.Pause)
                 m_guiState = MenuState.Casting;
         }
         else

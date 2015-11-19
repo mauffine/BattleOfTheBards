@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.01.07.00">
+    <object class="AudioFile" id="{835abb3b-c511-4427-94df-523c041e314f}">
+        <property name="frequencyInKHz">
+            <value>44.0999985</value>
+        </property>
+        <property name="channelCount">
+            <value>2</value>
+        </property>
+        <property name="length">
+            <value>0.91721088435374154</value>
+        </property>
+        <property name="audioFilePath">
+            <value>$(AUDIO_BIN_DIR)/bass_drum_accent_03 {5fafc34e-d8f2-4e1f-b413-bf1adca7a6cb}.wav</value>
+        </property>
+        <relationship name="container">
+            <destination>{0fe225f7-77e9-45a1-9a10-788290b82f75}</destination>
+        </relationship>
+    </object>
+</objects>

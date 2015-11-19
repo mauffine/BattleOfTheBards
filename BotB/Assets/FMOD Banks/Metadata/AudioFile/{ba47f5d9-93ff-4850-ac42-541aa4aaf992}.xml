@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.01.07.00">
+    <object class="AudioFile" id="{ba47f5d9-93ff-4850-ac42-541aa4aaf992}">
+        <property name="frequencyInKHz">
+            <value>44.0999985</value>
+        </property>
+        <property name="channelCount">
+            <value>2</value>
+        </property>
+        <property name="length">
+            <value>1.1784353741496598</value>
+        </property>
+        <property name="audioFilePath">
+            <value>$(AUDIO_BIN_DIR)/snare_bass_drum_cymbal_03 {b772f885-c61c-45ae-a14d-b38c040f587f}.wav</value>
+        </property>
+        <relationship name="container">
+            <destination>{0fe225f7-77e9-45a1-9a10-788290b82f75}</destination>
+        </relationship>
+    </object>
+</objects>

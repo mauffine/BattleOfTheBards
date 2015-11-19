@@ -48,8 +48,10 @@ public class NoteVisualiser : MonoBehaviour
             if (m_turn != TurnTimer.Instance.CurrentTurn)
             {
                 m_turn = TurnTimer.Instance.CurrentTurn;
-                m_notePool.RemoveAllNotes();
-                if (m_turn == Turn.Casting)
+                if(m_turn == Turn.SpellEffect)
+                    m_notePool.RemoveAllNotes();
+                Debug.Log("Hellohere");
+                if (/*m_turn == Turn.Casting || */m_turn == Turn.Pause)
                     ShowCombo();
             }
         }
@@ -94,6 +96,8 @@ public class NoteVisualiser : MonoBehaviour
         float pos8 = 746.6666666666667f;
 
         GameObject spell = null;
+
+        //Debug.Log(SpellMenu.Instance.m_castingType);
 
         switch (SpellMenu.Selection)
         {
@@ -155,7 +159,9 @@ public class NoteVisualiser : MonoBehaviour
         m_notePool.AddNote(pos6, spell.GetComponent<Spell>().Key[5], true);
         m_notePool.AddNote(pos7, spell.GetComponent<Spell>().Key[6], true);
         m_notePool.AddNote(pos8, spell.GetComponent<Spell>().Key[7], true);
-        
+
+        //Debug.Log("Hello");
+
     }
     public static NoteVisualiser Reference
     {

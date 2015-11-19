@@ -11,11 +11,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eef8d824ea7b63742966aaa0e94ac383, type: 3}
   m_Name: FMODStudioSettings
   m_EditorClassIdentifier: 
-  HasSourceProject: 0
-  HasPlatforms: 0
-  SourceProjectPath: C:/Users/daniel.waterston/Documents/FMOD Studio/BOTB Slime/BOTB
-    Slime.fspro
-  SourceBankPath: C:/Users/daniel.waterston/Documents/FMOD Studio/BOTB Slime/Build/Desktop
+  HasSourceProject: 1
+  HasPlatforms: 1
+  SourceProjectPath: C:/Users/richard.murray/Desktop/BattleOfTheBards/BotB/Assets/FMOD
+    Banks/BOTB Slime.fspro
+  SourceBankPath: C:/Users/richard.murray/Desktop/BattleOfTheBards/BotB/Assets/FMOD
+    Banks\Build
   SpeakerModeSettings:
   - Platform: 2
     Value: 0
@@ -36,9 +37,9 @@ MonoBehaviour:
     Value: 0
   BankDirectorySettings:
   - Platform: 1
-    Value: 
+    Value: Desktop
   - Platform: 2
-    Value: 
+    Value: Desktop
   VirtualChannelSettings:
   - Platform: 2
     Value: 128
