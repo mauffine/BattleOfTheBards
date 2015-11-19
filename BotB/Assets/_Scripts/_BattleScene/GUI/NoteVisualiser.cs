@@ -47,7 +47,11 @@ public class NoteVisualiser : MonoBehaviour
 
             if (m_turn != TurnTimer.Instance.CurrentTurn)
             {
+                if (m_turn == Turn.Casting)
+                    m_notePool.RemoveAllNotes();
+
                 m_turn = TurnTimer.Instance.CurrentTurn;
+
                 if(m_turn == Turn.SpellEffect)
                     m_notePool.RemoveAllNotes();
                 Debug.Log("Hellohere");

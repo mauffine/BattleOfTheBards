@@ -1,0 +1,2052 @@
+fileFormatVersion: 2
+guid: 99dd80272eaa00e469b6874d0a464821
+timeCreated: 1447910507
+licenseType: Free
+ModelImporter:
+  serializedVersion: 18
+  fileIDToRecycleName:
+    100000: boot
+    100002: boot 1
+    100004: bottom_middle_mouth
+    100006: //RootNode
+    100008: head_top
+    100010: jaw
+    100012: JIG_left_back
+    100014: JIG_left_stomach
+    100016: JIG_mid_stomach
+    100018: JIG_right_back
+    100020: JIG_right_stomach
+    100022: JIG_tail
+    100024: JNT_organ
+    100026: JNT_queen
+    100028: joint34
+    100030: joint35
+    100032: joint36
+    100034: joint37
+    100036: joint38
+    100038: joint39
+    100040: joint40
+    100042: joint42
+    100044: joint43
+    100046: joint43 1
+    100048: joint43 2
+    100050: joint43 3
+    100052: joint44
+    100054: joint44 1
+    100056: joint44 2
+    100058: joint44 3
+    100060: joint45
+    100062: joint45 1
+    100064: joint45 2
+    100066: joint45 3
+    100068: joint46
+    100070: joint46 1
+    100072: joint46 2
+    100074: joint46 3
+    100076: joint47
+    100078: joint47 1
+    100080: joint47 2
+    100082: joint47 3
+    100084: joint48
+    100086: joint49
+    100088: joint51
+    100090: joint52
+    100092: joint53
+    100094: joint55
+    100096: joint56
+    100098: joint57
+    100100: joint58
+    100102: joint59
+    100104: joint60
+    100106: joint61
+    100108: joint61 1
+    100110: joint62
+    100112: joint62 1
+    100114: joint63
+    100116: joint63 1
+    100118: joint64
+    100120: joint65
+    100122: joint66
+    100124: joint67
+    100126: joint68
+    100128: joint69
+    100130: joint70
+    100132: joint71
+    100134: joint72
+    100136: joint73
+    100138: joint74
+    100140: joint75
+    100142: left_eye
+    100144: left_eye 1
+    100146: left_tooth
+    100148: left_tooth 1
+    100150: left_tusk
+    100152: left_tusk 1
+    100154: organ
+    100156: organ_boot
+    100158: queen
+    100160: right_eye
+    100162: right_eye 1
+    100164: right_tooth
+    100166: right_tooth 1
+    100168: right_tusk
+    100170: right_tusk 1
+    100172: slime
+    100174: spine_02
+    100176: spine_03
+    100178: spine_05
+    100180: spine_06
+    100182: spine_07
+    100184: spine_08
+    100186: stomach
+    100188: Tail
+    100190: teeth
+    100192: top_middle_mouth
+    400000: boot
+    400002: boot 1
+    400004: bottom_middle_mouth
+    400006: //RootNode
+    400008: head_top
+    400010: jaw
+    400012: JIG_left_back
+    400014: JIG_left_stomach
+    400016: JIG_mid_stomach
+    400018: JIG_right_back
+    400020: JIG_right_stomach
+    400022: JIG_tail
+    400024: JNT_organ
+    400026: JNT_queen
+    400028: joint34
+    400030: joint35
+    400032: joint36
+    400034: joint37
+    400036: joint38
+    400038: joint39
+    400040: joint40
+    400042: joint42
+    400044: joint43
+    400046: joint43 1
+    400048: joint43 2
+    400050: joint43 3
+    400052: joint44
+    400054: joint44 1
+    400056: joint44 2
+    400058: joint44 3
+    400060: joint45
+    400062: joint45 1
+    400064: joint45 2
+    400066: joint45 3
+    400068: joint46
+    400070: joint46 1
+    400072: joint46 2
+    400074: joint46 3
+    400076: joint47
+    400078: joint47 1
+    400080: joint47 2
+    400082: joint47 3
+    400084: joint48
+    400086: joint49
+    400088: joint51
+    400090: joint52
+    400092: joint53
+    400094: joint55
+    400096: joint56
+    400098: joint57
+    400100: joint58
+    400102: joint59
+    400104: joint60
+    400106: joint61
+    400108: joint61 1
+    400110: joint62
+    400112: joint62 1
+    400114: joint63
+    400116: joint63 1
+    400118: joint64
+    400120: joint65
+    400122: joint66
+    400124: joint67
+    400126: joint68
+    400128: joint69
+    400130: joint70
+    400132: joint71
+    400134: joint72
+    400136: joint73
+    400138: joint74
+    400140: joint75
+    400142: left_eye
+    400144: left_eye 1
+    400146: left_tooth
+    400148: left_tooth 1
+    400150: left_tusk
+    400152: left_tusk 1
+    400154: organ
+    400156: organ_boot
+    400158: queen
+    400160: right_eye
+    400162: right_eye 1
+    400164: right_tooth
+    400166: right_tooth 1
+    400168: right_tusk
+    400170: right_tusk 1
+    400172: slime
+    400174: spine_02
+    400176: spine_03
+    400178: spine_05
+    400180: spine_06
+    400182: spine_07
+    400184: spine_08
+    400186: stomach
+    400188: Tail
+    400190: teeth
+    400192: top_middle_mouth
+    4300000: organ
+    4300002: boot
+    4300004: right_eye
+    4300006: left_eye
+    4300008: slime
+    4300010: right_tusk
+    4300012: left_tusk
+    4300014: left_tooth
+    4300016: right_tooth
+    7400000: Damaged
+    7400002: Idle
+    7400004: bite01
+    7400006: bite02
+    7400008: bite03
+    7400010: Fire01
+    7400012: win
+    7400014: lose
+    9500000: //RootNode
+    13700000: boot
+    13700002: left_eye
+    13700004: left_tooth
+    13700006: left_tusk
+    13700008: organ
+    13700010: right_eye
+    13700012: right_tooth
+    13700014: right_tusk
+    13700016: slime
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: .5
+    animationPositionError: .5
+    animationScaleError: .5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: Idle
+      takeName: Take 001
+      firstFrame: 1
+      lastFrame: 60
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 1
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: JNT_organ
+        weight: 1
+      - path: JNT_organ/joint34
+        weight: 1
+      - path: JNT_organ/joint35
+        weight: 1
+      - path: JNT_organ/joint36
+        weight: 1
+      - path: JNT_organ/joint37
+        weight: 1
+      - path: JNT_organ/joint38
+        weight: 1
+      - path: JNT_organ/joint39
+        weight: 1
+      - path: JNT_organ/joint40
+        weight: 1
+      - path: JNT_organ/joint40/boot 1
+        weight: 1
+      - path: JNT_organ/joint40/joint42
+        weight: 1
+      - path: JNT_organ/joint40/joint42/joint43
+        weight: 1
+      - path: JNT_organ/joint40/joint42/joint44
+        weight: 1
+      - path: JNT_organ/joint40/joint42/joint45
+        weight: 1
+      - path: JNT_organ/joint40/joint42/joint46
+        weight: 1
+      - path: JNT_organ/joint40/joint42/joint47
+        weight: 1
+      - path: JNT_organ/joint40/joint42/joint56
+        weight: 1
+      - path: JNT_organ/joint40/joint42/joint57
+        weight: 1
+      - path: JNT_organ/joint40/joint48
+        weight: 1
+      - path: JNT_organ/joint40/joint48/joint43 1
+        weight: 1
+      - path: JNT_organ/joint40/joint48/joint44 1
+        weight: 1
+      - path: JNT_organ/joint40/joint48/joint45 1
+        weight: 1
+      - path: JNT_organ/joint40/joint48/joint46 1
+        weight: 1
+      - path: JNT_organ/joint40/joint48/joint47 1
+        weight: 1
+      - path: JNT_organ/joint40/joint48/joint60
+        weight: 1
+      - path: JNT_organ/joint40/joint49
+        weight: 1
+      - path: JNT_organ/joint40/joint49/joint43 2
+        weight: 1
+      - path: JNT_organ/joint40/joint49/joint44 2
+        weight: 1
+      - path: JNT_organ/joint40/joint49/joint45 2
+        weight: 1
+      - path: JNT_organ/joint40/joint49/joint46 2
+        weight: 1
+      - path: JNT_organ/joint40/joint49/joint47 2
+        weight: 1
+      - path: JNT_organ/joint40/joint49/joint58
+        weight: 1
+      - path: JNT_organ/joint40/joint49/joint59
+        weight: 1
+      - path: JNT_organ/joint40/joint55
+        weight: 1
+      - path: JNT_organ/joint40/joint55/joint43 3
+        weight: 1
+      - path: JNT_organ/joint40/joint55/joint44 3
+        weight: 1
+      - path: JNT_organ/joint40/joint55/joint45 3
+        weight: 1
+      - path: JNT_organ/joint40/joint55/joint46 3
+        weight: 1
+      - path: JNT_organ/joint40/joint55/joint47 3
+        weight: 1
+      - path: JNT_organ/joint51
+        weight: 1
+      - path: JNT_organ/joint51/joint52
+        weight: 1
+      - path: JNT_organ/joint51/joint52/joint65
+        weight: 1
+      - path: JNT_organ/joint51/joint52/joint66
+        weight: 1
+      - path: JNT_organ/joint51/joint52/joint67
+        weight: 1
+      - path: JNT_organ/joint51/joint52/joint68
+        weight: 1
+      - path: JNT_organ/joint51/joint52/joint69
+        weight: 1
+      - path: JNT_organ/joint51/joint52/joint70
+        weight: 1
+      - path: JNT_organ/joint51/joint52/joint71
+        weight: 1
+      - path: JNT_organ/joint51/joint52/joint72
+        weight: 1
+      - path: JNT_organ/joint51/joint52/joint73
+        weight: 1
+      - path: JNT_organ/joint51/joint52/joint74
+        weight: 1
+      - path: JNT_organ/joint51/joint52/joint75
+        weight: 1
+      - path: JNT_organ/joint51/joint53
+        weight: 1
+      - path: JNT_organ/joint51/joint53/joint61
+        weight: 1
+      - path: JNT_organ/joint51/joint53/joint62
+        weight: 1
+      - path: JNT_organ/joint51/joint53/joint63
+        weight: 1
+      - path: JNT_organ/joint51/joint64
+        weight: 1
+      - path: JNT_organ/joint51/joint64/joint61 1
+        weight: 1
+      - path: JNT_organ/joint51/joint64/joint62 1
+        weight: 1
+      - path: JNT_organ/joint51/joint64/joint63 1
+        weight: 1
+      - path: JNT_queen
+        weight: 1
+      - path: JNT_queen/spine_02
+        weight: 1
+      - path: JNT_queen/spine_02/spine_03
+        weight: 1
+      - path: JNT_queen/spine_02/spine_03/spine_05
+        weight: 1
+      - path: JNT_queen/spine_02/spine_03/spine_05/jaw
+        weight: 1
+      - path: JNT_queen/spine_02/spine_03/spine_05/jaw/bottom_middle_mouth
+        weight: 1
+      - path: JNT_queen/spine_02/spine_03/spine_05/jaw/left_tooth 1
+        weight: 1
+      - path: JNT_queen/spine_02/spine_03/spine_05/jaw/left_tusk 1
+        weight: 1
+      - path: JNT_queen/spine_02/spine_03/spine_05/jaw/right_tooth 1
+        weight: 1
+      - path: JNT_queen/spine_02/spine_03/spine_05/jaw/right_tusk 1
+        weight: 1
+      - path: JNT_queen/spine_02/spine_03/spine_05/jaw/top_middle_mouth
+        weight: 1
+      - path: JNT_queen/spine_02/spine_03/spine_05/spine_06
+        weight: 1
+      - path: JNT_queen/spine_02/spine_03/spine_05/spine_06/spine_07
+        weight: 1
+      - path: JNT_queen/spine_02/spine_03/spine_05/spine_06/spine_07/left_eye 1
+        weight: 1
+      - path: JNT_queen/spine_02/spine_03/spine_05/spine_06/spine_07/right_eye 1
+        weight: 1
+      - path: JNT_queen/spine_02/spine_03/spine_05/spine_06/spine_07/spine_08
+        weight: 1
+      - path: JNT_queen/spine_02/spine_03/spine_05/spine_06/spine_07/spine_08/head_top
+        weight: 1
+      - path: JNT_queen/spine_02/stomach
+        weight: 1
+      - path: JNT_queen/spine_02/stomach/JIG_left_stomach
+        weight: 1
+      - path: JNT_queen/spine_02/stomach/JIG_mid_stomach
+        weight: 1
+      - path: JNT_queen/spine_02/stomach/JIG_right_stomach
+        weight: 1
+      - path: JNT_queen/spine_02/Tail
+        weight: 1
+      - path: JNT_queen/spine_02/Tail/JIG_left_back
+        weight: 1
+      - path: JNT_queen/spine_02/Tail/JIG_right_back
+        weight: 1
+      - path: JNT_queen/spine_02/Tail/JIG_tail
+        weight: 1
+      - path: organ_boot
+        weight: 1
+      - path: organ_boot/boot
+        weight: 1
+      - path: organ_boot/organ
+        weight: 1
+      - path: queen
+        weight: 1
+      - path: queen/left_eye
+        weight: 1
+      - path: queen/right_eye
+        weight: 1
+      - path: queen/slime
+        weight: 1
+      - path: queen/teeth
+        weight: 1
+      - path: queen/teeth/left_tooth
+        weight: 1
+      - path: queen/teeth/left_tusk
+        weight: 1
+      - path: queen/teeth/right_tooth
+        weight: 1
+      - path: queen/teeth/right_tusk
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: Damaged
+      takeName: Take 001
+      firstFrame: 70
+      lastFrame: 130
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: JNT_organ
+        weight: 1
+      - path: JNT_organ/joint34
+        weight: 1
+      - path: JNT_organ/joint35
+        weight: 1
+      - path: JNT_organ/joint36
+        weight: 1
+      - path: JNT_organ/joint37
+        weight: 1
+      - path: JNT_organ/joint38
+        weight: 1
+      - path: JNT_organ/joint39
+        weight: 1
+      - path: JNT_organ/joint40
+        weight: 1
+      - path: JNT_organ/joint40/boot 1
+        weight: 1
+      - path: JNT_organ/joint40/joint42
+        weight: 1
+      - path: JNT_organ/joint40/joint42/joint43
+        weight: 1
+      - path: JNT_organ/joint40/joint42/joint44
+        weight: 1
+      - path: JNT_organ/joint40/joint42/joint45
+        weight: 1
+      - path: JNT_organ/joint40/joint42/joint46
+        weight: 1
+      - path: JNT_organ/joint40/joint42/joint47
+        weight: 1
+      - path: JNT_organ/joint40/joint42/joint56
+        weight: 1
+      - path: JNT_organ/joint40/joint42/joint57
+        weight: 1
+      - path: JNT_organ/joint40/joint48
+        weight: 1
+      - path: JNT_organ/joint40/joint48/joint43 1
+        weight: 1
+      - path: JNT_organ/joint40/joint48/joint44 1
+        weight: 1
+      - path: JNT_organ/joint40/joint48/joint45 1
+        weight: 1
+      - path: JNT_organ/joint40/joint48/joint46 1
+        weight: 1
+      - path: JNT_organ/joint40/joint48/joint47 1
+        weight: 1
+      - path: JNT_organ/joint40/joint48/joint60
+        weight: 1
+      - path: JNT_organ/joint40/joint49
+        weight: 1
+      - path: JNT_organ/joint40/joint49/joint43 2
+        weight: 1
+      - path: JNT_organ/joint40/joint49/joint44 2
+        weight: 1
+      - path: JNT_organ/joint40/joint49/joint45 2
+        weight: 1
+      - path: JNT_organ/joint40/joint49/joint46 2
+        weight: 1
+      - path: JNT_organ/joint40/joint49/joint47 2
+        weight: 1
+      - path: JNT_organ/joint40/joint49/joint58
+        weight: 1
+      - path: JNT_organ/joint40/joint49/joint59
+        weight: 1
+      - path: JNT_organ/joint40/joint55
+        weight: 1
+      - path: JNT_organ/joint40/joint55/joint43 3
+        weight: 1
+      - path: JNT_organ/joint40/joint55/joint44 3
+        weight: 1
+      - path: JNT_organ/joint40/joint55/joint45 3
+        weight: 1
+      - path: JNT_organ/joint40/joint55/joint46 3
+        weight: 1
+      - path: JNT_organ/joint40/joint55/joint47 3
+        weight: 1
+      - path: JNT_organ/joint51
+        weight: 1
+      - path: JNT_organ/joint51/joint52
+        weight: 1
+      - path: JNT_organ/joint51/joint52/joint65
+        weight: 1
+      - path: JNT_organ/joint51/joint52/joint66
+        weight: 1
+      - path: JNT_organ/joint51/joint52/joint67
+        weight: 1
+      - path: JNT_organ/joint51/joint52/joint68
+        weight: 1
+      - path: JNT_organ/joint51/joint52/joint69
+        weight: 1
+      - path: JNT_organ/joint51/joint52/joint70
+        weight: 1
+      - path: JNT_organ/joint51/joint52/joint71
+        weight: 1
+      - path: JNT_organ/joint51/joint52/joint72
+        weight: 1
+      - path: JNT_organ/joint51/joint52/joint73
+        weight: 1
+      - path: JNT_organ/joint51/joint52/joint74
+        weight: 1
+      - path: JNT_organ/joint51/joint52/joint75
+        weight: 1
+      - path: JNT_organ/joint51/joint53
+        weight: 1
+      - path: JNT_organ/joint51/joint53/joint61
+        weight: 1
+      - path: JNT_organ/joint51/joint53/joint62
+        weight: 1
+      - path: JNT_organ/joint51/joint53/joint63
+        weight: 1
+      - path: JNT_organ/joint51/joint64
+        weight: 1
+      - path: JNT_organ/joint51/joint64/joint61 1
+        weight: 1
+      - path: JNT_organ/joint51/joint64/joint62 1
+        weight: 1
+      - path: JNT_organ/joint51/joint64/joint63 1
+        weight: 1
+      - path: JNT_queen
+        weight: 1
+      - path: JNT_queen/spine_02
+        weight: 1
+      - path: JNT_queen/spine_02/spine_03
+        weight: 1
+      - path: JNT_queen/spine_02/spine_03/spine_05
+        weight: 1
+      - path: JNT_queen/spine_02/spine_03/spine_05/jaw
+        weight: 1
+      - path: JNT_queen/spine_02/spine_03/spine_05/jaw/bottom_middle_mouth
+        weight: 1
+      - path: JNT_queen/spine_02/spine_03/spine_05/jaw/left_tooth 1
+        weight: 1
+      - path: JNT_queen/spine_02/spine_03/spine_05/jaw/left_tusk 1
+        weight: 1
+      - path: JNT_queen/spine_02/spine_03/spine_05/jaw/right_tooth 1
+        weight: 1
+      - path: JNT_queen/spine_02/spine_03/spine_05/jaw/right_tusk 1
+        weight: 1
+      - path: JNT_queen/spine_02/spine_03/spine_05/jaw/top_middle_mouth
+        weight: 1
+      - path: JNT_queen/spine_02/spine_03/spine_05/spine_06
+        weight: 1
+      - path: JNT_queen/spine_02/spine_03/spine_05/spine_06/spine_07
+        weight: 1
+      - path: JNT_queen/spine_02/spine_03/spine_05/spine_06/spine_07/left_eye 1
+        weight: 1
+      - path: JNT_queen/spine_02/spine_03/spine_05/spine_06/spine_07/right_eye 1
+        weight: 1
+      - path: JNT_queen/spine_02/spine_03/spine_05/spine_06/spine_07/spine_08
+        weight: 1
+      - path: JNT_queen/spine_02/spine_03/spine_05/spine_06/spine_07/spine_08/head_top
+        weight: 1
+      - path: JNT_queen/spine_02/stomach
+        weight: 1
+      - path: JNT_queen/spine_02/stomach/JIG_left_stomach
+        weight: 1
+      - path: JNT_queen/spine_02/stomach/JIG_mid_stomach
+        weight: 1
+      - path: JNT_queen/spine_02/stomach/JIG_right_stomach
+        weight: 1
+      - path: JNT_queen/spine_02/Tail
+        weight: 1
+      - path: JNT_queen/spine_02/Tail/JIG_left_back
+        weight: 1
+      - path: JNT_queen/spine_02/Tail/JIG_right_back
+        weight: 1
+      - path: JNT_queen/spine_02/Tail/JIG_tail
+        weight: 1
+      - path: organ_boot
+        weight: 1
+      - path: organ_boot/boot
+        weight: 1
+      - path: organ_boot/organ
+        weight: 1
+      - path: queen
+        weight: 1
+      - path: queen/left_eye
+        weight: 1
+      - path: queen/right_eye
+        weight: 1
+      - path: queen/slime
+        weight: 1
+      - path: queen/teeth
+        weight: 1
+      - path: queen/teeth/left_tooth
+        weight: 1
+      - path: queen/teeth/left_tusk
+        weight: 1
+      - path: queen/teeth/right_tooth
+        weight: 1
+      - path: queen/teeth/right_tusk
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: bite01
+      takeName: Take 001
+      firstFrame: 140
+      lastFrame: 170
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: JNT_organ
+        weight: 1
+      - path: JNT_organ/joint34
+        weight: 1
+      - path: JNT_organ/joint35
+        weight: 1
+      - path: JNT_organ/joint36
+        weight: 1
+      - path: JNT_organ/joint37
+        weight: 1
+      - path: JNT_organ/joint38
+        weight: 1
+      - path: JNT_organ/joint39
+        weight: 1
+      - path: JNT_organ/joint40
+        weight: 1
+      - path: JNT_organ/joint40/boot 1
+        weight: 1
+      - path: JNT_organ/joint40/joint42
+        weight: 1
+      - path: JNT_organ/joint40/joint42/joint43
+        weight: 1
+      - path: JNT_organ/joint40/joint42/joint44
+        weight: 1
+      - path: JNT_organ/joint40/joint42/joint45
+        weight: 1
+      - path: JNT_organ/joint40/joint42/joint46
+        weight: 1
+      - path: JNT_organ/joint40/joint42/joint47
+        weight: 1
+      - path: JNT_organ/joint40/joint42/joint56
+        weight: 1
+      - path: JNT_organ/joint40/joint42/joint57
+        weight: 1
+      - path: JNT_organ/joint40/joint48
+        weight: 1
+      - path: JNT_organ/joint40/joint48/joint43 1
+        weight: 1
+      - path: JNT_organ/joint40/joint48/joint44 1
+        weight: 1
+      - path: JNT_organ/joint40/joint48/joint45 1
+        weight: 1
+      - path: JNT_organ/joint40/joint48/joint46 1
+        weight: 1
+      - path: JNT_organ/joint40/joint48/joint47 1
+        weight: 1
+      - path: JNT_organ/joint40/joint48/joint60
+        weight: 1
+      - path: JNT_organ/joint40/joint49
+        weight: 1
+      - path: JNT_organ/joint40/joint49/joint43 2
+        weight: 1
+      - path: JNT_organ/joint40/joint49/joint44 2
+        weight: 1
+      - path: JNT_organ/joint40/joint49/joint45 2
+        weight: 1
+      - path: JNT_organ/joint40/joint49/joint46 2
+        weight: 1
+      - path: JNT_organ/joint40/joint49/joint47 2
+        weight: 1
+      - path: JNT_organ/joint40/joint49/joint58
+        weight: 1
+      - path: JNT_organ/joint40/joint49/joint59
+        weight: 1
+      - path: JNT_organ/joint40/joint55
+        weight: 1
+      - path: JNT_organ/joint40/joint55/joint43 3
+        weight: 1
+      - path: JNT_organ/joint40/joint55/joint44 3
+        weight: 1
+      - path: JNT_organ/joint40/joint55/joint45 3
+        weight: 1
+      - path: JNT_organ/joint40/joint55/joint46 3
+        weight: 1
+      - path: JNT_organ/joint40/joint55/joint47 3
+        weight: 1
+      - path: JNT_organ/joint51
+        weight: 1
+      - path: JNT_organ/joint51/joint52
+        weight: 1
+      - path: JNT_organ/joint51/joint52/joint65
+        weight: 1
+      - path: JNT_organ/joint51/joint52/joint66
+        weight: 1
+      - path: JNT_organ/joint51/joint52/joint67
+        weight: 1
+      - path: JNT_organ/joint51/joint52/joint68
+        weight: 1
+      - path: JNT_organ/joint51/joint52/joint69
+        weight: 1
+      - path: JNT_organ/joint51/joint52/joint70
+        weight: 1
+      - path: JNT_organ/joint51/joint52/joint71
+        weight: 1
+      - path: JNT_organ/joint51/joint52/joint72
+        weight: 1
+      - path: JNT_organ/joint51/joint52/joint73
+        weight: 1
+      - path: JNT_organ/joint51/joint52/joint74
+        weight: 1
+      - path: JNT_organ/joint51/joint52/joint75
+        weight: 1
+      - path: JNT_organ/joint51/joint53
+        weight: 1
+      - path: JNT_organ/joint51/joint53/joint61
+        weight: 1
+      - path: JNT_organ/joint51/joint53/joint62
+        weight: 1
+      - path: JNT_organ/joint51/joint53/joint63
+        weight: 1
+      - path: JNT_organ/joint51/joint64
+        weight: 1
+      - path: JNT_organ/joint51/joint64/joint61 1
+        weight: 1
+      - path: JNT_organ/joint51/joint64/joint62 1
+        weight: 1
+      - path: JNT_organ/joint51/joint64/joint63 1
+        weight: 1
+      - path: JNT_queen
+        weight: 1
+      - path: JNT_queen/spine_02
+        weight: 1
+      - path: JNT_queen/spine_02/spine_03
+        weight: 1
+      - path: JNT_queen/spine_02/spine_03/spine_05
+        weight: 1
+      - path: JNT_queen/spine_02/spine_03/spine_05/jaw
+        weight: 1
+      - path: JNT_queen/spine_02/spine_03/spine_05/jaw/bottom_middle_mouth
+        weight: 1
+      - path: JNT_queen/spine_02/spine_03/spine_05/jaw/left_tooth 1
+        weight: 1
+      - path: JNT_queen/spine_02/spine_03/spine_05/jaw/left_tusk 1
+        weight: 1
+      - path: JNT_queen/spine_02/spine_03/spine_05/jaw/right_tooth 1
+        weight: 1
+      - path: JNT_queen/spine_02/spine_03/spine_05/jaw/right_tusk 1
+        weight: 1
+      - path: JNT_queen/spine_02/spine_03/spine_05/jaw/top_middle_mouth
+        weight: 1
+      - path: JNT_queen/spine_02/spine_03/spine_05/spine_06
+        weight: 1
+      - path: JNT_queen/spine_02/spine_03/spine_05/spine_06/spine_07
+        weight: 1
+      - path: JNT_queen/spine_02/spine_03/spine_05/spine_06/spine_07/left_eye 1
+        weight: 1
+      - path: JNT_queen/spine_02/spine_03/spine_05/spine_06/spine_07/right_eye 1
+        weight: 1
+      - path: JNT_queen/spine_02/spine_03/spine_05/spine_06/spine_07/spine_08
+        weight: 1
+      - path: JNT_queen/spine_02/spine_03/spine_05/spine_06/spine_07/spine_08/head_top
+        weight: 1
+      - path: JNT_queen/spine_02/stomach
+        weight: 1
+      - path: JNT_queen/spine_02/stomach/JIG_left_stomach
+        weight: 1
+      - path: JNT_queen/spine_02/stomach/JIG_mid_stomach
+        weight: 1
+      - path: JNT_queen/spine_02/stomach/JIG_right_stomach
+        weight: 1
+      - path: JNT_queen/spine_02/Tail
+        weight: 1
+      - path: JNT_queen/spine_02/Tail/JIG_left_back
+        weight: 1
+      - path: JNT_queen/spine_02/Tail/JIG_right_back
+        weight: 1
+      - path: JNT_queen/spine_02/Tail/JIG_tail
+        weight: 1
+      - path: organ_boot
+        weight: 1
+      - path: organ_boot/boot
+        weight: 1
+      - path: organ_boot/organ
+        weight: 1
+      - path: queen
+        weight: 1
+      - path: queen/left_eye
+        weight: 1
+      - path: queen/right_eye
+        weight: 1
+      - path: queen/slime
+        weight: 1
+      - path: queen/teeth
+        weight: 1
+      - path: queen/teeth/left_tooth
+        weight: 1
+      - path: queen/teeth/left_tusk
+        weight: 1
+      - path: queen/teeth/right_tooth
+        weight: 1
+      - path: queen/teeth/right_tusk
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: bite02
+      takeName: Take 001
+      firstFrame: 180
+      lastFrame: 210
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: JNT_organ
+        weight: 1
+      - path: JNT_organ/joint34
+        weight: 1
+      - path: JNT_organ/joint35
+        weight: 1
+      - path: JNT_organ/joint36
+        weight: 1
+      - path: JNT_organ/joint37
+        weight: 1
+      - path: JNT_organ/joint38
+        weight: 1
+      - path: JNT_organ/joint39
+        weight: 1
+      - path: JNT_organ/joint40
+        weight: 1
+      - path: JNT_organ/joint40/boot 1
+        weight: 1
+      - path: JNT_organ/joint40/joint42
+        weight: 1
+      - path: JNT_organ/joint40/joint42/joint43
+        weight: 1
+      - path: JNT_organ/joint40/joint42/joint44
+        weight: 1
+      - path: JNT_organ/joint40/joint42/joint45
+        weight: 1
+      - path: JNT_organ/joint40/joint42/joint46
+        weight: 1
+      - path: JNT_organ/joint40/joint42/joint47
+        weight: 1
+      - path: JNT_organ/joint40/joint42/joint56
+        weight: 1
+      - path: JNT_organ/joint40/joint42/joint57
+        weight: 1
+      - path: JNT_organ/joint40/joint48
+        weight: 1
+      - path: JNT_organ/joint40/joint48/joint43 1
+        weight: 1
+      - path: JNT_organ/joint40/joint48/joint44 1
+        weight: 1
+      - path: JNT_organ/joint40/joint48/joint45 1
+        weight: 1
+      - path: JNT_organ/joint40/joint48/joint46 1
+        weight: 1
+      - path: JNT_organ/joint40/joint48/joint47 1
+        weight: 1
+      - path: JNT_organ/joint40/joint48/joint60
+        weight: 1
+      - path: JNT_organ/joint40/joint49
+        weight: 1
+      - path: JNT_organ/joint40/joint49/joint43 2
+        weight: 1
+      - path: JNT_organ/joint40/joint49/joint44 2
+        weight: 1
+      - path: JNT_organ/joint40/joint49/joint45 2
+        weight: 1
+      - path: JNT_organ/joint40/joint49/joint46 2
+        weight: 1
+      - path: JNT_organ/joint40/joint49/joint47 2
+        weight: 1
+      - path: JNT_organ/joint40/joint49/joint58
+        weight: 1
+      - path: JNT_organ/joint40/joint49/joint59
+        weight: 1
+      - path: JNT_organ/joint40/joint55
+        weight: 1
+      - path: JNT_organ/joint40/joint55/joint43 3
+        weight: 1
+      - path: JNT_organ/joint40/joint55/joint44 3
+        weight: 1
+      - path: JNT_organ/joint40/joint55/joint45 3
+        weight: 1
+      - path: JNT_organ/joint40/joint55/joint46 3
+        weight: 1
+      - path: JNT_organ/joint40/joint55/joint47 3
+        weight: 1
+      - path: JNT_organ/joint51
+        weight: 1
+      - path: JNT_organ/joint51/joint52
+        weight: 1
+      - path: JNT_organ/joint51/joint52/joint65
+        weight: 1
+      - path: JNT_organ/joint51/joint52/joint66
+        weight: 1
+      - path: JNT_organ/joint51/joint52/joint67
+        weight: 1
+      - path: JNT_organ/joint51/joint52/joint68
+        weight: 1
+      - path: JNT_organ/joint51/joint52/joint69
+        weight: 1
+      - path: JNT_organ/joint51/joint52/joint70
+        weight: 1
+      - path: JNT_organ/joint51/joint52/joint71
+        weight: 1
+      - path: JNT_organ/joint51/joint52/joint72
+        weight: 1
+      - path: JNT_organ/joint51/joint52/joint73
+        weight: 1
+      - path: JNT_organ/joint51/joint52/joint74
+        weight: 1
+      - path: JNT_organ/joint51/joint52/joint75
+        weight: 1
+      - path: JNT_organ/joint51/joint53
+        weight: 1
+      - path: JNT_organ/joint51/joint53/joint61
+        weight: 1
+      - path: JNT_organ/joint51/joint53/joint62
+        weight: 1
+      - path: JNT_organ/joint51/joint53/joint63
+        weight: 1
+      - path: JNT_organ/joint51/joint64
+        weight: 1
+      - path: JNT_organ/joint51/joint64/joint61 1
+        weight: 1
+      - path: JNT_organ/joint51/joint64/joint62 1
+        weight: 1
+      - path: JNT_organ/joint51/joint64/joint63 1
+        weight: 1
+      - path: JNT_queen
+        weight: 1
+      - path: JNT_queen/spine_02
+        weight: 1
+      - path: JNT_queen/spine_02/spine_03
+        weight: 1
+      - path: JNT_queen/spine_02/spine_03/spine_05
+        weight: 1
+      - path: JNT_queen/spine_02/spine_03/spine_05/jaw
+        weight: 1
+      - path: JNT_queen/spine_02/spine_03/spine_05/jaw/bottom_middle_mouth
+        weight: 1
+      - path: JNT_queen/spine_02/spine_03/spine_05/jaw/left_tooth 1
+        weight: 1
+      - path: JNT_queen/spine_02/spine_03/spine_05/jaw/left_tusk 1
+        weight: 1
+      - path: JNT_queen/spine_02/spine_03/spine_05/jaw/right_tooth 1
+        weight: 1
+      - path: JNT_queen/spine_02/spine_03/spine_05/jaw/right_tusk 1
+        weight: 1
+      - path: JNT_queen/spine_02/spine_03/spine_05/jaw/top_middle_mouth
+        weight: 1
+      - path: JNT_queen/spine_02/spine_03/spine_05/spine_06
+        weight: 1
+      - path: JNT_queen/spine_02/spine_03/spine_05/spine_06/spine_07
+        weight: 1
+      - path: JNT_queen/spine_02/spine_03/spine_05/spine_06/spine_07/left_eye 1
+        weight: 1
+      - path: JNT_queen/spine_02/spine_03/spine_05/spine_06/spine_07/right_eye 1
+        weight: 1
+      - path: JNT_queen/spine_02/spine_03/spine_05/spine_06/spine_07/spine_08
+        weight: 1
+      - path: JNT_queen/spine_02/spine_03/spine_05/spine_06/spine_07/spine_08/head_top
+        weight: 1
+      - path: JNT_queen/spine_02/stomach
+        weight: 1
+      - path: JNT_queen/spine_02/stomach/JIG_left_stomach
+        weight: 1
+      - path: JNT_queen/spine_02/stomach/JIG_mid_stomach
+        weight: 1
+      - path: JNT_queen/spine_02/stomach/JIG_right_stomach
+        weight: 1
+      - path: JNT_queen/spine_02/Tail
+        weight: 1
+      - path: JNT_queen/spine_02/Tail/JIG_left_back
+        weight: 1
+      - path: JNT_queen/spine_02/Tail/JIG_right_back
+        weight: 1
+      - path: JNT_queen/spine_02/Tail/JIG_tail
+        weight: 1
+      - path: organ_boot
+        weight: 1
+      - path: organ_boot/boot
+        weight: 1
+      - path: organ_boot/organ
+        weight: 1
+      - path: queen
+        weight: 1
+      - path: queen/left_eye
+        weight: 1
+      - path: queen/right_eye
+        weight: 1
+      - path: queen/slime
+        weight: 1
+      - path: queen/teeth
+        weight: 1
+      - path: queen/teeth/left_tooth
+        weight: 1
+      - path: queen/teeth/left_tusk
+        weight: 1
+      - path: queen/teeth/right_tooth
+        weight: 1
+      - path: queen/teeth/right_tusk
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: bite03
+      takeName: Take 001
+      firstFrame: 220
+      lastFrame: 250
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: JNT_organ
+        weight: 1
+      - path: JNT_organ/joint34
+        weight: 1
+      - path: JNT_organ/joint35
+        weight: 1
+      - path: JNT_organ/joint36
+        weight: 1
+      - path: JNT_organ/joint37
+        weight: 1
+      - path: JNT_organ/joint38
+        weight: 1
+      - path: JNT_organ/joint39
+        weight: 1
+      - path: JNT_organ/joint40
+        weight: 1
+      - path: JNT_organ/joint40/boot 1
+        weight: 1
+      - path: JNT_organ/joint40/joint42
+        weight: 1
+      - path: JNT_organ/joint40/joint42/joint43
+        weight: 1
+      - path: JNT_organ/joint40/joint42/joint44
+        weight: 1
+      - path: JNT_organ/joint40/joint42/joint45
+        weight: 1
+      - path: JNT_organ/joint40/joint42/joint46
+        weight: 1
+      - path: JNT_organ/joint40/joint42/joint47
+        weight: 1
+      - path: JNT_organ/joint40/joint42/joint56
+        weight: 1
+      - path: JNT_organ/joint40/joint42/joint57
+        weight: 1
+      - path: JNT_organ/joint40/joint48
+        weight: 1
+      - path: JNT_organ/joint40/joint48/joint43 1
+        weight: 1
+      - path: JNT_organ/joint40/joint48/joint44 1
+        weight: 1
+      - path: JNT_organ/joint40/joint48/joint45 1
+        weight: 1
+      - path: JNT_organ/joint40/joint48/joint46 1
+        weight: 1
+      - path: JNT_organ/joint40/joint48/joint47 1
+        weight: 1
+      - path: JNT_organ/joint40/joint48/joint60
+        weight: 1
+      - path: JNT_organ/joint40/joint49
+        weight: 1
+      - path: JNT_organ/joint40/joint49/joint43 2
+        weight: 1
+      - path: JNT_organ/joint40/joint49/joint44 2
+        weight: 1
+      - path: JNT_organ/joint40/joint49/joint45 2
+        weight: 1
+      - path: JNT_organ/joint40/joint49/joint46 2
+        weight: 1
+      - path: JNT_organ/joint40/joint49/joint47 2
+        weight: 1
+      - path: JNT_organ/joint40/joint49/joint58
+        weight: 1
+      - path: JNT_organ/joint40/joint49/joint59
+        weight: 1
+      - path: JNT_organ/joint40/joint55
+        weight: 1
+      - path: JNT_organ/joint40/joint55/joint43 3
+        weight: 1
+      - path: JNT_organ/joint40/joint55/joint44 3
+        weight: 1
+      - path: JNT_organ/joint40/joint55/joint45 3
+        weight: 1
+      - path: JNT_organ/joint40/joint55/joint46 3
+        weight: 1
+      - path: JNT_organ/joint40/joint55/joint47 3
+        weight: 1
+      - path: JNT_organ/joint51
+        weight: 1
+      - path: JNT_organ/joint51/joint52
+        weight: 1
+      - path: JNT_organ/joint51/joint52/joint65
+        weight: 1
+      - path: JNT_organ/joint51/joint52/joint66
+        weight: 1
+      - path: JNT_organ/joint51/joint52/joint67
+        weight: 1
+      - path: JNT_organ/joint51/joint52/joint68
+        weight: 1
+      - path: JNT_organ/joint51/joint52/joint69
+        weight: 1
+      - path: JNT_organ/joint51/joint52/joint70
+        weight: 1
+      - path: JNT_organ/joint51/joint52/joint71
+        weight: 1
+      - path: JNT_organ/joint51/joint52/joint72
+        weight: 1
+      - path: JNT_organ/joint51/joint52/joint73
+        weight: 1
+      - path: JNT_organ/joint51/joint52/joint74
+        weight: 1
+      - path: JNT_organ/joint51/joint52/joint75
+        weight: 1
+      - path: JNT_organ/joint51/joint53
+        weight: 1
+      - path: JNT_organ/joint51/joint53/joint61
+        weight: 1
+      - path: JNT_organ/joint51/joint53/joint62
+        weight: 1
+      - path: JNT_organ/joint51/joint53/joint63
+        weight: 1
+      - path: JNT_organ/joint51/joint64
+        weight: 1
+      - path: JNT_organ/joint51/joint64/joint61 1
+        weight: 1
+      - path: JNT_organ/joint51/joint64/joint62 1
+        weight: 1
+      - path: JNT_organ/joint51/joint64/joint63 1
+        weight: 1
+      - path: JNT_queen
+        weight: 1
+      - path: JNT_queen/spine_02
+        weight: 1
+      - path: JNT_queen/spine_02/spine_03
+        weight: 1
+      - path: JNT_queen/spine_02/spine_03/spine_05
+        weight: 1
+      - path: JNT_queen/spine_02/spine_03/spine_05/jaw
+        weight: 1
+      - path: JNT_queen/spine_02/spine_03/spine_05/jaw/bottom_middle_mouth
+        weight: 1
+      - path: JNT_queen/spine_02/spine_03/spine_05/jaw/left_tooth 1
+        weight: 1
+      - path: JNT_queen/spine_02/spine_03/spine_05/jaw/left_tusk 1
+        weight: 1
+      - path: JNT_queen/spine_02/spine_03/spine_05/jaw/right_tooth 1
+        weight: 1
+      - path: JNT_queen/spine_02/spine_03/spine_05/jaw/right_tusk 1
+        weight: 1
+      - path: JNT_queen/spine_02/spine_03/spine_05/jaw/top_middle_mouth
+        weight: 1
+      - path: JNT_queen/spine_02/spine_03/spine_05/spine_06
+        weight: 1
+      - path: JNT_queen/spine_02/spine_03/spine_05/spine_06/spine_07
+        weight: 1
+      - path: JNT_queen/spine_02/spine_03/spine_05/spine_06/spine_07/left_eye 1
+        weight: 1
+      - path: JNT_queen/spine_02/spine_03/spine_05/spine_06/spine_07/right_eye 1
+        weight: 1
+      - path: JNT_queen/spine_02/spine_03/spine_05/spine_06/spine_07/spine_08
+        weight: 1
+      - path: JNT_queen/spine_02/spine_03/spine_05/spine_06/spine_07/spine_08/head_top
+        weight: 1
+      - path: JNT_queen/spine_02/stomach
+        weight: 1
+      - path: JNT_queen/spine_02/stomach/JIG_left_stomach
+        weight: 1
+      - path: JNT_queen/spine_02/stomach/JIG_mid_stomach
+        weight: 1
+      - path: JNT_queen/spine_02/stomach/JIG_right_stomach
+        weight: 1
+      - path: JNT_queen/spine_02/Tail
+        weight: 1
+      - path: JNT_queen/spine_02/Tail/JIG_left_back
+        weight: 1
+      - path: JNT_queen/spine_02/Tail/JIG_right_back
+        weight: 1
+      - path: JNT_queen/spine_02/Tail/JIG_tail
+        weight: 1
+      - path: organ_boot
+        weight: 1
+      - path: organ_boot/boot
+        weight: 1
+      - path: organ_boot/organ
+        weight: 1
+      - path: queen
+        weight: 1
+      - path: queen/left_eye
+        weight: 1
+      - path: queen/right_eye
+        weight: 1
+      - path: queen/slime
+        weight: 1
+      - path: queen/teeth
+        weight: 1
+      - path: queen/teeth/left_tooth
+        weight: 1
+      - path: queen/teeth/left_tusk
+        weight: 1
+      - path: queen/teeth/right_tooth
+        weight: 1
+      - path: queen/teeth/right_tusk
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: Fire01
+      takeName: Take 001
+      firstFrame: 260
+      lastFrame: 320
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: JNT_organ
+        weight: 1
+      - path: JNT_organ/joint34
+        weight: 1
+      - path: JNT_organ/joint35
+        weight: 1
+      - path: JNT_organ/joint36
+        weight: 1
+      - path: JNT_organ/joint37
+        weight: 1
+      - path: JNT_organ/joint38
+        weight: 1
+      - path: JNT_organ/joint39
+        weight: 1
+      - path: JNT_organ/joint40
+        weight: 1
+      - path: JNT_organ/joint40/boot 1
+        weight: 1
+      - path: JNT_organ/joint40/joint42
+        weight: 1
+      - path: JNT_organ/joint40/joint42/joint43
+        weight: 1
+      - path: JNT_organ/joint40/joint42/joint44
+        weight: 1
+      - path: JNT_organ/joint40/joint42/joint45
+        weight: 1
+      - path: JNT_organ/joint40/joint42/joint46
+        weight: 1
+      - path: JNT_organ/joint40/joint42/joint47
+        weight: 1
+      - path: JNT_organ/joint40/joint42/joint56
+        weight: 1
+      - path: JNT_organ/joint40/joint42/joint57
+        weight: 1
+      - path: JNT_organ/joint40/joint48
+        weight: 1
+      - path: JNT_organ/joint40/joint48/joint43 1
+        weight: 1
+      - path: JNT_organ/joint40/joint48/joint44 1
+        weight: 1
+      - path: JNT_organ/joint40/joint48/joint45 1
+        weight: 1
+      - path: JNT_organ/joint40/joint48/joint46 1
+        weight: 1
+      - path: JNT_organ/joint40/joint48/joint47 1
+        weight: 1
+      - path: JNT_organ/joint40/joint48/joint60
+        weight: 1
+      - path: JNT_organ/joint40/joint49
+        weight: 1
+      - path: JNT_organ/joint40/joint49/joint43 2
+        weight: 1
+      - path: JNT_organ/joint40/joint49/joint44 2
+        weight: 1
+      - path: JNT_organ/joint40/joint49/joint45 2
+        weight: 1
+      - path: JNT_organ/joint40/joint49/joint46 2
+        weight: 1
+      - path: JNT_organ/joint40/joint49/joint47 2
+        weight: 1
+      - path: JNT_organ/joint40/joint49/joint58
+        weight: 1
+      - path: JNT_organ/joint40/joint49/joint59
+        weight: 1
+      - path: JNT_organ/joint40/joint55
+        weight: 1
+      - path: JNT_organ/joint40/joint55/joint43 3
+        weight: 1
+      - path: JNT_organ/joint40/joint55/joint44 3
+        weight: 1
+      - path: JNT_organ/joint40/joint55/joint45 3
+        weight: 1
+      - path: JNT_organ/joint40/joint55/joint46 3
+        weight: 1
+      - path: JNT_organ/joint40/joint55/joint47 3
+        weight: 1
+      - path: JNT_organ/joint51
+        weight: 1
+      - path: JNT_organ/joint51/joint52
+        weight: 1
+      - path: JNT_organ/joint51/joint52/joint65
+        weight: 1
+      - path: JNT_organ/joint51/joint52/joint66
+        weight: 1
+      - path: JNT_organ/joint51/joint52/joint67
+        weight: 1
+      - path: JNT_organ/joint51/joint52/joint68
+        weight: 1
+      - path: JNT_organ/joint51/joint52/joint69
+        weight: 1
+      - path: JNT_organ/joint51/joint52/joint70
+        weight: 1
+      - path: JNT_organ/joint51/joint52/joint71
+        weight: 1
+      - path: JNT_organ/joint51/joint52/joint72
+        weight: 1
+      - path: JNT_organ/joint51/joint52/joint73
+        weight: 1
+      - path: JNT_organ/joint51/joint52/joint74
+        weight: 1
+      - path: JNT_organ/joint51/joint52/joint75
+        weight: 1
+      - path: JNT_organ/joint51/joint53
+        weight: 1
+      - path: JNT_organ/joint51/joint53/joint61
+        weight: 1
+      - path: JNT_organ/joint51/joint53/joint62
+        weight: 1
+      - path: JNT_organ/joint51/joint53/joint63
+        weight: 1
+      - path: JNT_organ/joint51/joint64
+        weight: 1
+      - path: JNT_organ/joint51/joint64/joint61 1
+        weight: 1
+      - path: JNT_organ/joint51/joint64/joint62 1
+        weight: 1
+      - path: JNT_organ/joint51/joint64/joint63 1
+        weight: 1
+      - path: JNT_queen
+        weight: 1
+      - path: JNT_queen/spine_02
+        weight: 1
+      - path: JNT_queen/spine_02/spine_03
+        weight: 1
+      - path: JNT_queen/spine_02/spine_03/spine_05
+        weight: 1
+      - path: JNT_queen/spine_02/spine_03/spine_05/jaw
+        weight: 1
+      - path: JNT_queen/spine_02/spine_03/spine_05/jaw/bottom_middle_mouth
+        weight: 1
+      - path: JNT_queen/spine_02/spine_03/spine_05/jaw/left_tooth 1
+        weight: 1
+      - path: JNT_queen/spine_02/spine_03/spine_05/jaw/left_tusk 1
+        weight: 1
+      - path: JNT_queen/spine_02/spine_03/spine_05/jaw/right_tooth 1
+        weight: 1
+      - path: JNT_queen/spine_02/spine_03/spine_05/jaw/right_tusk 1
+        weight: 1
+      - path: JNT_queen/spine_02/spine_03/spine_05/jaw/top_middle_mouth
+        weight: 1
+      - path: JNT_queen/spine_02/spine_03/spine_05/spine_06
+        weight: 1
+      - path: JNT_queen/spine_02/spine_03/spine_05/spine_06/spine_07
+        weight: 1
+      - path: JNT_queen/spine_02/spine_03/spine_05/spine_06/spine_07/left_eye 1
+        weight: 1
+      - path: JNT_queen/spine_02/spine_03/spine_05/spine_06/spine_07/right_eye 1
+        weight: 1
+      - path: JNT_queen/spine_02/spine_03/spine_05/spine_06/spine_07/spine_08
+        weight: 1
+      - path: JNT_queen/spine_02/spine_03/spine_05/spine_06/spine_07/spine_08/head_top
+        weight: 1
+      - path: JNT_queen/spine_02/stomach
+        weight: 1
+      - path: JNT_queen/spine_02/stomach/JIG_left_stomach
+        weight: 1
+      - path: JNT_queen/spine_02/stomach/JIG_mid_stomach
+        weight: 1
+      - path: JNT_queen/spine_02/stomach/JIG_right_stomach
+        weight: 1
+      - path: JNT_queen/spine_02/Tail
+        weight: 1
+      - path: JNT_queen/spine_02/Tail/JIG_left_back
+        weight: 1
+      - path: JNT_queen/spine_02/Tail/JIG_right_back
+        weight: 1
+      - path: JNT_queen/spine_02/Tail/JIG_tail
+        weight: 1
+      - path: organ_boot
+        weight: 1
+      - path: organ_boot/boot
+        weight: 1
+      - path: organ_boot/organ
+        weight: 1
+      - path: queen
+        weight: 1
+      - path: queen/left_eye
+        weight: 1
+      - path: queen/right_eye
+        weight: 1
+      - path: queen/slime
+        weight: 1
+      - path: queen/teeth
+        weight: 1
+      - path: queen/teeth/left_tooth
+        weight: 1
+      - path: queen/teeth/left_tusk
+        weight: 1
+      - path: queen/teeth/right_tooth
+        weight: 1
+      - path: queen/teeth/right_tusk
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: win
+      takeName: Take 001
+      firstFrame: 330
+      lastFrame: 630
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: JNT_organ
+        weight: 1
+      - path: JNT_organ/joint34
+        weight: 1
+      - path: JNT_organ/joint35
+        weight: 1
+      - path: JNT_organ/joint36
+        weight: 1
+      - path: JNT_organ/joint37
+        weight: 1
+      - path: JNT_organ/joint38
+        weight: 1
+      - path: JNT_organ/joint39
+        weight: 1
+      - path: JNT_organ/joint40
+        weight: 1
+      - path: JNT_organ/joint40/boot 1
+        weight: 1
+      - path: JNT_organ/joint40/joint42
+        weight: 1
+      - path: JNT_organ/joint40/joint42/joint43
+        weight: 1
+      - path: JNT_organ/joint40/joint42/joint44
+        weight: 1
+      - path: JNT_organ/joint40/joint42/joint45
+        weight: 1
+      - path: JNT_organ/joint40/joint42/joint46
+        weight: 1
+      - path: JNT_organ/joint40/joint42/joint47
+        weight: 1
+      - path: JNT_organ/joint40/joint42/joint56
+        weight: 1
+      - path: JNT_organ/joint40/joint42/joint57
+        weight: 1
+      - path: JNT_organ/joint40/joint48
+        weight: 1
+      - path: JNT_organ/joint40/joint48/joint43 1
+        weight: 1
+      - path: JNT_organ/joint40/joint48/joint44 1
+        weight: 1
+      - path: JNT_organ/joint40/joint48/joint45 1
+        weight: 1
+      - path: JNT_organ/joint40/joint48/joint46 1
+        weight: 1
+      - path: JNT_organ/joint40/joint48/joint47 1
+        weight: 1
+      - path: JNT_organ/joint40/joint48/joint60
+        weight: 1
+      - path: JNT_organ/joint40/joint49
+        weight: 1
+      - path: JNT_organ/joint40/joint49/joint43 2
+        weight: 1
+      - path: JNT_organ/joint40/joint49/joint44 2
+        weight: 1
+      - path: JNT_organ/joint40/joint49/joint45 2
+        weight: 1
+      - path: JNT_organ/joint40/joint49/joint46 2
+        weight: 1
+      - path: JNT_organ/joint40/joint49/joint47 2
+        weight: 1
+      - path: JNT_organ/joint40/joint49/joint58
+        weight: 1
+      - path: JNT_organ/joint40/joint49/joint59
+        weight: 1
+      - path: JNT_organ/joint40/joint55
+        weight: 1
+      - path: JNT_organ/joint40/joint55/joint43 3
+        weight: 1
+      - path: JNT_organ/joint40/joint55/joint44 3
+        weight: 1
+      - path: JNT_organ/joint40/joint55/joint45 3
+        weight: 1
+      - path: JNT_organ/joint40/joint55/joint46 3
+        weight: 1
+      - path: JNT_organ/joint40/joint55/joint47 3
+        weight: 1
+      - path: JNT_organ/joint51
+        weight: 1
+      - path: JNT_organ/joint51/joint52
+        weight: 1
+      - path: JNT_organ/joint51/joint52/joint65
+        weight: 1
+      - path: JNT_organ/joint51/joint52/joint66
+        weight: 1
+      - path: JNT_organ/joint51/joint52/joint67
+        weight: 1
+      - path: JNT_organ/joint51/joint52/joint68
+        weight: 1
+      - path: JNT_organ/joint51/joint52/joint69
+        weight: 1
+      - path: JNT_organ/joint51/joint52/joint70
+        weight: 1
+      - path: JNT_organ/joint51/joint52/joint71
+        weight: 1
+      - path: JNT_organ/joint51/joint52/joint72
+        weight: 1
+      - path: JNT_organ/joint51/joint52/joint73
+        weight: 1
+      - path: JNT_organ/joint51/joint52/joint74
+        weight: 1
+      - path: JNT_organ/joint51/joint52/joint75
+        weight: 1
+      - path: JNT_organ/joint51/joint53
+        weight: 1
+      - path: JNT_organ/joint51/joint53/joint61
+        weight: 1
+      - path: JNT_organ/joint51/joint53/joint62
+        weight: 1
+      - path: JNT_organ/joint51/joint53/joint63
+        weight: 1
+      - path: JNT_organ/joint51/joint64
+        weight: 1
+      - path: JNT_organ/joint51/joint64/joint61 1
+        weight: 1
+      - path: JNT_organ/joint51/joint64/joint62 1
+        weight: 1
+      - path: JNT_organ/joint51/joint64/joint63 1
+        weight: 1
+      - path: JNT_queen
+        weight: 1
+      - path: JNT_queen/spine_02
+        weight: 1
+      - path: JNT_queen/spine_02/spine_03
+        weight: 1
+      - path: JNT_queen/spine_02/spine_03/spine_05
+        weight: 1
+      - path: JNT_queen/spine_02/spine_03/spine_05/jaw
+        weight: 1
+      - path: JNT_queen/spine_02/spine_03/spine_05/jaw/bottom_middle_mouth
+        weight: 1
+      - path: JNT_queen/spine_02/spine_03/spine_05/jaw/left_tooth 1
+        weight: 1
+      - path: JNT_queen/spine_02/spine_03/spine_05/jaw/left_tusk 1
+        weight: 1
+      - path: JNT_queen/spine_02/spine_03/spine_05/jaw/right_tooth 1
+        weight: 1
+      - path: JNT_queen/spine_02/spine_03/spine_05/jaw/right_tusk 1
+        weight: 1
+      - path: JNT_queen/spine_02/spine_03/spine_05/jaw/top_middle_mouth
+        weight: 1
+      - path: JNT_queen/spine_02/spine_03/spine_05/spine_06
+        weight: 1
+      - path: JNT_queen/spine_02/spine_03/spine_05/spine_06/spine_07
+        weight: 1
+      - path: JNT_queen/spine_02/spine_03/spine_05/spine_06/spine_07/left_eye 1
+        weight: 1
+      - path: JNT_queen/spine_02/spine_03/spine_05/spine_06/spine_07/right_eye 1
+        weight: 1
+      - path: JNT_queen/spine_02/spine_03/spine_05/spine_06/spine_07/spine_08
+        weight: 1
+      - path: JNT_queen/spine_02/spine_03/spine_05/spine_06/spine_07/spine_08/head_top
+        weight: 1
+      - path: JNT_queen/spine_02/stomach
+        weight: 1
+      - path: JNT_queen/spine_02/stomach/JIG_left_stomach
+        weight: 1
+      - path: JNT_queen/spine_02/stomach/JIG_mid_stomach
+        weight: 1
+      - path: JNT_queen/spine_02/stomach/JIG_right_stomach
+        weight: 1
+      - path: JNT_queen/spine_02/Tail
+        weight: 1
+      - path: JNT_queen/spine_02/Tail/JIG_left_back
+        weight: 1
+      - path: JNT_queen/spine_02/Tail/JIG_right_back
+        weight: 1
+      - path: JNT_queen/spine_02/Tail/JIG_tail
+        weight: 1
+      - path: organ_boot
+        weight: 1
+      - path: organ_boot/boot
+        weight: 1
+      - path: organ_boot/organ
+        weight: 1
+      - path: queen
+        weight: 1
+      - path: queen/left_eye
+        weight: 1
+      - path: queen/right_eye
+        weight: 1
+      - path: queen/slime
+        weight: 1
+      - path: queen/teeth
+        weight: 1
+      - path: queen/teeth/left_tooth
+        weight: 1
+      - path: queen/teeth/left_tusk
+        weight: 1
+      - path: queen/teeth/right_tooth
+        weight: 1
+      - path: queen/teeth/right_tusk
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: lose
+      takeName: Take 001
+      firstFrame: 640
+      lastFrame: 940
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: JNT_organ
+        weight: 1
+      - path: JNT_organ/joint34
+        weight: 1
+      - path: JNT_organ/joint35
+        weight: 1
+      - path: JNT_organ/joint36
+        weight: 1
+      - path: JNT_organ/joint37
+        weight: 1
+      - path: JNT_organ/joint38
+        weight: 1
+      - path: JNT_organ/joint39
+        weight: 1
+      - path: JNT_organ/joint40
+        weight: 1
+      - path: JNT_organ/joint40/boot 1
+        weight: 1
+      - path: JNT_organ/joint40/joint42
+        weight: 1
+      - path: JNT_organ/joint40/joint42/joint43
+        weight: 1
+      - path: JNT_organ/joint40/joint42/joint44
+        weight: 1
+      - path: JNT_organ/joint40/joint42/joint45
+        weight: 1
+      - path: JNT_organ/joint40/joint42/joint46
+        weight: 1
+      - path: JNT_organ/joint40/joint42/joint47
+        weight: 1
+      - path: JNT_organ/joint40/joint42/joint56
+        weight: 1
+      - path: JNT_organ/joint40/joint42/joint57
+        weight: 1
+      - path: JNT_organ/joint40/joint48
+        weight: 1
+      - path: JNT_organ/joint40/joint48/joint43 1
+        weight: 1
+      - path: JNT_organ/joint40/joint48/joint44 1
+        weight: 1
+      - path: JNT_organ/joint40/joint48/joint45 1
+        weight: 1
+      - path: JNT_organ/joint40/joint48/joint46 1
+        weight: 1
+      - path: JNT_organ/joint40/joint48/joint47 1
+        weight: 1
+      - path: JNT_organ/joint40/joint48/joint60
+        weight: 1
+      - path: JNT_organ/joint40/joint49
+        weight: 1
+      - path: JNT_organ/joint40/joint49/joint43 2
+        weight: 1
+      - path: JNT_organ/joint40/joint49/joint44 2
+        weight: 1
+      - path: JNT_organ/joint40/joint49/joint45 2
+        weight: 1
+      - path: JNT_organ/joint40/joint49/joint46 2
+        weight: 1
+      - path: JNT_organ/joint40/joint49/joint47 2
+        weight: 1
+      - path: JNT_organ/joint40/joint49/joint58
+        weight: 1
+      - path: JNT_organ/joint40/joint49/joint59
+        weight: 1
+      - path: JNT_organ/joint40/joint55
+        weight: 1
+      - path: JNT_organ/joint40/joint55/joint43 3
+        weight: 1
+      - path: JNT_organ/joint40/joint55/joint44 3
+        weight: 1
+      - path: JNT_organ/joint40/joint55/joint45 3
+        weight: 1
+      - path: JNT_organ/joint40/joint55/joint46 3
+        weight: 1
+      - path: JNT_organ/joint40/joint55/joint47 3
+        weight: 1
+      - path: JNT_organ/joint51
+        weight: 1
+      - path: JNT_organ/joint51/joint52
+        weight: 1
+      - path: JNT_organ/joint51/joint52/joint65
+        weight: 1
+      - path: JNT_organ/joint51/joint52/joint66
+        weight: 1
+      - path: JNT_organ/joint51/joint52/joint67
+        weight: 1
+      - path: JNT_organ/joint51/joint52/joint68
+        weight: 1
+      - path: JNT_organ/joint51/joint52/joint69
+        weight: 1
+      - path: JNT_organ/joint51/joint52/joint70
+        weight: 1
+      - path: JNT_organ/joint51/joint52/joint71
+        weight: 1
+      - path: JNT_organ/joint51/joint52/joint72
+        weight: 1
+      - path: JNT_organ/joint51/joint52/joint73
+        weight: 1
+      - path: JNT_organ/joint51/joint52/joint74
+        weight: 1
+      - path: JNT_organ/joint51/joint52/joint75
+        weight: 1
+      - path: JNT_organ/joint51/joint53
+        weight: 1
+      - path: JNT_organ/joint51/joint53/joint61
+        weight: 1
+      - path: JNT_organ/joint51/joint53/joint62
+        weight: 1
+      - path: JNT_organ/joint51/joint53/joint63
+        weight: 1
+      - path: JNT_organ/joint51/joint64
+        weight: 1
+      - path: JNT_organ/joint51/joint64/joint61 1
+        weight: 1
+      - path: JNT_organ/joint51/joint64/joint62 1
+        weight: 1
+      - path: JNT_organ/joint51/joint64/joint63 1
+        weight: 1
+      - path: JNT_queen
+        weight: 1
+      - path: JNT_queen/spine_02
+        weight: 1
+      - path: JNT_queen/spine_02/spine_03
+        weight: 1
+      - path: JNT_queen/spine_02/spine_03/spine_05
+        weight: 1
+      - path: JNT_queen/spine_02/spine_03/spine_05/jaw
+        weight: 1
+      - path: JNT_queen/spine_02/spine_03/spine_05/jaw/bottom_middle_mouth
+        weight: 1
+      - path: JNT_queen/spine_02/spine_03/spine_05/jaw/left_tooth 1
+        weight: 1
+      - path: JNT_queen/spine_02/spine_03/spine_05/jaw/left_tusk 1
+        weight: 1
+      - path: JNT_queen/spine_02/spine_03/spine_05/jaw/right_tooth 1
+        weight: 1
+      - path: JNT_queen/spine_02/spine_03/spine_05/jaw/right_tusk 1
+        weight: 1
+      - path: JNT_queen/spine_02/spine_03/spine_05/jaw/top_middle_mouth
+        weight: 1
+      - path: JNT_queen/spine_02/spine_03/spine_05/spine_06
+        weight: 1
+      - path: JNT_queen/spine_02/spine_03/spine_05/spine_06/spine_07
+        weight: 1
+      - path: JNT_queen/spine_02/spine_03/spine_05/spine_06/spine_07/left_eye 1
+        weight: 1
+      - path: JNT_queen/spine_02/spine_03/spine_05/spine_06/spine_07/right_eye 1
+        weight: 1
+      - path: JNT_queen/spine_02/spine_03/spine_05/spine_06/spine_07/spine_08
+        weight: 1
+      - path: JNT_queen/spine_02/spine_03/spine_05/spine_06/spine_07/spine_08/head_top
+        weight: 1
+      - path: JNT_queen/spine_02/stomach
+        weight: 1
+      - path: JNT_queen/spine_02/stomach/JIG_left_stomach
+        weight: 1
+      - path: JNT_queen/spine_02/stomach/JIG_mid_stomach
+        weight: 1
+      - path: JNT_queen/spine_02/stomach/JIG_right_stomach
+        weight: 1
+      - path: JNT_queen/spine_02/Tail
+        weight: 1
+      - path: JNT_queen/spine_02/Tail/JIG_left_back
+        weight: 1
+      - path: JNT_queen/spine_02/Tail/JIG_right_back
+        weight: 1
+      - path: JNT_queen/spine_02/Tail/JIG_tail
+        weight: 1
+      - path: organ_boot
+        weight: 1
+      - path: organ_boot/boot
+        weight: 1
+      - path: organ_boot/organ
+        weight: 1
+      - path: queen
+        weight: 1
+      - path: queen/left_eye
+        weight: 1
+      - path: queen/right_eye
+        weight: 1
+      - path: queen/slime
+        weight: 1
+      - path: queen/teeth
+        weight: 1
+      - path: queen/teeth/left_tooth
+        weight: 1
+      - path: queen/teeth/left_tusk
+        weight: 1
+      - path: queen/teeth/right_tooth
+        weight: 1
+      - path: queen/teeth/right_tusk
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    splitTangentsAcrossUV: 1
+    normalImportMode: 0
+    tangentImportMode: 1
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: .5
+    foreArmTwist: .5
+    upperLegTwist: .5
+    legTwist: .5
+    armStretch: .0500000007
+    legStretch: .0500000007
+    feetSpacing: 0
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

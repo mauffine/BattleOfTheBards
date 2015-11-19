@@ -2282,11 +2282,6 @@ MonoBehaviour:
   m_health: 300
   m_spellBehavior: 2
   m_lifeBar: {fileID: 0}
-  m_events:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
 --- !u!114 &11477054
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2299,9 +2294,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spriteList:
-  - {fileID: 21300000, guid: 7ac6760692ef33342a725d41b517b048, type: 3}
-  - {fileID: 21300000, guid: 76756a21ac509984c8522e0cdd790aec, type: 3}
-  - {fileID: 21300000, guid: d5960743d60e3ff49bdbb1cba4926f41, type: 3}
+  - {fileID: 21300000, guid: 8fe21fc4208420a449d9b4d6715eda2b, type: 3}
+  - {fileID: 21300002, guid: 8fe21fc4208420a449d9b4d6715eda2b, type: 3}
+  - {fileID: 21300004, guid: 8fe21fc4208420a449d9b4d6715eda2b, type: 3}
 --- !u!137 &13727158
 SkinnedMeshRenderer:
   m_ObjectHideFlags: 1
@@ -2631,6 +2626,21 @@ Prefab:
       propertyPath: m_maxHealth
       value: 200
       objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: spriteList.Array.data[0]
+      value: 
+      objectReference: {fileID: 21300000, guid: 8fe21fc4208420a449d9b4d6715eda2b,
+        type: 3}
+    - target: {fileID: 0}
+      propertyPath: spriteList.Array.data[1]
+      value: 
+      objectReference: {fileID: 21300002, guid: 8fe21fc4208420a449d9b4d6715eda2b,
+        type: 3}
+    - target: {fileID: 0}
+      propertyPath: spriteList.Array.data[2]
+      value: 
+      objectReference: {fileID: 21300004, guid: 8fe21fc4208420a449d9b4d6715eda2b,
+        type: 3}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 146360}

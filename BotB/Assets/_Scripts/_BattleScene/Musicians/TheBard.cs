@@ -22,19 +22,58 @@ public class TheBard : Musician
         switch (a_animationNum)
         {
             case 1:
-                GetComponentInChildren<Animator>().SetTrigger("PlayChord1");
+                GetComponentInChildren<Animator>().SetTrigger("PlayNote01");
                 break;
             case 2:
-                GetComponentInChildren<Animator>().SetTrigger("PlayChord2");
+                GetComponentInChildren<Animator>().SetTrigger("PlayNote02");
                 break;
             case 3:
-                GetComponentInChildren<Animator>().SetTrigger("PlayChord3");
+                GetComponentInChildren<Animator>().SetTrigger("PlayNote03");
                 break;
             case 4:
-                GetComponentInChildren<Animator>().SetTrigger("PlayChord4");
+                GetComponentInChildren<Animator>().SetTrigger("PlayNote04");
                 break;
             case 5:
-                GetComponentInChildren<Animator>().SetTrigger("PlayHurt");
+                GetComponentInChildren<Animator>().SetTrigger("PlayNote05");
+                break;
+            case 6:
+                GetComponentInChildren<Animator>().SetTrigger("PlayNote06");
+                break;
+            case 7:
+                GetComponentInChildren<Animator>().SetTrigger("PlayNote07");
+                break;
+            case 8:
+                GetComponentInChildren<Animator>().SetTrigger("Fire01");
+                break;
+            case 9:
+                GetComponentInChildren<Animator>().SetTrigger("Fire02");
+                break;
+            case 10:
+                GetComponentInChildren<Animator>().SetTrigger("Fire03");
+                break;
+            case 11:
+                GetComponentInChildren<Animator>().SetTrigger("Win01");
+                break;
+            case 12:
+                GetComponentInChildren<Animator>().SetTrigger("Win02");
+                break;
+            case 13:
+                GetComponentInChildren<Animator>().SetTrigger("Win03");
+                break;
+            case 14:
+                GetComponentInChildren<Animator>().SetTrigger("Lose01");
+                break;
+            case 15:
+                GetComponentInChildren<Animator>().SetTrigger("Lose02");
+                break;
+            case 16:
+                GetComponentInChildren<Animator>().SetTrigger("Lose03");
+                break;
+            case 17:
+                GetComponentInChildren<Animator>().SetTrigger("Hit01");
+                break;
+            case 18:
+                GetComponentInChildren<Animator>().SetTrigger("Hit02");
                 break;
             default:
                 break;

@@ -135,7 +135,15 @@ public class Battle : MonoBehaviour
                 //past here is the death sequence
                 m_screenTransitionIndex = 0;
                 m_displayingScreens = true;
-                if (m_enemyListIndex < m_enemyList.Count)
+                if (m_enemyListIndex > 1)
+                {
+                    m_screenTransition.SetTexture(m_screenList[m_enemyListIndex].m_textures[0]);
+                    m_screenTransitionIndex++;
+                    m_screenTransition.SetScreen(true, 0.5f);
+                    m_timeUntilNextSlide = 5.0f;
+                    Application.LoadLevel("BrockLavaMineScene");
+                }
+                else if (m_enemyListIndex < m_enemyList.Count)
                 {
                     m_screenTransition.SetTexture(m_screenList[m_enemyListIndex].m_textures[0]);
                     m_screenTransitionIndex++;
@@ -257,15 +265,15 @@ public class Battle : MonoBehaviour
         if (a_note.m_playerOwned == true)
         {
             if (a_note.m_note == Note.A)
-                m_player.GetComponent<Musician>().Animate(1);
+                m_player.GetComponent<Musician>().Animate((short)Random.Range(1.0f, 7.0f));
             else if (a_note.m_note == Note.B)
-                m_player.GetComponent<Musician>().Animate(2);
+                m_player.GetComponent<Musician>().Animate((short)Random.Range(1.0f, 7.0f));
             else if (a_note.m_note == Note.C)
-                m_player.GetComponent<Musician>().Animate(3);
+                m_player.GetComponent<Musician>().Animate((short)Random.Range(1.0f, 7.0f));
             else if (a_note.m_note == Note.D)
-                m_player.GetComponent<Musician>().Animate(1);
+                m_player.GetComponent<Musician>().Animate((short)Random.Range(1.0f, 7.0f));
             else if (a_note.m_note == Note.E)
-                m_player.GetComponent<Musician>().Animate(4);
+                m_player.GetComponent<Musician>().Animate((short)Random.Range(1.0f, 7.0f));
         }
         else
         {
@@ -288,7 +296,7 @@ public class Battle : MonoBehaviour
             TextGen.Instance.TakeDamage(a_damage * -1, playerRef.transform.position, m_player.GetComponentInChildren<SkinnedMeshRenderer>().bounds.size.y);
             if (a_animate)
             {
-                playerRef.Animate(5);
+                playerRef.Animate((short)Random.Range(17.0f,18.0f));
             }
         }
         else
