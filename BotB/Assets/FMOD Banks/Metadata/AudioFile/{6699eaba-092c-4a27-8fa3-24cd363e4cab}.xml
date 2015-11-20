@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.01.07.00">
+    <object class="AudioFile" id="{6699eaba-092c-4a27-8fa3-24cd363e4cab}">
+        <property name="frequencyInKHz">
+            <value>44.0999985</value>
+        </property>
+        <property name="channelCount">
+            <value>2</value>
+        </property>
+        <property name="length">
+            <value>8.5267346938775503</value>
+        </property>
+        <property name="audioFilePath">
+            <value>$(AUDIO_BIN_DIR)/Cello 4 {2fc08863-dd39-4701-9e80-01d3102c9ec2}.wav</value>
+        </property>
+        <relationship name="container">
+            <destination>{0fe225f7-77e9-45a1-9a10-788290b82f75}</destination>
+        </relationship>
+    </object>
+</objects>

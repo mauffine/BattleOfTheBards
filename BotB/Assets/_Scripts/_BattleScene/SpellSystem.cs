@@ -88,7 +88,7 @@ public class SpellSystem : MonoBehaviour
             m_playerNotes.Clear();
         }
 
-        if (!m_clashed && m_flightTime < 0.7f)
+        if (!m_clashed && m_flightTime < 0.7f && TurnTimer.Instance.CurrentTurn == Turn.SpellEffect)
         {
             if (m_playerSpell != null && m_enemySpell != null)
             {
@@ -439,7 +439,7 @@ public class SpellSystem : MonoBehaviour
         m_playerNotes.Clear();
 
         Battle.Instance.EnemyRef.GetComponent<Musician>().Animate(4);
-        m_enemySpell = Battle.Instance.EnemyRef.GetComponent<TheSlime>().CurrentSpell.gameObject;
+        m_enemySpell = Battle.Instance.EnemyRef.GetComponent<Musician>().CurrentSpell.gameObject;
         switch (m_enemySpell.GetComponent<Spell>().Type)//
         {
             case (SpellType.Offencive):

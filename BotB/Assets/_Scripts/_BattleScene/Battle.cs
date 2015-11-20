@@ -140,7 +140,7 @@ public class Battle : MonoBehaviour
                     m_screenTransitionIndex++;
                     m_screenTransition.SetScreen(true, 0.5f);
                     m_timeUntilNextSlide = 5.0f;
-                    Application.LoadLevel("BrockLavaMineScene");
+                    //Application.LoadLevel("BrockLavaMineScene");
                 }
                 else if (m_enemyListIndex < m_enemyList.Count)
                 {
@@ -219,7 +219,8 @@ public class Battle : MonoBehaviour
             {
                 if(m_win)
                 {
-                    m_screenTransition.TransitionToScene("MenuScene");
+                    if (Application.loadedLevelName != "BrockLavaMineScene")
+                        m_screenTransition.TransitionToScene("BrockLavaMineScene");
                     //win, queue transition
                 }
                 else
