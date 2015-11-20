@@ -88,7 +88,7 @@ public class SpellSystem : MonoBehaviour
             m_playerNotes.Clear();
         }
 
-        if (!m_clashed && m_flightTime < 0.7f && m_playerSpell != null && m_enemySpell != null)
+        if (!m_clashed && m_flightTime < 0.7f)
         {
             if (m_playerSpell != null && m_enemySpell != null)
             {
@@ -129,7 +129,7 @@ public class SpellSystem : MonoBehaviour
                                 m_playerSpell.GetComponent<Spell>().TurnOffEmission();
                                 m_enemySpell.GetComponent<Spell>().TurnOffEmission();
                             }
-                            else if(m_enemySpell.GetComponent<Spell>().Type == SpellType.Defensive)
+                            else if (m_enemySpell.GetComponent<Spell>().Type == SpellType.Defensive)
                                 m_enemySpell.GetComponent<Spell>().TurnOffEmission();
                             else
                                 m_playerSpell.GetComponent<Spell>().TurnOffEmission();
@@ -137,6 +137,10 @@ public class SpellSystem : MonoBehaviour
                         break;
                 }
             }
+            else if (m_playerSpell != null)
+                m_playerSpell.GetComponent<Spell>().TurnOffEmission();
+            else if (m_enemySpell != null)
+                m_enemySpell.GetComponent<Spell>().TurnOffEmission();
             m_clashed = true;
         }
 
@@ -217,8 +221,9 @@ public class SpellSystem : MonoBehaviour
                                             m_playerSpell.GetComponent<Spell>().m_velocity = Vector3.zero;
                                         }
                                         break;
-                                    }                            
+                                    }
                                 }
+                            Battle.Instance.PlayerRef.GetComponent<Musician>().Animate((short)Random.Range(8, 11));
                          }
                         else if (spellEnumerator.Current.Key == m_spellPrefabs[o].GetComponent<Spell>().Name && !a_currentNotes[i].m_playerOwned)
                         {
