@@ -13,9 +13,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   HasSourceProject: 1
   HasPlatforms: 1
-  SourceProjectPath: C:/Users/sean.mauff/Documents/BattleOfTheBards1/BotB/Assets/FMOD
+  SourceProjectPath: C:/Users/daniel.waterston/Documents/BattleOfTheBards/BotB/Assets/FMOD
     Banks/BOTB Slime.fspro
-  SourceBankPath: C:/Users/sean.mauff/Documents/BattleOfTheBards1/BotB/Assets/FMOD
+  SourceBankPath: C:/Users/daniel.waterston/Documents/BattleOfTheBards/BotB/Assets/FMOD
     Banks\Build
   SpeakerModeSettings:
   - Platform: 2
@@ -49,6 +49,4 @@ MonoBehaviour:
   Plugins: []
   MasterBank:
     Name: Master Bank
-  Banks:
-  - Name: Dwarf
-  - Name: Queen
+  Banks: []

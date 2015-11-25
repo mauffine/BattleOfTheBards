@@ -81,6 +81,7 @@ public class Battle : MonoBehaviour
 
     public bool m_win, m_playing; //bools for the end of the battle
     private float m_winTimer = 5;
+    private float m_finalTick = 3;
 
     float m_timeUntilNextSlide;
 
@@ -140,7 +141,7 @@ public class Battle : MonoBehaviour
                     m_screenTransitionIndex++;
                     m_screenTransition.SetScreen(true, 0.5f);
                     m_timeUntilNextSlide = 5.0f;
-                    //Application.LoadLevel("BrockLavaMineScene");
+                    Application.LoadLevel("BrockLavaMineScene");
                 }
                 else if (m_enemyListIndex < m_enemyList.Count)
                 {
@@ -194,7 +195,7 @@ public class Battle : MonoBehaviour
                     m_player.GetComponent<Musician>().Reset();
                     if (!enemiesLeft)
                     {
-                        //not currently used, scene is over
+
                     }
                 }
             }
@@ -226,6 +227,17 @@ public class Battle : MonoBehaviour
                 else
                 {
                     m_screenTransition.TransitionToScene("MenuScene");
+                }
+            }
+        }
+        if(m_currentEnemy != null)
+        {   if(m_currentEnemy.GetComponent<Queen>() != null)
+            {
+                if(m_currentEnemy.GetComponent<Queen>().Health <= 0)
+                {
+                    m_finalTick -= Time.deltaTime;
+                    if(m_finalTick <= 0)
+                        Application.LoadLevel("MenuScene");
                 }
             }
         }

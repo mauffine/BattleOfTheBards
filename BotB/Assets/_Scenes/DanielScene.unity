@@ -1868,7 +1868,7 @@ Transform:
   - {fileID: 2106059084}
   - {fileID: 140248066}
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 9
 --- !u!1 &448608164
 GameObject:
   m_ObjectHideFlags: 0
@@ -5570,6 +5570,10 @@ Transform:
 Transform:
   m_PrefabParentObject: {fileID: 400002, guid: cd2ab9ec8c5931e4bb465c2b603baad4, type: 3}
   m_PrefabInternal: {fileID: 1630998880}
+--- !u!1 &1346557004 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 127650, guid: 1d217c3c2647a1e4e97973f1e359c4d2, type: 2}
+  m_PrefabInternal: {fileID: 1659134932}
 --- !u!1 &1356459982
 GameObject:
   m_ObjectHideFlags: 0
@@ -7354,6 +7358,10 @@ Prefab:
       propertyPath: m_ApplyRootMotion
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 11408874, guid: 1d217c3c2647a1e4e97973f1e359c4d2, type: 2}
+      propertyPath: m_lifeBar
+      value: 
+      objectReference: {fileID: 1790364301}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 1d217c3c2647a1e4e97973f1e359c4d2, type: 2}
   m_IsPrefabParent: 0
@@ -9154,7 +9162,7 @@ Prefab:
     - target: {fileID: 11439744, guid: c2cb8aafa83d79f4bb15694996577265, type: 2}
       propertyPath: m_player
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1346557004}
     - target: {fileID: 11439744, guid: c2cb8aafa83d79f4bb15694996577265, type: 2}
       propertyPath: m_currentEnemy
       value: 
